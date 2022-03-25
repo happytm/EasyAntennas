@@ -1,0 +1,75 @@
+CM 
+CE
+SY GH=0	'Ground height
+SY W=0.008	'Wire radius (2MM Wire diameter for 2450 Mhz)
+SY Rx=0.60/2, Rnx=4	'Reflector width  / 2 , number of wires
+SY Ry=5.882/2, Rny=20	'Reflector height / 2 , number of wires
+SY A=0.1609	'Length of first transmission  line
+SY B=0.3284	'Length of second transmission line
+SY C=0.3374	'Length of third transmission line
+SY D=0.3619	'Length of fourth transmission line
+SY E=0.2632	'Width of elements
+SY F=0.2920	'Lenth of last elements
+SY G=0.1058	'Gap between transmission lines (wire center to wire center)
+SY H=0.2166	'Height of elements
+SY R=0.1122	'Distance from reflector to wire center
+SY HF=0.2181	'Height of last element
+SY BL=0.4	'Balun coax length
+SM	Rnx*2	Rny*2	-R	-Rx	GH-Ry	-R	Rx	GH-Ry	'Reflector
+SC	0	0	-R	Rx	GH+Ry	'Reflector
+GW	1	1	0	-W	GH	0	W	GH	W
+GW	2	11	0	-G	GH-A	0	-G	GH+A	W
+GW	3	14	0	-G	GH+A	0	-E	GH+A+H	W
+GW	4	14	0	-E	GH+A+H	0	-G	GH+A+H+H	W
+GW	5	18	0	-G	GH+A+H+H	0	-G	GH+A+H+H+B	W
+GW	6	14	0	-G	GH+A+H+H+B	0	-E	GH+A+H+H+B+H	W
+GW	7	14	0	-E	GH+A+H+H+B+H	0	-G	GH+A+H+H+B+H+H	W
+GW	8	18	0	-G	GH+A+H+H+B+H+H	0	-G	GH+A+H+H+B+H+H+C	W
+GW	9	14	0	-G	GH+A+H+H+B+H+H+C	0	-E	GH+A+H+H+B+H+H+C+H	W
+GW	10	14	0	-E	GH+A+H+H+B+H+H+C+H	0	-G	GH+A+H+H+B+H+H+C+H+H	W
+GW	11	18	0	-G	GH+A+H+H+B+H+H+C+H+H	0	-G	GH+A+H+H+B+H+H+C+H+H+D	W
+GW	12	14	0	-G	GH+A+H+H+B+H+H+C+H+H+D	0	-E	GH+A+H+H+B+H+H+C+H+H+D+H	W
+GW	13	14	0	-E	GH+A+H+H+B+H+H+C+H+H+D+H	0	0	GH+A+H+H+B+H+H+C+H+H+D+H+HF	W
+GW	14	11	0	G	GH-A	0	G	GH+A	W
+GW	15	14	0	G	GH+A	0	E	GH+A+H	W
+GW	16	14	0	E	GH+A+H	0	G	GH+A+H+H	W
+GW	17	18	0	G	GH+A+H+H	0	G	GH+A+H+H+B	W
+GW	18	14	0	G	GH+A+H+H+B	0	E	GH+A+H+H+B+H	W
+GW	19	14	0	E	GH+A+H+H+B+H	0	G	GH+A+H+H+B+H+H	W
+GW	20	18	0	G	GH+A+H+H+B+H+H	0	G	GH+A+H+H+B+H+H+C	W
+GW	21	14	0	G	GH+A+H+H+B+H+H+C	0	E	GH+A+H+H+B+H+H+C+H	W
+GW	22	14	0	E	GH+A+H+H+B+H+H+C+H	0	G	GH+A+H+H+B+H+H+C+H+H	W
+GW	23	18	0	G	GH+A+H+H+B+H+H+C+H+H	0	G	GH+A+H+H+B+H+H+C+H+H+D	W
+GW	24	14	0	G	GH+A+H+H+B+H+H+C+H+H+D	0	E	GH+A+H+H+B+H+H+C+H+H+D+H	W
+GW	25	14	0	E	GH+A+H+H+B+H+H+C+H+H+D+H	0	0	GH+A+H+H+B+H+H+C+H+H+D+H+HF	W
+GW	27	14	0	-G	GH-A	0	-E	GH-A-H	W
+GW	28	14	0	-E	GH-A-H	0	-G	GH-A-H-H	W
+GW	29	18	0	-G	GH-A-H-H	0	-G	GH-A-H-H-B	W
+GW	30	14	0	-G	GH-A-H-H-B	0	-E	GH-A-H-H-B-H	W
+GW	31	14	0	-E	GH-A-H-H-B-H	0	-G	GH-A-H-H-B-H-H	W
+GW	32	18	0	-G	GH-A-H-H-B-H-H	0	-G	GH-A-H-H-B-H-H-C	W
+GW	33	14	0	-G	GH-A-H-H-B-H-H-C	0	-E	GH-A-H-H-B-H-H-C-H	W
+GW	34	14	0	-E	GH-A-H-H-B-H-H-C-H	0	-G	GH-A-H-H-B-H-H-C-H-H	W
+GW	35	18	0	-G	GH-A-H-H-B-H-H-C-H-H	0	-G	GH-A-H-H-B-H-H-C-H-H-D	W
+GW	36	14	0	-G	GH-A-H-H-B-H-H-C-H-H-D	0	-E	GH-A-H-H-B-H-H-C-H-H-D-H	W
+GW	37	14	0	-E	GH-A-H-H-B-H-H-C-H-H-D-H	0	0	GH-A-H-H-B-H-H-C-H-H-D-H-HF	W
+GW	39	14	0	G	GH-A	0	E	GH-A-H	W
+GW	40	14	0	E	GH-A-H	0	G	GH-A-H-H	W
+GW	41	18	0	G	GH-A-H-H	0	G	GH-A-H-H-B	W
+GW	42	14	0	G	GH-A-H-H-B	0	E	GH-A-H-H-B-H	W
+GW	43	14	0	E	GH-A-H-H-B-H	0	G	GH-A-H-H-B-H-H	W
+GW	44	18	0	G	GH-A-H-H-B-H-H	0	G	GH-A-H-H-B-H-H-C	W
+GW	45	14	0	G	GH-A-H-H-B-H-H-C	0	E	GH-A-H-H-B-H-H-C-H	W
+GW	46	14	0	E	GH-A-H-H-B-H-H-C-H	0	G	GH-A-H-H-B-H-H-C-H-H	W
+GW	47	18	0	G	GH-A-H-H-B-H-H-C-H-H	0	G	GH-A-H-H-B-H-H-C-H-H-D	W
+GW	48	14	0	G	GH-A-H-H-B-H-H-C-H-H-D	0	E	GH-A-H-H-B-H-H-C-H-H-D-H	W
+GW	49	14	0	E	GH-A-H-H-B-H-H-C-H-H-D-H	0	0	GH-A-H-H-B-H-H-C-H-H-D-H-HF	W
+GS	0	0	299.8/915
+GE	0
+GN	-1
+EK
+EX	0	1	1	0	1	0	0
+TL	1	1	2	6	200	0	0	0	0	0
+TL	1	1	14	6	200	0	0	0	0	0
+FR	0	0	0	0	915	0
+EN

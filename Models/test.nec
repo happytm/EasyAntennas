@@ -1,0 +1,34 @@
+CM 
+CE
+SY W=0.0006	'Wire radius (1.2mm diameter wire)
+SM	8	14	0	-0.023	0	0	0.023	0	'Center back reflector
+SC	0	0	0	0.023	0.0216	'Center back reflector
+SM	8	14	0	-0.023	0	0.0205	-0.085	0	'Left center back reflector
+SC	0	0	0.0205	-0.085	0.0216	'Left center back reflector
+SM	8	14	0	0.023	0	0.0205	0.085	0	'Right center back reflector
+SC	0	0	0.0205	0.085	0.0216	'Right center back reflector
+SM	8	14	0.0205	-0.085	0	0.0607	-0.136	0	'Left back reflector
+SC	0	0	0.0607	-0.136	0.0216	'Left back reflector
+SM	8	14	0.0205	0.085	0	0.0607	0.136	0	'Right back reflector
+SC	0	0	0.0607	0.136	0.0216	'Right back reflector
+SM	8	14	0	0	0	0.086	0	0	'Bottom Right Plate
+SC	0	0	0.086	0.136	0	'Bottom Right Plate
+SM	8	14	0	0	0	0.086	0	0	'Bottom Leftt Plate
+SC	0	0	0.086	-0.136	0	'Bottom Leftt Plate
+SM	8	14	0	0	0.0216	0.086	0	0.0216	'Top Right Plate
+SC	0	0	0.086	0.136	0.0216	'Top Right Plate
+SM	8	14	0	0	0.0216	0.086	0	0.0216	'Top Leftt Plate
+SC	0	0	0.086	-0.136	0.0216	'Top Leftt Plate
+SM	8	14	0.086	-0.014	0	0.086	0.014	0	'Center Front Plate
+SC	0	0	0.086	0.014	0.0216	'Center Front Plate
+SM	8	14	0.086	-0.014	0	0.084	-0.020	0	'Center Left Front Plate
+SC	0	0	0.084	-0.020	0.0216	'Center Left Front Plate
+SM	8	14	0.086	0.014	0	0.084	0.020	0	'Center Right Front Plate
+SC	0	0	0.084	0.020	0.0216	'Center Right Front Plate
+GW	1	9	0.078	-W	0	0.078	W	0.0115	W
+GE	0
+GN	-1
+EK
+EX	0	1	1	0	1	0	0
+FR	0	0	0	0	5600	0
+EN

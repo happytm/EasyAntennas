@@ -1,0 +1,43 @@
+CM LoRa/LoRaWAN tutorial 48
+CM https://www.mobilefish.com/developer/lorawan/lorawan_quickguide_tutorial.html
+CM https://www.mobilefish.com/download/lora/yagi_868mhz_4nec2_after_optimisation.nec.txt
+CM Three element Yagi
+CM To be used in 4NEC2 with support for SY cards
+CM 
+CM Reflector element length: lr
+CM Driven element length: ldip
+CM Director element length: ld
+CM Spacing between reflector and driven element: dis
+CM Spacing between director and driven element: dis2
+CM wire diameter: d
+CM height between ground and boom: h
+CM Frequency freq = 868.0 MHz
+CM feedpoint is located at the center of the driven element
+CM Wire material is stainless steel, conductance = 1450000 mho/m
+CM Reflector
+CM Driven element
+CM Director
+CE
+SY lr=0.171
+SY ldip=0.154
+SY ld=0.076
+SY dis=0.060
+SY dis2=0.061
+SY h=1.0
+SY d=0.0018
+SY hlr=lr/2
+SY hldip=ldip/2
+SY hld=ld/2
+SY r=d/2
+GW	1	21	0	0	h+hlr	0	0	h-hlr	r
+GW	2	17	dis	0	h+hldip	dis	0	h-hldip	r
+GW	3	15	dis+dis2	0	h+hld	dis+dis2	0	h-hld	r
+GE	1
+LD	5	1	0	0	1450000
+LD	5	2	0	0	1450000
+LD	5	3	0	0	1450000
+GN	1
+EK
+EX	0	2	9	0	1.	0	0
+FR	0	0	0	0	868	0
+EN

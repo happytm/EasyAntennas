@@ -1,0 +1,169 @@
+CM NEC Input File Franklin-AMOS antenna
+CM Data in wavelengths.
+CM Jeff Liebermann  08/12/2007
+CM Setup for AMOS 7 dipoles  10/03/2008
+CE
+SY W=0.008	'Wire radius (2MM Wire diameter)
+SY Rx=3/2, Rnx=4	'Reflector width  / 2 , number of wires
+SY Ry=7/2, Rny=20	'Reflector height / 2 , number of wires
+SY A=0.3252	'Half of horizontal gap+half of first element
+SY B=0.5	'Length of 2nd element
+SY C=0.5	'Length of 3rd element
+SY D=0.5	'Length of 4th element
+SY E=0.6755	'Length of 5th element
+SY F=0.1711	'Height of stub
+SY G=0.1758	'Width of stub
+SY H=0.263	'Distance from reflector to wire center
+SY I=0.27	'Half of first element
+SY EG=0.4199	'Gap between inner elements 0.4199
+SY EGO=1.2346	'Gap between inner  & outer elements 1.2346
+SY J=0.0442	'Hallf of gap between transmission lines
+SM	Rnx*2	Rny*2	-F	-Rx	-Ry	-F	Rx	-Ry	'Reflector
+SC	0	0	-F	Rx	Ry	'Reflector
+GW	201	100	H-F	-EGO	J	H-F	EGO	J	W
+GW	202	100	H-F	-EGO	-J	H-F	EGO	-J	W
+GW	1	3	H-F	0	J	H-F	0	-J	W
+GW	2	11	H-F	EG	J	H-F	EG	A	W	'Dipole driven element
+GW	3	3	H-F	EG	A	H	EG	A	W
+GW	4	3	H	EG	A	H	EG	A+G	W
+GW	5	3	H	EG	A+G	H-F	EG	A+G	W
+GW	6	10	H-F	EG	A+G	H-F	EG	A+G+B	W
+GW	7	3	H-F	EG	A+G+B	H	EG	A+G+B	W
+GW	8	3	H	EG	A+G+B	H	EG	A+G+B+G	W
+GW	9	3	H	EG	A+G+B+G	H-F	EG	A+G+B+G	W
+GW	10	10	H-F	EG	A+G+B+G	H-F	EG	A+G+B+G+C	W
+GW	11	3	H-F	EG	A+G+B+G+C	H	EG	A+G+B+G+C	W
+GW	12	3	H	EG	A+G+B+G+C	H	EG	A+G+B+G+C+G	W
+GW	13	3	H	EG	A+G+B+G+C+G	H-F	EG	A+G+B+G+C+G	W
+GW	14	10	H-F	EG	A+G+B+G+C+G	H-F	EG	A+G+B+G+C+G+D	W
+GW	15	3	H-F	EG	A+G+B+G+C+G+D	H	EG	A+G+B+G+C+G+D	W
+GW	16	3	H	EG	A+G+B+G+C+G+D	H	EG	A+G+B+G+C+G+D+G	W
+GW	17	3	H	EG	A+G+B+G+C+G+D+G	H-F	EG	A+G+B+G+C+G+D+G	W
+GW	18	10	H-F	EG	A+G+B+G+C+G+D+G	H-F	EG	A+G+B+G+C+G+D+G+E	W
+GW	19	3	H-F	EG	-J	H-F	EG	-A	W
+GW	203	3	H-F	EG	-A	H	EG	-A	W
+GW	20	3	H	EG	-A	H	EG	-A-G	W
+GW	21	3	H	EG	-A-G	H-F	EG	-A-G	W
+GW	22	10	H-F	EG	-A-G	H-F	EG	-A-G-B	W
+GW	23	3	H-F	EG	-A-G-B	H	EG	-A-G-B	W
+GW	24	3	H	EG	-A-G-B	H	EG	-A-G-B-G	W
+GW	25	3	H	EG	-A-G-B-G	H-F	EG	-A-G-B-G	W
+GW	26	10	H-F	EG	-A-G-B-G	H-F	EG	-A-G-B-G-C	W
+GW	27	3	H-F	EG	-A-G-B-G-C	H	EG	-A-G-B-G-C	W
+GW	28	3	H	EG	-A-G-B-G-C	H	EG	-A-G-B-G-C-G	W
+GW	29	3	H	EG	-A-G-B-G-C-G	H-F	EG	-A-G-B-G-C-G	W
+GW	30	10	H-F	EG	-A-G-B-G-C-G	H-F	EG	-A-G-B-G-C-G-D	W
+GW	31	3	H-F	EG	-A-G-B-G-C-G-D	H	EG	-A-G-B-G-C-G-D	W
+GW	32	3	H	EG	-A-G-B-G-C-G-D	H	EG	-A-G-B-G-C-G-D-G	W
+GW	33	3	H	EG	-A-G-B-G-C-G-D-G	H-F	EG	-A-G-B-G-C-G-D-G	W
+GW	34	10	H-F	EG	-A-G-B-G-C-G-D-G	H-F	EG	-A-G-B-G-C-G-D-G-E	W
+GW	35	11	H-F	-EG	J	H-F	-EG	A	W	'Dipole driven element
+GW	36	3	H-F	-EG	A	H	-EG	A	W
+GW	37	3	H	-EG	A	H	-EG	A+G	W
+GW	38	3	H	-EG	A+G	H-F	-EG	A+G	W
+GW	39	10	H-F	-EG	A+G	H-F	-EG	A+G+B	W
+GW	40	3	H-F	-EG	A+G+B	H	-EG	A+G+B	W
+GW	41	3	H	-EG	A+G+B	H	-EG	A+G+B+G	W
+GW	42	3	H	-EG	A+G+B+G	H-F	-EG	A+G+B+G	W
+GW	43	10	H-F	-EG	A+G+B+G	H-F	-EG	A+G+B+G+C	W
+GW	44	3	H-F	-EG	A+G+B+G+C	H	-EG	A+G+B+G+C	W
+GW	45	3	H	-EG	A+G+B+G+C	H	-EG	A+G+B+G+C+G	W
+GW	46	3	H	-EG	A+G+B+G+C+G	H-F	-EG	A+G+B+G+C+G	W
+GW	47	10	H-F	-EG	A+G+B+G+C+G	H-F	-EG	A+G+B+G+C+G+D	W
+GW	48	3	H-F	-EG	A+G+B+G+C+G+D	H	-EG	A+G+B+G+C+G+D	W
+GW	49	3	H	-EG	A+G+B+G+C+G+D	H	-EG	A+G+B+G+C+G+D+G	W
+GW	50	3	H	-EG	A+G+B+G+C+G+D+G	H-F	-EG	A+G+B+G+C+G+D+G	W
+GW	51	10	H-F	-EG	A+G+B+G+C+G+D+G	H-F	-EG	A+G+B+G+C+G+D+G+E	W
+GW	52	3	H-F	-EG	-J	H-F	-EG	-A	W
+GW	204	3	H-F	-EG	-A	H	-EG	-A	W
+GW	53	3	H	-EG	-A	H	-EG	-A-G	W
+GW	54	3	H	-EG	-A-G	H-F	-EG	-A-G	W
+GW	55	10	H-F	-EG	-A-G	H-F	-EG	-A-G-B	W
+GW	56	3	H-F	-EG	-A-G-B	H	-EG	-A-G-B	W
+GW	57	3	H	-EG	-A-G-B	H	-EG	-A-G-B-G	W
+GW	58	3	H	-EG	-A-G-B-G	H-F	-EG	-A-G-B-G	W
+GW	59	10	H-F	-EG	-A-G-B-G	H-F	-EG	-A-G-B-G-C	W
+GW	60	3	H-F	-EG	-A-G-B-G-C	H	-EG	-A-G-B-G-C	W
+GW	61	3	H	-EG	-A-G-B-G-C	H	-EG	-A-G-B-G-C-G	W
+GW	62	3	H	-EG	-A-G-B-G-C-G	H-F	-EG	-A-G-B-G-C-G	W
+GW	63	10	H-F	-EG	-A-G-B-G-C-G	H-F	-EG	-A-G-B-G-C-G-D	W
+GW	64	3	H-F	-EG	-A-G-B-G-C-G-D	H	-EG	-A-G-B-G-C-G-D	W
+GW	65	3	H	-EG	-A-G-B-G-C-G-D	H	-EG	-A-G-B-G-C-G-D-G	W
+GW	66	3	H	-EG	-A-G-B-G-C-G-D-G	H-F	-EG	-A-G-B-G-C-G-D-G	W
+GW	67	10	H-F	-EG	-A-G-B-G-C-G-D-G	H-F	-EG	-A-G-B-G-C-G-D-G-E	W
+GW	68	11	H-F	EGO	J	H-F	EGO	A	W	'Dipole driven element
+GW	69	3	H-F	EGO	A	H	EGO	A	W
+GW	70	3	H	EGO	A	H	EGO	A+G	W
+GW	71	3	H	EGO	A+G	H-F	EGO	A+G	W
+GW	72	10	H-F	EGO	A+G	H-F	EGO	A+G+B	W
+GW	73	3	H-F	EGO	A+G+B	H	EGO	A+G+B	W
+GW	74	3	H	EGO	A+G+B	H	EGO	A+G+B+G	W
+GW	75	3	H	EGO	A+G+B+G	H-F	EGO	A+G+B+G	W
+GW	76	10	H-F	EGO	A+G+B+G	H-F	EGO	A+G+B+G+C	W
+GW	77	3	H-F	EGO	A+G+B+G+C	H	EGO	A+G+B+G+C	W
+GW	78	3	H	EGO	A+G+B+G+C	H	EGO	A+G+B+G+C+G	W
+GW	79	3	H	EGO	A+G+B+G+C+G	H-F	EGO	A+G+B+G+C+G	W
+GW	80	10	H-F	EGO	A+G+B+G+C+G	H-F	EGO	A+G+B+G+C+G+D	W
+GW	81	3	H-F	EGO	A+G+B+G+C+G+D	H	EGO	A+G+B+G+C+G+D	W
+GW	82	3	H	EGO	A+G+B+G+C+G+D	H	EGO	A+G+B+G+C+G+D+G	W
+GW	83	3	H	EGO	A+G+B+G+C+G+D+G	H-F	EGO	A+G+B+G+C+G+D+G	W
+GW	84	10	H-F	EGO	A+G+B+G+C+G+D+G	H-F	EGO	A+G+B+G+C+G+D+G+E	W
+GW	85	3	H-F	EGO	-J	H-F	EGO	-A	W
+GW	205	3	H-F	EGO	-A	H	EGO	-A	W
+GW	86	3	H	EGO	-A	H	EGO	-A-G	W
+GW	87	3	H	EGO	-A-G	H-F	EGO	-A-G	W
+GW	88	10	H-F	EGO	-A-G	H-F	EGO	-A-G-B	W
+GW	89	3	H-F	EGO	-A-G-B	H	EGO	-A-G-B	W
+GW	90	3	H	EGO	-A-G-B	H	EGO	-A-G-B-G	W
+GW	91	3	H	EGO	-A-G-B-G	H-F	EGO	-A-G-B-G	W
+GW	92	10	H-F	EGO	-A-G-B-G	H-F	EGO	-A-G-B-G-C	W
+GW	93	3	H-F	EGO	-A-G-B-G-C	H	EGO	-A-G-B-G-C	W
+GW	94	3	H	EGO	-A-G-B-G-C	H	EGO	-A-G-B-G-C-G	W
+GW	95	3	H	EGO	-A-G-B-G-C-G	H-F	EGO	-A-G-B-G-C-G	W
+GW	96	10	H-F	EGO	-A-G-B-G-C-G	H-F	EGO	-A-G-B-G-C-G-D	W
+GW	97	3	H-F	EGO	-A-G-B-G-C-G-D	H	EGO	-A-G-B-G-C-G-D	W
+GW	98	3	H	EGO	-A-G-B-G-C-G-D	H	EGO	-A-G-B-G-C-G-D-G	W
+GW	99	3	H	EGO	-A-G-B-G-C-G-D-G	H-F	EGO	-A-G-B-G-C-G-D-G	W
+GW	100	10	H-F	EGO	-A-G-B-G-C-G-D-G	H-F	EGO	-A-G-B-G-C-G-D-G-E	W
+GW	101	11	H-F	-EGO	J	H-F	-EGO	A	W	'Dipole driven element
+GW	102	3	H-F	-EGO	A	H	-EGO	A	W
+GW	103	3	H	-EGO	A	H	-EGO	A+G	W
+GW	104	3	H	-EGO	A+G	H-F	-EGO	A+G	W
+GW	105	10	H-F	-EGO	A+G	H-F	-EGO	A+G+B	W
+GW	106	3	H-F	-EGO	A+G+B	H	-EGO	A+G+B	W
+GW	107	3	H	-EGO	A+G+B	H	-EGO	A+G+B+G	W
+GW	108	3	H	-EGO	A+G+B+G	H-F	-EGO	A+G+B+G	W
+GW	109	10	H-F	-EGO	A+G+B+G	H-F	-EGO	A+G+B+G+C	W
+GW	110	3	H-F	-EGO	A+G+B+G+C	H	-EGO	A+G+B+G+C	W
+GW	111	3	H	-EGO	A+G+B+G+C	H	-EGO	A+G+B+G+C+G	W
+GW	112	3	H	-EGO	A+G+B+G+C+G	H-F	-EGO	A+G+B+G+C+G	W
+GW	113	10	H-F	-EGO	A+G+B+G+C+G	H-F	-EGO	A+G+B+G+C+G+D	W
+GW	114	3	H-F	-EGO	A+G+B+G+C+G+D	H	-EGO	A+G+B+G+C+G+D	W
+GW	115	3	H	-EGO	A+G+B+G+C+G+D	H	-EGO	A+G+B+G+C+G+D+G	W
+GW	116	3	H	-EGO	A+G+B+G+C+G+D+G	H-F	-EGO	A+G+B+G+C+G+D+G	W
+GW	117	10	H-F	-EGO	A+G+B+G+C+G+D+G	H-F	-EGO	A+G+B+G+C+G+D+G+E	W
+GW	118	3	H-F	-EGO	-J	H-F	-EGO	-A	W
+GW	206	3	H-F	-EGO	-A	H	-EGO	-A	W
+GW	119	3	H	-EGO	-A	H	-EGO	-A-G	W
+GW	120	3	H	-EGO	-A-G	H-F	-EGO	-A-G	W
+GW	121	10	H-F	-EGO	-A-G	H-F	-EGO	-A-G-B	W
+GW	122	3	H-F	-EGO	-A-G-B	H	-EGO	-A-G-B	W
+GW	123	3	H	-EGO	-A-G-B	H	-EGO	-A-G-B-G	W
+GW	124	3	H	-EGO	-A-G-B-G	H-F	-EGO	-A-G-B-G	W
+GW	125	10	H-F	-EGO	-A-G-B-G	H-F	-EGO	-A-G-B-G-C	W
+GW	126	3	H-F	-EGO	-A-G-B-G-C	H	-EGO	-A-G-B-G-C	W
+GW	127	3	H	-EGO	-A-G-B-G-C	H	-EGO	-A-G-B-G-C-G	W
+GW	128	3	H	-EGO	-A-G-B-G-C-G	H-F	-EGO	-A-G-B-G-C-G	W
+GW	129	10	H-F	-EGO	-A-G-B-G-C-G	H-F	-EGO	-A-G-B-G-C-G-D	W
+GW	130	3	H-F	-EGO	-A-G-B-G-C-G-D	H	-EGO	-A-G-B-G-C-G-D	W
+GW	131	3	H	-EGO	-A-G-B-G-C-G-D	H	-EGO	-A-G-B-G-C-G-D-G	W
+GW	132	3	H	-EGO	-A-G-B-G-C-G-D-G	H-F	-EGO	-A-G-B-G-C-G-D-G	W
+GW	133	10	H-F	-EGO	-A-G-B-G-C-G-D-G	H-F	-EGO	-A-G-B-G-C-G-D-G-E	W
+GS	0	0	299.8/2450
+GE	0
+GN	-1
+EK
+EX	0	1	2	0	1	0	0
+FR	0	0	0	0	2450	0
+RP	0	73	73	1001	-90.	90.	5.	5.	10000.	
+EN

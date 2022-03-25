@@ -1,0 +1,120 @@
+CM Design @ https://www.qsl.net/yu1aw/ANT_VHF/Amos_Ant/InvAmosArray.pdf
+CM 
+CM Convert wavelength measuremet to millimeter multiply wavelength measurements by 1 wavelength.
+CM Overall copper wire length: 8 x 282 mm or 8 x 2.3 wavelengths
+CM Reflector solid metal sheet surface: 492 x 369 mm or 4 x 3 wavelengths.
+CM 
+CM Dimensions of antenna array
+CM Due to inserting a two-wire phasing line it is necessary to change some of the original
+CM dimensions of single Inverted Amos-5 antenna and introduce the new ones.
+CM Here are given all dimensions of antenna both in millimeters and in wavelengths:
+CM      mm   wavelengths
+CM A   33       0.27
+CM B   61       0.50
+CM C   61       0.50
+CM D   21.5    0.176
+CM E   21       0.172
+CM F   10.8    0.0885
+CM H   32.5    0.264 (from refl. surface to dipole wire axis)
+CM X   102.5  0.840
+CM dw 2         0.0164 (dipole elements copper wire diameter)
+CM 
+CM 
+CE
+SY W=0.0164	'Wire radius 0.0164 (2 MM wire Diameter)
+SY Rx=3/2, Rnx=5	'Reflector width / 2
+SY Ry=4/2, Rny=5	'Reflector height / 2
+SY H=0.264	'Height from refl. surface to dipole wire center
+SY A=0.27	'Half length of element A
+SY B=0.50	'Length of element B
+SY C=0.50	'Length of element C
+SY D=0.176	'Width of stub
+SY E=0.172	'Height of stub
+SY F=0.0885/2	'Gap bettween 2 horizontal lines
+SY X=0.840*1.5	'Half length of horizontal lines
+SY G=X/2.5420	'Gap between inverted amos elements
+SM	Rnx*2	Rny*2	0	-Rx	-Ry	0	Rx	-Ry	'Reflector
+SC	0	0	0	Rx	Ry	'Reflector
+GW	2	20	H	-X	-F	H	X	-F	W	'Horizontal wire
+GW	3	20	H	-X	F	H	X	F	W	'Horizontal wire
+GW	4	1	H	0	-F	H	0	F	W	'Centre feed
+GW	5	5	H	-X	F	H	-X	A	W	'Left upper element
+GW	6	3	H	-X	A	H+E	-X	A	W	'Left upper element
+GW	7	3	H+E	-X	A	H+E	-X	A+D	W	'Left upper element
+GW	8	3	H+E	-X	A+D	H	-X	A+D	W	'Left upper element
+GW	9	5	H	-X	A+D	H	-X	A+D+B	W	'Left upper element
+GW	10	3	H	-X	A+D+B	H+E	-X	A+D+B	W	'Left upper element
+GW	11	3	H+E	-X	A+D+B	H+E	-X	A+D+B+D	W	'Left upper element
+GW	12	3	H+E	-X	A+D+B+D	H	-X	A+D+B+D	W	'Left upper element
+GW	13	5	H	-X	A+D+B+D	H	-X	A+D+B+D+C	W	'Left upper element
+GW	14	5	H	X	F	H	X	A	W	'Right upper element
+GW	15	3	H	X	A	H+E	X	A	W	'Right upper element
+GW	16	3	H+E	X	A	H+E	X	A+D	W	'Right upper element
+GW	17	3	H+E	X	A+D	H	X	A+D	W	'Right upper element
+GW	18	5	H	X	A+D	H	X	A+D+B	W	'Right upper element
+GW	19	3	H	X	A+D+B	H+E	X	A+D+B	W	'Right upper element
+GW	20	3	H+E	X	A+D+B	H+E	X	A+D+B+D	W	'Right upper element
+GW	21	3	H+E	X	A+D+B+D	H	X	A+D+B+D	W	'Right upper element
+GW	22	5	H	X	A+D+B+D	H	X	A+D+B+D+C	W	'Right upper element
+GW	23	5	H	-G	F	H	-G	A	W	'Left middle upper element
+GW	24	3	H	-G	A	H+E	-G	A	W	'Left middle upper element
+GW	25	3	H+E	-G	A	H+E	-G	A+D	W	'Left middle upper element
+GW	26	3	H+E	-G	A+D	H	-G	A+D	W	'Left middle upper element
+GW	27	5	H	-G	A+D	H	-G	A+D+B	W	'Left middle upper element
+GW	28	3	H	-G	A+D+B	H+E	-G	A+D+B	W	'Left middle upper element
+GW	29	3	H+E	-G	A+D+B	H+E	-G	A+D+B+D	W	'Left middle upper element
+GW	30	3	H+E	-G	A+D+B+D	H	-G	A+D+B+D	W	'Left middle upper element
+GW	31	5	H	-G	A+D+B+D	H	-G	A+D+B+D+C	W	'Left middle upper element
+GW	32	5	H	G	F	H	G	A	W	'Right middle upper element
+GW	33	3	H	G	A	H+E	G	A	W	'Right middle upper element
+GW	34	3	H+E	G	A	H+E	G	A+D	W	'Right middle upper element
+GW	35	3	H+E	G	A+D	H	G	A+D	W	'Right middle upper element
+GW	36	5	H	G	A+D	H	G	A+D+B	W	'Right middle upper element
+GW	37	3	H	G	A+D+B	H+E	G	A+D+B	W	'Right middle upper element
+GW	38	3	H+E	G	A+D+B	H+E	G	A+D+B+D	W	'Right middle upper element
+GW	39	3	H+E	G	A+D+B+D	H	G	A+D+B+D	W	'Right middle upper element
+GW	40	5	H	G	A+D+B+D	H	G	A+D+B+D+C	W	'Right middle upper element
+GW	41	5	H	-X	-F	H	-X	-A	W	'Left lower element
+GW	42	3	H	-X	-A	H+E	-X	-A	W	'Left lower element
+GW	43	3	H+E	-X	-A	H+E	-X	-A-D	W	'Left lower element
+GW	44	3	H+E	-X	-A-D	H	-X	-A-D	W	'Left lower element
+GW	45	5	H	-X	-A-D	H	-X	-A-D-B	W	'Left lower element
+GW	46	3	H	-X	-A-D-B	H+E	-X	-A-D-B	W	'Left lower element
+GW	47	3	H+E	-X	-A-D-B	H+E	-X	-A-D-B-D	W	'Left lower element
+GW	48	3	H+E	-X	-A-D-B-D	H	-X	-A-D-B-D	W	'Left lower element
+GW	49	5	H	-X	-A-D-B-D	H	-X	-A-D-B-D-C	W	'Left lower element
+GW	50	5	H	X	-F	H	X	-A	W	'Right lower element
+GW	51	3	H	X	-A	H+E	X	-A	W	'Right lower element
+GW	52	3	H+E	X	-A	H+E	X	-A-D	W	'Right lower element
+GW	53	3	H+E	X	-A-D	H	X	-A-D	W	'Right lower element
+GW	54	5	H	X	-A-D	H	X	-A-D-B	W	'Right lower element
+GW	55	3	H	X	-A-D-B	H+E	X	-A-D-B	W	'Right lower element
+GW	56	3	H+E	X	-A-D-B	H+E	X	-A-D-B-D	W	'Right lower element
+GW	57	3	H+E	X	-A-D-B-D	H	X	-A-D-B-D	W	'Right lower element
+GW	58	5	H	X	-A-D-B-D	H	X	-A-D-B-D-C	W	'Right lower element
+GW	59	5	H	-G	-F	H	-G	-A	W	'Left middle lower element
+GW	60	3	H	-G	-A	H+E	-G	-A	W	'Left middle lower element
+GW	61	3	H+E	-G	-A	H+E	-G	-A-D	W	'Left middle lower element
+GW	62	3	H+E	-G	-A-D	H	-G	-A-D	W	'Left middle lower element
+GW	63	5	H	-G	-A-D	H	-G	-A-D-B	W	'Left middle lower element
+GW	64	3	H	-G	-A-D-B	H+E	-G	-A-D-B	W	'Left middle lower element
+GW	65	3	H+E	-G	-A-D-B	H+E	-G	-A-D-B-D	W	'Left middle lower element
+GW	66	3	H+E	-G	-A-D-B-D	H	-G	-A-D-B-D	W	'Left middle lower element
+GW	67	5	H	-G	-A-D-B-D	H	-G	-A-D-B-D-C	W	'Left middle lower elementt
+GW	68	5	H	G	-F	H	G	-A	W	'Right middle lower element
+GW	69	3	H	G	-A	H+E	G	-A	W	'Right middle lower element
+GW	70	3	H+E	G	-A	H+E	G	-A-D	W	'Right middle lower element
+GW	71	3	H+E	G	-A-D	H	G	-A-D	W	'Right middle lower element
+GW	72	5	H	G	-A-D	H	G	-A-D-B	W	'Right middle lower element
+GW	73	3	H	G	-A-D-B	H+E	G	-A-D-B	W	'Right middle lower element
+GW	74	3	H+E	G	-A-D-B	H+E	G	-A-D-B-D	W	'Right middle lower element
+GW	75	3	H+E	G	-A-D-B-D	H	G	-A-D-B-D	W	'Right middle lower element
+GW	76	5	H	G	-A-D-B-D	H	G	-A-D-B-D-C	W	'Right middle lower element
+GS	0	0	299.7925.0/2442
+GE	0
+GN	-1
+EK
+EX	0	4	1	0	1.	0	0
+FR	0	0	0	0	2442	0
+RP	0	73	73	1001	-90.	90.	5.	5.	10000.	
+EN

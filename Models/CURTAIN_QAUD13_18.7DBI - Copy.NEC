@@ -1,0 +1,62 @@
+CM CQ13r 13 element Curtain Quad with reflector from W1HBQ
+CM Minor tweaks for 2.4Ghz by AE6KS
+CE
+SY l0 = 2	'l0 is the length of the top and bottom elements in the center
+SY l00 = 1.75	'l00 is the length of the central element
+SY l1 = 4.00	'l1 is the length of the elements next to the center column
+SY l2 = 3.75	'l2 is the length of the outer elements
+SY h = 6.00	'h is the length of all vertical wires
+SY y0 = .5 * l0
+SY y00 = .5 * l00
+SY y0t = .1 * l00
+SY y1 = y0 + l1
+SY y2 = y1 + l2
+SY z0 = 0
+SY z1 = h
+SY z2 = z1 + h
+SY z3 = z2 + h
+SY t = 2.61	't is the electrical length of the matching transformer
+SY Rx=18/2, Rnx=4	'Reflector width  / 2 , number of wiresb
+SY Ry=30/2, Rny=20	'Reflector height / 2 , number of wires
+SY G=1.1	'Gap between reflector and elements
+SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
+SC	0	0	-G	Rx	Ry	'Reflector
+GW	3	11	0	y1	z2	0	y2	z2	0.039
+GW	4	11	0	y0	z1	0	y1	z1	0.039
+GW	7	11	0	y1	z0	0	y2	z0	0.039
+GW	205	5	0	-y00	z0	0	y00	z0	0.039
+GW	206	1	t	-y0t	z0	t	y0t	z0	0.039
+GW	8	11	0	y0	-z1	0	y1	-z1	0.039
+GW	11	11	0	y1	-z2	0	y2	-z2	0.039
+GW	14	13	0	y0	z2	0	y0	z1	0.039
+GW	15	13	0	y0	z1	0	y00	z0	0.039
+GW	16	13	0	y00	z0	0	y0	-z1	0.039
+GW	17	13	0	y0	-z1	0	y0	-z2	0.039
+GW	20	13	0	y1	z2	0	y1	z1	0.039
+GW	21	13	0	y1	z1	0	y1	z0	0.039
+GW	22	13	0	y1	z0	0	y1	-z1	0.039
+GW	23	13	0	y1	-z1	0	y1	-z2	0.039
+GW	103	11	0	-y1	z2	0	-y2	z2	0.039
+GW	104	11	0	-y0	z1	0	-y1	z1	0.039
+GW	107	11	0	-y1	z0	0	-y2	z0	0.039
+GW	108	11	0	-y0	-z1	0	-y1	-z1	0.039
+GW	111	11	0	-y1	-z2	0	-y2	-z2	0.039
+GW	114	13	0	-y0	z2	0	-y0	z1	0.039
+GW	115	13	0	-y0	z1	0	-y00	z0	0.039
+GW	116	13	0	-y00	z0	0	-y0	-z1	0.039
+GW	117	13	0	-y0	-z1	0	-y0	-z2	0.039
+GW	120	13	0	-y1	z2	0	-y1	z1	0.039
+GW	121	13	0	-y1	z1	0	-y1	z0	0.039
+GW	122	13	0	-y1	z0	0	-y1	-z1	0.039
+GW	123	13	0	-y1	-z1	0	-y1	-z2	0.039
+GW	202	5	0	-y0	z2	0	y0	z2	0.039
+GW	210	5	0	-y0	-z2	0	y0	-z2	0.039
+GS	0	0	0.0254
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	206	1	0	1	0	0
+TL	206	1	205	3	126	0	0	0	0	0	'impedance of the transformer
+FR	0	0	0	0	1332	0
+EN
