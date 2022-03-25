@@ -1,0 +1,76 @@
+CM NEC Input File Franklin-AMOS antenna
+CM Data in wavelengths.
+CM Jeff Liebermann  08/12/2007
+CM Setup for AMOS 7 dipoles  10/03/2008
+CE
+SY W=.008	'Wire radius (2MM Wire diameter)
+SY Rx=0.65/2, Rnx=4	'Reflector width  / 2 , number of wires
+SY Ry=6.0/2, Rny=20	'Reflector height / 2 , number of wires
+SY A=0.38	'Half of first element
+SY H=0.18	'Distance from reflector to dipole
+SY D=0.125	'Stub Length
+SY E=0.185	'Stub width
+SY B=0.66	'Length of 2nd element
+SY C=0.58	'Length of 3rd element
+SY F=0.10	'Gap between to antennas
+GW	1	11	H	0	A	H	0	-A	w	'Dipole driven element
+GW	2	5	H	0	-A	H-D	0	-A	w	'Stub
+GW	3	3	H-D	0	-A	H-D	0	-A-E	w	'Stub width
+GW	4	5	H-D	0	-A-E	H	0	-A-E	w	'Stub return
+GW	5	9	H	0	-A-E	H	0	-A-E-B	w	'2nd element
+GW	6	5	H	0	-A-E-B	H-D	0	-A-E-B	w	'2nd Stub
+GW	7	3	H-D	0	-A-E-B	H-D	0	-A-E-B-E	w	'2nd stub width
+GW	8	5	H-D	0	-A-E-B-E	H	0	-A-E-B-E	w	'2nd stub return
+GW	9	9	H	0	-A-E-B-E	H	0	-A-E-B-E-B	w	'3rd element
+GW	10	5	H	0	-A-E-B-E-B	H-D	0	-A-E-B-E-B	w	'3rd stub
+GW	11	3	H-D	0	-A-E-B-E-B	H-D	0	-A-E-B-E-B-E	w	'3rd stub width
+GW	12	5	H-D	0	-A-E-B-E-B-E	H	0	-A-E-B-E-B-E	w	'3rd stub return
+GW	13	9	H	0	-A-E-B-E-B-E	H	0	-A-E-B-E-B-E-C	w	'4th element
+GW	14	5	H	0	A	H-D	0	A	w	'Stub
+GW	15	3	H-D	0	A	H-D	0	A+E	w	'Stub width
+GW	16	5	H-D	0	A+E	H	0	A+E	w	'Stub return
+GW	17	9	H	0	A+E	H	0	A+E+B	w	'2nd element
+GW	18	5	H	0	A+E+B	H-D	0	A+E+B	w	'2nd Stub
+GW	19	3	H-D	0	A+E+B	H-D	0	A+E+B+E	w	'2nd stub width
+GW	20	5	H-D	0	A+E+B+E	H	0	A+E+B+E	w	'2nd stub return
+GW	21	9	H	0	A+E+B+E	H	0	A+E+B+E+B	w	'3rd element
+GW	22	5	H	0	A+E+B+E+B	H-D	0	A+E+B+E+B	w	'3rd stub
+GW	22	3	H-D	0	A+E+B+E+B	H-D	0	A+E+B+E+B+E	w	'3rd stub width
+GW	24	5	H-D	0	A+E+B+E+B+E	H	0	A+E+B+E+B+E	w	'3rd stub return
+GW	25	9	H	0	A+E+B+E+B+E	H	0	A+E+B+E+B+E+C	w	'4th element
+GW	26	11	-H-F	0	A	-H-F	0	-A	w	'Dipole driven element
+GW	27	5	-H-F	0	-A	-H-F+D	0	-A	w	'Stub
+GW	28	3	-H-F+D	0	-A	-H-F+D	0	-A-E	w	'Stub width
+GW	29	5	-H-F+D	0	-A-E	-H-F	0	-A-E	w	'Stub return
+GW	30	9	-H-F	0	-A-E	-H-F	0	-A-E-B	w	'2nd element
+GW	31	5	-H-F	0	-A-E-B	-H-F+D	0	-A-E-B	w	'2nd Stub
+GW	32	3	-H-F+D	0	-A-E-B	-H-F+D	0	-A-E-B-E	w	'2nd stub width
+GW	33	5	-H-F+D	0	-A-E-B-E	-H-F	0	-A-E-B-E	w	'2nd stub return
+GW	34	9	-H-F	0	-A-E-B-E	-H-F	0	-A-E-B-E-B	w	'3rd element
+GW	35	5	-H-F	0	-A-E-B-E-B	-H-F+D	0	-A-E-B-E-B	w	'3rd stub
+GW	36	3	-H-F+D	0	-A-E-B-E-B	-H-F+D	0	-A-E-B-E-B-E	w	'3rd stub width
+GW	37	5	-H-F+D	0	-A-E-B-E-B-E	-H-F	0	-A-E-B-E-B-E	w	'3rd stub return
+GW	38	9	-H-F	0	-A-E-B-E-B-E	-H-F	0	-A-E-B-E-B-E-C	w	'4th element
+GW	39	5	-H-F	0	A	-H-F+D	0	A	w	'Stub
+GW	40	3	-H-F+D	0	A	-H-F+D	0	A+E	w	'Stub width
+GW	41	5	-H-F+D	0	A+E	-H-F	0	A+E	w	'Stub return
+GW	42	9	-H-F	0	A+E	-H-F	0	A+E+B	w	'2nd element
+GW	43	5	-H-F	0	A+E+B	-H-F+D	0	A+E+B	w	'2nd Stub
+GW	44	3	-H-F+D	0	A+E+B	-H-F+D	0	A+E+B+E	w	'2nd stub width
+GW	45	5	-H-F+D	0	A+E+B+E	-H-F	0	A+E+B+E	w	'2nd stub return
+GW	46	9	-H-F	0	A+E+B+E	-H-F	0	A+E+B+E+B	w	'3rd element
+GW	47	5	-H-F	0	A+E+B+E+B	-H-F+D	0	A+E+B+E+B	w	'3rd stub
+GW	48	3	-H-F+D	0	A+E+B+E+B	-H-F+D	0	A+E+B+E+B+E	w	'3rd stub width
+GW	49	5	-H-F+D	0	A+E+B+E+B+E	-H-F	0	A+E+B+E+B+E	w	'3rd stub return
+GW	50	9	-H-F	0	A+E+B+E+B+E	-H-F	0	A+E+B+E+B+E+C	w	'4th element
+GW	51	1	-F/2	0	w	-F/2	0	-w	w
+GS	0	0	299.8/915
+GE	0
+GN	-1
+EK
+EX	0	51	1	0	1	0	0
+TL	51	1	1	6	200	0	0	0	0	0
+TL	51	1	26	6	200	0	0	0	0	0
+FR	0	0	0	0	915	0
+RP	0	73	73	1001	-90.	90.	5.	5.	10000.	
+EN

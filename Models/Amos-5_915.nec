@@ -1,0 +1,50 @@
+CM NEC2 Input File Franklin-AMOS antenna
+CM Everything in wavelengths.  
+CM 08/24/2007  Jeff Liebermann  
+CM 10/01/2008  Setup for AMOS 5 dipoles  
+CM 04/18/2015  Calculated for 915 MHz
+CM #
+CM Wire #12 AWG = 1 mm radius   1mm/330mm at 915 Mhz = 0.003 wavelengths.
+CM 
+CM 
+CE
+SY W=.003	'Wire radius  #12 AWG = 2mm dia.
+SY Rx=0.50/2, Rnx=4	'Reflector width  / 2 , number of wires
+SY Ry=4.20/2, Rny=20	'Reflector height / 2 , number of wires
+SY Dl=0.335472	'Half of center dipole length
+SY Dh=0.216148	'Feed distance from reflector to dipole
+SY D=0.147626	'Stub Length
+SY E=0.183988	'Stub width
+SY B=0.605056	'Length of 2nd element
+SY C=0.512391	'Length of 3rd element
+GW	1	16	Dh	0	Dl	Dh	0	-Dl	w	'Dipole driven element
+GW	3	5	Dh	0	-Dl	Dh-D	0	-Dl	w	'Stub
+GW	4	3	Dh-D	0	-Dl	Dh-D	0	-Dl-E	w	'Stub width
+GW	5	5	Dh-D	0	-Dl-E	Dh	0	-Dl-E	w	'Stub return
+GW	6	9	Dh	0	-Dl-E	Dh	0	-Dl-E-B	w	'2nd element
+GW	7	5	Dh	0	-Dl-E-B	Dh-D	0	-Dl-E-B	w	'2nd Stub
+GW	8	3	Dh-D	0	-Dl-E-B	Dh-D	0	-Dl-E-B-E	w	'2nd stub width
+GW	9	5	Dh-D	0	-Dl-E-B-E	Dh	0	-Dl-E-B-E	w	'2nd stub return
+GW	10	9	Dh	0	-DL-E-B-E	Dh	0	-Dl-E-B-E-C	w	'3rd element
+GW	12	5	Dh	0	Dl	Dh-D	0	Dl	w	'Stub
+GW	13	3	Dh-D	0	Dl	Dh-D	0	Dl+E	w	'Stub width
+GW	14	5	Dh-D	0	Dl+E	Dh	0	Dl+E	w	'Stub return
+GW	15	9	Dh	0	Dl+E	Dh	0	Dl+E+B	w	'2nd element
+GW	16	5	Dh	0	Dl+E+B	Dh-D	0	Dl+E+B	w	'2nd Stub
+GW	17	3	Dh-D	0	Dl+E+B	Dh-D	0	Dl+E+B+E	w	'2nd stub width
+GW	18	5	Dh-D	0	Dl+E+B+E	Dh	0	Dl+E+B+E	w	'2nd stub return
+GW	19	9	Dh	0	DL+E+B+E	Dh	0	Dl+E+B+E+C	w	'3rd element
+GW	2	1	0	-Rx	-Ry	0	-Rx	-Ry+Ry/Rny	w
+GW	2	1	0	-Rx	-Ry	0	-Rx+Rx/Rnx	-Ry	w
+GM	0	Rny*2-1	0	0	0	0	0	Ry/Rny	2	'transform
+GW	2	1	0	-Rx	Ry	0	-Rx+Rx/Rnx	Ry	w
+GM	0	Rnx*2-1	0	0	0	0	Rx/Rnx	0	2	'transform
+GW	2	Rny*2	0	Rx	Ry	0	Rx	-Ry	w
+GS	0	0	0.32765
+GE	0
+GN	-1
+EK
+EX	0	1	8	0	1.	0	0	'Voltage Source
+FR	0	0	0	0	915	0
+RP	0	73	73	1001	-90.	90.	5.	5.	10000.	
+EN
