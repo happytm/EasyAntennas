@@ -1,0 +1,41 @@
+CM CQ13r 13 element Curtain Quad with reflector from W1HBQ
+CM Minor tweaks for 2.4Ghz by AE6KS
+CE
+SY W=0.008	'Wire Thickness
+SY l0=0.2235	'Top and bottom horizontal elements in the center
+SY l00=0.1992	'Center element
+SY l1=0.4690	'l1 is the length of the elements next to the center column
+SY l2=0.4231	'l2 is the length of the outer elements
+SY h=0.6872	'h is the length of all vertical wires
+SY y0 = .27 * l0
+SY y00 = .27* l0
+SY y0t = .5 * l00
+SY y1 = y0 + l1
+SY y2 = y1 + l2
+SY z0 = 0
+SY z1 = h
+SY z2 = z1 + h
+SY z3 = z2 + h
+SY t=0.3444	'Electrical length of the matching transformer
+SY Rx=2/2, Rnx=4	'Reflector width / 2 , number of wires
+SY Ry=3/2, Rny=20	'Reflector height / 2 , number of wires
+SY G=0.15	'Gap between reflector and elements
+SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
+SC	0	0	-G	Rx	Ry	'Reflector
+GW	205	5	0	-y00	z0	0	y00	z0	W	'Center horizontal
+GW	4	11	0	y0	z1	0	y1	z1	W	'Inner right top horizontal
+GW	8	11	0	y0	-z1	0	y1	-z1	W	'Inner right bottom horizontal
+GW	15	13	0	y0	z1	0	y00	z0	W	'Inner right middle top vertical
+GW	16	13	0	y00	z0	0	y0	-z1	W	'Inner right middle top vertical
+GW	104	11	0	-y0	z1	0	-y1	z1	W	'Inner left top horizontal
+GW	108	11	0	-y0	-z1	0	-y1	-z1	W	'Inner left bottom horizontal
+GW	115	13	0	-y0	z1	0	-y00	z0	W	'Inner left middle top vertical
+GW	116	13	0	-y00	z0	0	-y0	-z1	W	'Inner left middle bottom vertical
+GS	0	0	299.8/915
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	205	3	0	1	0	0
+FR	0	0	0	0	915	0
+EN
