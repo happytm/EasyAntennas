@@ -1,24 +1,18 @@
-CM CQ13r 13 element Curtain Quad with reflector from W1HBQ
-CM Minor tweaks for 2.4Ghz by AE6KS
+CM Based on design from W1HBQ
 CE
 SY W=0.008	'Wire Thickness
-SY l0=0.2235	'Top and bottom horizontal elements in the center
+SY l0=0.22607	'Top and bottom horizontal elements in the center
 SY l00=0.1992	'Center element
-SY l1=0.4690	'l1 is the length of the elements next to the center column
-SY l2=0.4231	'l2 is the length of the outer elements
-SY h=0.6872	'h is the length of all vertical wires
+SY l1=0.460708	'l1 is the length of the elements next to the center column
+SY h=0.679555	'h is the length of all vertical wires
 SY y0 = .27 * l0
 SY y00 = .27* l0
 SY y0t = .5 * l00
 SY y1 = y0 + l1
-SY y2 = y1 + l2
 SY z0 = 0
 SY z1 = h
-SY z2 = z1 + h
-SY z3 = z2 + h
-SY t=0.3444	'Electrical length of the matching transformer
 SY Rx=2/2, Rnx=4	'Reflector width / 2 , number of wires
-SY Ry=3/2, Rny=20	'Reflector height / 2 , number of wires
+SY Ry=2.7/2, Rny=20	'Reflector height / 2 , number of wires
 SY G=0.15	'Gap between reflector and elements
 SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
 SC	0	0	-G	Rx	Ry	'Reflector
@@ -39,3 +33,4 @@ EK
 EX	0	205	3	0	1	0	0
 FR	0	0	0	0	2450	0
 EN
+
