@@ -1,28 +1,28 @@
+CM 4:1 balun made of halfwave lenght coax required with reflector. Gain of 20.6 dBi in front direction.
+CM No balun required if there is no reflector. Gain of 17.3 dBi in both directions (front and back). This setup is good for long hallways of building.
+CM Change frequency on first line of symbols tab.
+CM Add or remove last row of Geometry tab to add or remove reflector.
+CM Change char-impendence to 200 under Settings if using reflector.
+CM ########################################################################
 CM CQ21, 21 Element Curtain-Quad from Ross Anderson, W1HBQ, holl_ands mod 20Oct2014
 CM See http://home.comcast.net/~ross_anderson/CurtainQuadFigure2.htm
 CM Horizontal wires represent 21 Elements, vertical wires all same length.
-CM 
-CM holl_ands mod: Add FR/RP Statements, Rsrc & Relem, Rescale for UHF Band.
-CM Combined GW6 & GW106 into a SINGLE Simulated SOURCE by moving AFTER GX Statement.
-CM 
-CM  Simulated SOURCE Wire at the CENTER of the Array:
-CM  FR Freq Sweep choices in order of increasing calculation time (fm holl_ands):
-CM  FR 0 0 0 0 2450 0
 CE
-SY F=1303/915	'Frequency
-SY RH=60	'Reflector height
-SY RW=40	'Reflector Width
-SY G=0.34	'Gap between reflector and elements 0.4290
-SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires     6.22
+SY freq=915	'Resonant frequency
+SY F=1303/freq	'Conversion to inches
+SY RH=40*F	'Reflector height
+SY RW=30*F	'Reflector Width
+SY G=2.88*F	'Gap between reflector and elements 0.4290
+SY Ry=RH/2, Rny=16	'Reflector height / 2 , number of wires     6.22
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires       4.97
 SY Relem=0.0404*F	'Wire Radius  0.00067
-SY Rsrc=0.063	'Simulated SOURCE Wire Radius, Adjust for AGT=1.0  0.0309
+SY Rsrc=0.011	'Simulated SOURCE Wire Radius, Adjust for AGT=1.0  0.0309
 SY l0=1.08*F	'0.1786
 SY l1=3.75*F	'0.62
 SY l2=4.50*F	'0.744
 SY l3=4.0*F	'0.6613
-SY h=6.08*F	'1.0052
-SY y0=0.5*l0	'Horizontal elements
+SY h=6.1*F	'1.0052
+SY y0= 0.5*l0	'Horizontal elements   0.5*l0
 SY y1=y0+l1	'Horizontal elements
 SY y2=y1+l2	'Horizontal elements
 SY y3=y2+l3	'Horizontal elements
@@ -61,12 +61,14 @@ GW	29	13	0	y3	z1	0	y3	z0	Relem
 GW	30	13	0	y3	z0	0	y3	-z1	Relem
 GX	100	010
 GW	6	3	0	-y0	z0	0	y0	z0	Rsrc
+SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
+SC	0	0	-G	Rx	Ry	'Reflector
 GS	0	0	0.0254
 GE	0
 LD	5	0	0	0	58000000	'Copper wires
 GN	-1
 EK
 EX	0	6	2	0	1	0	0	'SOURCE on GW1, Seg1
-FR	0	0	0	0	915	0
+FR	0	0	0	0	freq	0
 RP	0	73	73	1001	-90	90	5	5	10000	0
 EN
