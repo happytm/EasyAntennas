@@ -21,15 +21,15 @@ CM dw 2         0.0164 (dipole elements copper wire diameter)
 CM 
 CM 
 CE
-SY W=0.0164	'Wire radius 0.0164 (2 MM wire Diameter)
+SY W=0.008	'Wire radius
 SY Rx=3/2, Rnx=5	'Reflector width / 2
 SY Ry=4/2, Rny=5	'Reflector height / 2
 SY H=0.264	'Height from refl. surface to dipole wire center
-SY A=0.27	'Half length of element A
-SY B=0.50	'Length of element B
-SY C=0.50	'Length of element C
-SY D=0.176	'Width of stub
-SY E=0.172	'Height of stub
+SY A=0.25	'Half length of element A
+SY B=A*2	'Length of element B
+SY C=B	'Length of element C
+SY D=0.174	'Width of stub
+SY E=D	'Height of stub
 SY F=0.0885/2	'Gap bettween 2 horizontal lines
 SY X=0.840*1.5	'Half length of horizontal lines
 SY G=X/2.5420	'Gap between inverted amos elements

@@ -2,23 +2,23 @@ CM
 CE
 SY GH=0	'Ground height
 SY W=0.008	'Wire radius (2MM Wire diameter for 2450 Mhz)
-SY RH=5.85	'Reflector height
-SY RW=0.59	'Reflector width
+SY RH=6	'Reflector height
+SY RW=0.6	'Reflector width
 SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
-SY A=0.1609	'Length of first transmission  line
-SY B=0.3284	'Length of second transmission line
-SY C=0.3374	'Length of third transmission line
-SY D=0.3619	'Length of fourth transmission line
-SY E=0.2632	'Width of elements
-SY F=0.2920	'Lenth of last elements 0.2920
-SY G=0.04657	'Gap between transmission lines (wire center to wire center)
-SY H=0.2166	'Height of elements
-SY R=0.1119	'Distance from reflector to wire center
-SY HF=0.2403	'Height of last element 0.2181
+SY A=0.039973	'Length of first transmission  line
+SY B=0.359286	'Length of second transmission line
+SY C=0.446913	'Length of third transmission line
+SY D=0.45657	'Length of fourth transmission line
+SY E=0.28029	'Width of elements 26.0
+SY F=0.331	'Lenth of last elements 0.3310
+SY G=0.067893	'Gap between transmission lines (wire center to wire center)
+SY H=0.197303	'Height of elements  (  0.22 for 45 degrees angle)
+SY R=0.159447	'Distance from reflector to wire center
+SY HF=0.250982	'Height of last element 0.22
 SM	Rnx*2	Rny*2	-R	-Rx	GH-Ry	-R	Rx	GH-Ry	'Reflector
 SC	0	0	-R	Rx	GH+Ry	'Reflector
-GW	1	1	0	-W	GH	0	W	GH	W
+GW	1	3	0	-G	GH	0	G	GH	W
 GW	2	11	0	-G	GH-A	0	-G	GH+A	W
 GW	3	14	0	-G	GH+A	0	-E	GH+A+H	W
 GW	4	14	0	-E	GH+A+H	0	-G	GH+A+H+H	W
@@ -69,8 +69,6 @@ GS	0	0	299.8/2450
 GE	0
 GN	-1
 EK
-EX	0	1	1	0	1	0	0
-TL	1	1	2	6	200	0	0	0	0	0
-TL	1	1	14	6	200	0	0	0	0	0
+EX	0	1	2	0	1	0	0
 FR	0	0	0	0	2450	0
 EN

@@ -18,14 +18,15 @@ CM Distance between dipole vertically (center to center) and horizontally = 93.3
 CM Total antenna height 49 mm (0.4 wavelength) with side reflectors |
 CM -----------------------------[ http://pow.za.net/ ]--
 CE
-SY W=6.2e-3	'Wire radius
+SY freq=2442	'Resonant frequency
+SY W=0.008	'Wire radius
 SY Rx=1.4/2, Rnx=5	'Reflector width / 2
 SY Ry=2/2, Rny=5	'Reflector height / 2
 SY Dl=0.25	'Dipole arm length
 SY Dh=0.22	'Dipole height over reflector
 SY Dx=0.38	'Distance between left and right dipole / 2
-SY Dy=0.38	'Distance between top and bottom dipole centers / 2
-SY Rx2=1.300003, Rz2=.40	'Side reflectors (+1.5 dB gain)
+SY Dy=Dx	'Distance between top and bottom dipole centers / 2
+SY Rx2=1.30, Rz2=0.40	'Side reflectors
 GW	1	1	Dh	0	W	Dh	0	-W	W
 GW	2	31	Dh	Dx	-Dl-Dy	Dh	Dx	Dl-Dy	W
 GW	3	31	Dh	-Dx	-Dl-Dy	Dh	-Dx	Dl-Dy	W
@@ -37,7 +38,7 @@ SM	Rny*2	5	0	-Rx	-Ry	0	-Rx	Ry
 SC	0	0	Rz2	-Rx2	Ry
 SM	Rny*2	5	0	Rx	Ry	0	Rx	-Ry
 SC	0	0	Rz2	Rx2	-Ry
-GS	0	0	300.0/2442.0
+GS	0	0	300.0/freq
 GE	0
 GN	-1
 EK
@@ -46,6 +47,6 @@ TL	1	1	2	16	50.	0	0	0	0	0
 TL	1	1	3	16	50.	0	0	0	0	0
 TL	1	1	4	16	50.	0	0	0	0	0
 TL	1	1	5	16	50.	0	0	0	0	0
-FR	0	0	0	0	2442	0
+FR	0	0	0	0	freq	0
 RP	0	73	73	1001	-90.	90.	5.	5.	10000.	
 EN

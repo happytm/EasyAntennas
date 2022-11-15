@@ -6,12 +6,12 @@ CE
 SY W=0.008	'Wire radius (2MM Wire diameter)
 SY Rx=2.5/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=6/2, Rny=20	'Reflector height / 2 , number of wires
-SY A=0.473859	'Half of first element
-SY B=0.329339	'Length of 2nd element
-SY F=0.322289	'Height of stub
-SY G=0.353302	'Width of stub
+SY A=0.474544	'Half of first element
+SY B=0.329542	'Length of 2nd element
+SY F=0.32272	'Height of stub
+SY G=0.353536	'Width of stub
 SY R=3.819694	'Reflector wire height
-SY EG=0.319194	'Gap between elements
+SY EG=0.319429	'Gap between elements
 SY H=0	'Atenna height
 GW	1	1	H-F	-W	0	H-F	W	0	W
 GW	2	11	H-F	EG	A	H-F	EG	-A	W	'Dipole driven element

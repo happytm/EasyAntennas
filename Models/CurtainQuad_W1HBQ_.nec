@@ -31,7 +31,7 @@ CM  RP choices in order of increasing calculation time:
 CM  RP 0 1 1 1510 90 90 1 1 0 0 
 CM  RP 0 1 1 1510 90 180 1 1 0 0 
 CE
-SY F=1303/584	'Frequency Rescale Factor
+SY F=1303/915	'Frequency Rescale Factor
 SY Rsrc=0.849449	'Simulated SOURCE Wire Radius, Adjust for AGT=1.0
 SY Relem=0.0404*F
 SY l0=1.08*F

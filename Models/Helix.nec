@@ -1,19 +1,30 @@
-CM Length L in mtr. = .050
-CM Radius R1 in cm. = 1.5
-CM Radius R2 in cm. = 1.5
-CM Number of turns = 1
-CM Segments per turn = 9
-CM Rotate X, Y, Z = 0, 0, 0
-CM Move X, Y, Z = 0, 0, 0
+CM LoRa/LoRaWAN tutorial 45
+CM https://www.mobilefish.com/developer/lorawan/lorawan_quickguide_tutorial.html
+CM https://www.mobilefish.com/download/lora/axial_mode_helical_2.45ghz.nec.txt
+CM Helix 2.45 GHz (6 turns) over perfect ground
+CM Helix starts 2mm above ground
+CM Helix diameter = 46mm 
+CM Helix turn space = 29mm
+CM Helix wire diameter = 2mm
+CM Wire with length=2mm and diameter=2mm added between helix and ground
+CM Wire and helix made of copper
+CM Excitation at bottom of this wire
+CM --------
 CE
-GW   100    2     .015       .0     18.0  .011491  .009642   18.006    .0016
-GW   101    2  .011491  .009642   18.006  .002605  .014772   18.011    .0016
-GW   102    2  .002605  .014772   18.011   -.0075   .01299   18.017    .0016
-GW   103    2   -.0075   .01299   18.017 -.014095   .00513   18.022    .0016
-GW   104    2 -.014095   .00513   18.022 -.014095  -.00513   18.028    .0016
-GW   105    2 -.014095  -.00513   18.028   -.0075  -.01299   18.033    .0016
-GW   106    2   -.0075  -.01299   18.033  .002605 -.014772   18.039    .0016
-GW   107    2  .002605 -.014772   18.039  .011491 -.009642   18.044    .0016
-GW   108    2  .011491 -.009642   18.044     .015       .0    18.05    .0016
-GE 0
-FR 0 0 0 0 2483
+SY height=0.002
+SY rad=0.023
+SY space=0.029
+SY n=6
+SY length=n*space
+SY diam=0.002
+SY r=diam/2
+GH	1	120	space	length	rad	rad	rad	rad	r
+GM	0	0	0	0	0	0	0	height	0
+GW	15	1	rad	0	0	rad	0	height	r
+GE	1
+LD	5	0	0	0	58000000
+GN	1
+EK
+EX	0	15	1	0	1	0	0	0
+FR	0	0	0	0	2450.0	0
+EN

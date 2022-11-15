@@ -4,20 +4,19 @@ SY GH=0	'Ground height
 SY W=0.008	'Wire radius (2MM Wire diameter for 2450 Mhz)
 SY Rx=0.60/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=5.882/2, Rny=20	'Reflector height / 2 , number of wires
-SY A=0.1609	'Length of first transmission  line
-SY B=0.3284	'Length of second transmission line
-SY C=0.3374	'Length of third transmission line
-SY D=0.3619	'Length of fourth transmission line
-SY E=0.2632	'Width of elements
-SY F=0.2920	'Lenth of last elements
-SY G=0.1058	'Gap between transmission lines (wire center to wire center)
-SY H=0.2166	'Height of elements
-SY R=0.1122	'Distance from reflector to wire center
-SY HF=0.2181	'Height of last element
-SY BL=0.4	'Balun coax length
+SY A=0.120616	'Length of first transmission  line
+SY B=0.345147	'Length of second transmission line
+SY C=0.380468	'Length of third transmission line
+SY D=0.441292	'Length of fourth transmission line
+SY E=0.388164	'Width of elements
+SY F=0.292	'Lenth of last elements
+SY G=0.08	'Gap between transmission lines (wire center to wire center)
+SY H=0.25861	'Height of elements
+SY R=0.289617	'Distance from reflector to wire center
+SY HF=0.230478	'Height of last element
 SM	Rnx*2	Rny*2	-R	-Rx	GH-Ry	-R	Rx	GH-Ry	'Reflector
 SC	0	0	-R	Rx	GH+Ry	'Reflector
-GW	1	1	0	-W	GH	0	W	GH	W
+GW	1	3	0	-G	0	0	G	0	W
 GW	2	11	0	-G	GH-A	0	-G	GH+A	W
 GW	3	14	0	-G	GH+A	0	-E	GH+A+H	W
 GW	4	14	0	-E	GH+A+H	0	-G	GH+A+H+H	W
@@ -68,8 +67,6 @@ GS	0	0	299.8/915
 GE	0
 GN	-1
 EK
-EX	0	1	1	0	1	0	0
-TL	1	1	2	6	200	0	0	0	0	0
-TL	1	1	14	6	200	0	0	0	0	0
+EX	0	1	2	0	1	0	0
 FR	0	0	0	0	915	0
 EN

@@ -6,12 +6,15 @@ CM Each element length = 80mm
 CM Wire diameter = 1.8mm
 CM Height from ground to feedpoint = 11m
 CM --------
-SY height=11
-SY length=0.160
 CE
-GW	1	17	0	0	height	0	0	height+length	9.e-4
+SY W=0.0005
+SY L=0.1725
+GW	1	21	0	0	0	0	0	L	W
 GE	0
-LD	5	0	0	0	1390000	0
-EX	0	1	9	0	1	0
-GN	2	0	0	0	3	0.0001
-FR	0	1	0	0	868	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	1	10	0	1	0	0	0
+
+FR	0	0	0	0	868	0
+EN

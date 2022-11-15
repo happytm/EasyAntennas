@@ -1,0 +1,139 @@
+CM Sweep ranges:
+CM R0 = (470, 6, 39) with target levels [15, 16]
+CM SWR target: [[2, 2]]
+CM Target function: .8*ave_gain_diff+.2*max_gain_diff
+CM Autosegmentation: 9 per 0.1875
+CM
+CM Score -2.54965
+CM
+CM
+CMD--OPT  -u -t(15,16) -a9 -F .8*ave_gain_diff+.2*max_gain_diff -n2 -olocal -llocal.log -L
+'CMD--OPT  -r restart.log --de-np=100 
+CMD--EVAL -u -a9
+CE
+SY ay4=0.06976043' 0.02, 0.07
+SY ay2=0.08887095' 0.007, 0.1
+SY ay6=0.08370753' 0.007, 0.1
+SY d_ay1=0.1540643' 0.07, 0.18
+SY ay1 = ay2+d_ay1
+SY d_ay3=0.1485157' 0.07, 0.18
+SY ay3 = ay4+d_ay3
+SY d_ay5=0.1247431' 0.07, 0.18
+SY ay5 = ay4+d_ay5
+SY d_ay7=0.1210134' 0.07, 0.18
+SY ay7 = ay6+d_ay7
+SY as1=0.08754928' 0.075, 0.25
+SY as2=0.1268222' 0.075, 0.25
+
+SY az1=0.1325133' 0.05, 0.4
+SY d_az2=0.1097725' 0.07, 0.18
+SY az2 = az1+d_az2
+SY d_az3=0.1800572' 0.07, 0.18
+SY az3 = az2+d_az3
+SY d_az4=0.1508607' 0.07, 0.18
+SY az4 = az3+d_az4
+SY d_az5=0.1661731' 0.07, 0.18
+SY az5 = az4+d_az5
+SY d_az6=0.1768406' 0.07, 0.18
+SY az6 = az5+d_az6
+SY d_az7=0.1150238' 0.07, 0.18
+SY az7 = az6+d_az7
+
+SY aradius=0.003175
+
+'upper active - the #00f is blue color for the nec2 viewer
+GW 1 4 0 ay1+as1 az1 0 ay1 az1 aradius'#00f
+GW 2 9 0 ay1 az1 0 ay2 az2 aradius
+GW 3 11 0 ay2 az2 0 ay3 az3 aradius
+GW 4 11 0 ay3 az3 0 ay4 az4 aradius
+GW 5 9 0 ay4 az4 0 ay5 az5 aradius
+GW 6 11 0 ay5 az5 0 ay6 az6 aradius
+GW 7 8 0 ay6 az6 0 ay7 az7 aradius
+GW 8 6 0 ay7 az7 0 ay7+as2 az7 aradius
+
+SY rradius=0.003175
+
+'reflector gaps 
+SY rg1=0.007069522' 0.002, 0.045
+SY rg2=0.002516305' 0.002, 0.045
+SY rg3=0.00208319' 0.002, 0.045
+SY rg4=0.0441698' 0.002, 0.045
+SY rg5=0.02238247' 0.002, 0.045
+SY rg6=0.00477744' 0.002, 0.045
+SY rg7=0.002669233' 0.002, 0.045
+SY rg8=0.003199015' 0.002, 0.045
+SY rg9=0.04431732' 0.002, 0.045
+SY rg10=0.0110554' 0.002, 0.045
+
+'reflector lengths
+SY rl1=0.4307366' 0.1, 0.7
+SY rl2=0.4794519' 0.1, 0.7
+SY rl3=0.6497862' 0.1, 0.7
+SY rl4=0.2953012' 0.1, 0.7
+SY rl5=0.3894696' 0.1, 0.7
+SY rl6=0.2712826' 0.1, 0.7
+SY rl7=0.5823199' 0.1, 0.7
+SY rl8=0.5108414' 0.1, 0.7
+SY rl9=0.3081389' 0.1, 0.7
+SY rl10=0.2600492' 0.1, 0.7
+
+'reflector heights
+SY rz1=0.05332938' 0.05, 0.4
+SY d_rz2=0.1467996' 0.025, 0.3
+SY rz2=rz1+d_rz2
+SY d_rz3=0.1245515' 0.025, 0.3
+SY rz3=rz2+d_rz3
+SY d_rz4=0.120872' 0.025, 0.3
+SY rz4=rz3+d_rz4
+SY d_rz5=0.1501002' 0.025, 0.3
+SY rz5=rz4+d_rz5
+SY d_rz6=0.133522' 0.025, 0.3
+SY rz6=rz5+d_rz6
+SY d_rz7=0.1322134' 0.025, 0.3
+SY rz7=rz6+d_rz7
+SY d_rz8=0.1262458' 0.025, 0.3
+SY rz8=rz7+d_rz8
+SY d_rz9=0.1905367' 0.025, 0.3
+SY rz9=rz8+d_rz9
+SY d_rz10=0.09516072' 0.025, 0.3
+SY rz10=rz9+d_rz10
+
+SY rx=-0.08555679' -0.12, -0.05
+
+'upper reflector - the #0f0 is green color for the nec2 viewer
+GW 11 21 rx rg1 rz1 rx rg1+rl1 rz1 rradius'#0f0
+GW 12 23 rx rg2 rz2 rx rg2+rl2 rz2 rradius'#0f0
+GW 13 31 rx rg3 rz3 rx rg3+rl3 rz3 rradius'#0f0
+GW 14 15 rx rg4 rz4 rx rg4+rl4 rz4 rradius'#0f0
+GW 15 19 rx rg5 rz5 rx rg5+rl5 rz5 rradius'#0f0
+GW 16 13 rx rg6 rz6 rx rg6+rl6 rz6 rradius'#0f0
+GW 17 27 rx rg7 rz7 rx rg7+rl7 rz7 rradius'#0f0
+GW 18 25 rx rg8 rz8 rx rg8+rl8 rz8 rradius'#0f0
+GW 19 15 rx rg9 rz9 rx rg9+rl9 rz9 rradius'#0f0
+GW 20 13 rx rg10 rz10 rx rg10+rl10 rz10 rradius'#0f0
+
+SY fx1=0
+SY fy1 =ay4
+SY fz1 =az4
+SY fx2=0.025
+SY fy2=0.03379011' 0.01, 0.07
+SY fz2 =az4
+SY fx3=0.025
+SY fy3=0.03190743' 0.01, 0.1
+SY fz3=0
+
+GW 21 2 fx1 fy1 fz1 fx2 fy2 fz2 aradius'#000
+GW 22 27 fx2 fy2 fz2 fx3 fy3 fz3 aradius
+
+GX	50	011
+
+GW 40 3 fx3 -fy3 fz3 fx3 fy3 fz3 aradius'#fb4
+
+GE
+
+LD	5	0	0	0	24900000
+GN	-1
+EK
+EX 0 40 2 0 1
+FR	0	0	0	0	800	0
+EN

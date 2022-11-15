@@ -27,14 +27,15 @@ CM Wire	8	13	0	-C	V	0	-C	0	W				Inner right middle top vertical
 CM Wire	9	13	0	-C	0	0	-C	-V	W				Inner right middle top vertical
 CE
 SY freq=2450	'Resonent frequency.
-SY W=7.847e-3	'Wire Thickness. 1/125 wavelength. (0.008)
-SY CW=9.422e-3	'Center element wire thickness
-SY C=0.060776	'Center element. 1/8 wavelength. (0.12)
-SY H=0.486931	'Horizontal elements.1/2 Wavelength. (0.49)
-SY V=0.661153	'Vertical elements. 2/3 wavelength. (0.66)
-SY Rx=1.75/2, Rnx=4	'Reflector width / 2 , number of wires.
-SY Ry=2.3/2, Rny=20	'Reflector height / 2 , number of wires.
-SY G=0.1454	'Gap between reflector and elements. 1/7 wavelength. (0.1454)
+SY AH=30	'Antenna height in wavelength
+SY W=0.008	'Wire Thickness. 1/125 wavelength. (0.008)
+SY CW=0.010	'Center element wire thickness
+SY C=0.06	'Center element. 1/8 wavelength. (0.12)
+SY H=0.49	'Horizontal elements.1/2 Wavelength. (0.49)
+SY V=0.66	'Vertical elements. 2/3 wavelength. (0.66)
+SY Rx=1.75/2, Rnx=4	'Reflector width / 2 , number of wires.     1.75
+SY Ry=2.3/2, Rny=20	'Reflector height / 2 , number of wires.    2.3
+SY G=0.20	'Gap between reflector and elements. 1/5 wavelength. (0.20)
 SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Main Reflector
 SC	0	0	-G	Rx	Ry	'Main Reflector
 SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Top Reflector
@@ -50,10 +51,11 @@ GW	6	11	0	-C	V	0	-H-C	V	W	'right top horizontal
 GW	7	11	0	-C	-V	0	-H-C	-V	W	'Inner right bottom horizontal
 GW	8	13	0	-C	V	0	-C	0	W	'Inner right middle top vertical
 GW	9	13	0	-C	0	0	-C	-V	W	'Inner right middle top vertical
+GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/freq
-GE	0
+GE	1
 LD	5	0	0	0	58000000
-GN	-1
+GN	2	0	0	0	4	0.003
 EK
 EX	0	1	3	0	1	0	0
 FR	0	0	0	0	freq	0

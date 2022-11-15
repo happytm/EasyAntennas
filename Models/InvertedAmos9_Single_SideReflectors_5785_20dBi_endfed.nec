@@ -1,0 +1,132 @@
+CM Franklin-AMOS antenna
+CM 4:1 balun required. Gain of 19 dBi.
+CM ##############################################################################
+CM freq=5785	Desired frequency
+CM AH=10	Antenna height in wavelength
+CM W=0.008	Wire radius
+CM RH=7.7326	Reflector height
+CM RW=0.92	Reflector width
+CM SRA=0.30	Side reflector angle
+CM Rx=RW/2, Rnx=4	Reflector width  / 2 , number of wires
+CM Ry=RH/2, Rny=20	Reflector height / 2 , number of wires
+CM Rx2=RW, Rz2=SRA	Side reflectors
+CM A=0.26	Half of first element
+CM B=A*2	Length of 2nd element      Half of Wavelength
+CM C=B	Length of 3rd element
+CM D=B	Length of 4th element
+CM E=0.605	Length of 5th element     0.605
+CM F=0.174	Height of stub  0.174
+CM G=F	Width of stub
+CM H=0.26	Distance from reflector to wire center  0.264
+CM EG=0	
+CM ##############################################################################
+CM P-multip	Rnx*2	Rny*2	-F	-Rx	-Ry	-F	Rx	-Ry	-F	Rx	Ry		Reflector
+CM P-multip	Rny*2	5	-F	-Rx	-Ry	-F	-Rx	Ry	Rz2	-Rx2	Ry		
+CM P-multip	Rny*2	5	-F	Rx	Ry	-F	Rx	-Ry	Rz2	Rx2	-Ry		
+CM Wire	1	1	H-F	-W	0	H-F	W	0	W				
+CM Wire	2	11	H-F	EG	A	H-F	0	-A	W				Dipole driven element
+CM Wire	3	3	H-F	EG	A	H	EG	A	W				
+CM Wire	4	3	H	EG	A	H	EG	A+G	W				
+CM Wire	5	3	H	EG	A+G	H-F	EG	A+G	W				
+CM Wire	6	10	H-F	EG	A+G	H-F	EG	A+G+B	W				
+CM Wire	7	3	H-F	EG	A+G+B	H	EG	A+G+B	W				
+CM Wire	8	3	H	EG	A+G+B	H	EG	A+G+B+G	W				
+CM Wire	9	3	H	EG	A+G+B+G	H-F	EG	A+G+B+G	W				
+CM Wire	10	10	H-F	EG	A+G+B+G	H-F	EG	A+G+B+G+C	W				
+CM Wire	11	3	H-F	EG	A+G+B+G+C	H	EG	A+G+B+G+C	W				
+CM Wire	12	3	H	EG	A+G+B+G+C	H	EG	A+G+B+G+C+G	W				
+CM Wire	13	3	H	EG	A+G+B+G+C+G	H-F	EG	A+G+B+G+C+G	W				
+CM Wire	14	10	H-F	EG	A+G+B+G+C+G	H-F	EG	A+G+B+G+C+G+D	W				
+CM Wire	15	3	H-F	EG	A+G+B+G+C+G+D	H	EG	A+G+B+G+C+G+D	W				
+CM Wire	16	3	H	EG	A+G+B+G+C+G+D	H	EG	A+G+B+G+C+G+D+G	W				
+CM Wire	17	3	H	EG	A+G+B+G+C+G+D+G	H-F	EG	A+G+B+G+C+G+D+G	W				
+CM Wire	18	10	H-F	EG	A+G+B+G+C+G+D+G	H-F	EG	A+G+B+G+C+G+D+G+E	W				
+CM Wire	19	3	H-F	EG	-A	H	EG	-A	W				
+CM Wire	20	3	H	EG	-A	H	EG	-A-G	W				
+CM Wire	21	3	H	EG	-A-G	H-F	EG	-A-G	W				
+CM Wire	22	10	H-F	EG	-A-G	H-F	EG	-A-G-B	W				
+CM Wire	23	3	H-F	EG	-A-G-B	H	EG	-A-G-B	W				
+CM Wire	24	3	H	EG	-A-G-B	H	EG	-A-G-B-G	W				
+CM Wire	25	3	H	EG	-A-G-B-G	H-F	EG	-A-G-B-G	W				
+CM Wire	26	10	H-F	EG	-A-G-B-G	H-F	EG	-A-G-B-G-C	W				
+CM Wire	27	3	H-F	EG	-A-G-B-G-C	H	EG	-A-G-B-G-C	W				
+CM Wire	28	3	H	EG	-A-G-B-G-C	H	EG	-A-G-B-G-C-G	W				
+CM Wire	29	3	H	EG	-A-G-B-G-C-G	H-F	EG	-A-G-B-G-C-G	W				
+CM Wire	30	10	H-F	EG	-A-G-B-G-C-G	H-F	EG	-A-G-B-G-C-G-D	W				
+CM Wire	31	3	H-F	EG	-A-G-B-G-C-G-D	H	EG	-A-G-B-G-C-G-D	W				
+CM Wire	32	3	H	EG	-A-G-B-G-C-G-D	H	EG	-A-G-B-G-C-G-D-G	W				
+CM Wire	33	3	H	EG	-A-G-B-G-C-G-D-G	H-F	EG	-A-G-B-G-C-G-D-G	W				
+CM Wire	34	10	H-F	EG	-A-G-B-G-C-G-D-G	H-F	EG	-A-G-B-G-C-G-D-G-E	W				
+CM Copy/move	0	0	0	0	0	0	0	AH						
+CE
+SY freq=5785	'Desired frequency
+SY AH=4	'Antenna height in wavelength
+SY W=0.008	'Wire radius
+SY RH=7.7326	'Reflector height       7.73
+SY RW=0.916498	'Reflector width        0.92
+SY SRA=0.299989	'Side reflector angle 0.30
+SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
+SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
+SY Rx2=RW, Rz2=SRA	'Side reflectors
+SY A=0.327602	'Half of first element         0.26
+SY B=A*2	'Length of 2nd element      Half of Wavelength
+SY C=B	'Length of 3rd element
+SY D=B	'Length of 4th element
+SY E=0.490335	'Length of 5th element     0.605
+SY F=0.144692	'Height of stub  0.174
+SY G=F	'Width of stub
+SY H=0.281353	'Distance from reflector to wire center  0.264
+SY EG=0
+SM	Rnx*2	Rny*2	-F	-Rx	-Ry	-F	Rx	-Ry	'Reflector
+SC	0	0	-F	Rx	Ry	'Reflector
+SM	Rny*2	5	-F	-Rx	-Ry	-F	-Rx	Ry
+SC	0	0	SRA	-RW	Ry
+SM	Rny*2	5	-F	Rx	Ry	-F	Rx	-Ry
+SC	0	0	SRA	RW	-Ry
+GW	1	1	H-F	-W	0	H-F	W	0	W
+GW	2	11	H-F	EG	A	H-F	0	-A	W
+GW	3	3	H-F	EG	A	H	EG	A	W
+GW	4	3	H	EG	A	H	EG	A+G	W
+GW	5	3	H	EG	A+G	H-F	EG	A+G	W
+GW	6	10	H-F	EG	A+G	H-F	EG	A+G+B	W
+GW	7	3	H-F	EG	A+G+B	H	EG	A+G+B	W
+GW	8	3	H	EG	A+G+B	H	EG	A+G+B+G	W
+GW	9	3	H	EG	A+G+B+G	H-F	EG	A+G+B+G	W
+GW	10	10	H-F	EG	A+G+B+G	H-F	EG	A+G+B+G+C	W
+GW	11	3	H-F	EG	A+G+B+G+C	H	EG	A+G+B+G+C	W
+GW	12	3	H	EG	A+G+B+G+C	H	EG	A+G+B+G+C+G	W
+GW	13	3	H	EG	A+G+B+G+C+G	H-F	EG	A+G+B+G+C+G	W
+GW	14	10	H-F	EG	A+G+B+G+C+G	H-F	EG	A+G+B+G+C+G+D	W
+GW	15	3	H-F	EG	A+G+B+G+C+G+D	H	EG	A+G+B+G+C+G+D	W
+GW	16	3	H	EG	A+G+B+G+C+G+D	H	EG	A+G+B+G+C+G+D+G	W
+GW	17	3	H	EG	A+G+B+G+C+G+D+G	H-F	EG	A+G+B+G+C+G+D+G	W
+GW	18	10	H-F	EG	A+G+B+G+C+G+D+G	H-F	EG	A+G+B+G+C+G+D+G+E	W
+GW	19	3	H-F	EG	-A	H	EG	-A	W
+GW	20	3	H	EG	-A	H	EG	-A-G	W
+GW	21	3	H	EG	-A-G	H-F	EG	-A-G	W
+GW	22	10	H-F	EG	-A-G	H-F	EG	-A-G-B	W
+GW	23	3	H-F	EG	-A-G-B	H	EG	-A-G-B	W
+GW	24	3	H	EG	-A-G-B	H	EG	-A-G-B-G	W
+GW	25	3	H	EG	-A-G-B-G	H-F	EG	-A-G-B-G	W
+GW	26	10	H-F	EG	-A-G-B-G	H-F	EG	-A-G-B-G-C	W
+GW	27	3	H-F	EG	-A-G-B-G-C	H	EG	-A-G-B-G-C	W
+GW	28	3	H	EG	-A-G-B-G-C	H	EG	-A-G-B-G-C-G	W
+GW	29	3	H	EG	-A-G-B-G-C-G	H-F	EG	-A-G-B-G-C-G	W
+GW	30	10	H-F	EG	-A-G-B-G-C-G	H-F	EG	-A-G-B-G-C-G-D	W
+GW	31	3	H-F	EG	-A-G-B-G-C-G-D	H	EG	-A-G-B-G-C-G-D	W
+GW	32	3	H	EG	-A-G-B-G-C-G-D	H	EG	-A-G-B-G-C-G-D-G	W
+GW	33	3	H	EG	-A-G-B-G-C-G-D-G	H-F	EG	-A-G-B-G-C-G-D-G	W
+GW	34	11	H-F	EG	-A-G-B-G-C-G-D-G	H-F	EG	-A-G-B-G-C-G-D-G-E	W
+GW	35	15	-F	-Rx	Ry	SRA	-RW	Ry	W
+GW	36	15	-F	Rx	Ry	SRA	RW	Ry	W
+GW	37	15	-F	-Rx	Ry	-F	Rx	Ry	W
+GM	0	0	0	0	0	0	0	AH
+GS	0	0	299.80/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	32	2	0	1	0	0
+FR	0	0	0	0	freq	0
+RP	0	73	73	1001	-90.	90.	5.	5.	10000.	
+EN

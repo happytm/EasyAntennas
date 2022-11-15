@@ -1,0 +1,103 @@
+CM Franklin-AMOS antenna
+CM 4:1 balun made from halfwave coax cable required. Gain of 17.2 dBi with SWR of 1.08.
+CM ##############################################################################
+CM freq=915	Desired frequency
+CM AH=4	Antenna height in wavelength
+CM W=0.008	Wire radius
+CM RH=4	Reflector height             4.0
+CM RW=0.911082	Reflector width              0.91
+CM SRA=0.30	Side reflector angle       0.30
+CM Rx=RW/2, Rnx=4	Reflector width  / 2 , number of wires
+CM Ry=RH/2, Rny=20	Reflector height / 2 , number of wires
+CM Rx2=RW, Rz2=SRA	Side reflectors
+CM A=0.2578	Half of first element                  0.2578
+CM B=A*2	Length of 2nd element     A*2
+CM C=B	Length of 3rd element     Same as B
+CM D=B	Length of 4th element     Same as B
+CM F=0.177	Height of stub  0.177
+CM G=F	Width of stub
+CM H=0.2652	Distance from reflector to wire center  0.2652
+CM EG=0	
+CM ##############################################################################
+CM P-multip	Rnx*2	Rny*2	-F	-Rx	-Ry	-F	Rx	-Ry	-F	Rx	Ry		Reflector
+CM P-multip	Rny*2	5	-F	-Rx	-Ry	-F	-Rx	Ry	Rz2	-Rx2	Ry		
+CM P-multip	Rny*2	5	-F	Rx	Ry	-F	Rx	-Ry	Rz2	Rx2	-Ry		
+CM Wire	1	1	H-F	-W	0	H-F	W	0	W				
+CM Wire	2	11	H-F	EG	A	H-F	0	-A	W				Dipole driven element
+CM Wire	3	3	H-F	EG	A	H	EG	A	W				
+CM Wire	4	3	H	EG	A	H	EG	A+G	W				
+CM Wire	5	3	H	EG	A+G	H-F	EG	A+G	W				
+CM Wire	6	10	H-F	EG	A+G	H-F	EG	A+G+B	W				
+CM Wire	7	3	H-F	EG	A+G+B	H	EG	A+G+B	W				
+CM Wire	8	3	H	EG	A+G+B	H	EG	A+G+B+G	W				
+CM Wire	9	3	H	EG	A+G+B+G	H-F	EG	A+G+B+G	W				
+CM Wire	10	10	H-F	EG	A+G+B+G	H-F	EG	A+G+B+G+C	W				
+CM Wire	11	3	H-F	EG	A+G+B+G+C	H	EG	A+G+B+G+C	W				
+CM Wire	12	3	H	EG	A+G+B+G+C	H	EG	A+G+B+G+C+G	W				
+CM Wire	13	3	H	EG	A+G+B+G+C+G	H-F	EG	A+G+B+G+C+G	W				
+CM Wire	14	10	H-F	EG	A+G+B+G+C+G	H-F	EG	A+G+B+G+C+G+D	W				
+CM Wire	19	3	H-F	EG	-A	H	EG	-A	W				
+CM Wire	20	3	H	EG	-A	H	EG	-A-G	W				
+CM Wire	21	3	H	EG	-A-G	H-F	EG	-A-G	W				
+CM Wire	22	10	H-F	EG	-A-G	H-F	EG	-A-G-B	W				
+CM Wire	23	3	H-F	EG	-A-G-B	H	EG	-A-G-B	W				
+CM Wire	24	3	H	EG	-A-G-B	H	EG	-A-G-B-G	W				
+CM Wire	25	3	H	EG	-A-G-B-G	H-F	EG	-A-G-B-G	W				
+CM Wire	26	10	H-F	EG	-A-G-B-G	H-F	EG	-A-G-B-G-C	W				
+CM Wire	27	3	H-F	EG	-A-G-B-G-C	H	EG	-A-G-B-G-C	W				
+CM Wire	28	3	H	EG	-A-G-B-G-C	H	EG	-A-G-B-G-C-G	W				
+CM Wire	29	3	H	EG	-A-G-B-G-C-G	H-F	EG	-A-G-B-G-C-G	W				
+CM Wire	30	10	H-F	EG	-A-G-B-G-C-G	H-F	EG	-A-G-B-G-C-G-D	W				
+CM Copy/move	0	0	0	0	0	0	0	AH					
+CE
+SY freq=2450	'Desired frequency
+SY AH=4	'Antenna height in wavelength
+SY W=0.008	'Wire radius
+SY RH=10	'Reflector height            10.0
+SY WH=4	'Wing height                   4.0
+SY RW=0.911	'Reflector width              0.91
+SY SRA=0.30	'Side reflector angle       0.30
+SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
+SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
+SY Rx2=RW, Rz2=SRA	'Side reflectors
+SY A=0.2578	'Half of first element                  0.2578
+SY B=A*2	'Length of 2nd element     A*2
+SY C=B	'Length of 3rd element     Same as B
+SY F=0.177	'Height of stub  0.177
+SY G=F	'Width of stub
+SY H=0.2652	'Distance from reflector to wire center  0.2652
+SY EG=0
+SM	Rnx*2	Rny*2	-F	-Rx	-Ry	-F	Rx	-Ry	'Reflector
+SC	0	0	-F	Rx	Ry	'Reflector
+SM	Rny*2	5	-F	-Rx	-WH/2	-F	-Rx	WH/2
+SC	0	0	Rz2	-Rx2	WH/2
+SM	Rny*2	5	-F	Rx	WH/2	-F	Rx	-WH/2
+SC	0	0	Rz2	Rx2	-WH/2
+GW	1	1	H-F	-W	0	H-F	W	0	W
+GW	2	11	H-F	EG	A	H-F	0	-A	W	'Dipole driven element
+GW	3	3	H-F	EG	A	H	EG	A	W
+GW	4	3	H	EG	A	H	EG	A+G	W
+GW	5	3	H	EG	A+G	H-F	EG	A+G	W
+GW	6	10	H-F	EG	A+G	H-F	EG	A+G+B	W
+GW	7	3	H-F	EG	A+G+B	H	EG	A+G+B	W
+GW	8	3	H	EG	A+G+B	H	EG	A+G+B+G	W
+GW	9	3	H	EG	A+G+B+G	H-F	EG	A+G+B+G	W
+GW	10	10	H-F	EG	A+G+B+G	H-F	EG	A+G+B+G+C	W
+GW	19	3	H-F	EG	-A	H	EG	-A	W
+GW	20	3	H	EG	-A	H	EG	-A-G	W
+GW	21	3	H	EG	-A-G	H-F	EG	-A-G	W
+GW	22	10	H-F	EG	-A-G	H-F	EG	-A-G-B	W
+GW	23	3	H-F	EG	-A-G-B	H	EG	-A-G-B	W
+GW	24	3	H	EG	-A-G-B	H	EG	-A-G-B-G	W
+GW	25	3	H	EG	-A-G-B-G	H-F	EG	-A-G-B-G	W
+GW	26	10	H-F	EG	-A-G-B-G	H-F	EG	-A-G-B-G-C	W
+GM	0	0	0	0	0	0	0	AH
+GS	0	0	299.80/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	2	6	0	1	0	0
+FR	0	0	0	0	freq	0
+RP	0	73	73	1001	-90.	90.	5.	5.	10000.	
+EN

@@ -23,8 +23,8 @@ SY Rx=1.4/2, Rnx=5	'Reflector width / 2
 SY Ry=2/2, Rny=5	'Reflector height / 2
 SY Dl=0.25	'Dipole arm length
 SY Dh=0.22	'Dipole height over reflector
-SY Dx=0.38	'Distance between left and right dipole / 2
-SY Dy=0.38	'Distance between top and bottom dipole centers / 2
+SY Dx=0.38	'Distance between left and right dipole / 2                   0.38
+SY Dy=0.38	'Distance between top and bottom dipole centers / 2  0.38
 SY Rx2=1.3, Rz2=0.4	'Side reflectors (+1.5 dB gain)
 GW	1	1	Dh	0	W	Dh	0	-W	W
 GW	2	31	Dh	Dx	-Dl-Dy	Dh	Dx	Dl-Dy	W

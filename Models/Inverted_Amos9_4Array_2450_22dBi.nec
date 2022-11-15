@@ -3,21 +3,21 @@ CM Data in wavelengths.
 CM Jeff Liebermann  08/12/2007
 CM Setup for AMOS 7 dipoles  10/03/2008
 CE
-SY W=0.008	'Wire radius (2MM Wire diameter)
-SY Rx=3/2, Rnx=4	'Reflector width  / 2 , number of wires
-SY Ry=7/2, Rny=20	'Reflector height / 2 , number of wires
-SY A=0.3252	'Half of horizontal gap+half of first element
-SY B=0.5	'Length of 2nd element
-SY C=0.5	'Length of 3rd element
-SY D=0.5	'Length of 4th element
-SY E=0.6755	'Length of 5th element
-SY F=0.1711	'Height of stub
-SY G=0.1758	'Width of stub
-SY H=0.263	'Distance from reflector to wire center
-SY I=0.27	'Half of first element
-SY EG=0.4199	'Gap between inner elements 0.4199
-SY EGO=1.2346	'Gap between inner  & outer elements 1.2346
-SY J=0.0442	'Hallf of gap between transmission lines
+SY freq=2450	'Resonant frequency
+SY W=0.008	'Wire radius (2MM Wire diameter)                        0.008
+SY Rx=3/2, Rnx=4	'Reflector width  / 2 , number of wires                 3.00
+SY Ry=7/2, Rny=20	'Reflector height / 2 , number of wires                 7.00
+SY A=0.3252	'Half of horizontal gap+half of first element           0.3252
+SY B=0.5	'Length of 2nd element                                        0.5
+SY C=B	'Length of 3rd element                                         0.5
+SY D=B	'Length of 4th element                                         0.5
+SY E=0.6755	'Length of 5th element                                         0.6755
+SY F=0.1723	'Height of stub                                                     0.1711
+SY G=F	'Width of stub                                                      0.1758
+SY H=0.263	'Distance from reflector to wire center                 0.263
+SY EG=0.4199	'Gap between inner elements                              0.4199
+SY EGO=1.2346	'Gap between outer elements                              1.2346
+SY J=0.0442	'Half of gap between transmission lines               0.0442
 SM	Rnx*2	Rny*2	-F	-Rx	-Ry	-F	Rx	-Ry	'Reflector
 SC	0	0	-F	Rx	Ry	'Reflector
 GW	201	100	H-F	-EGO	J	H-F	EGO	J	W
@@ -159,11 +159,11 @@ GW	130	3	H-F	-EGO	-A-G-B-G-C-G-D	H	-EGO	-A-G-B-G-C-G-D	W
 GW	131	3	H	-EGO	-A-G-B-G-C-G-D	H	-EGO	-A-G-B-G-C-G-D-G	W
 GW	132	3	H	-EGO	-A-G-B-G-C-G-D-G	H-F	-EGO	-A-G-B-G-C-G-D-G	W
 GW	133	10	H-F	-EGO	-A-G-B-G-C-G-D-G	H-F	-EGO	-A-G-B-G-C-G-D-G-E	W
-GS	0	0	299.8/2450
+GS	0	0	299.8/freq
 GE	0
 GN	-1
 EK
 EX	0	1	2	0	1	0	0
-FR	0	0	0	0	2450	0
+FR	0	0	0	0	freq	0
 RP	0	73	73	1001	-90.	90.	5.	5.	10000.	
 EN

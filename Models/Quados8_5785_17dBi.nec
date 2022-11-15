@@ -70,7 +70,5 @@ GE	0
 GN	-1
 EK
 EX	0	50	1	0	1	0	0
-TL	50	1	2	6	200	0	0	0	0	0	'impedance of the transformer
-TL	50	1	14	6	200	0	0	0	0	0
 FR	0	0	0	0	5785	0
 EN

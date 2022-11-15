@@ -2,6 +2,12 @@ CM M2 432-12EME with T-MATCH
 CE
 SY Freq=915
 SY WR=0.003431	'Wire radius
+SY RH=7.7326	'Reflector height
+SY RW=0.92	'Reflector width
+SY SRA=0.30	'Side reflector angle
+SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
+SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
+SY Rx2=RW, Rz2=SRA	'Side reflectors
 SY A=0	'Reflector
 SY B=0.201297	'Driven element
 SY C=0.355673	'Director
@@ -26,25 +32,25 @@ SY U=0.202556
 SY V=0.208238
 SY W=0.228357
 SY Z=0.036023
-GW	1	19	A	-M	0	A	M	0	WR
-GW	2	15	B	-N	0	B	N	0	WR
-GW	3	19	C	-O	0	C	O	0	WR
-GW	4	17	D	-P	0	D	P	0	WR
-GW	5	17	E	-Q	0	E	Q	0	WR
-GW	6	17	F	-R	0	F	R	0	WR
-GW	7	17	G	-S	0	G	S	0	WR
-GW	8	17	H	-T	0	H	T	0	WR
-GW	9	17	I	-U	0	I	U	0	WR
-GW	10	17	J	-U	0	J	U	0	WR
-GW	11	17	K	-T	0	K	T	0	WR
-GW	12	17	L	-V	0	L	V	0	WR
-GW	13	3	B	N	0	B	W	0	WR
-GW	14	3	B	-N	0	B	-W	0	WR
-GW	15	1	B	N	0	B	N	-Z	WR
-GW	16	15	B	-N	-Z	B	N	-Z	WR
-GW	17	3	B	N	-Z	B	W	-Z	WR
-GW	18	3	B	-N	-Z	B	-W	-Z	WR
-GW	19	1	B	-N	-Z	B	-N	0	WR
+GW	1	19	A	-M	0	A	M	0	WR	'Reflector
+GW	2	15	B	-N	0	B	N	0	WR	'Driven element
+GW	3	19	C	-O	0	C	O	0	WR	'Director 1
+GW	4	17	D	-P	0	D	P	0	WR	'Director 2
+GW	5	17	E	-Q	0	E	Q	0	WR	'Director 3
+GW	6	17	F	-R	0	F	R	0	WR	'Director 4
+GW	7	17	G	-S	0	G	S	0	WR	'Director 5
+GW	8	17	H	-T	0	H	T	0	WR	'Director 6
+GW	9	17	I	-U	0	I	U	0	WR	'Director 7
+GW	10	17	J	-U	0	J	U	0	WR	'Director 8
+GW	11	17	K	-T	0	K	T	0	WR	'Director 9
+GW	12	17	L	-V	0	L	V	0	WR	'Director 10
+GW	13	3	B	N	0	B	W	0	WR	'Director 11
+GW	14	3	B	-N	0	B	-W	0	WR	'Director 12
+GW	15	1	B	N	0	B	N	-Z	WR	'Vertical driven element stub
+GW	16	15	B	-N	-Z	B	N	-Z	WR	'Center lower driven element
+GW	17	3	B	N	-Z	B	W	-Z	WR	'Side lower driven element
+GW	18	3	B	-N	-Z	B	-W	-Z	WR	'Side lower driven element
+GW	19	1	B	-N	-Z	B	-N	0	WR	'Vertical driven element stub
 GS	0	0	299.8/915
 GE	0
 LD	5	0	0	0	37700000
