@@ -3,24 +3,29 @@ CM Data in wavelengths.
 CM Jeff Liebermann  08/12/2007
 CM Setup for AMOS 7 dipoles  10/03/2008
 CE
-SY freq=2450	'Resonant frequency
-SY W=0.008	'Wire radius (2MM Wire diameter)
+SY freq=5785	'Resonant frequency
+SY W=0.008	'Wire radius
 SY RH=8	'Reflector height
-SY RW=0.65	'Reflector width
+SY RW=0.200828	'Reflector width
 SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
-SY A=0.4227	'Half of first element
-SY B=0.6227	'Length of 2nd element
-SY C=0.6325	'Length of 3rd element
-SY D=0.6292	'Length of 4th element
-SY E=0.5439	'Length of 5th element
-SY F=0.1219	'Height of stub
-SY G=0.2113	'Width of stub
-SY H=0.2520	'Distance from reflector to wire center
+SY Rx2=0.283135, Rz2=0.278481	'Side reflectors
+SY A=0.421411	'Half of first element
+SY B=0.622382	'Length of 2nd element
+SY C=0.629684	'Length of 3rd element
+SY D=0.624853	'Length of 4th element
+SY E=0.539507	'Length of 5th element
+SY F=0.121456	'Height of stub
+SY G=0.210313	'Width of stub
+SY H=0.249241	'Distance from reflector to wire center
 SY R=3.82	'Reflector wire height
 SM	Rnx*2	Rny*2	-F	-Rx	-Ry	-F	Rx	-Ry	'Reflector
 SC	0	0	-F	Rx	Ry	'Reflector
-GW	1	1	H	W	0	H	-W	0	W
+SM	Rny*2	5	-F	-Rx	-Ry	-F	-Rx	Ry
+SC	0	0	Rz2	-Rx2	Ry
+SM	Rny*2	5	-F	Rx	Ry	-F	Rx	-Ry
+SC	0	0	Rz2	Rx2	-Ry
+GW	35	100	-F	0	-R	-F	0	R	W
 GW	2	11	H	0	A	H	0	-A	W	'Dipole driven element
 GW	3	3	H	0	A	H-F	0	A	W
 GW	4	3	H-F	0	A	H-F	0	A+G	W

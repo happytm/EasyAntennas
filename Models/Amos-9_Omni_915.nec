@@ -6,13 +6,13 @@ CE
 SY W=.008	'Wire radius (2MM Wire diameter)
 SY Rx=0.65/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=6.0/2, Rny=20	'Reflector height / 2 , number of wires
-SY A=0.38	'Half of first element
-SY H=0.18	'Distance from reflector to dipole
-SY D=0.125	'Stub Length
-SY E=0.185	'Stub width
-SY B=0.66	'Length of 2nd element
-SY C=0.58	'Length of 3rd element
-SY F=0.10	'Gap between to antennas
+SY A=0.354881	'Half of first element
+SY H=0.204439	'Distance from reflector to dipole
+SY D=0.127252	'Stub Length
+SY E=0.2155	'Stub width
+SY B=0.615268	'Length of 2nd element
+SY C=1.000408	'Length of 3rd element
+SY F=0.324647	'Gap between to antennas
 GW	1	11	H	0	A	H	0	-A	w	'Dipole driven element
 GW	2	5	H	0	-A	H-D	0	-A	w	'Stub
 GW	3	3	H-D	0	-A	H-D	0	-A-E	w	'Stub width

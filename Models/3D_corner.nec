@@ -1,0 +1,26 @@
+CM 
+CE
+SY freq=2430
+SY W=0.032	'Wire radius
+SY Ry=3, Rny=20	'Reflector height / 2 , number of wires.
+SY Rx=3, Rnx=4	'Reflector width / 2 , number of wires.
+SY P=0.76	'Height of primary element
+SY S=0.65	'Height of secondery element
+SY Px=0.661596	'X position of primary element
+SY Sx=0.855871	'X position of secondery element
+SM	Rnx*2	Rny*2	0	0	0	0	0	Ry	'Reflector
+SC	0	0	0	-Rx	Ry	'Reflector
+SM	Rnx*2	Rny*2	0	0	0	0	0	Ry	'Reflector
+SC	0	0	Rx	0	Ry	'Reflector
+SP	0	2	0	0	0	Rx	0	0	'Bottom plate
+SC	0	-1	0	-Ry	0	'Bottom plate
+GW	1	9	Px	-Px	0	Px	-Px	P	W	'Primary element
+GW	2	9	Sx	-Sx	0	Sx	-Sx	S	W	'Secondery element
+GS	0	0	300/freq
+GE	0
+GN	-1
+EK
+EX	0	1	1	0	1	0	0
+
+FR	0	0	0	0	Freq	0
+EN

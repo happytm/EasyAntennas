@@ -8,25 +8,26 @@ CM Wire #12 AWG = 1 mm radius   1mm/330mm at 915 Mhz = 0.003 wavelengths.
 CM 
 CM 
 CE
-SY W=0.008	'Wire radius  #12 AWG = 2mm dia.
+SY W=0.008	'Wire radius (1/125 of wavelength)
+SY WS=W*3
 SY Rx=0.50/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=4.20/2, Rny=20	'Reflector height / 2 , number of wires
-SY Dl=0.3272	'Half of center dipole length
-SY Dh=0.2152	'Feed distance from reflector to dipole
-SY D=0.1493	'Stub Length
-SY E=0.1823	'Stub width
-SY B=0.5317	'Length of 2nd element
-GW	1	11	Dh	0	Dl	Dh	0	-Dl	w	'Dipole driven element
-GW	3	5	Dh	0	-Dl	Dh-D	0	-Dl	w	'Stub
-GW	4	3	Dh-D	0	-Dl	Dh-D	0	-Dl-E	w	'Stub width
-GW	5	5	Dh-D	0	-Dl-E	Dh	0	-Dl-E	w	'Stub return
-GW	6	9	Dh	0	-Dl-E	Dh	0	-Dl-E-B	w*1.5	'2nd element
-GW	12	5	Dh	0	Dl	Dh-D	0	Dl	w	'Stub
-GW	13	3	Dh-D	0	Dl	Dh-D	0	Dl+E	w	'Stub width
-GW	14	5	Dh-D	0	Dl+E	Dh	0	Dl+E	w	'Stub return
-GW	15	9	Dh	0	Dl+E	Dh	0	Dl+E+B	w*1.5	'2nd element
-GW	20	70	0	0	-Dl	0	0	Dl	w
-GS	0	0	299.8/915
+SY Dl=0.33	'Half of center dipole length (1/3 of wavelength)
+SY Dh=0.20	'Feed distance from reflector to dipole (1/5 of wavelength)
+SY D=0.166	'Stub Length (1/6 of wavelength)
+SY E=D	'Stub width (1/6 of wavelength)
+SY B=0.50	'Length of 2nd element (1/2 of wavelength)
+GW	1	11	Dh	0	Dl	Dh	0	-Dl	W	'Dipole driven element
+GW	3	5	Dh	0	-Dl	Dh-D	0	-Dl	W	'Stub
+GW	4	3	Dh-D	0	-Dl	Dh-D	0	-Dl-E	WS	'Stub width
+GW	5	5	Dh-D	0	-Dl-E	Dh	0	-Dl-E	W	'Stub return
+GW	6	9	Dh	0	-Dl-E	Dh	0	-Dl-E-B	W	'2nd element
+GW	12	5	Dh	0	Dl	Dh-D	0	Dl	W	'Stub
+GW	13	3	Dh-D	0	Dl	Dh-D	0	Dl+E	WS	'Stub width
+GW	14	5	Dh-D	0	Dl+E	Dh	0	Dl+E	W	'Stub return
+GW	15	9	Dh	0	Dl+E	Dh	0	Dl+E+B	W	'2nd element
+GW	16	11	Dh-0.25	0	0.50	Dh-0.25	0	-0.5	WS
+GS	0	0	0.32765
 GE	0
 GN	-1
 EK

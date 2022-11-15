@@ -3,18 +3,18 @@ CM Data in wavelengths.
 CM Jeff Liebermann  08/12/2007
 CM Setup for AMOS 7 dipoles  10/03/2008
 CE
-SY freq=2442
-SY W=.008	'Wire radius
-SY Rx=0.6.5/2, Rnx=4	'Reflector width  / 2 , number of wiresb
-SY Ry=6/2, Rny=20	'Reflector height / 2 , number of wires
-SY Dl=0.366569	'Half of first element
-SY Dh=0.179652	'Distance from reflector to dipole
-SY D=0.125013	'Stub Length
-SY E=0.185026	'Stub width
-SY B=0.670992	'Length of 2nd element
-SY C=0.577198	'Length of 3rd element
-SM	Rnx*2	Rny*2	0	-Rx	-Ry	0	Rx	-Ry	'Reflector
-SC	0	0	0	Rx	Ry	'Reflector
+SY freq=2450.029	'Resonant frequency
+SY W=7.983e-3	'Wire radius
+SY RW=0.651179	'Reflector width
+SY RH=5.997927	'Reflector height
+SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wiresb
+SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
+SY Dl=0.356124	'Half of first element  0.36
+SY B=0.654006	'Length of 2nd element  0.67
+SY C=0.568687	'Length of 3rd element   0.58
+SY D=0.143029	'Stub Length  0.144
+SY E=D	'Stub width    0.144
+SY Dh=0.177	'Distance from reflector to dipole 0.177
 GW	1	11	Dh	0	Dl	Dh	0	-Dl	w	'Dipole driven element
 GW	3	5	Dh	0	-Dl	Dh-D	0	-Dl	w	'Stub
 GW	4	3	Dh-D	0	-Dl	Dh-D	0	-Dl-E	w	'Stub width
@@ -40,15 +40,11 @@ GW	28	5	Dh	0	Dl+E+B+E+B	Dh-D	0	Dl+E+B+E+B	w	'3rd stub
 GW	29	3	Dh-D	0	Dl+E+B+E+B	Dh-D	0	Dl+E+B+E+B+E	w	'3rd stub width
 GW	30	5	Dh-D	0	Dl+E+B+E+B+E	Dh	0	Dl+E+B+E+B+E	w	'3rd stub return
 GW	31	9	Dh	0	DL+E+B+E+B+E	Dh	0	Dl+E+B+E+B+E+C	w	'4th element
-GM	0	0	0	0	0	.10	0	0
-GX	100	100
-GW	500	71	0	0	3	0	0	-5	w*8
 GS	0	0	299.8/freq
 GE	0
 GN	-1
 EK
-EX	0	1	6	0	1.	0	0	'Voltage Source
-EX	0	101	6	0	1	0	0
+EX	0	12	2	0	1.	0	0	'Voltage Source
 FR	0	0	0	0	freq	0
 RP	0	73	73	1001	-90.	90.	5.	5.	10000.	
 EN

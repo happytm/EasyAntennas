@@ -3,7 +3,7 @@ CM Data in wavelengths.
 CM Jeff Liebermann  08/12/2007
 CM Setup for AMOS 7 dipoles  10/03/2008
 CE
-SY freq=2442	'Desired frequency
+SY freq=915	'Desired frequency
 SY W=.008	'Wire radius                                                  0.008
 SY Rx=0.8/2, Rnx=4	'Reflector width  / 2 , number of wires          0.8
 SY Ry=8.0/2, Rny=20	'Reflector height / 2 , number of wires          8.0
@@ -12,7 +12,7 @@ SY B=0.62	'Length of 2nd element                                 0.62
 SY C=0.50	'Length of 3rd element                                  0.50
 SY D=0.162	'Stub Length                                                 0.162
 SY E=D	'Stub width                                                    0.162
-SY R=0.31	'Length of reflector                                        0.31
+SY R=0.32	'Length of reflector                                        0.32
 SY H=D	'Distance from reflector to dipole                   0.162
 GW	2	5	H	0	-A	H-D	0	-A	w	'Stub
 GW	3	3	H-D	0	-A	H-D	0	-A-E	w	'Stub width
@@ -31,8 +31,8 @@ GW	27	3	H-D	0	-A-E-B-E-B-E-B	H-D	0	-A-E-B-E-B-E-B-E	w	'4th element
 GW	28	5	H-D	0	-A-E-B-E-B-E-B-E	H	0	-A-E-B-E-B-E-B-E	w
 GW	29	9	H	0	-A-E-B-E-B-E-B-E	H	0	-A-E-B-E-B-E-B-E-C	w
 GX	100	001
-GW	1	11	H	0	A	H	0	-A	w	'Dipole driven element
 GW	34	100	0	0	-R	0	0	R	w
+GW	1	11	H	0	A	H	0	-A	w	'Dipole driven element
 GS	0	0	299.8/freq
 GE	0
 GN	-1

@@ -12,7 +12,7 @@ SY D=0.125	'Stub Length
 SY E=0.185	'Stub width
 SY B=0.66	'Length of 2nd element
 SY C=0.58	'Length of 3rd element
-SY F=0.01	'Gap between to antennas
+SY F=0.03	'Gap between to antennas
 SM	Rnx*2	Rny*2	0	-Rx	-Ry	0	Rx	-Ry	'Reflector
 SC	0	0	0	Rx	Ry	'Reflector
 SM	Rnx*2	Rny*2	-F	-Rx	-Ry	-F	Rx	-Ry	'Reflector

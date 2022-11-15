@@ -4,19 +4,18 @@ CM Jeff Liebermann  08/12/2007
 CM Setup for AMOS 7 dipoles  10/03/2008
 CE
 SY W=0.008	'Wire radius (2MM Wire diameter)
-SY Rx=0.65/2, Rnx=4	'Reflector width  / 2 , number of wires
-SY Ry=7.65/2, Rny=20	'Reflector height / 2 , number of wires
+SY Rx=0.2/2, Rnx=4	'Reflector width  / 2 , number of wires
+SY Ry=7.6422/2, Rny=20	'Reflector height / 2 , number of wires
 SY A=0.4227	'Half of first element
 SY B=0.6227	'Length of 2nd element
 SY C=0.6325	'Length of 3rd element
 SY D=0.6292	'Length of 4th element
 SY E=0.5439	'Length of 5th element
-SY F=0.1219	'Height of stub
-SY G=0.2113	'Width of stub
+SY F=0.122	'Height of stub    0.1219
+SY G=0.211	'Width of stub     0.2113
 SY H=0.2520	'Distance from reflector to wire center
 SM	Rnx*2	Rny*2	-F	-Rx	-Ry	-F	Rx	-Ry	'Reflector
 SC	0	0	-F	Rx	Ry	'Reflector
-GW	1	1	H	W	0	H	-W	0	W
 GW	2	11	H	0	A	H	0	-A	W	'Dipole driven element
 GW	3	3	H	0	A	H-F	0	A	W
 GW	4	3	H-F	0	A	H-F	0	A+G	W
@@ -50,8 +49,10 @@ GW	31	3	H	0	-A-G-B-G-C-G-D	H-F	0	-A-G-B-G-C-G-D	W
 GW	32	3	H-F	0	-A-G-B-G-C-G-D	H-F	0	-A-G-B-G-C-G-D-G	W
 GW	33	3	H-F	0	-A-G-B-G-C-G-D-G	H	0	-A-G-B-G-C-G-D-G	W
 GW	34	10	H	0	-A-G-B-G-C-G-D-G	H	0	-A-G-B-G-C-G-D-G-E	W
+GW	35	10	F	0	-0.40	F	0	0.40	W
 GS	0	0	299.8/915
 GE	0
+LD	5	0	0	0	58000000	'All wires are copper
 GN	-1
 EK
 EX	0	2	6	0	1	0	0

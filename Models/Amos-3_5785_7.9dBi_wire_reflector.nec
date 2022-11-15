@@ -9,12 +9,12 @@ CM
 CM 
 CE
 SY F=5785	'Center frequecy
-SY W=.008	'Wire radius  #12 AWG = 2mm dia.
-SY Dl=0.3272	'Half of center element
-SY Dh=0.2152	'Feed distance from reflector to dipole
-SY D=0.1493	'Stub Length
-SY E=0.1823	'Stub width
-SY B=0.5317	'Length of end elements
+SY W=.008	'Wire radius
+SY Dl=0.324758	'Half of center element
+SY D=0.15	'Stub Length     0.15
+SY E=0.18	'Stub width        0.18
+SY B=0.524171	'Length of end elements
+SY Dh=0.214952	'Feed distance from reflector to dipole
 GW	1	11	Dh	0	Dl	Dh	0	-Dl	w	'Dipole driven element
 GW	3	5	Dh	0	-Dl	Dh-D	0	-Dl	w	'Stub
 GW	4	3	Dh-D	0	-Dl	Dh-D	0	-Dl-E	w	'Stub width
@@ -24,7 +24,7 @@ GW	12	5	Dh	0	Dl	Dh-D	0	Dl	w	'Stub
 GW	13	3	Dh-D	0	Dl	Dh-D	0	Dl+E	w	'Stub width
 GW	14	5	Dh-D	0	Dl+E	Dh	0	Dl+E	w	'Stub return
 GW	15	9	Dh	0	Dl+E	Dh	0	Dl+E+B	w	'2nd element
-GW	20	70	0	0	-Dl	0	0	Dl	w
+GW	20	70	0	0	-Dl-w	0	0	Dl-w	w
 GS	0	0	299.8/F
 GE	0
 GN	-1

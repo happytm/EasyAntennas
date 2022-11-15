@@ -8,7 +8,7 @@ CM Wire #12 AWG = 1 mm radius   1mm/330mm at 915 Mhz = 0.003 wavelengths.
 CM 
 CM 
 CE
-SY freq=915	'Desired frequency
+SY freq=2450	'Desired frequency
 SY W=.008	'Wire radius  #12 AWG = 2mm dia.
 SY Rx=0.50/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=4.20/2, Rny=20	'Reflector height / 2 , number of wires

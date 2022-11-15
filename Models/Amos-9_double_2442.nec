@@ -12,7 +12,7 @@ SY D=0.125	'Stub Length
 SY E=0.185	'Stub width
 SY B=0.66	'Length of 2nd element
 SY C=0.58	'Length of 3rd element
-SY G=0.30	'Gap between amos elements
+SY G=0.50	'Gap between amos elements
 GW	1	11	H	G	A	H	G	-A	w	'Dipole driven element
 GW	2	5	H	G	-A	H-D	G	-A	w	'Stub
 GW	3	3	H-D	G	-A	H-D	G	-A-E	w	'Stub width

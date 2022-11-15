@@ -37,60 +37,40 @@ CM Radial -Y bend
 CM Radiator (copper)
 CM Radials (stainless steel)
 CE
-SY height=1.0
-SY spacing=0.0045	'Gap of 4.5 mm (adjust this gap when testing in real time)
-SY diameter=0.0016	'wire 1.6mm (14 AWG)
-SY wla=0.062
-SY wlb=0.079
-SY wlc=0.066
-SY hr=0.0055
-SY r=diameter/2
-SY da=height+wla
+SY freq=5785
+SY AH=0	'Antenna height in wavelength
+SY rg=0.04	'reflector gap                    0.04
+SY spacing=0.0130	'Adjust gap when testing  0.0130
+SY diameter=0.008	'Wire thickness                0.008
+SY wla=0.520329	'Center wire                      0.52
+SY wlb=0.659399	'Inner wires                       0.6594
+SY wlc=0.725071	'Outer wires                      0.7250
+SY wld=0.692378	'End wires                        0.6923
+SY hr=0.044451	'Ring radius                      0.04445
+SY r=diameter/2	'Wire radius
+SY da=wla
 SY db=da+spacing
 SY dc=db+wlb
 SY dd=dc+spacing
 SY de=dd+wlc
-SY LA=0.0099
-SY LB=0.023
-SY hrrad1=hr+LA
-SY hrrad2=hr-LA
-SY angle=40
-SY LBX=cos(angle)*LB
-SY LBY=sin(angle)*LB
-SY freq=2442
+SY df=de+spacing
+SY dg=df+wld
 GH	1	9	spacing	spacing	hr	hr	hr	hr	r
 GM	0	0	0	0	0	0	0	da	1
 GH	2	9	spacing	spacing	hr	hr	hr	hr	r
 GM	0	0	0	0	0	0	0	dc	2
 GH	3	9	spacing	spacing	hr	hr	hr	hr	r
 GM	0	0	0	0	0	0	0	de	3
-GW	5	30	hr	0	height	hr	0	da	r
-GW	6	40	hr	0	db	hr	0	dc	r
+GW	5	30	hr	0	0	hr	0	da	r
+GW	6	41	hr	0	db	hr	0	dc	r
 GW	7	33	hr	0	dd	hr	0	de	r
-GW	10	3	hr	0	height	hrrad1	0	height	r
-GW	11	3	hr	0	height	hr	LA	height	r
-GW	12	3	hr	0	height	hrrad2	0	height	r
-GW	13	3	hr	0	height	hr	-LA	height	r
-GW	15	10	hrrad1	0	height	hrrad1+LBX	0	height-LBY	r
-GW	16	10	hr	LA	height	hr	LA+LBX	height-LBY	r
-GW	17	10	hrrad2	0	height	hrrad2-LBX	0	height-LBY	r
-GW	18	10	hr	-LA	height	hr	-LA-LBX	height-LBY	r
-GE	1
-LD	5	1	0	0	58000000
-LD	5	2	0	0	58000000
-LD	5	3	0	0	58000000
-LD	5	5	0	0	58000000
-LD	5	6	0	0	58000000
-LD	5	7	0	0	58000000
-LD	5	10	0	0	1390000
-LD	5	11	0	0	1390000
-LD	5	12	0	0	1390000
-LD	5	13	0	0	1390000
-LD	5	15	0	0	1390000
-LD	5	16	0	0	1390000
-LD	5	17	0	0	1390000
-LD	5	18	0	0	1390000
-GN	2	0	0	0	3	0.0001
+GW	8	30	hr	0	df	hr	0	dg	r
+GW	10	30	0	0	0	0	0	da	r
+GX	100	001
+GM	0	0	0	0	0	0	0	AH
+GS	0	0	299.80/freq
+GE	0
+GN	-1
 EK
 EX	0	5	1	0	1	0	0
 FR	0	0	0	0	freq	0
