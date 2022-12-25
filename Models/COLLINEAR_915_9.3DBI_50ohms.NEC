@@ -41,11 +41,11 @@ SY freq=915
 SY AH=0	'Antenna height in wavelength
 SY G=0.019	'Ring gap                         0.019       Adjust gap when testing
 SY W=0.0041	'Wire thickness                0.0041
-SY A=0.5963	'Center wire                      0.5963     Adjust when testing
-SY B=0.7543	'Inner wires                       0.7543
-SY C=B	'Outer wires                      0.7543
-SY D=0.6403	'End wires                        0.6403     Adjust when testing
-SY R=0.0390	'Ring radius                      0.0390
+SY A=0.5810	'Center wire                      0.5810     Adjust when testing
+SY B=0.7122	'Inner wires                       0.7122
+SY C=B	'Outer wires                      0.7122
+SY D=B	'End wires                        0.7122     Adjust when testing
+SY R=0.040	'Ring radius                      0.040
 SY da=A
 SY db=da+G
 SY dc=db+B
@@ -70,6 +70,6 @@ GS	0	0	299.80/freq
 GE	0
 GN	-1
 EK
-EX	0	103	6	0	1	0	0
+EX	0	103	10	0	1	0	0
 FR	0	0	0	0	freq	0
 EN

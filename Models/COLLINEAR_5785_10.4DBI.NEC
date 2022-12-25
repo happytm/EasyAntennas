@@ -41,13 +41,12 @@ SY freq=5785
 SY AH=0	'Antenna height in wavelength
 SY rg=0.04	'reflector gap                    0.04
 SY spacing=0.0130	'Adjust gap when testing  0.0130
-SY diameter=0.008	'Wire thickness                0.008
+SY W=0.0041	'Wire thickness                0.0041
 SY wla=0.520329	'Center wire                      0.52
 SY wlb=0.659399	'Inner wires                       0.6594
 SY wlc=0.725071	'Outer wires                      0.7250
 SY wld=0.692378	'End wires                        0.6923
-SY hr=0.044451	'Ring radius                      0.04445
-SY r=diameter/2	'Wire radius
+SY hr=0.04399	'Ring radius                      0.04399
 SY da=wla
 SY db=da+spacing
 SY dc=db+wlb
@@ -55,17 +54,17 @@ SY dd=dc+spacing
 SY de=dd+wlc
 SY df=de+spacing
 SY dg=df+wld
-GH	1	9	spacing	spacing	hr	hr	hr	hr	r
+GH	1	10	spacing	spacing	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	da	1
-GH	2	9	spacing	spacing	hr	hr	hr	hr	r
+GH	2	10	spacing	spacing	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	dc	2
-GH	3	9	spacing	spacing	hr	hr	hr	hr	r
+GH	3	10	spacing	spacing	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	de	3
-GW	5	30	hr	0	0	hr	0	da	r
-GW	6	41	hr	0	db	hr	0	dc	r
-GW	7	33	hr	0	dd	hr	0	de	r
-GW	8	30	hr	0	df	hr	0	dg	r
-GW	10	30	0	0	0	0	0	da	r
+GW	5	30	hr	0	0	hr	0	da	W
+GW	6	41	hr	0	db	hr	0	dc	W
+GW	7	33	hr	0	dd	hr	0	de	W
+GW	8	30	hr	0	df	hr	0	dg	W
+GW	10	30	0	0	0	0	0	da	W
 GX	100	001
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.80/freq
