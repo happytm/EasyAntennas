@@ -3,7 +3,7 @@ CM Data in wavelengths.
 CM Jeff Liebermann  08/12/2007
 CM Setup for AMOS 7 dipoles  10/03/2008
 CE
-SY freq=915	'Resonant frequency
+SY freq=10000	'Resonant frequency
 SY W=0.008	'Wire radius
 SY RW=0.651179	'Reflector width
 SY RH=5.997927	'Reflector height
