@@ -1,4 +1,4 @@
-CM SWR of 1.14 at 25 OHM
+CM 
 CE
 SY freq=2450
 SY AH=0	'Antenna height in wavelength
@@ -34,6 +34,6 @@ GS	0	0	299.80/freq
 GE	0
 GN	-1
 EK
-EX	0	5	1	0	1	0	0
+EX	0	105	17	0	1	0	0
 FR	0	0	0	0	freq	0
 EN
