@@ -1,30 +1,9 @@
-CM Gain of 14.6 dBi in front direction.:
+CM Gain of 6 dBi in front direction.:
 CM 
 CM 
 CM #############################################################################################
 CM freq=915	Resonent frequency.
-CM W=7.847e-3	Wire Thickness. 1/125 wavelength. (0.008)
-CM CW=9.422e-3	Center element wire thickness
-CM C=0.060776	Center element. 1/8 wavelength. (0.12)
-CM H=0.486931	Horizontal elements.1/2 Wavelength. (0.49)
-CM V=0.661153	Vertical elements. 2/3 wavelength. (0.66)
-CM Rx=1.75/2, Rnx=4	Reflector width / 2 , number of wires.
-CM Ry=2.3/2, Rny=20	Reflector height / 2 , number of wires.
-CM G=0.165201	Gap between reflector and elements. 1/7 wavelength. (0.1454)
 CM 
-CM #############################################################################################
-CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry		Main Reflector
-CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	0	Rx	-Ry		Top Reflector
-CM P-multip	Rnx*2	Rny*2	-G	-Rx	Ry	-G	Rx	Ry	0	Rx	Ry		Bottom Reflector
-CM Wire	1	5	0	-C	0	0	C	0	CW				Center horizontal
-CM Wire	2	11	0	C	V	0	H+C	V	W				right top horizontal
-CM Wire	3	11	0	C	-V	0	H+C	-V	W				Inner right bottom horizontal
-CM Wire	4	13	0	C	V	0	C	0	W				Inner right middle top vertical
-CM Wire	5	13	0	C	0	0	C	-V	W				Inner right middle top vertical
-CM Wire	6	11	0	-C	V	0	-H-C	V	W				right top horizontal
-CM Wire	7	11	0	-C	-V	0	-H-C	-V	W				Inner right bottom horizontal
-CM Wire	8	13	0	-C	V	0	-C	0	W				Inner right middle top vertical
-CM Wire	9	13	0	-C	0	0	-C	-V	W				Inner right middle top vertical
 CE
 SY freq=915	'Resonent frequency.
 SY W=0.008	'Wire Thickness                           0.008

@@ -39,14 +39,13 @@ CM Radials (stainless steel)
 CE
 SY freq=2450
 SY AH=0	'Antenna height in wavelength
-SY rg=0.04	'reflector gap                    0.04
-SY spacing=0.0130	'Adjust gap when testing  0.0130
+SY spacing=0.013001	'Adjust gap when testing  0.0130
 SY W=0.0041	'Wire thickness                0.0041
-SY wla=0.520329	'Center wire                      0.52
-SY wlb=0.659399	'Inner wires                       0.6594
-SY wlc=0.725071	'Outer wires                      0.7250
-SY wld=0.692378	'End wires                        0.6923
-SY hr=0.04399	'Ring radius                      0.04399
+SY wla=0.523387	'Center wire                      0.5234
+SY wlb=0.64656	'Inner wires                       0.6466
+SY wlc=0.737531	'Outer wires                      0.7375
+SY wld=0.693665	'End wires                        0.6937
+SY hr=0.043966	'Ring radius                      0.04397
 SY da=wla
 SY db=da+spacing
 SY dc=db+wlb

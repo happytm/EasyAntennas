@@ -60,21 +60,21 @@ CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry		Reflector
 CM Copy/move	0	0	0	0	0	0	0	AH																		
 CE
 SY freq=2450	'Resonant frequency
-SY AH=3	'Antenna height in wavelength
-SY RH=4.0	'Reflector height   4.0
-SY RW=3.0	'Reflector Width    3.0
+SY AH=0	'Antenna height in wavelength
+SY RH=4.28	'Reflector height   4.28
+SY RW=2.96	'Reflector Width    2.96
 SY Ry=RH/2, Rny=16	'Reflector height / 2 , number of wires
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
 SY W=0.004	'Wire Radius                                        0.004
-SY WH=0.02	'Wire radius for horizontal elements      0.020
-SY G=0.16	'Gap between reflector and elements   0.16
-SY H=0.074	'Horizontal elements       0.074
-SY H1=H+0.41	'Horizontal elements       H+0.41
-SY H2=H1+0.50	'Horizontal elements       H1+0.50
-SY H3=H2+0.50	'Horizontal elements       H2+0.50
-SY V=0.66	'All vertical elements       0.66
+SY WH=0.020	'Wire radius for horizontal elements      0.020
+SY G=0.1622	'Gap between reflector and elements   0.1622
+SY H=0.0658	'Transmission lines         0.0658
+SY V=0.6892	'All vertical elements      0.6892
+SY H1=0.4508	'Horizontal elements       0.4508
+SY H2=H1*2	'Horizontal elements       H1*2
+SY H3=H1*3	'Horizontal elements       H1*3
 SY V1=V*2	'Vertical elements           V*2
-SY V2=V+V1	'Vertical elements           V1+V
+SY V2=V*3	'Vertical elements           V*3
 GW	1	11	0	H	V2	0	H1	V2	WH
 GW	2	2	0	0	V1	0	H	V1	WH
 GW	3	11	0	H1	V1	0	H2	V1	WH

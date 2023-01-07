@@ -2,39 +2,40 @@ CM
 CE
 SY freq=915
 SY AH=0	'Antenna height in wavelength
-SY spacing=0.002	'Adjust gap when testing  0.002
-SY W=0.0006	'Wire thickness                0.0006
-SY wla=0.2332	'Center wire                      0.2332
-SY wlb=0.1249	'Inner wires                       0.1250
-SY wlc=0.1484	'Outer wires                      0.1484
-SY wld=0.1310	'End wires                        0.1310
-SY hr=0.009643	'Ring radius                      0.009643
-SY da=wla
-SY db=da+spacing
-SY dc=db+wlb
-SY dd=dc+spacing
-SY de=dd+wlc
-SY df=de+spacing
-SY dg=df+wld
-SY dh=dg+spacing
-SY di=dh+wld
-GH	1	10	spacing	spacing	hr	hr	hr	hr	W
+SY G=0.0039	'Adjust gap when testing  0.0039      1.27mm gap  (allow using pin headers) at 915 mhz
+SY W=0.0031	'Wire thickness                0.0031
+SY A=0.2223	'Center wire                      0.2223
+SY B=0.1237	'Inner wires                       0.1237
+SY C=B	'Outer wires                      0.1237
+SY D=B	'End wires                        0.1237
+SY hr=0.0149	'Ring radius                      0.0149
+SY RL=hr*2*3.1416	'Ring wire length
+SY da=A
+SY db=A+G
+SY dc=db+B
+SY dd=dc+G
+SY de=dd+C
+SY df=de+G
+SY dg=df+D
+GH	1	10	G	G	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	da	1
-GH	2	10	spacing	spacing	hr	hr	hr	hr	W
+GH	2	10	G	G	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	dc	2
-GH	3	10	spacing	spacing	hr	hr	hr	hr	W
+GW	7	33	hr	0	dd	hr	0	de	W
+GH	3	10	G	G	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	de	3
 GW	8	30	hr	0	df	hr	0	dg	W
-GW	7	33	hr	0	dd	hr	0	de	W
 GW	5	30	hr	0	0	hr	0	da	W
 GW	6	41	hr	0	db	hr	0	dc	W
-GW	10	30	0	0	0	0	0	da	W
+GW	20	30	0	0	0	0	0	da	W	'Reflector
 GX	100	001
 GM	0	0	0	0	0	0	0	AH
+GW	21	30	0.55	0	0	0.55	0	RL	W	'Length of ring wire
 GS	0	0	299.80/freq
 GE	0
+LD	5	0	0	0	58000000
 GN	-1
 EK
-EX	0	105	17	0	1	0	0
+EX	0	105	22	0	1	0	0
 FR	0	0	0	0	freq	0
 EN
