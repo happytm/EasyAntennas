@@ -2,12 +2,6 @@ CM M2 432-12EME with T-MATCH
 CE
 SY Freq=915
 SY WR=0.003431	'Wire radius
-SY RH=7.7326	'Reflector height
-SY RW=0.92	'Reflector width
-SY SRA=0.30	'Side reflector angle
-SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
-SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
-SY Rx2=RW, Rz2=SRA	'Side reflectors
 SY A=0	'Reflector
 SY B=0.201297	'Driven element
 SY C=0.355673	'Director

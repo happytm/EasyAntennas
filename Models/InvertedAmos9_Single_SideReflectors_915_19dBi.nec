@@ -61,21 +61,21 @@ CM Copy/move	0	0	0	0	0	0	0	AH
 CE
 SY freq=915	'Desired frequency
 SY AH=4	'Antenna height in wavelength
-SY W=0.008	'Wire radius
+SY W=0.008	'Wire radius  0.008
 SY RH=7.3	'Reflector height             7.3
 SY RW=0.92	'Reflector width              0.92
 SY SRA=0.30	'Side reflector angle       0.30
 SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
 SY Rx2=RW, Rz2=SRA	'Side reflectors
-SY A=0.26	'Half of first element                  0.26
+SY A=0.262104	'Half of first element                  0.2621
 SY B=A*2	'Length of 2nd element     A*2
 SY C=B	'Length of 3rd element     Same as B
 SY D=B	'Length of 4th element     Same as B
 SY E=B	'Length of 5th element     Same as B
-SY F=0.174	'Height of stub  0.174
+SY F=0.175037	'Height of stub  0.175
 SY G=F	'Width of stub
-SY H=0.26	'Distance from reflector to wire center  0.26
+SY H=0.260072	'Distance from reflector to wire center  0.26
 SY EG=0
 SM	Rnx*2	Rny*2	-F	-Rx	-Ry	-F	Rx	-Ry	'Reflector
 SC	0	0	-F	Rx	Ry	'Reflector

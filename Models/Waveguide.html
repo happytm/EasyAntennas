@@ -1,0 +1,233 @@
+<html>
+
+<!-- Mirrored from www.wikarekare.org/Antenna/Waveguide.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 28 Aug 2021 22:11:18 GMT -->
+<head>
+<title>Rectangular Waveguide</title>
+<SCRIPT language=JavaScript>
+
+<!--
+function clearResults(form)
+{
+	form.lamda0.value = "";
+	form.lamda0_25.value= "";
+	form.lamdaG.value= "";
+
+	form.maxF.value= "";
+	form.minF.value= "";
+	form.cutoffF.value= "";
+	
+	form.cavityLength.value = "";
+	form.outerLength.value = "";
+	form.probeBottom.value = "";
+}
+
+function DoIt(form)
+{
+	if(Number(form.width.value) <= Number(form.depth.value) )
+	{
+		form.message.value="Width <= Depth";
+		clearResults(form);
+		return;
+	}
+	else
+		form.message.value="";
+	
+	var l0 = (299.702547/form.frequency.value);
+	var lg = (1/Math.sqrt(1/(l0*l0) - 1/(4*form.width.value*form.width.value)));
+	var lc = 2*Number(form.width.value);
+	var lu = 1.6*Number(form.width.value);
+	var ls = 1.1*Number(form.width.value);
+	
+	if(((Number(form.width.value)*2)/l0)<1.27 || lu < l0)
+	{
+		form.message.value="waveguide too small";
+		clearResults(form);
+		return;
+	}
+	else if(((Number(form.width.value)*2)/l0)>1.9 || ls > l0)
+	{
+		form.message.value="waveguide too large";
+		clearResults(form);
+		return;
+	}
+	
+	form.lamda0.value = Math.round(l0*10)/10;
+	form.lamda0_25.value=Math.round(l0/4*10)/10;
+	form.lamdaG.value= Math.round(lg*10)/10;
+	form.maxF.value= Math.round(299.702547/ls*1000)/1000;
+	form.minF.value= Math.round(299.702547/lu*1000)/1000;
+	form.cutoffF.value= Math.round(299.702547/lc*1000)/1000;
+	
+	form.cavityLength.value = Math.round(0.75*lg*10)/10;
+	form.outerLength.value = Math.round(100 + Number(form.cavityLength.value)) ;
+	form.probeBottom.value = Math.round(0.25*lg*10)/10;
+	form.slotProbe.value = Math.round(0.5*lg*10)/10;
+	
+}
+
+function setFrequency(form, theSelect)
+{
+	form.frequency.value = theSelect.options[theSelect.selectedIndex].value;
+	if(form.frequency.value > 5 && form.width.value == 94)
+	{	
+		form.width.value = 44;
+		form.depth.value = 22;
+	}
+	else if(form.frequency.value < 5 && form.width.value == 44)
+	{	
+		form.width.value = 94;
+		form.depth.value = 44;
+	}
+	DoIt(document.theForm);
+}
+// --->
+</SCRIPT>
+</head>
+<body onload="DoIt(document.theForm)">
+<h1>Building the Rectangular Waveguide</h1>
+
+We used 100mm x 50mm rectangular hollow box section aluminium with 3mm thick walls 
+(off cuts from the 8+8 antenna).
+This gives us an internal size of 94mm x 44mm. We chose to build the antenna for
+2.442GHz, or channel 7, as this is close to the center of the 13 channels available
+to us (US designs use channel 6 (2.437Ghz), as they have 11 channels). 
+I followed Rob Clark's design. I have included a key lengths calculator in the form below.
+<b>Nb.</b>Circular waveguides (cans) use a different formulae (see <a href="WaveguideCan.html">Can Waveguide</a>).
+<p> Note: Use internal measurement of roughly 94x44 for 2.4 ghz WiFi, 44x22 for 5.8 ghz WiFi, 165x82 for GPS & 250x125 for 865, 868 or 915 Mhz LoRa. These are rough estimate only. See <a href="https://www.everythingrf.com/tech-resources/waveguides-sizes">Calculation here.</a></p>
+<p>
+<form name="theForm">
+<table>
+<tr><td>Frequency</td><td><input type="text" value="2.437" name="frequency"><br>
+<select name="selectFrequency" SIZE=1 onChange="setFrequency(this.form, this.form.selectFrequency)">
+<option value=".915">LoRa USA</option>
+<option value=".868">LoRa EU</option>
+<option value=".865">LoRa India</option>
+<option value="1.575">GPS</option>
+<option value="2.412">b/g Ch. 1</option>
+<option value="2.417">b/g Ch. 2</option>
+<option value="2.422">b/g Ch. 3</option>
+<option value="2.427">b/g Ch. 4</option>
+<option value="2.432">b/g Ch. 5</option>
+<option SELECTED value="2.437">b/g Ch. 6</option>
+<option value="2.442">b/g Ch. 7</option>
+<option value="2.447">b/g Ch. 8</option>
+<option value="2.452">b/g Ch. 9</option>
+<option value="2.457">b/g Ch. 10</option>
+<option value="2.462">b/g Ch. 11</option>
+<option value="2.467">b/g Ch. 12</option>
+<option value="2.472">b/g Ch. 13 NZ</option>
+<option value="2.484">b/g Ch. 14 JAPAN</option>
+<option disabled>-NZ Indoor-</option>
+<option value="5.170">a Chnl 34</option>
+<option value="5.180">a Chnl 36</option>
+<option value="5.190">a Chnl 38</option>
+<option value="5.200">a Chnl 40</option>
+<option value="5.210">a Chnl 42 (mid-range)</option>
+<option value="5.220">a Chnl 44</option>
+<option value="5.230">a Chnl 46</option>
+<option value="5.240">a Chnl 48</option>
+<option disabled>-NZ outdoor low-</option>
+<option value="5.250">a Chnl 50</option>
+<option value="5.260">a Chnl 52</option>
+<option value="5.280">a Chnl 56</option>
+<option value="5.285">a Chnl 57 (mid-range)</option>
+<option value="5.290">a Chnl 58</option>
+<option value="5.300">a Chnl 60</option>
+<option value="5.320">a Chnl 64</option>
+<option disabled>-NZ Outdoor High-</option>
+<option value="5.745">a Chnl 149</option>
+<option value="5.760">a Chnl 152</option>
+<option value="5.765">a Chnl 153</option>
+<option value="5.785">a Chnl 157 (mid-range)</option>
+<option value="5.800">a Chnl 160</option>
+<option value="5.805">a Chnl 161</option>
+<option value="5.825">a Chnl 165</option>
+</select>
+</td><td valign="top">GHz</td>
+	<td rowspan=18>
+		<table>
+		<tr>
+			<td><img src="WaveGuideDiag.gif"></td>
+		</tr>
+		</table>
+</tr>
+<tr><td>Wide Side</td><td><input type="text" value="94" name="width"></td><td>mm (Inside Measurement)</td></tr>
+<tr><td>Short Side</td><td><input type="text" value="44" name="depth"></td><td>mm (Inside Measurement)</td></tr>
+<tr><td>&nbsp;</td><td><input type="text" value="" name="message"></td><td><INPUT onclick="DoIt(this.form)" type="button" value="Compute"></td></tr>
+<tr><td>Free Space<br>Wavelength</td><td><input type="text" value="" name="lamda0"></td><td>mm</td></tr>
+<tr><td>Waveguide<br>Wavelength</td><td><input type="text" value="" name="lamdaG"></td><td>mm</td></tr>
+<tr><td>Max<br>Frequency</td><td><input type="text" value="" name="maxF"></td><td>GHz</td></tr>
+<tr><td>Min<br>Frequency</td><td><input type="text" value="" name="minF"></td><td>GHz</td></tr>
+<tr><td>Cut Off<br>Frequency</td><td><input type="text" value="" name="cutoffF"></td><td>GHz</td></tr>
+<tr><td>Probe Length</td><td><input type="text" value="" name="lamda0_25"></td><td>mm</td></tr>
+<tr><td>Open End to Probe</td><td><input type="text" value="" name="slotProbe"></td><td>mm (Open End to probe center)</td></tr>
+<tr><td>Probe to Reflector</td><td><input type="text" value="" name="probeBottom"></td><td>mm (Probe center to Reflector)</td></tr>
+<tr><td>Inside Length</td><td><input type="text" value="" name="cavityLength"></td><td>mm (Reflector to Opening)</td></tr>
+<tr><td>Outside Length</td><td><input type="text" value="" name="outerLength"></td><td>mm (Length including Mount)</td></tr>
+</table>
+</form>
+<p>
+The final product only needs to be accurate to about 1mm as this will only shift the frequency
+within the range of the 802.11 spectrum. A smaller cavity length will shift the frequency response
+to that slot to a higher channel. A longer slot cavity length will shift it down. 
+<p>
+<h3>Methods and madness</h3>
+I measured to .1mm using vernier callipers, on the assumption that errors in cutting might bring that
+closer to the 1mm error mark. There are only two to make, and you can't go too wrong, the probe 
+(N-Socket) position and the placement of the reflector (end plate).
+<p>
+<h3>Misc Notes</h3>
+<UL>
+<li>100mm is added to the end for mounting (included in form as the outside length).
+<li>We made the reflector (end plate) from part of a 44mm offcut (We made it an L shape to help in fixing it) and used
+the callipers to measure how far down the tube it needed to go.
+<li>The probe is a 2mm diameter copper wire soldered into an N-Socket and cut to 31mm (1/4 free space
+wavelength, including the protruding bit of the N-Socket).
+<li>The N-Socket is held down with nylon screws. If you use metal screws,
+use stainless steal ones and keep them short so they don't protrude into the cavity.
+<li>Water in the antenna, or spider and insects will be a problem. One suggestion is to seal around the
+edges of the reflector with silicone and cover the open end with a piece of plastic (microwave friendly and thin).
+</UL>
+
+
+<table>
+<tr>
+	<td><img src="WaveguideSide.gif"></td>
+	<td><img src="WaveguideBack.gif"></td>
+</tr>
+<tr valign="top">
+	<td> Not very exciting, but works well out to ~2Km. (with a cone probe it was working well at 3km)</td>
+	<td> Shows the reflector mounting </td>
+</tr>
+<tr>
+	<td><img src="N-Socket.jpg"></td>
+	<td><img src="WaveguideFront.gif"></td>
+</tr>
+<tr valign="top">
+	<td> N-Socket with 1/4 wavelength copper wire <br>
+	    (including the length of the bit of the <br>
+	    N-Socket it is soldered into). 
+	    <p>
+	    This becomes the probe for the antenna.
+	    <p>
+	</td>
+	<td> Shows the probe mounted. </td>
+</tr>
+<tr>	
+	<td align="center"><img src="coneFeed.jpg"></td>
+	<td align="center"><img src="RectWGConeProbeTN.jpg"></td>
+	<td align="center"><img src="coneCutout.jpg"></td>
+</tr>	
+<tr valign="top">
+	<td colspan="3">
+		A conical feed is a much better probe. It is made from a 20mm x 40mm piece of copper and rolled into a cone. It is slightly harder to make, but it is worthwhile.
+		<p>
+		Cut the red area from the copper and roll into a cone. Solder onto an N-Connector so that the cones base will be exactly half way across the cavity. 
+	<p><b>Nb.</b>The 10mm hole in the waveguide for the Nconnector will be too small for a cone probe. You will need to drill it out to 16mm. Do this in small increments, widening the hole one or two drill bit sizes at a time. It will make a much neater hole.
+	</td>
+</tr>
+</table>
+</body>
+
+<!-- Mirrored from www.wikarekare.org/Antenna/Waveguide.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 28 Aug 2021 22:11:29 GMT -->
+</html>

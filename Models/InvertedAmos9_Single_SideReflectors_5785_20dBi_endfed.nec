@@ -68,14 +68,14 @@ SY SRA=0.299989	'Side reflector angle 0.30
 SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
 SY Rx2=RW, Rz2=SRA	'Side reflectors
-SY A=0.327602	'Half of first element         0.26
+SY A=0.327602	'Half of first element         0.3276
 SY B=A*2	'Length of 2nd element      Half of Wavelength
 SY C=B	'Length of 3rd element
 SY D=B	'Length of 4th element
-SY E=0.490335	'Length of 5th element     0.605
-SY F=0.144692	'Height of stub  0.174
+SY E=0.490335	'Length of 5th element     0.4903
+SY F=0.144692	'Height of stub  0.145
 SY G=F	'Width of stub
-SY H=0.281353	'Distance from reflector to wire center  0.264
+SY H=0.281353	'Distance from reflector to wire center  0.2814
 SY EG=0
 SM	Rnx*2	Rny*2	-F	-Rx	-Ry	-F	Rx	-Ry	'Reflector
 SC	0	0	-F	Rx	Ry	'Reflector

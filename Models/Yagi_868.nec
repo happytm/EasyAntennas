@@ -32,11 +32,11 @@ SY r=d/2
 GW	1	21	0	0	h+hlr	0	0	h-hlr	r
 GW	2	17	dis	0	h+hldip	dis	0	h-hldip	r
 GW	3	15	dis+dis2	0	h+hld	dis+dis2	0	h-hld	r
-GE	1
+GE	0
 LD	5	1	0	0	1450000
 LD	5	2	0	0	1450000
 LD	5	3	0	0	1450000
-GN	1
+GN	-1
 EK
 EX	0	2	9	0	1.	0	0
 FR	0	0	0	0	868	0

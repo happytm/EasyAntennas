@@ -1,0 +1,11 @@
+CURTAIN_QUAD21_915_20.9DBI.NEC wavelength=0.328 mtr.
+
+Error, max s-patch area (5.4e-3) above (wlen*wlen)/25 (4.3e-3)
+Warn.: Wire 2, seg 12 (tag 2), len/rad at junction (3.144) below 6.
+Warn.: Wire 2, seg 14 (tag 2), len/rad at junction (3.144) below 6.
+Warn.: Wire 9, seg 81 (tag 10), len/rad at junction (3.144) below 6.
+Warn.: Wire 9, seg 83 (tag 10), len/rad at junction (3.144) below 6.
+Warn.: Wire 31, seg 351 (tag 102), len/rad at junction (3.144) below 6.
+Warn.: Wire 31, seg 353 (tag 102), len/rad at junction (3.144) below 6.
+Warn.: Wire 38, seg 420 (tag 110), len/rad at junction (3.144) below 6.
+Warn.: Wire 38, seg 422 (tag 110), len/rad at junction (3.144) below 6.
