@@ -2,9 +2,9 @@ CM
 CE
 SY freq=915
 SY AH=0	'Antenna height in wavelength
-SY G=0.0039	'Adjust gap when testing  0.0039      1.27mm gap  (allow using pin headers) at 915 mhz
-SY W=0.0031	'Wire thickness                0.0031
-SY A=0.2223	'Center wire                      0.2223
+SY G=0.0038	'Adjust gap when testing  0.0038
+SY W=0.0028	'Wire thickness                0.0028
+SY A=0.2228	'Center wire                      0.2228
 SY B=0.1237	'Inner wires                       0.1237
 SY C=B	'Outer wires                      0.1237
 SY D=B	'End wires                        0.1237
@@ -30,10 +30,9 @@ GW	6	41	hr	0	db	hr	0	dc	W
 GW	20	30	0	0	0	0	0	da	W	'Reflector
 GX	100	001
 GM	0	0	0	0	0	0	0	AH
-GW	21	30	0.55	0	0	0.55	0	RL	W	'Length of ring wire
 GS	0	0	299.80/freq
 GE	0
-LD	5	0	0	0	58000000
+LD	5	0	0	0	1390000
 GN	-1
 EK
 EX	0	105	22	0	1	0	0

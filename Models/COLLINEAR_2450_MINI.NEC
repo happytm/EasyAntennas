@@ -8,7 +8,6 @@ SY A=0.2223	'Center wire                      0.2223
 SY B=0.1237	'Inner wires                       0.1237
 SY C=B	'Outer wires                      0.1237
 SY D=B	'End wires                        0.1237
-SY E=0.115	'End wires                        0.115
 SY hr=0.0149	'Ring radius                      0.0149
 SY RL=hr*2*3.1416	'Ring wire length
 SY da=A
@@ -28,10 +27,9 @@ GM	0	0	0	0	0	0	0	de	3
 GW	8	30	hr	0	df	hr	0	dg	W
 GW	5	30	hr	0	0	hr	0	da	W
 GW	6	41	hr	0	db	hr	0	dc	W
-GW	20	30	0	0	0	0	0	da	W	'Reflector
+GW	10	30	0	0	0	0	0	da	W
 GX	100	001
 GM	0	0	0	0	0	0	0	AH
-GW	21	30	0.55	0	0	0.55	0	RL	W	'Length of ring wire
 GS	0	0	299.80/freq
 GE	0
 LD	5	0	0	0	58000000

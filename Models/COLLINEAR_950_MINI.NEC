@@ -1,14 +1,14 @@
 CM 
 CE
-SY freq=950
+SY freq=915
 SY AH=0	'Antenna height in wavelength
 SY spacing=0.002	'Adjust gap when testing  0.002
 SY W=0.0028	'Wire thickness                0.0028
-SY wla=0.226515	'Center wire                      0.2265
-SY wlb=0.124639	'Inner wires                       0.1246
-SY wlc=0.148619	'Outer wires                      0.1486
-SY wld=0.130991	'End wires                        0.1310
-SY hr=0.011333	'Ring radius                      0.01133
+SY wla=0.2265	'Center wire                      0.2265
+SY wlb=0.12445	'Inner wires                       0.1246
+SY wlc=0.148379	'Outer wires                      0.1486
+SY wld=0.130554	'End wires                        0.1310
+SY hr=0.011316	'Ring radius                      0.01133
 SY da=wla
 SY db=da+spacing
 SY dc=db+wlb
@@ -26,8 +26,8 @@ GH	3	10	spacing	spacing	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	de	3
 GW	8	30	hr	0	df	hr	0	dg	W
 GW	7	33	hr	0	dd	hr	0	de	W
-GW	5	30	hr	0	0	hr	0	da	W
 GW	6	41	hr	0	db	hr	0	dc	W
+GW	5	30	hr	0	0	hr	0	da	W
 GW	10	30	0	0	0	0	0	da	W
 GX	100	001
 GM	0	0	0	0	0	0	0	AH

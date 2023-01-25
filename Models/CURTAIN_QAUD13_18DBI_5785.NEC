@@ -54,7 +54,7 @@ CM Wire	123	13	0	-y1	-z1	0	-y1	-z2	W				Outer left bottom vertical
 CM 													
 CE
 SY freq=5785	'Resonant frequency
-SY W=4.002e-3	'Wire Thickness  0.004
+SY W=0.004	'Wire Thickness  0.004
 SY WH=0.02	'Horizontal wires thickness  0.02
 SY RW=2.0	'Reflector Width     2.0
 SY RH=3	'Reflector Height    3.0
@@ -74,9 +74,9 @@ SY z2 = z1 + h
 SY z3 = z2 + h
 SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
 SC	0	0	-G	Rx	Ry	'Reflector
-GW	205	5	0	-y0	z0	0	y0	z0	WH	'Center horizontal
-GW	202	5	0	-y0	z2	0	y0	z2	WH	'Center top horizontal
-GW	210	5	0	-y0	-z2	0	y0	-z2	WH	'Center bottom horizontal
+GW	205	3	0	-y0	z0	0	y0	z0	WH	'Center horizontal
+GW	202	3	0	-y0	z2	0	y0	z2	WH	'Center top horizontal
+GW	210	3	0	-y0	-z2	0	y0	-z2	WH	'Center bottom horizontal
 GW	3	11	0	y1	z2	0	y2	z2	W	'Outer right top horizontal
 GW	4	11	0	y0	z1	0	y1	z1	WH	'Inner right top horizontal
 GW	7	11	0	y1	z0	0	y2	z0	W	'Outer right middle horizontal
@@ -108,6 +108,6 @@ GE	0
 LD	5	0	0	0	58000000
 GN	-1
 EK
-EX	0	205	3	0	1	0	0
+EX	0	205	2	0	1	0	0
 FR	0	0	0	0	freq	0
 EN

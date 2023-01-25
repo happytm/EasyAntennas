@@ -55,17 +55,17 @@ CM
 CE
 SY freq=2450	'Resonant frequency
 SY AH=3	'Antenna height in wavelength
-SY W=0.006	'Wire Thickness  0.004 T0 0.008
-SY WH=0.02	'Horizontal wires thickness  0.02
-SY RW=2.0	'Reflector Width     2.0
-SY RH=3.0	'Reflector Height    3.0
+SY W=0.006	'Wire Thickness  0.004 To 0.008
+SY WH=0.006	'Horizontal wires thickness  0.006 To 0.02
+SY RW=1.7	'Reflector Width     1.7
+SY RH=3.4	'Reflector Height    3.4
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
 SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
-SY G=0.09	'Gap between reflector and elements   0.09
-SY l0=0.212624	'Top and bottom horizontal elements in the center   0.2126
-SY l1=0.328813	'l1 is the length of the elements next to the center column  0.3288
-SY l2=0.418931	'l2 is the length of the outer elements  0.4189
-SY h=0.707053	'h is the length of all vertical wires  0.7071
+SY G=0.0885	'Gap between reflector and elements   0.0885
+SY l0=0.16	'Top and bottom horizontal elements in the center   0.16
+SY l1=0.3288	'l1 is the length of the elements next to the center column  0.3288
+SY l2=0.4189	'l2 is the length of the outer elements  0.4189
+SY h=0.7071	'h is the length of all vertical wires  0.7071
 SY y0 = .5 * l0
 SY y1 = y0 + l1
 SY y2 = y1 + l2
@@ -76,8 +76,8 @@ SY z3 = z2 + h
 SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
 SC	0	0	-G	Rx	Ry	'Reflector
 GW	205	5	0	-y0	z0	0	y0	z0	WH	'Center horizontal
-GW	202	5	0	-y0	z2	0	y0	z2	WH	'Center top horizontal
-GW	210	5	0	-y0	-z2	0	y0	-z2	WH	'Center bottom horizontal
+GW	202	3	0	-y0	z2	0	y0	z2	WH	'Center top horizontal
+GW	210	3	0	-y0	-z2	0	y0	-z2	WH	'Center bottom horizontal
 GW	3	11	0	y1	z2	0	y2	z2	W	'Outer right top horizontal
 GW	4	11	0	y0	z1	0	y1	z1	WH	'Inner right top horizontal
 GW	7	11	0	y1	z0	0	y2	z0	WH	'Outer right middle horizontal
@@ -106,9 +106,9 @@ GW	122	13	0	-y1	z0	0	-y1	-z1	W	'Outer left middle bottom vertical
 GW	123	13	0	-y1	-z1	0	-y1	-z2	W	'Outer left bottom vertical
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/freq
-GE	0
+GE	1
 LD	5	0	0	0	58000000
-GN	-1
+GN	2	0	0	0	4	0.003
 EK
 EX	0	205	3	0	1	0	0
 FR	0	0	0	0	freq	0

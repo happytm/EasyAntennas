@@ -7,14 +7,15 @@ CM Wire diameter = 1.8mm
 CM Height from ground to feedpoint = 11m
 CM --------
 CE
-SY W=0.0005
-SY L=0.1725
-GW	1	21	0	0	0	0	0	L	W
+SY FREQ=915	'Wire diameter
+SY W=2.995e-3	'Wire diameter
+SY L=0.625	'Element length
+GW	1	21	0	0	-L	0	0	L	W
+GS	0	0	299.80/FREQ
 GE	0
 LD	5	0	0	0	58000000
 GN	-1
 EK
-EX	0	1	10	0	1	0	0	0
-
-FR	0	0	0	0	868	0
+EX	0	1	11	0	1	0	0
+FR	0	0	0	0	FREQ	0
 EN
