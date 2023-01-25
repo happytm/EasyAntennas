@@ -8,15 +8,15 @@ CM Wire #12 AWG = 1 mm radius   1mm/330mm at 915 Mhz = 0.003 wavelengths.
 CM 
 CM 
 CE
-SY W=.008	'Wire radius
+SY W=0.008	'Wire radius
 SY Rx=0.50/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=4.20/2, Rny=20	'Reflector height / 2 , number of wires
-SY Dl=0.33446	'Half of center dipole length  0.33
+SY Dl=0.3465	'Half of center dipole length  0.33
 SY Dh=0.2	'Feed distance from reflector to dipole  0.20
-SY D=0.167928	'Stub Length 0.167
+SY D=0.16461	'Stub Length 0.167
 SY E=D	'Stub width
-SY B=0.588092	'Length of 2nd element   0.59
-SY C=0.503507	'Length of 3rd element    0.50
+SY B=0.585757	'Length of 2nd element   0.59
+SY C=0.497386	'Length of 3rd element    0.50
 SY freq=2450
 GW	1	11	Dh	0	Dl	Dh	0	-Dl	w	'Dipole driven element
 GW	3	5	Dh	0	-Dl	Dh-D	0	-Dl	w	'Stub

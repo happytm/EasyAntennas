@@ -4,7 +4,7 @@ CM Jeff Liebermann  08/12/2007
 CM Setup for AMOS 7 dipoles  10/03/2008
 CE
 SY freq=915	'Desired frequency
-SY W=.008	'Wire radius                                                  0.008
+SY W=8.098e-3	'Wire radius                                                  0.008
 SY Rx=0.8/2, Rnx=4	'Reflector width  / 2 , number of wires          0.8
 SY Ry=8.0/2, Rny=20	'Reflector height / 2 , number of wires          8.0
 SY A=0.33	'Half of first element                                      0.33
@@ -31,7 +31,6 @@ GW	27	3	H-D	0	-A-E-B-E-B-E-B	H-D	0	-A-E-B-E-B-E-B-E	w	'4th element
 GW	28	5	H-D	0	-A-E-B-E-B-E-B-E	H	0	-A-E-B-E-B-E-B-E	w
 GW	29	9	H	0	-A-E-B-E-B-E-B-E	H	0	-A-E-B-E-B-E-B-E-C	w
 GX	100	001
-GW	34	100	0	0	-R	0	0	R	w
 GW	1	11	H	0	A	H	0	-A	w	'Dipole driven element
 GS	0	0	299.8/freq
 GE	0
