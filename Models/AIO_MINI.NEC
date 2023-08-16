@@ -1,0 +1,90 @@
+CM This antenna is resonant at VHF/UHF ham bands, LoRa & WiFi bands @50 Ohms impedence.It can also work with GPS and ADS-B bands with impedence matching.
+CM 
+CM Following are simulated data at different frequencies using 4nec2 software:
+CM 
+CM Frequency                 Gain             Antenna              VSWR      Impedence         Antenna height           MHZ                          DBi               Pattern                                                         Real Moderate gnd             
+CM 
+CM  144  (VHF)               2.39          Omnidiectional            1.14         49.6-j6.42             Free space             
+CM  144  (VHF)               8.47          Omnidiectional            1.15         48.8-j6.62               3 feet
+CM 
+CM  444  (UHF)               4.52          Omnidiectional            1.57         78.1+j4.40            Free space
+CM  444  (UHF)             10.50          Omnidiectional            1.58         78.5+j5.22              3 feet
+CM  
+CM  868  (LoRa EU)        2.24         Omnidiectional            1.10          51.1+j4.71            Free space             
+CM  868  (LoRa EU)        8.30         Omnidiectional            1.11          50.7+j5.27              3 feet
+CM  
+CM  915  (LoRa US)        2.28         Omnidiectional            1.64          60.7+j25.50          Free space             
+CM  915  (LoRa US)        8.31         Omnidiectional            1.66          60.8+j26.10            3 feet
+CM 
+CM  978  (ADS-B)            2.34         Omnidiectional            2.49          76.2+j52.00          Free space
+CM  978  (ADS-B)            8.33         Omnidiectional            2.50          76.9+j52.20            3 feet
+CM 
+CM 1090  (ADS-B)           2.46         Omnidiectional            4.03         114+j94.40            Free space
+CM 1090  (ADS-B)           8.47         Omnidiectional            4.01         112+j98.40              3 feet
+CM 
+CM 1575  (GPS)              3.19         Omnidiectional            7.13          356+j5.83             Free space
+CM 1575  (GPS)              9.21         Omnidiectional            7.12          356+j6.07               3 feet
+CM 
+CM 1602  (GPS)              3.24         Omnidiectional            7.12          355+j14.60           Free space
+CM 1602  (GPS)              9.26         Omnidiectional            7.11          355-j14.20              3 feet
+CM 
+CM 2440  (WiFi)              4.53         Omnidiectional            1.63            73.9-j18.00         Free space
+CM 2440  (WiFi)            10.60         Omnidiectional            1.62            73.6-j18.00           3 feet
+CM 
+CM 
+CM 
+CM With following settings this antenna is resonant at LoRa & WiFi bands @50 Ohms impedence.It can also work with GPS and ADS-B bands with impedence matching.
+CM 
+CM freq=2440	Resonent frequency.                               2440          for Wifi & Lora        444               for VHF/UHF ham bands
+CM AH=1	                Antenna height in wavelength.
+CM W=0.0111	Wire Thickness.                                       0.0111      for Wifi & Lora         0.00125       for VHF/UHF ham bands. Wire thickness is very critical for VSWR.
+CM CW=0.0026	Center element wire thickness                  0.0026      for Wifi & Lora         0.00125       for VHF/UHF ham bands. Wire thickness is very critical for VSWR. Standard 2.54 mm pin header @2440 mhz.
+CM C=0.0555	                Center element.                                        0.0555      for Wifi & Lora         0.060           for VHF/UHF ham bands
+CM H=0.523	                Horizontal elements.                                 0.523        for Wifi & Lora         0.60             for VHF/UHF ham bands
+CM V=C	                Vertical elements.                                     0.0555      for Wifi & Lora
+CM A=0.00	                Angle between 2 elements (0 TO 0.20)    0.00         This changes directionality in WiFi band from omni to directional (0.00 produces omni pattern). This will change VSWR slightly too. It can lower VSWR for one band at cost of other bands.
+CM 
+CM With following settings this antenna is resonant at VHF/UHF ham bands @50 Ohms impedence.
+CM 
+CM 
+CM freq=444	                    Resonent frequency.                               2440          for Wifi & Lora        444               for VHF/UHF ham bands
+CM AH=3	                    Antenna height in wavelength.
+CM W=0.00125	    Wire Thickness.                                       0.0111      for Wifi & Lora         0.00125       for VHF/UHF ham bands. Wire thickness is very critical for VSWR.
+CM CW=0.0125	    Center element wire thickness                  0.0026      for Wifi & Lora         0.00125       for VHF/UHF ham bands. Wire thickness is very critical for VSWR.
+CM C=0.060	                    Center element.                                        0.0555      for Wifi & Lora         0.060           for VHF/UHF ham bands
+CM H=0.60	                    Horizontal elements.                                 0.523        for Wifi & Lora         0.60             for VHF/UHF ham bands
+CM V=C	                    Vertical elements.                                     0.0555      for Wifi & Lora
+CM A=0.00	                    Angle between 2 elements (0 TO 0.20)    0.00         This changes directionality in WiFi band from omni to directional (0.00 produces omni pattern). This will change VSWR slightly too. It can lower VSWR for one band at cost of other bands.
+CM 
+CM 
+CM In all above cases  at antenna height of 3 or 12 feet take off angle of main beams remains between 75 and 90 degrees for all bands except at 1090 mhz where take off angle is between 15 to 75 which is desirable.
+CM 
+CM A setting changes angle between 2 elements. It helps add directionality in WiFi band from omni to directional (0.00 produces omni pattern and 0.008 is directional). This will change VSWR slightly too.
+CM 
+CE
+SY freq=2440	'Resonent frequency.                               2440          for Wifi & Lora        444               for VHF/UHF ham bands
+SY AH=0	'Antenna height in wavelength.
+SY W=0.0111	'Wire Thickness.                                       0.0111      for Wifi & Lora         0.00125       for VHF/UHF ham bands.  Wire thickness is very critical for VSWR.
+SY CW=0.0026	'Center element wire thickness                  0.0026     for Wifi & Lora          0.00125       for VHF/UHF ham bands.  Wire thickness is very critical for VSWR. Standard 2.54 mm pin header @2440 mhz.
+SY C=0.0555	'Center element.                                        0.0555       for Wifi & Lora         0.060          for VHF/UHF ham bands
+SY H=0.523	'Horizontal elements.                                 0.523        for Wifi & Lora          0.60            for VHF/UHF ham bands. Cut little longer wire and shorten it to tune VSWR.
+SY V=C	'Vertical elements.                                     0.0555       for Wifi & Lora         0.060          for VHF/UHF ham bands
+SY A=0.00	'Angle between 2 elements (0 to 0.20)    0.00         This changes directionality in WiFi band from omni to directional (0.00 produces omni pattern). This will change VSWR slightly too. It can lower VSWR a one band at cost of other band.
+GW	1	5	0	-C	0	0	C	0	CW
+GW	2	11	0	C	V	A	H+C-A/6	V	W
+GW	3	11	0	C	-V	A	H+C-A/6	-V	W
+GW	4	13	0	C	V	0	C	0	W
+GW	5	13	0	C	0	0	C	-V	W
+GW	6	11	0	-C	V	A	-H-C+A/6	V	W
+GW	7	11	0	-C	-V	A	-H-C+A/6	-V	W
+GW	8	13	0	-C	V	0	-C	0	W
+GW	9	13	0	-C	0	0	-C	-V	W
+GM	100	0	90	0	0	0	0	AH
+GS	0	0	299.8/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	101	3	0	1	0	0
+FR	0	0	0	0	freq	0
+EN

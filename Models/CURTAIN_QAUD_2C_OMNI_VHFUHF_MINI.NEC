@@ -1,0 +1,67 @@
+CM With following settings this antenna is resonant at LoRa & WiFi bands.
+CM 
+CM At 915 mhz LoRa band in free space it has omnidirectional pattern with gain of 2.1 & SWR of 1.67.
+CM At 915 mhz LoRa band and antenna height of 3 or 12 feet it has omnidirectional pattern with gain of 8.17 & SWR of 1.54.
+CM 
+CM At 2440 mhz  in free space it has Omni pattern with gain of 4.38 & SWR of 1.68.
+CM At 2440 mhz  WiFi band and antenna height of 3 or 12 feet it has Oval pattern with gain of 10.4 & SWR of 1.69.
+CM 
+CM At 1090 mhz  air traffic band in free space it has  omnidirectional and  beams pointing upwards (desirable) with gain of 2.27 & SWR of 4.18 (Impedence 112.0+j98.4) .
+CM At 1090 mhz   and antenna height of 3 or 12 feet it has  omnidirectional and  beams pointing upwards (desirable) with gain of 8.26 & SWR of 4.18 (Impedence 112.0+j98.4) .
+CM 
+CM At 1575 mhz  GPS band in free space it has omnidirectional and  beams pointing upwards (desirable) with gain of 2.97 & SWR of 7.37 (Impedence 365+j36.9) .
+CM At 1575 mhz  GPS band and antenna height of 3 or 12 feet it has omnidirectional and  beams pointing upwards (desirable) with gain of 8.99 & SWR of 7.37 (Impedence 364+j36.3) .
+CM 
+CM At antenna height of 3 or 12 feet take off angle of main beams remains between 75 and 90 degrees for all bands except at 1090 mhz where take off angle is between 15 to 75.
+CM 
+CM freq=2635	Resonent frequency.                               2635          for Wifi & Lora        355               for VHF/UHF ham bands
+CM AH=1	Antenna height in wavelength.
+CM W=0.0121	Wire Thickness.                                       0.0121      for Wifi & Lora         0.0010         for VHF/UHF ham bands
+CM CW=0.0018	Center element wire thickness                  0.0018     for Wifi & Lora         0.0010         for VHF/UHF ham bands
+CM C=0.060	Center element.                                        0.060        for Wifi & Lora         0.048           for VHF/UHF ham bands
+CM H=0.555	Horizontal elements.                                 0.555        for Wifi & Lora         0.48             for VHF/UHF ham bands
+CM V=C	Vertical elements.                                     0.060        for Wifi & Lora
+CM 
+CM 
+CM With following settings this antenna is resonant at VHF/UHF ham bands.
+CM 
+CM At 145 mhz LoRa band in free space it has omnidirectional pattern with gain of 2.4 & SWR of 1.05.
+CM At 145 mhz LoRa band and antenna height of 3 or 12 feet it has omnidirectional pattern with gain of 8.38 & SWR of 1.05.
+CM 
+CM At 445 mhz  in free space it has Omni pattern with gain of 4.47 & SWR of 1.59.
+CM At 445 mhz  WiFi band and antenna height of 3 or 12 feet it has Oval pattern with gain of 10.5 & SWR of 1.60.
+CM 
+CM 
+CM freq=355	Resonent frequency.                               2635          for Wifi & Lora        355               for VHF/UHF ham bands
+CM AH=3	Antenna height in wavelength.
+CM W=0.0010	Wire Thickness.                                       0.0121      for Wifi & Lora         0.0010         for VHF/UHF ham bands
+CM CW=0.0010	Center element wire thickness                  0.0018     for Wifi & Lora         0.0010         for VHF/UHF ham bands
+CM C=0.048	Center element.                                        0.060        for Wifi & Lora         0.048           for VHF/UHF ham bands
+CM H=0.48	Horizontal elements.                                 0.555        for Wifi & Lora         0.48             for VHF/UHF ham bands
+CM V=C	Vertical elements.                                     0.060        for Wifi & Lora
+CE
+SY freq=355	'Resonent frequency.                               2635          for Wifi & Lora        355               for VHF/UHF ham bands
+SY AH=3	'Antenna height in wavelength.
+SY W=0.0010	'Wire Thickness.                                       0.0121      for Wifi & Lora         0.0010         for VHF/UHF ham bands
+SY CW=0.0010	'Center element wire thickness                  0.0018     for Wifi & Lora         0.0010         for VHF/UHF ham bands
+SY C=0.048	'Center element.                                        0.060        for Wifi & Lora         0.048           for VHF/UHF ham bands
+SY H=0.48	'Horizontal elements.                                 0.555        for Wifi & Lora         0.48             for VHF/UHF ham bands
+SY V=C	'Vertical elements.                                     0.060        for Wifi & Lora
+GW	1	5	0	-C	0	0	C	0	CW	'Center wire.
+GW	2	11	0	C	V	0	H+C	V	W
+GW	3	11	0	C	-V	0	H+C	-V	W
+GW	4	13	0	C	V	0	C	0	W
+GW	5	13	0	C	0	0	C	-V	W
+GW	6	11	0	-C	V	0	-H-C	V	W
+GW	7	11	0	-C	-V	0	-H-C	-V	W
+GW	8	13	0	-C	V	0	-C	0	W
+GW	9	13	0	-C	0	0	-C	-V	W
+GM	100	0	90	0	0	0	0	AH
+GS	0	0	299.8/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	101	3	0	1	0	0
+FR	0	0	0	0	freq	0
+EN

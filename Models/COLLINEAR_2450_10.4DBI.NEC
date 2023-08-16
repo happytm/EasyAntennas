@@ -1,7 +1,7 @@
 CM 
 CE
 SY freq=2450
-SY AH=0	'Antenna height in wavelength
+SY AH=3	'Antenna height in wavelength
 SY spacing=0.0130	'Adjust gap when testing  0.0130
 SY W=0.0041	'Wire thickness                0.0041
 SY wla=0.4162	'Center wire                      0.4162
@@ -16,7 +16,6 @@ SY dd=dc+spacing
 SY de=dd+wlc
 SY df=de+spacing
 SY dg=df+wld
-SY RL=wla
 GH	1	10	spacing	spacing	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	da	1
 GH	2	10	spacing	spacing	hr	hr	hr	hr	W
@@ -27,14 +26,14 @@ GW	5	10	hr	0	0	hr	0	da	W
 GW	6	10	hr	0	db	hr	0	dc	W
 GW	7	10	hr	0	dd	hr	0	de	W
 GW	8	10	hr	0	df	hr	0	dg	W
-GW	10	11	0	0	0	0	0	RL	W
+GW	10	11	0	0	0	0	0	da	W
 GX	100	001
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.80/freq
-GE	0
+GE	1
 LD	5	0	0	0	1390000
-GN	-1
+GN	2	0	0	0	4	0.003
 EK
-EX	0	5	1	0	1	0	0
+EX	0	105	1	0	1	0	0
 FR	0	0	0	0	freq	0
 EN

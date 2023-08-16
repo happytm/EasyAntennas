@@ -13,10 +13,10 @@ SY W=.008	'Wire radius        0.008
 SY WS=W*2
 SY Rx=0.50/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=4.20/2, Rny=20	'Reflector height / 2 , number of wires
-SY Dl=0.340116	'Half of center dipole length  0.33
+SY Dl=0.340116	'Half of center dipole length  0.34
 SY B=0.59341	'Length of 2nd element   0.59
-SY C=0.5257	'Length of 3rd element    0.50
-SY D=0.168816	'Stub Length 0.167
+SY C=0.5257	'Length of 3rd element    0.53
+SY D=0.168816	'Stub Length 0.169
 SY E=D	'Stub width
 SY Dh=0.2	'Feed distance from reflector to dipole  0.20
 GW	1	11	Dh	0	Dl	Dh	0	-Dl	w	'Dipole driven element

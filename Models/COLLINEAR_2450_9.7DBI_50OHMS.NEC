@@ -39,13 +39,13 @@ CM Radials (stainless steel)
 CE
 SY freq=2450
 SY AH=0	'Antenna height in wavelength
-SY G=0.01862	'Ring gap                         0.019       Adjust gap to adjust SWR
-SY W=4.37e-3	'Wire thickness                0.0040
-SY A=0.361459	'Center wire                      0.5810     Adjust when testing
-SY B=0.819161	'Inner wires                       0.7122
+SY G=0.019	'Ring gap                         0.019       Adjust gap to adjust SWR
+SY W=0.004	'Wire thickness                0.0040
+SY A=0.3615	'Center wire                      0.3615     Adjust when testing
+SY B=0.8192	'Inner wires                       0.8192
 SY C=B	'Outer wires                      0.7122
 SY D=B	'End wires                        0.7122     Adjust length to adjust SWR
-SY R=0.037007	'Ring radius                      0.040
+SY R=0.037007	'Ring radius                      0.037
 SY da=A
 SY db=da+G
 SY dc=db+B
@@ -53,7 +53,7 @@ SY dd=dc+G
 SY de=dd+C
 SY df=de+G
 SY dg=df+D
-SY seg=1
+SY seg=1	'1
 GH	1	11	G	G	R	R	R	R	W
 GM	0	0	0	0	0	0	0	da	1
 GH	2	11	G	G	R	R	R	R	W

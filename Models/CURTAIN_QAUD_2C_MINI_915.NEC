@@ -11,7 +11,7 @@ SY C=0.039239	'Center element                            0.03573
 SY H=0.137569	'Horizontal elements                     0.1477
 SY V=0.082305	'Vertical elements                         0.07896
 SY G=0.293228	'Gap for reflector                          0.2932
-SY EG=0.720835	'Gap between elements               0.6166
+SY EG=0.920835	'Gap between elements               0.6166
 SY RL=0.35	'Reflector length                          0.2331
 GW	1	5	0	-C	0	0	C	0	CW	'Center horizontal
 GW	2	11	0	C	V	0	H+C	V	W	'right top horizontal
