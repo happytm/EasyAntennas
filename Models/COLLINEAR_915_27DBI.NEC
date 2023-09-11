@@ -1,9 +1,11 @@
-CM 
+CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry	
+CM P-multip	Rny*2	5	-G	-Rx	-Ry	-G	-Rx	Ry	SRL	-SRA	Ry		
+CM P-multip	Rny*2	5	-G	Rx	Ry	-G	Rx	-Ry	SRL	SRA	-Ry		
 CE
 SY freq=915
 SY AH=3	'Antenna height in wavelength
-SY spacing=0.0130	'Adjust gap when testing  0.0130
-SY W=0.0041	'Wire thickness                0.0041
+SY spacing=0.0130	'Adj gap when testing      0.0130              Help in adjusting VSWR.
+SY W=2.002e-3	'Wire thickness                0.0041              0.0020 @ 2.45 ghz is ethernet cable
 SY wla=0.4207	'Center wire                      0.4207
 SY wlb=0.7089	'Inner wires                       0.7089
 SY wlc=wlb	'Outer wires                      0.7208
@@ -17,13 +19,13 @@ SY de=dd+wlc
 SY df=de+spacing
 SY dg=df+wld
 SY FP=1
-SY RH=6.428016	'Reflector height       6.42
-SY RW=0.876513	'Reflector width        0.88
-SY SRA=0.297589	'Side reflector angle 0.30
+SY RH=6.668659	'Reflector height       6.42
+SY RW=0.91283	'Reflector width        0.88
+SY SRL=0.322463	'Side reflector length 0.30
+SY SRA=0.98	'Side reflector angle 0.98           0.70 TO 1.0       (0.70 T0 0.80 no horizontal side lobes)
 SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
-SY Rx2=RW, Rz2=SRA	'Side reflectors
-SY F=0.4088	'Reflector gap 0.30 to 0.40
+SY G=0.398819	'Reflector gap 0.30 to 0.40
 GH	1	10	spacing	spacing	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	da	1
 GH	2	10	spacing	spacing	hr	hr	hr	hr	W
@@ -36,12 +38,18 @@ GW	7	10	hr	0	dd	hr	0	de	W
 GW	8	10	hr	0	df	hr	0	dg	W
 GW	10	11	0	0	0	0	0	da	W
 GX	100	001
+SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry
+SC	0	0	-G	Rx	Ry
+SM	Rny*2	5	-G	-Rx	-Ry	-G	-Rx	Ry
+SC	0	0	G	-SRA	Ry
+SM	Rny*2	5	-G	Rx	Ry	-G	Rx	-Ry
+SC	0	0	G	SRA	-Ry
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.80/freq
-GE	0
+GE	1
 LD	5	0	0	0	58000000
-GN	-1
+GN	2	0	0	0	4	0.003
 EK
-EX	0	105	FP	0	1	0	0
+EX	0	105	1	0	1	0	0
 FR	0	0	0	0	freq	0
 EN
