@@ -10,7 +10,7 @@ CM ########################################################################
 CM 	
 CE
 SY freq=2450	'Resonant frequency
-SY AH=0	'Antenna height in wavelength
+SY AH=3	'Antenna height in wavelength
 SY RH=4.30	'Reflector height   4.30
 SY RW=3.00	'Reflector Width    3.00
 SY Ry=RH/2, Rny=16	'Reflector height / 2 , number of wires
@@ -60,9 +60,9 @@ SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
 SC	0	0	-G	Rx	Ry	'Reflector
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/freq
-GE	0
+GE	1
 LD	5	0	0	0	58000000	'Copper wires
-GN	-1
+GN	2	0	0	0	4	0.003
 EK
 EX	0	6	2	0	1	0	0	'SOURCE on GW1, Seg1
 FR	0	0	0	0	freq	0

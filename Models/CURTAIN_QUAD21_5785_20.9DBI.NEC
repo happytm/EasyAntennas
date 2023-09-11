@@ -9,7 +9,7 @@ CM Horizontal wires represent 21 Elements, vertical wires all same length.
 CM ########################################################################
 CM 	
 CE
-SY freq=5785	'Resonant frequency
+SY freq=7	'Resonant frequency
 SY AH=0	'Antenna height in wavelength
 SY RH=4.30	'Reflector height   4.30
 SY RW=3.00	'Reflector Width    3.00

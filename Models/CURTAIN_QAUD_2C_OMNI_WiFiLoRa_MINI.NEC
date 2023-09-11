@@ -56,7 +56,7 @@ CM
 CM FP setting changes angle between 2 elements directionality in WiFi band from omni to directional (0.00 produces omni pattern). This will change VSWR slightly too.
 CM 
 CE
-SY freq=2635	'Resonent frequency.                               2635          for Wifi & Lora        355               for VHF/UHF ham bands
+SY freq=2600	'Resonent frequency.                               2635          for Wifi & Lora        355               for VHF/UHF ham bands
 SY AH=3	'Antenna height in wavelength.
 SY W=0.0121	'Wire Thickness.                                       0.0121      for Wifi & Lora         0.0010         for VHF/UHF ham bands
 SY CW=0.0018	'Center element wire thickness                  0.0018     for Wifi & Lora          0.0010         for VHF/UHF ham bands

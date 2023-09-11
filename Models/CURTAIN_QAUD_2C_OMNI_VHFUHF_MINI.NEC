@@ -58,9 +58,9 @@ GW	8	13	0	-C	V	0	-C	0	W
 GW	9	13	0	-C	0	0	-C	-V	W
 GM	100	0	90	0	0	0	0	AH
 GS	0	0	299.8/freq
-GE	0
+GE	1
 LD	5	0	0	0	58000000
-GN	-1
+GN	0	0	0	0	4	0.003
 EK
 EX	0	101	3	0	1	0	0
 FR	0	0	0	0	freq	0

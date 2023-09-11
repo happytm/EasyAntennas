@@ -28,20 +28,14 @@ CM FP=0.18	                Feedpoint                                            
 CE
 SY freq=2400	'Resonent frequency. Use 2400 to cover whole wifi band wih optimum gain and VSWR.
 SY W=0.002	'Wire Thickness.                                       0.004                0.002 to 0.008
-SY CW=W	'Center element wire thickness                  0.004                0.002 to 0.008
-SY Rx=3/2, Rnx=5	'Reflector width / 2
-SY Ry=0.5/2, Rny=5	'Reflector height / 2
 SY C=0.075	'Center element.                                        0.0739
-SY H=0.50	'Horizontal elements.                                 0.5037
+SY H=C/0.15	'Horizontal elements.                                 0.5037
 SY V=C	'Vertical elements.                                     0.075
-SY HG=0.075	'Horizontal gap between 2 elements.        0.075
+SY HG=C	'Horizontal gap between 2 elements.        0.075
 SY elements=1	'Number of elements  (1 to 7).                                This decides size of antenna, peak gain and thereby beamwidth.VSWR does not change drasticly beween 1 to 7 elements.
 SY VG=0.96	'Vertical gap between 2 elements.            1.00      (peak gain is between 0.90 to 1.0). This parameter is very useful to tune the antenna.It adjust the VSWR, Range is 0.70 to 1.10. If RA is not 0 then range could be 0.20 to 1.00.
-SY RA=0	'Rotate angle between 2 elements           90          90 degrees rotation on Z axis have perfect omnidirectional pattern, 0 degrees rotation have oval pattern. Anything in beetween produce semi circular patern.
-SY HP=0.0	'Horizontal position of second element     0.00       This decides pattern (0 to 40).
-SY FP=0.0	'Feedpoint (0 to 0.15)                               0.00
-SY G=0.15
-GW	1	5	0	-C	0	0	C	0	CW	'Center wire.
+SY RA=0	'Rotate angle between 2 elements           0-90      90 degrees rotation on Z axis have perfect omnidirectional pattern, 0 degrees rotation have oval pattern. Anything in beetween produce semi circular patern.
+GW	1	5	0	-C	0	0	C	0	W	'Center wire.
 GW	2	11	0	C	V+HG	0	H+C	V+HG	W
 GW	3	11	0	C	-V-HG	0	H+C	-V-HG	W
 GW	4	13	0	C	V+HG	0	C	0	W
@@ -50,8 +44,8 @@ GW	6	11	0	-C	V	0	-H-C	V	W
 GW	7	11	0	-C	-V	0	-H-C	-V	W
 GW	8	13	0	-C	V	0	-C	0	W
 GW	9	13	0	-C	0	0	-C	-V	W
-GM	10	elements	0	RA	0	0	VG	-HP
-GW	100	1	FP	VG/2	-W	FP	VG/2	W	W
+GM	10	elements	0	RA	0	0	VG	0
+GW	100	1	0	VG/2	-W	0	VG/2	W	W
 GS	0	0	299.8/freq
 GE	0
 LD	5	0	0	0	58000000
