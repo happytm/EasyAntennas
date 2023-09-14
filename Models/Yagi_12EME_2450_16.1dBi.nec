@@ -1,6 +1,53 @@
 CM M2 432-12EME with T-MATCH
+CM 
+CM A=0	Reflector
+CM B=0.201297	Driven element
+CM C=0.355673	Director
+CM D=0.666841	Director
+CM E=1.03142	Director
+CM F=1.434258	Director
+CM G=1.857421	Director
+CM H=2.295333	Director
+CM I=2.738112	Director
+CM J=3.172731	Director
+CM K=3.605043	Director
+CM L=3.980187	Director
+CM M=0.235429	
+CM N=0.180115	
+CM O=0.226445	
+CM P=0.216213	
+CM Q=0.212808	
+CM R=0.209385	
+CM S=0.207108	
+CM T=0.203703	
+CM U=0.202556	
+CM V=0.208238	
+CM W=0.228357	
+CM Z=0.036023
+CM 
+CM 
+CM Wire	1	19	A	-M	0	A	M	0	WR				
+CM Wire	2	15	B	-N	0	B	N	0	WR				
+CM Wire	3	19	C	-O	0	C	O	0	WR				
+CM Wire	4	17	D	-P	0	D	P	0	WR				
+CM Wire	5	17	E	-Q	0	E	Q	0	WR				
+CM Wire	6	17	F	-R	0	F	R	0	WR				
+CM Wire	7	17	G	-S	0	G	S	0	WR				
+CM Wire	8	17	H	-T	0	H	T	0	WR				
+CM Wire	9	17	I	-U	0	I	U	0	WR				
+CM Wire	10	17	J	-U	0	J	U	0	WR				
+CM Wire	11	17	K	-T	0	K	T	0	WR				
+CM Wire	12	17	L	-V	0	L	V	0	WR				
+CM Wire	13	3	B	N	0	B	W	0	WR				
+CM Wire	14	3	B	-N	0	B	-W	0	WR				
+CM Wire	15	1	B	N	0	B	N	-Z	WR				
+CM Wire	16	15	B	-N	-Z	B	N	-Z	WR				
+CM Wire	17	3	B	N	-Z	B	W	-Z	WR				
+CM Wire	18	3	B	-N	-Z	B	-W	-Z	WR				
+CM Wire	19	1	B	-N	-Z	B	-N	0	WR					
 CE
 SY Freq=2450
+SY AH=3	'Antenna height
 SY WR=0.003431	'Wire radius
 SY A=0	'Reflector
 SY B=0.201297	'Driven element
@@ -45,6 +92,7 @@ GW	16	15	B	-N	-Z	B	N	-Z	WR
 GW	17	3	B	N	-Z	B	W	-Z	WR
 GW	18	3	B	-N	-Z	B	-W	-Z	WR
 GW	19	1	B	-N	-Z	B	-N	0	WR
+GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/2450
 GE	0
 LD	5	0	0	0	37700000

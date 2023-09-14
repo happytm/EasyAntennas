@@ -1,6 +1,14 @@
 CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry	
 CM P-multip	Rny*2	5	-G	-Rx	-Ry	-G	-Rx	Ry	SRL	-SRA	Ry		
-CM P-multip	Rny*2	5	-G	Rx	Ry	-G	Rx	-Ry	SRL	SRA	-Ry		
+CM P-multip	Rny*2	5	-G	Rx	Ry	-G	Rx	-Ry	SRL	SRA	-Ry
+CM 
+CM 
+CM Helix	1	10	spacing	spacing	hr	hr	hr	hr	W				
+CM Copy/move	0	0	0	0	0	0	0	da	1				
+CM Helix	2	10	spacing	spacing	hr	hr	hr	hr	W				
+CM Copy/move	0	0	0	0	0	0	0	dc	2				
+CM Helix	3	10	spacing	spacing	hr	hr	hr	hr	W				
+CM Copy/move	0	0	0	0	0	0	0	de	3						
 CE
 SY freq=2450
 SY AH=3	'Antenna height in wavelength
@@ -19,7 +27,7 @@ SY de=dd+wlc
 SY df=de+spacing
 SY dg=df+wld
 SY EG=0.719369	'Gap between elements  0.721
-SY RG=0.24	'Gap between elements  0.20       0.16 TO 0.25
+SY RG=0.24	'Gap between elements  0.24       0.16 TO 0.25
 SY STUB=0.98	'Electric length of stub   0.9826
 SY RH=5.5	'Reflector height
 SY RW=EG	'Reflector width
