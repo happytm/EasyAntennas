@@ -1,0 +1,58 @@
+CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry	
+CM P-multip	Rny*2	5	-G	-Rx	-Ry	-G	-Rx	Ry	SRL	-SRA	Ry		
+CM P-multip	Rny*2	5	-G	Rx	Ry	-G	Rx	-Ry	SRL	SRA	-Ry		
+CE
+SY freq=2450
+SY AH=3	'Antenna height in wavelength
+SY spacing=0.0130	'Adj gap when testing      0.0130              Help in adjusting VSWR.
+SY W=0.0020	'Wire thickness                0.0041              0.0020 @ 2.45 ghz is ethernet cable
+SY wla=0.4255	'Center wire                      0.4255
+SY wlb=0.6805	'Inner wires                       0.6805
+SY wlc=wlb	'Outer wires                      0.6805
+SY wld=wlb	'End wires                        0.6805
+SY hr=0.04581	'Ring radius                      0.04581
+SY da=wla
+SY db=da+spacing
+SY dc=db+wlb
+SY dd=dc+spacing
+SY de=dd+wlc
+SY df=de+spacing
+SY dg=df+wld
+SY EG=0.719369	'Gap between elements  0.721
+SY RG=0.24	'Gap between elements  0.20       0.16 TO 0.25
+SY STUB=0.98	'Electric length of stub   0.9826
+SY RH=5.5	'Reflector height
+SY RW=EG	'Reflector width
+SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
+SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
+GH	1	10	spacing	spacing	hr	hr	hr	hr	W
+GM	0	0	0	0	0	0	0	da	1
+GH	2	10	spacing	spacing	hr	hr	hr	hr	W
+GM	0	0	0	0	0	0	0	dc	2
+GH	3	10	spacing	spacing	hr	hr	hr	hr	W
+GM	0	0	0	0	0	0	0	de	3
+GW	5	30	hr	0	0	hr	0	da	W
+GW	6	10	hr	0	db	hr	0	dc	W
+GW	7	10	hr	0	dd	hr	0	de	W
+GW	8	10	hr	0	df	hr	0	dg	W
+GW	9	11	0	0	0	0	0	da	W
+GX	10	001
+GM	100	7	0	0	0	0	EG	0
+SM	Rnx*2	Rny*2	-RG	-EG	-Ry	-RG	EG*8	-Ry	'Reflector
+SC	0	0	-RG	EG*8	Ry	'Reflector
+GM	0	0	0	0	0	0	0	AH
+GS	0	0	299.80/freq
+GE	1
+LD	5	0	0	0	58000000
+GN	2	0	0	0	4	0.003
+EK
+EX	0	5	1	0	1	0	0
+TL	5	1	105	1	50	STUB	0	0	0	0
+TL	105	1	205	1	50	STUB	0	0	0	0
+TL	205	1	305	1	50	STUB	0	0	0	0
+TL	305	1	405	1	50	STUB	0	0	0	0
+TL	405	1	505	1	50	STUB	0	0	0	0
+TL	505	1	605	1	50	STUB	0	0	0	0
+TL	605	1	705	1	50	STUB	0	0	0	0
+FR	0	0	0	0	freq	0
+EN

@@ -1,0 +1,65 @@
+CM AH=3	Antenna height in wavelength
+CM S=0.0038	Adjust spacing when testing  0.0038
+CM W=0.0028	Wire thickness                0.0028
+CM A=0.2238	Center wire                      0.2223                 0.2238     with reflectors.
+CM B=0.1047	Inner wires                       0.1237                 0.1047     with reflectors.
+CM C=B	Outer wires                      0.1237
+CM D=B	End wires                        0.1237
+CM hr=0.0174	Ring radius                      0.0149                   0.174      with reflectors.
+CM RWL=hr*2*3.1416	Ring wire length
+CM da=A	
+CM db=A+S	
+CM dc=db+B	
+CM dd=dc+S	
+CM de=dd+C	
+CM df=de+S	
+CM dg=df+D	
+CM FP=25	Segment 22 Of 30 segments. 25 of 30 segments. This is very critical for good VSWR.
+CM G=0.18	Reflector gap              0.18
+CM RL=0.7	Reflector height          0.7
+CM RT=0.10	Reflector thickness     0.10
+CE
+SY freq=5785	'Resonant frequency.
+SY AH=3	'Antenna height in wavelength
+SY S=0.0038	'Adjust spacing when testing  0.0038
+SY W=0.0028	'Wire thickness                0.0028
+SY A=0.2238	'Center wire                      0.2223                 0.2238     with reflectors.
+SY B=0.1047	'Inner wires                       0.1237                 0.1047     with reflectors.
+SY C=B	'Outer wires                      0.1237
+SY D=B	'End wires                        0.1237
+SY hr=0.0174	'Ring radius                      0.0149                   0.174      with reflectors.
+SY RWL=hr*2*3.1416	'Ring wire length
+SY da=A
+SY db=A+S
+SY dc=db+B
+SY dd=dc+S
+SY de=dd+C
+SY df=de+S
+SY dg=df+D
+SY FP=25	'Segment 22 Of 30 segments. 25 of 30 segments. This is very critical for good VSWR.
+SY G=0.20	'Reflector gap              0.18
+SY RL=0.7	'Reflector height          0.7
+SY RT=0.07	'Reflector thickness     0.10
+GH	1	10	S	S	hr	hr	hr	hr	W
+GM	0	0	0	0	0	0	0	da	1
+GH	2	10	S	S	hr	hr	hr	hr	W
+GM	0	0	0	0	0	0	0	dc	2
+GH	3	10	S	S	hr	hr	hr	hr	W
+GM	0	0	0	0	0	0	0	de	3
+GW	11	30	hr	0	0	hr	0	da	W
+GW	12	41	hr	0	db	hr	0	dc	W
+GW	13	33	hr	0	dd	hr	0	de	W
+GW	14	30	hr	0	df	hr	0	dg	W
+GW	50	30	0	0	0	0	0	da	W
+GW	51	30	-G	0	-RL	-G	0	RL	RT
+GW	52	30	hr	-G	-RL	hr	-G	RL	RT
+GX	100	001
+GM	0	0	0	0	0	0	0	AH
+GS	0	0	299.80/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	11	FP	0	1	0	0
+FR	0	0	0	0	freq	0
+EN

@@ -1,0 +1,97 @@
+CM LoRa/LoRaWAN tutorial 46
+CM https://www.mobilefish.com/developer/lorawan/lorawan_quickguide_tutorial.html
+CM https://www.mobilefish.com/download/lora/collinear2_868mhz_4nec2.nec.txt
+CM Collinear antenna with 3 helixes and 4 radials 
+CM To be used in 4NEC2 with support for SY cards
+CM Helix outer diameter diam = 29.6mm
+CM Helix radius center hr = (diam-d) / 2 = 13.9mm
+CM Helix wire diameter d = 1.8mm
+CM Helix wire radius r = d/2 = 0.9mm
+CM Number of turns n = 1
+CM Spacing between turns spacing = 4.5mm
+CM Wire length bottom wla = 174mm
+CM Wire length middle wlb = 221mm
+CM Wire length top wlc = 186mm
+CM Wire length radials straight LA = 28mm
+CM Wire length radials bend LB = 65mm
+CM Bend angle = 40 degrees
+CM Wire a,b,c has an x offset = 13.9mm
+CM Four radials has an x offset = 13.9mm
+CM Frequency freq = 868.0 MHz
+CM feedpoint is located at the bottom of the bottom wire
+CM -----
+CM Helix bottom
+CM Helix middle
+CM Helix top
+CM Wire bottom
+CM Wire middle
+CM Wire top
+CM Radial X straight
+CM Radial Y straight
+CM Radial -X straight
+CM Radial -Y straight
+CM Radial X bend
+CM Radial Y bend
+CM Radial -X bend
+CM Radial -Y bend
+CM Radiator (copper)
+CM Radials (stainless steel)
+CE
+SY height=1.0
+SY spacing=0.0045	'Gap of 4.5 mm (adjust this gap when testing in real time)
+SY diameter=0.0016	'wire 1.6mm (14 AWG)
+SY wla=0.165
+SY wlb=0.210
+SY wlc=0.177
+SY hr=0.0132	'0.0132  (13.2 mm)
+SY r=diameter/2
+SY da=height+wla
+SY db=da+spacing
+SY dc=db+wlb
+SY dd=dc+spacing
+SY de=dd+wlc
+SY LA=0.0265
+SY LB=0.0617
+SY hrrad1=hr+LA
+SY hrrad2=hr-LA
+SY angle=40
+SY LBX=cos(angle)*LB
+SY LBY=sin(angle)*LB
+SY freq=915
+GH	1	9	spacing	spacing	hr	hr	hr	hr	r
+GM	0	0	0	0	0	0	0	da	1
+GH	2	9	spacing	spacing	hr	hr	hr	hr	r
+GM	0	0	0	0	0	0	0	dc	2
+GH	3	9	spacing	spacing	hr	hr	hr	hr	r
+GM	0	0	0	0	0	0	0	de	3
+GW	5	30	hr	0	height	hr	0	da	r
+GW	6	40	hr	0	db	hr	0	dc	r
+GW	7	33	hr	0	dd	hr	0	de	r
+GW	10	3	hr	0	height	hrrad1	0	height	r
+GW	11	3	hr	0	height	hr	LA	height	r
+GW	12	3	hr	0	height	hrrad2	0	height	r
+GW	13	3	hr	0	height	hr	-LA	height	r
+GW	15	10	hrrad1	0	height	hrrad1+LBX	0	height-LBY	r
+GW	16	10	hr	LA	height	hr	LA+LBX	height-LBY	r
+GW	17	10	hrrad2	0	height	hrrad2-LBX	0	height-LBY	r
+GW	18	10	hr	-LA	height	hr	-LA-LBX	height-LBY	r
+GE	-1
+LD	5	1	0	0	58000000
+LD	5	2	0	0	58000000
+LD	5	3	0	0	58000000
+LD	5	5	0	0	58000000
+LD	5	6	0	0	58000000
+LD	5	7	0	0	58000000
+LD	5	10	0	0	1390000
+LD	5	11	0	0	1390000
+LD	5	12	0	0	1390000
+LD	5	13	0	0	1390000
+LD	5	15	0	0	1390000
+LD	5	16	0	0	1390000
+LD	5	17	0	0	1390000
+LD	5	18	0	0	1390000
+GN	2	0	0	0	3	0.0001
+EK
+EX	0	5	1	0	1	0	0
+FR	0	0	0	0	freq	0
+EN

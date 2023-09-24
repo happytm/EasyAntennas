@@ -1,0 +1,65 @@
+CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry	
+CM P-multip	Rny*2	5	-G	-Rx	-Ry	-G	-Rx	Ry	SRL	-SRA	Ry		
+CM P-multip	Rny*2	5	-G	Rx	Ry	-G	Rx	-Ry	SRL	SRA	-Ry		
+CE
+SY freq=2440
+SY AH=3	'Antenna height in wavelength
+SY spacing=0.0130	'Adj gap when testing      0.0130              Help in adjusting VSWR.
+SY W=0.0020	'Wire thickness                0.0041              0.0020 @ 2.45 ghz is ethernet cable
+SY wla=0.42	'Center wire                      0.4193
+SY wlb=0.72	'Inner wires                       0.72
+SY wlc=wlb	'Outer wires                      0.72
+SY wld=wlb	'End wires                        0.72
+SY hr=0.0417	'Ring radius                      0.0417
+SY da=wla
+SY db=da+spacing
+SY dc=db+wlb
+SY dd=dc+spacing
+SY de=dd+wlc
+SY df=de+spacing
+SY dg=df+wld
+SY FP=1
+SY RH=6.66	'Reflector height       6.66
+SY RW=0.40	'Reflector width        0.40           0 TO 1.0            Decides antenna pattern
+SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
+SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
+SY G=0.40	'Reflector gap           0.40           0.20 to 0.45       Decides antenna pattern
+SY SRW=0.50	'0.50
+SY SRA=1.0	'1.00
+SY STUB1=0.1008	'0.1008
+SY STUB2=0.2028	'0.2028
+GH	1	10	spacing	spacing	hr	hr	hr	hr	W
+GM	0	0	0	0	0	0	0	da	1
+GH	2	10	spacing	spacing	hr	hr	hr	hr	W
+GM	0	0	0	0	0	0	0	dc	2
+GH	3	10	spacing	spacing	hr	hr	hr	hr	W
+GM	0	0	0	0	0	0	0	de	3
+GW	5	30	hr	0	0	hr	0	da	W
+GW	6	10	hr	0	db	hr	0	dc	W
+GW	7	10	hr	0	dd	hr	0	de	W
+GW	8	10	hr	0	df	hr	0	dg	W
+GW	10	30	0	0	0	0	0	da	W
+GX	100	001
+SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry
+SC	0	0	-G	Rx	Ry
+SM	Rny*2	5	-G	-Rx	-Ry	-G	-Rx	Ry
+SC	0	0	-G/2	-SRA/2	Ry
+SM	Rny*2	5	-G	Rx	Ry	-G	Rx	-Ry
+SC	0	0	-G/2	SRA/2	-Ry
+SM	Rny*2	5	-G/2	-SRA/2	-Ry	-G/2	-SRA/2	Ry
+SC	0	0	SRW	-SRA	Ry
+SM	Rny*2	5	-G/2	SRA/2	Ry	-G/2	SRA/2	-Ry
+SC	0	0	SRW	SRA	-Ry
+GW	500	1	1	-W	0	1	W	0	W
+GW	501	1	2	-W	0	2	W	0	W
+GM	0	0	0	0	0	0	0	AH
+GS	0	0	299.80/freq
+GE	1
+LD	5	0	0	0	58000000
+GN	2	0	0	0	4	0.003
+EK
+EX	0	500	1	0	1	0	0
+TL	500	1	5	1	50	STUB1	0	0	0	0
+TL	500	1	501	1	50	STUB2	0	0	0	0
+FR	0	0	0	0	freq	0
+EN

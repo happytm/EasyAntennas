@@ -1,0 +1,52 @@
+CM Wire	12	1	-G-0.45	-W	0	-G-0.45	W	0	W				
+CM Wire	13	1	-G-0.30	-W	-0.50	-G-0.30	W	-0.50	W					
+CE
+SY freq=2450
+SY AH=3	'Antenna height in wavelength
+SY spacing=0.0130	'Adj gap when testing      0.0130              Help in adjusting VSWR.
+SY W=0.0020	'Wire thickness                0.0041              0.0020 @ 2.45 ghz is ethernet cable
+SY wla=0.4196	'Center wire                      0.4196
+SY wlb=0.7078	'Inner wires                       0.7078
+SY wlc=wlb	'Outer wires                      0.72
+SY wld=wlb	'End wires                        0.72
+SY hr=0.0413	'Ring radius                      0.0413
+SY da=wla
+SY db=da+spacing
+SY dc=db+wlb
+SY dd=dc+spacing
+SY de=dd+wlc
+SY df=de+spacing
+SY dg=df+wld
+SY G=0.22	'Reflector gap           0.22           0.10 to 0.40       Decides antenna pattern  and VSWR
+SY RT=41	'Reflector thickness     41           20mm diameter at 2.45 ghz
+SY RH=3	'Reflector height        3
+SY STUB1=0.9806	'0.9806                 Adjust VSWR
+GH	1	10	spacing	spacing	hr	hr	hr	hr	W
+GM	0	0	0	0	0	G	0	da	1
+GH	2	10	spacing	spacing	hr	hr	hr	hr	W
+GM	0	0	0	0	0	G	0	dc	2
+GH	3	10	spacing	spacing	hr	hr	hr	hr	W
+GM	0	0	0	0	0	G	0	de	3
+GW	5	30	G+hr	0	0	G+hr	0	da	W
+GW	6	10	G+hr	0	db	G+hr	0	dc	W
+GW	7	10	G+hr	0	dd	G+hr	0	de	W
+GW	8	10	G+hr	0	df	G+hr	0	dg	W
+GW	10	30	G	0	0	G	0	da	W
+GX	100	001
+GM	500	3	0	0	90	-G*2	G*2	0
+GW	11	30	-G-G	0	0.05	-G-G	0	RH	W*RT
+GW	13	30	-G-G	0	-0.05	-G-G	0	-RH	W*RT
+GW	12	1	-G-G	-W	0	-G-G	W	0	W
+GM	0	0	0	0	0	G*2	0	AH
+GS	0	0	299.80/freq
+GE	1
+LD	5	0	0	0	58000000
+GN	2	0	0	0	4	0.003
+EK
+EX	0	12	1	0	1	0	0
+TL	12	1	5	1	50	STUB1	0	0	0	0
+TL	12	1	505	1	50	STUB1	0	0	0	0
+TL	12	1	1005	1	50	STUB1	0	0	0	0
+TL	12	1	1505	1	50	STUB1	0	0	0	0
+FR	0	0	0	0	freq	0
+EN
