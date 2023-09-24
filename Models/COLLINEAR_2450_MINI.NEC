@@ -1,41 +1,47 @@
 CM 
 CE
 SY freq=2450	'Resonant frequency.
-SY AH=0	'Antenna height in wavelength
-SY G=0.0038	'Adjust gap when testing  0.0038
+SY AH=3	'Antenna height in wavelength
+SY S=0.0038	'Adjust spacing when testing  0.0038
 SY W=0.0028	'Wire thickness                0.0028
-SY A=0.2223	'Center wire                      0.2223
-SY B=0.1237	'Inner wires                       0.1237
+SY A=0.2238	'Center wire                      0.2223                 0.2238     with reflectors.
+SY B=0.1047	'Inner wires                       0.1237                 0.1047     with reflectors.
 SY C=B	'Outer wires                      0.1237
 SY D=B	'End wires                        0.1237
-SY hr=0.0149	'Ring radius                      0.0149
-SY RL=hr*2*3.1416	'Ring wire length
+SY hr=0.0174	'Ring radius                      0.0149                   0.174      with reflectors.
+SY RWL=hr*2*3.1416	'Ring wire length
 SY da=A
-SY db=A+G
+SY db=A+S
 SY dc=db+B
-SY dd=dc+G
+SY dd=dc+S
 SY de=dd+C
-SY df=de+G
+SY df=de+S
 SY dg=df+D
-SY FP=22	'Segment 22 Of 30 segments. This is very critical for good VSWR.
-GH	1	10	G	G	hr	hr	hr	hr	W
+SY FP=25	'Segment 22 Of 30 segments. 25 of 30 segments. This is very critical for good VSWR.
+SY G=0.17524	'0.1752
+SY RL=0.68	'0.9812
+GH	1	10	S	S	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	da	1
-GH	2	10	G	G	hr	hr	hr	hr	W
+GH	2	10	S	S	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	dc	2
-GW	7	33	hr	0	dd	hr	0	de	W
-GH	3	10	G	G	hr	hr	hr	hr	W
+GH	3	10	S	S	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	de	3
-GW	8	30	hr	0	df	hr	0	dg	W
-GW	5	30	hr	0	0	hr	0	da	W
-GW	6	41	hr	0	db	hr	0	dc	W
-GW	10	30	0	0	0	0	0	da	W
+GW	11	30	hr	0	0	hr	0	da	W
+GW	12	41	hr	0	db	hr	0	dc	W
+GW	13	33	hr	0	dd	hr	0	de	W
+GW	14	30	hr	0	df	hr	0	dg	W
+GW	50	30	0	0	0	0	0	da	W
+GW	51	30	-G	0	-RL	-G	0	RL	W*10
+GW	52	30	hr	-G	-RL	hr	-G	RL	W*10
 GX	100	001
-GM	0	0	0	0	0	0	0	AH
+GM	60	1	0	0	0	0	0	1.4
+GM	0	0	180	0	0	0	0	AH
 GS	0	0	299.80/freq
 GE	0
 LD	5	0	0	0	58000000
 GN	-1
 EK
-EX	0	105	FP	0	1	0	0
+EX	0	11	FP	0	1	0	0
+EX	0	71	FP	0	1	0	0
 FR	0	0	0	0	freq	0
 EN

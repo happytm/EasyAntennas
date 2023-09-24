@@ -18,44 +18,8 @@ CM FP=25	Segment 22 Of 30 segments. 25 of 30 segments. This is very critical for
 CM G=0.18	Reflector gap              0.18
 CM RL=0.7	Reflector height          0.7
 CM RT=0.10	Reflector thickness     0.10
-CM 
-CM Helix	1	10	spacing	spacing	hr	hr	hr	hr	W				
-CM Copy/move	0	0	0	0	0	G	0	da	1				
-CM Helix	2	10	spacing	spacing	hr	hr	hr	hr	W				
-CM Copy/move	0	0	0	0	0	G	0	dc	2				
-CM Helix	3	10	spacing	spacing	hr	hr	hr	hr	W				
-CM Copy/move	0	0	0	0	0	G	0	de	3				
-CM Wire	5	30	G+hr	0	0	G+hr	0	da	W				
-CM Wire	6	10	G+hr	0	db	G+hr	0	dc	W				
-CM Wire	7	10	G+hr	0	dd	G+hr	0	de	W				
-CM Wire	8	10	G+hr	0	df	G+hr	0	dg	W				
-CM Wire	10	30	G	0	0	G	0	da	W				
-CM Mirror	100	0	0	1									
-CM Copy/move	500	3	0	0	90	-G*2	G*2	0					
-CM Wire	11	30	-G-G	0	0.05	-G-G	0	RH	W*RT				
-CM Wire	13	30	-G-G	0	-0.05	-G-G	0	-RH	W*RT				
-CM Wire	12	1	-G-G	-W	0	-G-G	W	0	W				
-CM Copy/move	0	0	0	0	0	G*2	0	AH	
-CM 
-CM 
-CM 
-CM Helix	1	10	S	S	hr	hr	hr	hr	W				
-CM Copy/move	0	0	0	0	0	0	0	da	1				
-CM Helix	2	10	S	S	hr	hr	hr	hr	W				
-CM Copy/move	0	0	0	0	0	0	0	dc	2				
-CM Helix	3	10	S	S	hr	hr	hr	hr	W				
-CM Copy/move	0	0	0	0	0	0	0	de	3				
-CM Wire	11	30	hr	0	0	hr	0	da	W				
-CM Wire	12	41	hr	0	db	hr	0	dc	W				
-CM Wire	13	33	hr	0	dd	hr	0	de	W				
-CM Wire	14	30	hr	0	df	hr	0	dg	W				
-CM Wire	50	30	0	0	0	0	0	da	W				
-CM Wire	51	30	-G	0	-RL	-G	0	RL	RT				
-CM Wire	52	30	hr	-G	-RL	hr	-G	RL	RT				
-CM Mirror	100	0	0	1									
-CM Copy/move	0	0	0	0	0	0	0	AH									
 CE
-SY freq=915	'Resonant frequency.
+SY freq=5785	'Resonant frequency.
 SY AH=3	'Antenna height in wavelength
 SY S=0.0038	'Adjust spacing when testing  0.0038
 SY W=0.0028	'Wire thickness                0.0028
@@ -72,10 +36,10 @@ SY dd=dc+S
 SY de=dd+C
 SY df=de+S
 SY dg=df+D
-SY FP=25	'Segment 22 Of 30 segments. 25 of 30 segments with reflectors. This is very critical for good VSWR.
-SY G=0.18	'Reflector gap              0.18
-SY RH=0.7	'Reflector height          0.7
-SY RT=10	'Reflector thickness     10
+SY FP=25	'Segment 22 Of 30 segments. 25 of 30 segments. This is very critical for good VSWR.
+SY G=0.20	'Reflector gap              0.18
+SY RL=0.7	'Reflector height          0.7
+SY RT=0.07	'Reflector thickness     0.10
 GH	1	10	S	S	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	da	1
 GH	2	10	S	S	hr	hr	hr	hr	W
@@ -87,8 +51,8 @@ GW	12	41	hr	0	db	hr	0	dc	W
 GW	13	33	hr	0	dd	hr	0	de	W
 GW	14	30	hr	0	df	hr	0	dg	W
 GW	50	30	0	0	0	0	0	da	W
-GW	51	30	-G	0	-RH	-G	0	RH	W*RT
-GW	52	30	hr	-G	-RH	hr	-G	RH	W*RT
+GW	51	30	-G	0	-RL	-G	0	RL	RT
+GW	52	30	hr	-G	-RL	hr	-G	RL	RT
 GX	100	001
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.80/freq

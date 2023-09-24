@@ -1,16 +1,57 @@
-CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry	
-CM P-multip	Rny*2	5	-G	-Rx	-Ry	-G	-Rx	Ry	SRL	-SRA	Ry		
-CM P-multip	Rny*2	5	-G	Rx	Ry	-G	Rx	-Ry	SRL	SRA	-Ry		
+CM 4:1 Halfwave stub balun required for below 1:1.05 VSWR @2440 mhz. Beamwidth 2410-2470 mhz  below 2:1 VSWR.
+CM 
+CM Omnidirectional pattern of 10.5 dBi peak gain in free space and 16.5 dBi peak gain with real moderate grround and 3 wavelength antenna height.
+CM 
+CM Directional peak gain of 22.0 dBi with real moderate grround and 3 wavelength antenna height using 2 reflectors.
+CM Directional peak gain of 19.3 dBi with real moderate grround and 3 wavelength antenna height using single reflector.
+CM 
+CM freq=2450	Resonant frequency
+CM AH=3	Antenna height in wavelength
+CM spacing=0.0130	Adj gap when testing      0.0130              Help in adjusting VSWR.
+CM W=0.0020	Wire thickness                0.0020              0.0020 @ 2.45 ghz is ethernet cable
+CM wla=0.4230	Center wire                      0.4196                                      0.4230 withreflectors
+CM wlb=0.6944	Inner wires                       0.7142                                      0.6944 with reflectors
+CM wlc=wlb	Outer wires                      0.7142                                      0.6944 with reflectors
+CM wld=wlb	End wires                        0.7142                                      0.6944 with reflectors
+CM hr=0.04172	Ring radius                      0.04118                                    0.4172 with reflector
+CM da=wla	
+CM db=da+spacing	
+CM dc=db+wlb	
+CM dd=dc+spacing	
+CM de=dd+wlc	
+CM df=de+spacing	
+CM dg=df+wld	
+CM G=0.27	0.27 for 2 reflecors and 0.15 for single reflector.
+CM RT=35	Reflector thickness            20
+CM XO=0.35	Offset                              0.35	
+CM 
+CM 
+CM 
+CM Helix	1	10	spacing	spacing	hr	hr	hr	hr	W				
+CM Copy/move	0	0	0	0	0	0	0	da	1				
+CM Helix	2	10	spacing	spacing	hr	hr	hr	hr	W				
+CM Copy/move	0	0	0	0	0	0	0	dc	2				
+CM Helix	3	10	spacing	spacing	hr	hr	hr	hr	W				
+CM Copy/move	0	0	0	0	0	0	0	de	3				
+CM Wire	5	30	hr	0	0	hr	0	da	W				
+CM Wire	6	10	hr	0	db	hr	0	dc	W				
+CM Wire	7	10	hr	0	dd	hr	0	de	W				
+CM Wire	8	10	hr	0	df	hr	0	dg	W				
+CM Wire	9	11	0	0	0	0	0	da	W				
+CM Mirror	100	0	0	1									
+CM Wire	10	30	hr	-G	-AH	hr	-G	AH	W*RT				
+CM Wire	11	30	-G	0	-AH	-G	0	AH	W*RT				
+CM Copy/move	0	0	0	0	0	0	0	AH					
 CE
-SY freq=2450
-SY AH=3	'Antenna height in wavelength
+SY freq=2450	'Resonant frequency
+SY AH=3.0	'Antenna height in wavelength
 SY spacing=0.0130	'Adj gap when testing      0.0130              Help in adjusting VSWR.
-SY W=0.0020	'Wire thickness                0.0041              0.0020 @ 2.45 ghz is ethernet cable
-SY wla=0.421549	'Center wire                      0.4207
-SY wlb=0.711198	'Inner wires                       0.7089
-SY wlc=wlb	'Outer wires                      0.7089
-SY wld=wlb	'End wires                        0.7089
-SY hr=0.042093	'Ring radius                      0.04187
+SY W=0.0020	'Wire thickness                0.0020              0.0020 @ 2.45 ghz is ethernet cable
+SY wla=0.4230	'Center wire                      0.4196                                      0.4230 withreflectors
+SY wlb=0.6944	'Inner wires                       0.7142                                      0.6944 with reflectors
+SY wlc=wlb	'Outer wires                      0.7142                                      0.6944 with reflectors
+SY wld=wlb	'End wires                        0.7142                                      0.6944 with reflectors
+SY hr=0.04172	'Ring radius                      0.04118                                    0.4172 with reflector
 SY da=wla
 SY db=da+spacing
 SY dc=db+wlb
@@ -18,17 +59,9 @@ SY dd=dc+spacing
 SY de=dd+wlc
 SY df=de+spacing
 SY dg=df+wld
-SY FP=1
-SY RH=6.668659	'Reflector height       6.42
-SY RW=0.91283	'Reflector width        0.88
-SY SRL=0.322463	'Side reflector length 0.30
-SY SRA=0.98	'Side reflector angle 0.98           0.70 TO 1.0       (0.70 T0 0.80 no horizontal side lobes)
-SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
-SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
-SY G=0.398819	'Reflector gap 0.30 to 0.40
-SY L1=20.04647
-SY L2=27.03259
-SY GAP=0.71
+SY G=0.27	'0.27 for 2 reflecors and 0.15 for single reflector.
+SY RT=35	'Reflector thickness            35
+SY XO=0.35	'Offset                              0.35
 GH	1	10	spacing	spacing	hr	hr	hr	hr	W
 GM	0	0	0	0	0	0	0	da	1
 GH	2	10	spacing	spacing	hr	hr	hr	hr	W
@@ -40,17 +73,15 @@ GW	6	10	hr	0	db	hr	0	dc	W
 GW	7	10	hr	0	dd	hr	0	de	W
 GW	8	10	hr	0	df	hr	0	dg	W
 GW	9	11	0	0	0	0	0	da	W
-GX	10	001
-GM	100	3	0	0	0	0	GAP	0
+GX	100	001
+GW	10	30	hr	-G	-AH	hr	-G	AH	W*RT
+GW	11	30	-G	0	-AH	-G	0	AH	W*RT
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.80/freq
-GE	0
+GE	1
 LD	5	0	0	0	58000000
-GN	-1
+GN	2	0	0	0	4	0.003
 EK
 EX	0	5	1	0	1	0	0
-EX	0	105	1	0	1	0	0
-EX	0	205	1	0	1	0	0
-EX	0	305	1	0	1	0	0
 FR	0	0	0	0	freq	0
 EN
