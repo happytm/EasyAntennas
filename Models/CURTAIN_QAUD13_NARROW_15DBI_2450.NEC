@@ -57,15 +57,15 @@ SY freq=2450	'Resonant frequency
 SY AH=3	'Antenna height in wavelength
 SY W=0.006	'Wire Thickness  0.004 To 0.008
 SY WH=0.006	'Horizontal wires thickness  0.006 To 0.02
-SY RW=1.7	'Reflector Width     1.7
-SY RH=3.4	'Reflector Height    3.4
+SY RW=0.90	'Reflector Width     0.90
+SY RH=3.2	'Reflector Height    3.2
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
 SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
-SY G=0.0885	'Gap between reflector and elements   0.0885
-SY l0=0.16	'Top and bottom horizontal elements in the center   0.16
-SY l1=0.3288	'l1 is the length of the elements next to the center column  0.3288
-SY l2=0.4189	'l2 is the length of the outer elements  0.4189
-SY h=0.7071	'h is the length of all vertical wires  0.7071
+SY G=0.240011	'Gap between reflector and elements   0.24
+SY l0=0.1643	'Top and bottom horizontal elements in the center   0.1643
+SY l1=0.1372	'l1 is the length of the elements next to the center column  0.1372
+SY l2=0.1111	'l2 is the length of the outer elements  0.1111
+SY h=0.7484	'h is the length of all vertical wires  0.7484
 SY y0 = .5 * l0
 SY y1 = y0 + l1
 SY y2 = y1 + l2

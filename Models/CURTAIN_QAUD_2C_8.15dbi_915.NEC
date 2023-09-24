@@ -21,7 +21,7 @@ CM A=0.00	Angle between 2 elements  (0.00 to 0.15)                        0.02  
 CM STUB1=1.45955	
 CM STUB2=1.45955	
 CE
-SY freq=2450	'Resonent frequency.
+SY freq=915	'Resonent frequency.
 SY AH=3	'Antenna height in wavelengths
 SY W=0.010743	'Wire Thickness.                                                               0.010
 SY CW=0.0053	'Center element wire thickness                                          0.0053

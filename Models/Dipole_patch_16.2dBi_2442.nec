@@ -4,16 +4,28 @@ CM   + 14 dBi gain, f/b ratio 18 dB                     |
 CM   + 40 deg horiz, 30 deg vertical 3 dB beamwidth     |
 CM   + SWR < 1.3                                        |
 CM All data in wavelengths. Scaled to meters with GS    |
+CM Frequency range: 2412 - 2472 MHz |
+CM Physical dimensions reflector plate: 185mm x 185mm (352 mm x 185 mm) (heigth = 30 mm without side reflector or 49 mm with side reflectors) |
+CM Gain: 14 dBi(15.7 dBi with 83.5 mm (0.68 wavelength)side reflector on both side at angle of 36 degrees)  |
+CM Front to back ratio: 18 dB |
+CM Half power beamwidth: 40 degrees H-plane & 14 dBi gain(30 degrees with side reflectors & 15.7 dBi gain), 30 degrees E-plane
+CM SWR < 1.3 (in practice adjust array height over reflector (default height = 27 mm or 0.22 wavelength) |
+CM Main reflector size = 184.20 x 184.20 mm (1.5 wavelength) |
+CM Side reflectors size = 184.20 (1.5 wavelength) x 83.5 mm (0.68 wavelength) |
+CM Dipole wire guage 14 AWG (1.6 mm or 0.006 wavelength) |
+CM Total length of each dipole = 61.4 mm (0.5 wavelength) |
+CM Distance between dipole vertically (center to center) and horizontally = 93.30 mm (0.76 wavelength) |
+CM Total antenna height 49 mm (0.4 wavelength) with side reflectors |
 CM -----------------------------[ http://pow.za.net/ ]--
 CE
-SY W=.006	'Wire radius  (14 AWG) (1.6 MM)
-SY Rx=1.4/2, Rnx=5	'Reflector width / 2  (184.5/2 mm)
-SY Ry=2/2, Rny=5	'Reflector height / 2 (184.5/2 mm)
-SY Dl=.25	'Dipole arm length (30.75 mm)
-SY Dh=.22	'Dipole height over reflector (27.06 mm)
-SY Dx=.38	'Distance between left and right dipole / 2 (93.3 mm)
-SY Dy=.38	'Distance between top and bottom dipole centers / 2  (93.3 mm)
-SY Rx2=1.30, Rz2=.4	'Side reflectors (+1.5 dB gain) (83.5 mm x 2)  (36 deegrees angle for reflectors)
+SY W=6.2e-3	'Wire radius
+SY Rx=1.4/2, Rnx=5	'Reflector width / 2
+SY Ry=2/2, Rny=5	'Reflector height / 2
+SY Dl=0.25	'Dipole arm length
+SY Dh=0.22	'Dipole height over reflector
+SY Dx=0.38	'Distance between left and right dipole / 2    0.38
+SY Dy=0.38	'Distance between top and bottom dipole centers / 2    0.38
+SY Rx2=1.300003, Rz2=0.4	'Side reflectors (+1.5 dB gain)
 GW	1	1	Dh	0	W	Dh	0	-W	W
 GW	2	31	Dh	Dx	-Dl-Dy	Dh	Dx	Dl-Dy	W
 GW	3	31	Dh	-Dx	-Dl-Dy	Dh	-Dx	Dl-Dy	W
@@ -25,7 +37,7 @@ SM	Rny*2	5	0	-Rx	-Ry	0	-Rx	Ry
 SC	0	0	Rz2	-Rx2	Ry
 SM	Rny*2	5	0	Rx	Ry	0	Rx	-Ry
 SC	0	0	Rz2	Rx2	-Ry
-GS	0	0	300.0/2442.0
+GS	0	0	300.0/2442
 GE	0
 GN	-1
 EK
@@ -34,6 +46,6 @@ TL	1	1	2	16	50.	0	0	0	0	0
 TL	1	1	3	16	50.	0	0	0	0	0
 TL	1	1	4	16	50.	0	0	0	0	0
 TL	1	1	5	16	50.	0	0	0	0	0
-FR	0	0	0	0	2442.	0
+FR	0	0	0	0	2442	0
 RP	0	73	73	1001	-90.	90.	5.	5.	10000.	
 EN

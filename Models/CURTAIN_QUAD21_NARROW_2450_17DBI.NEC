@@ -11,16 +11,16 @@ CM
 CE
 SY freq=2450	'Resonant frequency
 SY AH=3	'Antenna height in wavelength
-SY RH=4.30	'Reflector height   4.30
-SY RW=3.0	'Reflector Width    3.00
+SY RH=5.2	'Reflector height   5.20
+SY RW=1	'Reflector Width    1.00
 SY Ry=RH/2, Rny=16	'Reflector height / 2 , number of wires
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
 SY W=0.0034	'Wire Radius                                        0.0034
 SY WH=W	'Wire radius for horizontal elements      0.0034
-SY G=0.20	'Gap between reflector and elements   0.20
-SY H=0.032	'Transmission lines         0.032 with reflector or 0.052 without reflector
-SY V=0.68	'All vertical elements      0.68
-SY H1=0.4558	'Horizontal elements       0.4558
+SY G=0.16	'Gap between reflector and elements   0.16
+SY H=0.036594	'Transmission lines         0.03659 with reflector or 0.052 without reflector
+SY V=0.8181	'All vertical elements      0.8181
+SY H1=0.1412	'Horizontal elements       0.1412
 SY H2=H1*2	'Horizontal elements       H1*2
 SY H3=H1*3	'Horizontal elements       H1*3
 SY V1=V*2	'Vertical elements           V*2
@@ -60,9 +60,9 @@ SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
 SC	0	0	-G	Rx	Ry	'Reflector
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/freq
-GE	0
+GE	1
 LD	5	0	0	0	58000000	'Copper wires
-GN	-1
+GN	2	0	0	0	4	0.003
 EK
 EX	0	6	2	0	1	0	0	'SOURCE on GW1, Seg1
 FR	0	0	0	0	freq	0
