@@ -1,0 +1,84 @@
+CM This antenna is resonant at VHF/UHF ham bands, LoRa & WiFi bands @50 Ohms impedence.It can also work with GPS and ADS-B bands with impedence matching.
+CM 
+CM Following are simulated data at different frequencies using 4nec2 software:
+CM 
+CM Frequency                 Gain             Antenna              VSWR      Impedence         Antenna height           MHZ                          DBi               Pattern                                                         Real Moderate gnd             
+CM 
+CM  144  (VHF)               2.39          Omnidiectional            1.13         49.6-j6.09             Free space             
+CM  144  (VHF)               8.37          Omnidiectional            1.13         50.1-j5.94            3 or 12 feet
+CM 
+CM  444  (UHF)               4.52          Omnidiectional            1.57        78.1+j5.22             Free space
+CM  444  (UHF)             10.50          Omnidiectional            1.58        78.5+j5.22            3 or 12 feet
+CM   
+CM  915  (LoRa)               2.10         Omnidiectional            1.66         60.0+j26.10          Free space             
+CM  915  (LoRa)               8.17         Omnidiectional            1.67         59.4+j26.60          3 or 12 feet
+CM 
+CM 1090  (ADS-B)            2.27         Omnidiectional            4.18        111+j98.60            Free space
+CM 1090  (ADS-B)            8.26         Omnidiectional            4.18        112+j98.40            3 or 12 feet
+CM 
+CM 
+CM 1575  (GPS)               2.97         Omnidiectional            7.37         365+j36.90           Free space
+CM 1575  (GPS)               8.99         Omnidiectional            7.36         364+j36.30           3 or 12 feet
+CM 
+CM 1602  (GPS)               3.02         Omnidiectional            7.35         367+j16.50           Free space
+CM 1602  (GPS)               9.04         Omnidiectional            7.34         366+j16.00           3 or 12 feet
+CM 
+CM 2440  (WiFi)                4.38         Omnidiectional           1.68          81.3-j11.70          Free space
+CM 2440  (WiFi)              10.40         Omnidiectional           1.69          81.7-j11.80          3 or 12 feet
+CM 
+CM 
+CM 
+CM With following settings this antenna is resonant at LoRa & WiFi bands @50 Ohms impedence.It can also work with GPS and ADS-B bands with impedence matching.
+CM 
+CM freq=2635	Resonent frequency.                               2635          for Wifi & Lora        355               for VHF/UHF ham bands
+CM AH=1	                Antenna height in wavelength.
+CM W=0.0121	Wire Thickness.                                       0.0121      for Wifi & Lora         0.0010         for VHF/UHF ham bands
+CM CW=0.0018	Center element wire thickness                  0.0018      for Wifi & Lora         0.0010         for VHF/UHF ham bands
+CM C=0.060	                Center element.                                        0.060        for Wifi & Lora         0.048           for VHF/UHF ham bands
+CM H=0.555	                Horizontal elements.                                 0.555        for Wifi & Lora         0.48             for VHF/UHF ham bands
+CM V=C	                Vertical elements.                                     0.060        for Wifi & Lora
+CM 
+CM 
+CM With following settings this antenna is resonant at VHF/UHF ham bands @50 Ohms impedence.
+CM 
+CM 
+CM freq=355	                    Resonent frequency.                               2635          for Wifi & Lora        355               for VHF/UHF ham bands
+CM AH=3	                    Antenna height in wavelength.
+CM W=0.0010	    Wire Thickness.                                       0.0121      for Wifi & Lora         0.0010         for VHF/UHF ham bands
+CM CW=0.0010	    Center element wire thickness                  0.0018      for Wifi & Lora         0.0010         for VHF/UHF ham bands
+CM C=0.048	                    Center element.                                        0.060        for Wifi & Lora         0.048           for VHF/UHF ham bands
+CM H=0.48	                    Horizontal elements.                                 0.555        for Wifi & Lora         0.48             for VHF/UHF ham bands
+CM V=C	                    Vertical elements.                                     0.060        for Wifi & Lora
+CM 
+CM 
+CM In all above cases  at antenna height of 3 or 12 feet take off angle of main beams remains between 75 and 90 degrees for all bands except at 1090 mhz where take off angle is between 15 to 75 which is desirable.
+CM 
+CM FP setting changes angle between 2 elements directionality in WiFi band from omni to directional (0.00 produces omni pattern). This will change VSWR slightly too.
+CM 
+CE
+SY freq=2600	'Resonent frequency.                               2635          for Wifi & Lora        355               for VHF/UHF ham bands
+SY AH=3	'Antenna height in wavelength.
+SY W=0.0121	'Wire Thickness.                                       0.0121      for Wifi & Lora         0.0010         for VHF/UHF ham bands
+SY CW=0.0018	'Center element wire thickness                  0.0018     for Wifi & Lora          0.0010         for VHF/UHF ham bands
+SY C=0.060	'Center element.                                        0.060        for Wifi & Lora         0.048           for VHF/UHF ham bands
+SY H=0.555	'Horizontal elements.                                 0.555        for Wifi & Lora         0.48             for VHF/UHF ham bands
+SY V=C	'Vertical elements.                                     0.060        for Wifi & Lora         0.048           for VHF/UHF ham bands
+SY FP=0.00	'Angle between 2 elements (0 TO 0.08)    0.00         This changes directionality in WiFi band from omni to directional (0.00 produces omni pattern). This will change VSWR slightly too.
+GW	1	5	0	-C	0	0	C	0	CW	'Center wire.
+GW	2	11	0	C	V	-FP	H+C	V	W
+GW	3	11	0	C	-V	-FP	H+C	-V	W
+GW	4	13	0	C	V	0	C	0	W
+GW	5	13	0	C	0	0	C	-V	W
+GW	6	11	0	-C	V	-FP	-H-C	V	W
+GW	7	11	0	-C	-V	-FP	-H-C	-V	W
+GW	8	13	0	-C	V	0	-C	0	W
+GW	9	13	0	-C	0	0	-C	-V	W
+GM	100	0	90	0	0	0	0	AH
+GS	0	0	299.8/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	101	3	0	1	0	0
+FR	0	0	0	0	freq	0
+EN

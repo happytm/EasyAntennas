@@ -1,0 +1,48 @@
+CM Gain of 8.86 dBi Omnidirectional.:
+CM Truly wide bandwidth. Resonant  at many frequencies with even higher gain.
+CM 
+CM 
+CE
+SY freq=2450	'Resonent frequency.
+SY AH=1	'Antenna height in wavelenth.
+SY W=0.006	'Wire Thickness                           0.006              Anything between 0.004 to 0.008 is fine.
+SY C=0.06841	'Center element                            0.06841
+SY H=C*2	'Horizontal elements                     C*2                  These are the main radiating elements.
+SY V=C	'Vertical elements                         C                     This changes pattern from  omnidirectional to bidirectional with higher  gain.
+SY G=0.20	'Gap for reflectors & Elemens       0.20                  Anything between 0.15 to 0.25 is fine. if between 0.15 to 0.20 It does change VSWR.
+SY EG=0.94	'Gap between elements                0.94                This gap is optimum between 0.90 to 1 for highest gain. If between 0.50 to 0.90 it can change VSWR, Gain, and beamwidth.
+SY RL=0.02331	'Reflector length                           0.2331             Reflectors to increase gain in one direction.
+SY MEL=0.0032	'Electric length of  coax stubs       0.003208          Shorter the cable length , wider the bandwidth.
+SY EEL=1.97	'Electric length of  main coax       1.97                 This changes VSWR, pattern and thereby take off angle drasticly. If used with RF switches on PCB it can be used for beamforming.
+SY elements=3
+GW	1	5	0	-C	0	0	C	0	W	'Center horizontal
+GW	2	11	0	C	V	0	H+C	V	W	'right top horizontal
+GW	3	11	0	C	-V	0	H+C	-V	W	'Inner right bottom horizontal
+GW	4	13	0	C	V	0	C	0	W	'Inner right middle top vertical
+GW	5	13	0	C	0	0	C	-V	W	'Inner right middle top vertical
+GW	6	11	0	-C	V	0	-H-C	V	W	'right top horizontal
+GW	7	11	0	-C	-V	0	-H-C	-V	W	'Inner right bottom horizontal
+GW	8	13	0	-C	V	0	-C	0	W	'Inner right middle top vertical
+GW	9	13	0	-C	0	0	-C	-V	W	'Inner right middle top vertical
+GW	10	30	0	RL	G	0	-RL	G	W
+GM	100	0	90	0	90	0	0	AH
+GM	200	elements	0	0	0	0	0	EG
+GW	13	1	G/2	0	EG+C	G/2	W	EG+C	W
+GW	14	1	G/2	0	EG*2+C	G/2	W	EG*2+C	W
+GW	15	1	G/2	0	EG*3+C	G/2	W	EG*3+C	W
+GW	16	1	G/2	0	EG*4+C	G/2	W	EG*4+C	W
+GS	0	0	299.8/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	13	1	0	1	0	0
+TL	13	1	101	3	50	MEL	0	0	0	0
+TL	14	1	301	3	50	MEL	0	0	0	0
+TL	15	1	501	3	50	MEL	0	0	0	0
+TL	16	1	701	3	50	MEL	0	0	0	0
+TL	13	1	14	1	50	EEL	0	0	0	0
+TL	14	1	15	1	50	EEL	0	0	0	0
+TL	15	1	16	1	50	EEL	0	0	0	0
+FR	0	0	0	0	freq	0
+EN

@@ -1,0 +1,57 @@
+CM freq=915	                Resonent frequency.
+CM W=0.010	                Wire Thickness.                                                               0.010
+CM CW=0.0034	Center element wire thickness                                          0.0034
+CM C=0.0647	                Center element.                                                                0.0647
+CM H=0.507	                Horizontal elements.                                                         0.507
+CM V=C	                Vertical elements.                                                             0.0647
+CM EG=0.77	                Gap between elements                                                    0.77                    This changes bandwidth of antenna significantly thereby it also help adjust the VSWR for particular frequency.
+CM FP=0.18	                Feedpoint distance                                                          0.18
+CM A=0.02	               Angle between 2 elements  (0.00 to 0.15)                        0.02                     This angle decides directionality of antenna and thereby peak gain in one direction. Angle value of 0.00 is omnidirecional and angle value of 0.15 is most directional. It also sightly change VSWR.
+CM 
+CM freq=2450	Resonent frequency.
+CM AH=3	Antenna height in wavelengths
+CM W=0.010743	Wire Thickness.                                                               0.010
+CM CW=0.0053	Center element wire thickness                                          0.0053
+CM C=0.059	Center element.                                                                0.059
+CM H=0.523	Horizontal elements.                                                         0.523
+CM V=C	Vertical elements.                                                             0.059
+CM EG=1.84	Gap between elements                                                    1.84                    This changes bandwidth of antenna significantly thereby it also help adjust the VSWR for particular frequency.
+CM FP=0.18	Feedpoint distance                                                           0.18
+CM A=0.00	Angle between 2 elements  (0.00 to 0.15)                        0.02                    This angle decides directionality of antenna and thereby peak gain in one direction. Angle value of 0.00 is omnidirecional and angle value of 0.15 is most directional. It also sightly change VSWR.
+CM STUB1=1.45955	
+CM STUB2=1.45955	
+CE
+SY freq=2450	'Resonent frequency.
+SY AH=3	'Antenna height in wavelengths
+SY W=0.010743	'Wire Thickness.                                                               0.010
+SY CW=0.0053	'Center element wire thickness                                          0.0053
+SY C=0.059	'Center element.                                                                0.059
+SY H=0.523	'Horizontal elements.                                                         0.523
+SY V=C	'Vertical elements.                                                             0.059
+SY EG=1.84	'Gap between elements                                                    1.84                    This changes bandwidth of antenna significantly thereby it also help adjust the VSWR for particular frequency.
+SY FP=0.18	'Feedpoint distance                                                           0.18
+SY A=0.00	'Angle between 2 elements  (0.00 to 0.15)                        0.02                    This angle decides directionality of antenna and thereby peak gain in one direction. Angle value of 0.00 is omnidirecional and angle value of 0.15 is most directional. It also sightly change VSWR.
+SY STUB1=1.45955
+SY STUB2=1.45955
+GW	1	5	-A	-C	0	-A	C	0	CW	'Center horizontal
+GW	2	11	-A	C	V	A	H+C-A/2	V	W	'right top horizontal
+GW	3	11	-A	C	-V	A	H+C-A/2	-V	W	'Inner right bottom horizontal
+GW	4	13	-A	C	V	-A	C	0	W	'Inner right middle top vertical
+GW	5	13	-A	C	0	-A	C	-V	W	'Inner right middle top vertical
+GW	6	11	-A	-C	V	A	-H-C-A/2	V	W	'right top horizontal
+GW	7	11	-A	-C	-V	A	-H-C-A/2	-V	W	'Inner right bottom horizontal
+GW	8	13	-A	-C	V	-A	-C	0	W	'Inner right middle top vertical
+GW	9	13	-A	-C	0	-A	-C	-V	W	'Inner right middle top vertical
+GM	10	1	0	0	0	0	EG	0
+GW	100	1	FP	EG/2	-W	FP	EG/2	W	W
+GM	0	0	90	0	0	0	0	AH
+GS	0	0	299.8/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	100	1	0	1	0	0
+TL	100	1	1	3	50	STUB1	0	0	0	0
+TL	100	1	11	3	50	STUB2	0	0	0	0
+FR	0	0	0	0	freq	0
+EN

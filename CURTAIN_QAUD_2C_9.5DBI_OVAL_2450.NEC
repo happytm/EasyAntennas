@@ -1,0 +1,63 @@
+CM Compact and easy to build 7.5 dbi omnidirectional antenna with wide bandwidth.
+CM If we have 1.5 size antenna but connect only bottom half of it to a transmitter we get  8.73 dbi of gain.
+CM If we have double size antenna but connect only bottom half of it to a transmitter we get  9.45 dbi of gain.
+CM This design have very wide bandwidth due to thicker wire used.
+CM 
+CM                   1extra element          2 extra elements       3 extra elements
+CM Gap             Single size                  1.5 size                    Double size 
+CM VG             Gain    SWR             Gain    SWR             Gain        SWR
+CM 
+CM 0.75           7.72       1.30             6.45     1.55              6.45        1.59
+CM 0.80           7.87       1.20             7.76     1.41              7.59        1.44
+CM 0.85           7.97       1.10             8.48     1.31              8.69        1.30
+CM 0.90           8.04       1.04             8.73     1.20              9.29        1.17
+CM 0.95           8.07       1.07             8.73     1.06              9.45        1.01
+CM 1.00           8.06       1.13             8.60     1.18              9.29        1.20
+CM 1.05           8.03       1.16             8.34     1.49              8.93        1.48
+CM 1.10           8.00       1.18             7.99     1.91              8.38        1.87
+CM 
+CM freq=2450	Resonent frequency.
+CM AH=3	Antenna height in wavelengths.
+CM W=0.002	Wire Thickness.                                       0.004                0.002 to 0.008
+CM C=0.0772	Center element.                                        0.0772
+CM H=C/0.15	Horizontal elements.                                 0.5016 or C/0.15
+CM V=C	Vertical elements.                                     0.07386
+CM HG=C	Horizontal gap between 2 elements.        0.07386
+CM elements=1	Number of elements  (1 to 7).                                This decides size of antenna, peak gain and thereby beamwidth.VSWR does not change drasticly beween 1 to 7 elements.
+CM VG=1.10	Vertical gap between 2 elements.            1.00      (peak gain is between 0.90 to 1.0). This parameter is very useful to tune the antenna.It adjust the VSWR, Range is 0.70 to 1.10. If RA is not 0 then range could be 0.20 to 1.00.
+CM RA=0	Rotate angle between 2 elements           0-90      90 degrees rotation on Z axis have perfect omnidirectional pattern, 0 degrees rotation have oval pattern. Anything in beetween produce semi circular patern.
+CM STUB1=0.98	Adjust stub lenght to adjuset  VSWR       0.98      Electric length of stub
+CM STUB2=0.98	Adjust stub lenght to adjuset  VSWR       0.98      Electric length of stub
+CM FP=0.18	Feedpoint                                                 0.18
+CE
+SY freq=2450	'Resonent frequency.
+SY AH=3	'Antenna height in wavelengths.
+SY W=0.0020	'Wire Thickness.                                       0.0020                0.002 to 0.008
+SY C=0.080715	'Center element.                                        0.080715
+SY H=C/0.15	'Horizontal elements.                                 0.5381 or C/0.15
+SY V=C	'Vertical elements.                                     0.079
+SY HG=C	'Horizontal gap between 2 elements.        0.079
+SY elements=1	'Number of elements  (1 to 7).                                This decides size of antenna, peak gain and thereby beamwidth.VSWR does not change drasticly beween 1 to 7 elements.
+SY VG=1.841379	'Vertical gap between 2 elements.            1.8414      (peak gain is between 0.90 to 1.85). This parameter is very useful to tune the antenna.It adjust the VSWR, Range is 0.70 to 1.10. If RA is not 0 then range could be 0.20 to 1.00.
+SY RA=0	'Rotate angle between 2 elements           0-90      90 degrees rotation on Z axis have perfect omnidirectional pattern, 0 degrees rotation have oval pattern. Anything in beetween produce semi circular patern.
+SY STUB1=3.3136	'Adjust stub lenght to adjuset  VSWR       3.3136      Electric length of stub
+GW	1	5	0	-C	0	0	C	0	W	'Center wire.
+GW	2	11	0	C	V+HG	0	H+C	V+HG	W
+GW	3	11	0	C	-V-HG	0	H+C	-V-HG	W
+GW	4	13	0	C	V+HG	0	C	0	W
+GW	5	13	0	C	0	0	C	-V-HG	W
+GW	6	11	0	-C	V	0	-H-C	V	W
+GW	7	11	0	-C	-V	0	-H-C	-V	W
+GW	8	13	0	-C	V	0	-C	0	W
+GW	9	13	0	-C	0	0	-C	-V	W
+GM	10	elements	0	RA	0	0	VG	0
+GM	0	0	90	180	0	0	0	AH
+GS	0	0	299.80/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	1	3	0	1	0	0
+TL	11	3	1	3	50	STUB1	0	0	0	0
+FR	0	0	0	0	freq	0
+EN

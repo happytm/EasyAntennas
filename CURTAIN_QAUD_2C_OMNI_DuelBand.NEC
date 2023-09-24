@@ -1,0 +1,75 @@
+CM With following settings this antenna is resonant at LoRa & WiFi bands @50 Ohms impedence.It can also work with GPS and ADS-B bands with impedence matching.
+CM 
+CM Following are simulated data at different frequencies using 4nec2 software:
+CM 
+CM Frequency                 Gain             Antenna              VSWR      Impedence         Antenna height           MHZ                          DBi               Pattern                                                       Real Moderate gnd             
+CM    
+CM  915  (LoRa)               3.98         Omnidiectional            1.54         48.6-j21.5            Free space             
+CM  915  (LoRa)               8.48         Omnidiectional            1.54         48.6-j21.5            3 or 12 feet
+CM 
+CM 1090  (ADS-B)            3.30         Omnidiectional            2.19        108+j12.6             Free space
+CM 1090  (ADS-B)            8.51         Omnidiectional            2.19        106+j12.4             3 or 12 feet
+CM 
+CM 
+CM 1575  (GPS)               4.62         Omnidiectional            9.16         5.52+j5.29            Free space
+CM 1575  (GPS)             10.50         Omnidiectional            9.16         5.52+j5.29            3 or 12 feet
+CM 
+CM 1602  (GPS)               5.48         Omnidiectional            2.74         127+j33.3             Free space
+CM 1602  (GPS)             11.50         Omnidiectional            2.74         127+j33.3             3 or 12 feet
+CM 
+CM 2440  (WiFi)                8.29         Oval                           1.16          45.1-j4.90            Free space
+CM 2440  (WiFi)              14.20         Oval                           1.16          45.1-j4.90            3 or 12 feet
+CM 
+CM At antenna height of 3 or 12 feet take off angle of main beams remains between 75 and 90 degrees for all bands except at 1090 mhz where take off angle is between 15 to 75 which is desirable.
+CM 
+CM Rotating upper and lower elements  at 90 degrees apart does not have any significant difference in perforormance of this antenna.
+CM 
+CM freq=2440	Resonent frequency. 2440
+CM AH=30	                Antenna height in wavelength.
+CM W=0.008	                Wire Thickness.                                       0.008
+CM CW=0.008	Center element wire thickness                  0.008
+CM C=0.093	                Center element.                                        0.093
+CM H=0.45	                Horizontal elements.                                 0.4521
+CM V=C	                Vertical elements.                                     0.093
+CM elements=1	Number of elements  (1 to 8).                                      This decides size of antenna, peak gain and thereby beamwidth.VSWR does not                                                                                                                          change drasticly beween 1 to 8 elements.
+CM HG=0.077	 Horizontal gap between 2 elements.        0.07741
+CM VG=1.0	                 Vertical gap between 2 elements.            1.0             (peak gain is between 0.90 to 1.0). This parameter is very critical but very useful to                                                                                                               tune the antenna.It adjust the VSWR, peak gain.Range is 0.65 to 1.10.
+CM FP=0.2144	 Feedpoint                                                 0.2144
+CM L1=1.956	                 Length of Coax stub 1                              1.956
+CM L2=2.3454	 Length of Coax stub 2                              2.3454		
+CE
+SY freq=2440	'Resonent frequency.                               2440
+SY AH=3	'Antenna height in wavelength.
+SY W=0.008	'Wire Thickness.                                       0.008
+SY CW=0.008	'Center element wire thickness                  0.008
+SY C=0.093	'Center element.                                        0.093
+SY H=0.4521	'Horizontal elements.                                 0.4521
+SY V=C	'Vertical elements.                                     0.093
+SY elements=1	'Number of elements  (1 to 8).                                This decides size of antenna, peak gain and thereby beamwidth.VSWR does not change drasticly beween 1 to 8 elements.
+SY HG=0.07741	'Horizontal gap between 2 elements.        0.07741
+SY VG=1.0	'Vertical gap between 2 elements.            1.0     (peak gain is between 0.90 to 1.0). This parameter is very critical but very useful to tune the antenna.It adjust the VSWR, peak gain.Range is 0.65 to 1.10.
+SY FP=0.2144	'Feedpoint                                                 0.2144
+SY L1=1.956	'Length of Coax stub 1                              1.956
+SY L2=2.3454	'Length of Coax stub 2                              2.3454
+GW	1	5	0	-C	0	0	C	0	CW	'Center wire.
+GW	2	11	0	C	V+HG	0	H+C	V+HG	W
+GW	3	11	0	C	-V-HG	0	H+C	-V-HG	W
+GW	4	13	0	C	V+HG	0	C	0	W
+GW	5	13	0	C	0	0	C	-V-HG	W
+GW	6	11	0	-C	V	0	-H-C	V	W
+GW	7	11	0	-C	-V	0	-H-C	-V	W
+GW	8	13	0	-C	V	0	-C	0	W
+GW	9	13	0	-C	0	0	-C	-V	W
+GM	10	elements	0	0	0	0	VG	0
+GW	20	1	FP	VG/2	-W	FP	VG/2	W	W
+GM	100	0	90	0	0	0	0	AH
+GS	0	0	299.8/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	120	1	0	1	0	0
+TL	120	1	101	3	50	L1	0	0	0	0
+TL	120	1	111	3	50	L2	0	0	0	0
+FR	0	0	0	0	freq	0
+EN

@@ -1,0 +1,66 @@
+CM freq=2450	Resonant frequency
+CM elements=3	
+CM EG=0.96	Element gap 0.96
+CM W=0.007	Wire Thickness  0.007
+CM WH=0.007	Horizontal wires thickness  0.007
+CM RW=0.811584	Reflector Width     0.8116
+CM RH=0.618547	Reflector Height    0.6185
+CM Rx=RW/2, Rnx=4	Reflector width / 2 , number of wires
+CM Ry=RH/2, Rny=20	Reflector height / 2 , number of wires
+CM G=0.111437	Gap between reflector and elements   0.1114
+CM l0=G	Top and bottom horizontal elements in the center   0.0933
+CM l1=G	l1 is the length of the elements next to the center column  0.125
+CM l2=0.418931	l2 is the length of the outer elements  0.4189
+CM h=0.166705	h is the length of all vertical wires  0.1667
+CM y0 =0.5 * l0	
+CM y1 = y0 + l1	
+CM y2 = y1 + l2	
+CM z0 = 0	
+CM z1 = h	
+CM z2 = z1 + h												
+CE
+SY freq=2450	'Resonant frequency
+SY elements=3
+SY EG=0.96	'Element gap 0.96
+SY W=0.007	'Wire Thickness  0.007
+SY WH=0.007	'Horizontal wires thickness  0.007
+SY RW=0.811584	'Reflector Width     0.8116
+SY RH=0.618547	'Reflector Height    0.6185
+SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
+SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
+SY G=0.111437	'Gap between reflector and elements   0.1114
+SY l0=G	'Top and bottom horizontal elements in the center   0.0933
+SY l1=G	'l1 is the length of the elements next to the center column  0.125
+SY l2=0.418931	'l2 is the length of the outer elements  0.4189
+SY h=0.166705	'h is the length of all vertical wires  0.1667
+SY y0 =0.5 * l0
+SY y1 = y0 + l1
+SY y2 = y1 + l2
+SY z0 = 0
+SY z1 = h
+SY z2 = z1 + h
+GW	3	11	0	y0	z2	0	y1	z2	W	'Outer right top horizontal
+GW	4	11	0	y0	-z2	0	y1	-z2	W	'Outer right top horizontal
+GW	14	13	0	y0	z2	0	y0	z1	W	'Inner right top vertical
+GW	11	11	0	y0	-z0	0	y1	-z0	W	'Outer right bottom horizontal
+GW	4	11	0	y0	z1	0	y1	z1	WH	'Inner right top horizontal
+GW	8	11	0	y0	-z1	0	y1	-z1	WH	'Inner right bottom horizontal
+GW	15	13	0	y0	z1	0	y0	z0	W	'Inner right middle top vertical
+GW	16	13	0	y0	z0	0	y0	-z1	W	'Inner right middle top vertical
+GW	17	13	0	y0	-z1	0	y0	-z2	W	'Inner right middle bottom vertical
+GX	100	010
+GW	205	5	0	-y0	z0	0	y0	z0	WH	'Center horizontal
+GW	202	5	0	-y0	z2	0	y0	z2	WH	'Center top horizontal
+GW	210	5	0	-y0	-z2	0	y0	-z2	WH	'Center bottom horizontal
+GM	300	elements	0	0	0	0	EG	0
+GS	0	0	299.8/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	205	3	0	1	0	0
+EX	0	505	3	0	1	0	0
+EX	0	805	3	0	1	0	0
+EX	0	1105	3	0	1	0	0
+FR	0	0	0	0	freq	0
+EN

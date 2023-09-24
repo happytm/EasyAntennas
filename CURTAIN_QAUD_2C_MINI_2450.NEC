@@ -1,0 +1,42 @@
+CM Gain of 8 dBi Omnidirectional.:
+CM Truly wide bandwidth. Resonant  at many frequencies with even higher gain.
+CM 
+CM 
+CE
+SY freq=915	'Resonent frequency.
+SY AH=1	'Antenna height in wavelenth.
+SY W=0.006	'Wire Thickness                           0.006
+SY CW=W	'Center element wire thickness     0.018
+SY C=0.068416	'Center element                            0.06841
+SY H=C*2	'Horizontal elements                     C*2
+SY V=C	'Vertical elements                         C
+SY G=0.293228	'Gap for reflector                          0.2932
+SY EG=0.94	'Gap between elements               0.94
+SY RL=0.023	'Reflector length                          0.2331
+SY EL=1.4967	'Electric length of 2 middle coax cables  1.4967
+SY FEL=3.1394	'Electric length of 2 end coax cables  3.1394
+GW	1	5	0	-C	0	0	C	0	CW	'Center horizontal
+GW	2	11	0	C	V	0	H+C	V	W	'right top horizontal
+GW	3	11	0	C	-V	0	H+C	-V	W	'Inner right bottom horizontal
+GW	4	13	0	C	V	0	C	0	W	'Inner right middle top vertical
+GW	5	13	0	C	0	0	C	-V	W	'Inner right middle top vertical
+GW	6	11	0	-C	V	0	-H-C	V	W	'right top horizontal
+GW	7	11	0	-C	-V	0	-H-C	-V	W	'Inner right bottom horizontal
+GW	8	13	0	-C	V	0	-C	0	W	'Inner right middle top vertical
+GW	9	13	0	-C	0	0	-C	-V	W	'Inner right middle top vertical
+GW	10	30	0	RL	G	0	-RL	G	W
+GM	100	0	90	0	90	0	0	AH
+GM	200	3	0	0	0	0	0	EG
+GW	11	1	0	0.50	2.3	W	0.50	2.3	W
+GS	0	0	299.8/freq
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	11	1	0	1	0	0
+TL	11	1	101	3	50	FEL	0	0	0	0
+TL	11	1	301	3	50	EL	0	0	0	0
+TL	11	1	501	3	50	EL	0	0	0	0
+TL	11	1	701	3	50	FEL	0	0	0	0
+FR	0	0	0	0	freq	0
+EN
