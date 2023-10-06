@@ -7,5 +7,5 @@
 ### Impedance matching using coax stub : 
 - https://www.antenna-theory.com/tutorial/smith/chart.php
 
-###Beamwith to coverage at specific disance calculator :
+### Beamwith to coverage at specific disance calculator :
 - https://www.ahsystems.com/EMC-formulas-equations/Antenna-beamwidth-coverage-calculation.php
