@@ -1,0 +1,87 @@
+CM omnidirectional pattern of 16dbi.
+CM 
+CM FREQ=2440	Resonant center frequency
+CM AH=0	Antenna height in wavelength
+CM W=0.0020	Wire diameter                       0.00020
+CM L=0.48	Element length                     0.48
+CM TL=0.24	Transmission line length       0.24
+CM G=0.016	Transmission line gap           0.016
+CM EG=(L*2)+(G*2)	Elements gap                       (L*2)+(G*2)
+CM ELE=1	Number of elements             1 to 20
+CM 
+CM Wire	1	1	0	0	0	0	0	G	W				Feedpoint
+CM Wire	2	10	0	0	0	0	TL	0	W				Transmission line
+CM Wire	3	10	0	0	G	0	TL	G	W				Transmission line
+CM Wire	4	10	0	TL	G	0	TL	L	W				Radiating element
+CM Wire	5	10	0	TL	0	0	TL	-L+G	W				Radiating element
+CM Copy/move	10	ELE	0	0	0	0	0	EG					Radiating element multiplier
+CM Copy/move	0	0	0	0	0	0	-TL	AH					Antenna position adjustor
+CM 
+CM 
+CM 													
+CM Voltage-src	1	1	0	1	0	1	0	0		
+CM Voltage-src	11	1	0	1	0	1	0	0		
+CM Voltage-src	21	1	0	1	0	1	0	0		
+CM Voltage-src	31	1	0	1	0	1	0	0		
+CM Voltage-src	41	1	0	1	0	1	0	0		
+CM Voltage-src	51	1	0	1	0	1	0	0		
+CM Voltage-src	61	1	0	1	0	1	0	0		
+CM Voltage-src	71	1	0	1	0	1	0	0		
+CM Voltage-src	81	1	0	1	0	1	0	0		
+CM Voltage-src	91	1	0	1	0	1	0	0		
+CM Voltage-src	101	1	0	1	0	1	0	0		
+CM Voltage-src	111	1	0	1	0	1	0	0		
+CM Voltage-src	121	1	0	1	0	1	0	0		
+CM Voltage-src	131	1	0	1	0	1	0	0		
+CM Voltage-src	141	1	0	1	0	1	0	0		
+CM Voltage-src	151	1	0	1	0	1	0	0		
+CM Voltage-src	161	1	0	1	0	1	0	0		
+CM Voltage-src	171	1	0	1	0	1	0	0		
+CM Voltage-src	181	1	0	1	0	1	0	0		
+CM Voltage-src	191	1	0	1	0	1	0	0		
+CM Voltage-src	201	1	0	1	0	1	0	0					
+CM 
+CE
+SY FREQ=2450	'Resonant center frequency
+SY AH=0	'Antenna height in wavelength
+SY W=0.0020	'Wire diameter                       0.00020
+SY L=0.48	'Element length                     0.48
+SY TL=0.24	'Transmission line length       0.24
+SY G=0.016	'Transmission line gap           0.016
+SY EG=(L*2)+(G*2)	'Elements gap                       (L*2)+(G*2)
+SY EL=20	'Number of elements             1 to 20
+GW	1	1	0	0	0	0	0	G	W	'Feedpoint
+GW	2	10	0	0	0	0	TL	0	W	'Transmission line
+GW	3	10	0	0	G	0	TL	G	W	'Transmission line
+GW	4	10	0	TL	G	0	TL	L	W	'Radiating element
+GW	5	10	0	TL	0	0	TL	-L+G	W	'Radiating element
+GM	10	EL	0	0	0	0	0	EG	'Radiating element multiplier
+GM	0	0	0	0	0	0	-TL	AH	'Antenna position adjustor
+GS	0	0	299.80/FREQ
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	1	1	0	1	0	0
+EX	0	11	1	0	1	0	0
+EX	0	21	1	0	1	0	0
+EX	0	31	1	0	1	0	0
+EX	0	41	1	0	1	0	0
+EX	0	51	1	0	1	0	0
+EX	0	61	1	0	1	0	0
+EX	0	71	1	0	1	0	0
+EX	0	81	1	0	1	0	0
+EX	0	91	1	0	1	0	0
+EX	0	101	1	0	1	0	0
+EX	0	111	1	0	1	0	0
+EX	0	121	1	0	1	0	0
+EX	0	131	1	0	1	0	0
+EX	0	141	1	0	1	0	0
+EX	0	151	1	0	1	0	0
+EX	0	161	1	0	1	0	0
+EX	0	171	1	0	1	0	0
+EX	0	181	1	0	1	0	0
+EX	0	191	1	0	1	0	0
+EX	0	201	1	0	1	0	0
+FR	0	0	0	0	FREQ	0
+EN

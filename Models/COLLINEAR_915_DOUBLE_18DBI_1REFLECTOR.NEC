@@ -1,4 +1,4 @@
-CM freq=2450	
+CM freq=915	
 CM AH=3	Antenna height in wavelength
 CM spacing=0.0130	Adj gap when testing      0.0130              Help in adjusting VSWR.
 CM W=0.0020	Wire thickness                0.0041              0.0020 @ 2.45 ghz is ethernet cable
@@ -14,10 +14,10 @@ CM dd=dc+spacing
 CM de=dd+wlc	
 CM df=de+spacing	
 CM dg=df+wld	
-CM G=0.30	Reflector gap           0.22           0.10 to 0.40       Decides antenna pattern  and VSWR
-CM RT=40	Reflector thickness     41           20mm diameter at 2.45 ghz
+CM G=0.0415	Reflector gap           0.22           0.10 to 0.40       Decides antenna pattern  and VSWR
+CM RT=30	Reflector thickness     41           20mm diameter at 2.45 ghz
 CM RH=3	Reflector height        3
-CM STUB1=0.9806	0.9806                 Adjust VSWR	
+CM STUB1=0.978327	0.9783                 Adjust VSWR	
 CM 
 CM 
 CM Helix	1	10	spacing	spacing	hr	hr	hr	hr	W				
@@ -31,22 +31,20 @@ CM Wire	6	10	G+hr	0	db	G+hr	0	dc	W
 CM Wire	7	10	G+hr	0	dd	G+hr	0	de	W				
 CM Wire	8	10	G+hr	0	df	G+hr	0	dg	W				
 CM Wire	10	30	G	0	0	G	0	da	W				
+CM Wire	11	30	-G*2	0	0.05	-G*2	0	RH	W*RT				
 CM Mirror	100	0	0	1									
-CM Copy/move	500	3	0	0	90	-G	G	0					
-CM Wire	11	30	-G	0	0.05	-G	0	RH	W*RT				
-CM Wire	13	30	-G	0	-0.05	-G	0	-RH	W*RT				
-CM Wire	12	1	-G	-W	0	-G	W	0	W				
-CM Copy/move	0	0	0	0	0	G	0	AH					
+CM Copy/move	500	1	-G*4	0	180	-G*4	0	0					
+CM Wire	12	1	-G*2	-W	0	-G*2	W	0	W				
+CM Copy/move	0	0	0	0	0	G*2	0	AH					
 CM 
 CM 
 CM Voltage-src	12	1	0	1	0	1	0	0		
 CM 
-CM Trans-line	12	1	5	1	50	STUB1	Open	0	Open	0	
-CM Trans-line	12	1	505	1	50	STUB1	Open	0	Open	0	
-CM Trans-line	12	1	1005	1	50	STUB1	Open	0	Open	0	
-CM Trans-line	12	1	1505	1	50	STUB1	Open	0	Open	0				
+CM 
+CM Trans-line	12	1	5	1	50	STUB1	Open		Open		
+CM Trans-line	12	1	505	1	50	STUB1	Open		Open			
 CE
-SY freq=2450
+SY freq=915
 SY AH=3	'Antenna height in wavelength
 SY spacing=0.0130	'Adj gap when testing      0.0130              Help in adjusting VSWR.
 SY W=0.0020	'Wire thickness                0.0041              0.0020 @ 2.45 ghz is ethernet cable
@@ -62,10 +60,10 @@ SY dd=dc+spacing
 SY de=dd+wlc
 SY df=de+spacing
 SY dg=df+wld
-SY G=0.30	'Reflector gap           0.30           0.10 to 0.40       Decides antenna pattern  and VSWR
-SY RT=40	'Reflector thickness     41           20mm diameter at 2.45 ghz
+SY G=0.0415	'Reflector gap           0.22           0.10 to 0.40       Decides antenna pattern  and VSWR
+SY RT=30	'Reflector thickness     41           20mm diameter at 2.45 ghz
 SY RH=3	'Reflector height        3
-SY STUB1=0.9806	'0.9806                 Adjust VSWR
+SY STUB1=0.978327	'0.9783                 Adjust VSWR
 GH	1	10	spacing	spacing	hr	hr	hr	hr	W
 GM	0	0	0	0	0	G	0	da	1
 GH	2	10	spacing	spacing	hr	hr	hr	hr	W
@@ -77,21 +75,18 @@ GW	6	10	G+hr	0	db	G+hr	0	dc	W
 GW	7	10	G+hr	0	dd	G+hr	0	de	W
 GW	8	10	G+hr	0	df	G+hr	0	dg	W
 GW	10	30	G	0	0	G	0	da	W
+GW	11	30	-G*2	0	0.05	-G*2	0	RH	W*RT
 GX	100	001
-GM	500	3	0	0	90	-G	G	0
-GW	11	30	-G	0	0.05	-G	0	RH	W*RT
-GW	13	30	-G	0	-0.05	-G	0	-RH	W*RT
-GW	12	1	-G	-W	0	-G	W	0	W
-GM	0	0	0	0	0	G	0	AH
+GM	500	1	-G*4	0	180	-G*4	0	0
+GW	12	1	-G*2	-W	0	-G*2	W	0	W
+GM	0	0	0	0	0	G*2	0	AH
 GS	0	0	299.80/freq
-GE	1
+GE	0
 LD	5	0	0	0	58000000
-GN	2	0	0	0	4	0.003
+GN	-1
 EK
 EX	0	12	1	0	1	0	0
 TL	12	1	5	1	50	STUB1	0	0	0	0
 TL	12	1	505	1	50	STUB1	0	0	0	0
-TL	12	1	1005	1	50	STUB1	0	0	0	0
-TL	12	1	1505	1	50	STUB1	0	0	0	0
 FR	0	0	0	0	freq	0
 EN

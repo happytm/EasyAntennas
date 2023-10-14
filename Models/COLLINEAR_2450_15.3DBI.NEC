@@ -1,0 +1,171 @@
+CM Omnidirectional pattern of 10.5 to 15.3 dBi peak gain without reflector.
+CM Omnidirectional pattern of 16.6 to 21.4 dBi peak gain without reflector with real moderate ground and 3 wavelength antenna height.
+CM Directional peak gain of 26.9 dBi (83 degrees beamwidth) with real moderate ground and 3 wavelength antenna height using 2 reflectors.
+CM Directional peak gain of 23.8 dBi (190 degrees beamwidth) with real moderate ground and 3 wavelength antenna height using single reflector.
+CM 
+CM --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CM Antenna with no reflector for omnidirecional pattern. Velocity factor of coax cable is 0.66 and primary coax length is 230MM.
+CM ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CM 
+CM   Extra            VSWR         Gain         A             R           Adjusting
+CM Elements                            dBi                                      length(MM)        
+CM 
+CM       2                1.05          10.50      7743        2019             109.08                    
+CM       3                1.05          11.50      7844        2025             110.76                    
+CM       4                1.06          12.20      7898        2032             111.81                                    
+CM       5                1.05          12.80      7969        2010             112.46                     
+CM       6                1.05          13.30      8008        2000             113.15                   
+CM       7                1.10          13.90      8234        1853             113.01
+CM       8                1.07          14.30      8226        1867             113.11
+CM       9                1.02          14.70      8293        1831             113.41
+CM     10                1.06          15.30      8653        1562             111.41
+CM 
+CM ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CM Antenna with 1 reflector for 190 degree pattern. Velocity factor of coax cable is 0.66 and primary coax length is 230MM.
+CM ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CM 
+CM Elements        VSWR         Gain         A             R           Adjusting stub       RG      RT    Horizontal         Vertical
+CM                                            dBi                                          length(MM)                             beamwidth       beamwidth
+CM 
+CM       3                1.16          14.10      7844        2025             111.82                32       35         182                   8
+CM       4                1.12          14.70      7898        2032             112.87                32       35         187                   8
+CM       5                1.07          15.20      7969        2010             113.45                32       35         189                   6
+CM       6                1.10          16.10      8008        2000             114.29                32       35         188                   6
+CM       7                1.07          16.50      8234        1853             113.35                32       35         192                   4
+CM       8                1.02          16.70      8226        1867             113.98                32       35         190                   4
+CM       9                1.07          17.00      8293        1831             114.35                32       35         190                   4
+CM     10                1.06          17.80      8653        1562             112.04                32       35         206                   2
+CM 
+CM ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CM Antenna with 2 reflectors for 83 degree pattern. Velocity factor of coax cable is 0.66 and primary coax length is 230MM.
+CM ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CM 
+CM Elements        VSWR         Gain         A             R           Adjusting stub       RG      RT    Horizontal         Vertical
+CM                                            dBi                                          length(MM)                             beamwidth       beamwidth
+CM 
+CM       3                1.03          17.00      7844       2025             113.84                38       35         82                   8
+CM       4                1.05          17.60      7898       2032             114.44                38       35         83                   8
+CM       5                1.09          18.00      7969       2010             114.72                38       35         83                   6
+CM       6                1.14          18.10      8008       2000             115.00                38       35         83                   6
+CM       7                1.08          19.10      8234       1853             114.74                38       35         83                   4
+CM       8                1.12          19.20      8226       1867             115.09                38       35         83                   4
+CM       9                1.09          19.40      8293       1831             115.26                38       35         85                   4
+CM     10                1.16          20.90      8653       1562             113.61                35       35         82                   2
+CM 
+CM 
+CM ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CM Antenna with flat metal reflector for 30 degree pattern. Velocity factor of coax cable is 0.66 and primary coax length is 230MM.
+CM -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CM 
+CM Elements        VSWR         Gain         A             R           Adjusting stub       RW        G    Horizontal         Vertical
+CM                                            dBi                                          length(MM)                              beamwidth       beamwidth
+CM 
+CM       3                1.22          20.20      7844        2025             109.85                40       30         32                   8
+CM       4                1.25          21.20      7898        2032             111.10                40       30         32                   8
+CM       5                1.21          21.90      7969        2010             112.32                40       30         32                   6
+CM       6                1.22          22.40      8008        2000             112.68                40       30         32                   6
+CM       7                1.46          23.00      8234        1853             113.01                40       45         30                   4
+CM       8                1.36          23.40      8226        1867             113.11                40       45         30                   4
+CM       9                1.49          24.20      8293        1831             113.41                40       45         30                   4
+CM     
+CM 
+CM 
+CM freq=2450	Resonant frequency
+CM AH=9	Antenna height in wavelength
+CM S=0.0082	Adj gap when testing              0.0082              0.0082      1MM gap for WiFi band. Help in adjusting VSWR.
+CM W=0.0020	Wire thickness                        0.0020              0.0020 @ 2.45 ghz is ethernet cable
+CM A=0.8293	Center wire                              0.74
+CM R=0.1831	Ring wire length                      0.98-A               0.98 seems optimum number.
+CM CF=6.2832	6.2832 Conversion factor for ring wire length    (2*pi(3.1416)
+CM EL=8	Number of radiating elements       2 to 9
+CM G=0.32	0.27
+CM RT=35	Reflector thickness                         35
+CM RH=18	Reflector height                             EL+1
+CM STUB1=230	Stub from antenna to feedpoint     230 ( Length of stub in MM)
+CM STUB2=113.41	Stub to adjust VSWR                    117 ( Length of stub in MM ) with reflectors   and   115  without reflectors.
+CM VF=0.66	Velocity factor of coax cable.
+CM RW=0.40	Reflector width        0.40           0 TO 1.0            Decides antenna pattern
+CM Rx=RW/2, Rnx=4	Reflector width  / 2 , number of wires
+CM Ry=RH/2, Rny=20	Reflector height / 2 , number of wires
+CM RG=0.40	Reflector gap           0.40           0.20 to 0.45       Decides antenna pattern
+CM SRW=0.50	0.50
+CM SRA=1.0	1.00
+CM 
+CM 
+CM 
+CM 
+CM Helix	1	10	S	S	R/CF	R/CF	R/CF	R/CF	W				Create center ring
+CM Copy/move	0	0	0	0	0	0	0	A/2	1				Move center ring on Z axis
+CM Copy/move	10	EL	0	0	0	0	0	A+S	1				Create exra rings and copy on Z axis
+CM Wire	2	10	R/CF	0	(A/2)+S	R/CF	0	A+(A/2)+S	W				Wire from center ring to second ring
+CM Wire	3	10	R/CF	0	A+(A/2)+(S*2)	R/CF	0	(A*2)+(A/2)+(S*2)	W				Wire from second ring to third ring
+CM Copy/move	20	EL-1	0	0	0	0	0	A+S	3				Create wires and copy on Z axis
+CM Mirror	100	0	0	1									
+CM Wire	4	11	R/CF	0	-A/2	R/CF	0	A/2	W				Center radiator
+CM Wire	5	10	0	0	-A/2	0	0	A/2	W				Reflector
+CM Wire	6	1	0.20	-W	0	0.20	0	W	W				Feedpoint
+CM Wire	7	1	0.40	-W	0	0.40	0	W	W				Stub for adjusing VSWR
+CM Wire	8	30	-G	0	-RH	-G	0	RH	W*RT				Primary reflector
+CM Wire	9	30	R/CF	-G	-RH	R/CF	-G	RH	W*RT				Secondary
+CM Copy/move	0	0	0	0	0	0	0	AH					Antenna height adjustor
+CM 								
+CM 
+CM Voltage-src	6	1	0	1	0	1	0	0						
+CM 
+CM Wire-conduc	0	0	0	Copper	
+CM 
+CM Trans-line	6	1	4	6	50	(STUB1/VF)*(freq/2998000)	Open	0	Open	0	
+CM Trans-line	6	1	7	1	50	(STUB2/VF)*(freq/2998000)	Open	0	Open	0	
+CM 													
+CM 
+CM P-multip	Rnx*2	Rny*2	-RG	-Rx	-Ry	-RG	Rx	-Ry	-RG	Rx	Ry		
+CM P-multip	Rny*2	5	-RG	-Rx	-Ry	-RG	-Rx	Ry	-RG/2	-SRA/2	Ry		
+CM P-multip	Rny*2	5	-RG	Rx	Ry	-RG	Rx	-Ry	-RG/2	SRA/2	-Ry		
+CM P-multip	Rny*2	5	-RG/2	-SRA/2	-Ry	-RG/2	-SRA/2	Ry	SRW	-SRA	Ry		
+CM P-multip	Rny*2	5	-RG/2	SRA/2	Ry	-RG/2	SRA/2	-Ry	SRW	SRA	-Ry		
+CM 
+CM 
+CM 
+CM 	
+CE
+SY freq=2450	'Resonant frequency
+SY AH=3	'Antenna height in wavelength
+SY S=0.0082	'Adj gap when testing              0.0082              0.0082      1MM gap for WiFi band. Help in adjusting VSWR.
+SY W=0.0020	'Wire thickness                        0.0020              0.0020 @ 2.45 ghz is ethernet cable
+SY A=0.7743	'Center wire                              0.74
+SY R=0.2019	'Ring wire length                      0.98-A               0.98 seems optimum number.
+SY CF=6.2832	'6.2832 Conversion factor for ring wire length    (2*pi(3.1416)
+SY EL=2	'Number of extra  elements       2 to 9
+SY G=0.32	'0.32 with 1 reflector and 0.38 with 2 reflectors.
+SY RT=35	'Reflector thickness                         35
+SY RH=EL+1	'Reflector height                             EL+1
+SY STUB1=230	'Stub from antenna to feedpoint     230 ( Length of stub in MM)
+SY STUB2=109.08	'Stub to adjust VSWR                    117 ( Length of stub in MM ) with reflectors   and   115  without reflectors.
+SY VF=0.66	'Velocity factor of coax cable.
+SY RW=0.40	'Reflector width        0.40           0 TO 1.0            Decides antenna pattern
+SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
+SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
+SY SRW=0.50	'0.50
+SY SRA=1.00	'1.00
+GH	1	10	S	S	R/CF	R/CF	R/CF	R/CF	W	'Create center ring
+GM	0	0	0	0	0	0	0	A/2	1	'Move center ring on Z axis
+GM	10	EL	0	0	0	0	0	A+S	1	'Create exra rings and copy on Z axis
+GW	2	10	R/CF	0	(A/2)+S	R/CF	0	A+(A/2)+S	W	'Wire from center ring to second ring
+GW	3	10	R/CF	0	A+(A/2)+(S*2)	R/CF	0	(A*2)+(A/2)+(S*2)	W	'Wire from second ring to third ring
+GM	20	EL-1	0	0	0	0	0	A+S	3	'Create wires and copy on Z axis
+GX	100	001
+GW	4	11	R/CF	0	-A/2	R/CF	0	A/2	W	'Center radiator
+GW	5	10	0	0	-A/2	0	0	A/2	W	'Reflector
+GW	6	1	0.20	-W	0	0.20	0	W	W	'Feedpoint
+GW	7	1	0.40	-W	0	0.40	0	W	W	'Stub for adjusing VSWR
+GM	0	0	0	0	0	0	0	AH	'Antenna height adjustor
+GS	0	0	299.80/freq
+GE	1
+LD	5	0	0	0	58000000
+GN	2	0	0	0	4	0.003
+EK
+EX	0	6	1	0	1	0	0
+TL	6	1	4	6	50	(STUB1/VF)*(freq/2998000)	0	0	0	0
+TL	6	1	7	1	50	(STUB2/VF)*(freq/2998000)	0	0	0	0
+FR	0	0	0	0	freq	0
+EN

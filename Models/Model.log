@@ -1,11 +1,40 @@
-CURTAIN_QUAD21_915_20.9DBI.NEC wavelength=0.328 mtr.
+COLLINEAR_2450_10.4DBI.NEC wavelength=0.122 mtr.
 
-Error, max s-patch area (5.4e-3) above (wlen*wlen)/25 (4.3e-3)
-Warn.: Wire 2, seg 12 (tag 2), len/rad at junction (3.144) below 6.
-Warn.: Wire 2, seg 14 (tag 2), len/rad at junction (3.144) below 6.
-Warn.: Wire 9, seg 81 (tag 10), len/rad at junction (3.144) below 6.
-Warn.: Wire 9, seg 83 (tag 10), len/rad at junction (3.144) below 6.
-Warn.: Wire 31, seg 351 (tag 102), len/rad at junction (3.144) below 6.
-Warn.: Wire 31, seg 353 (tag 102), len/rad at junction (3.144) below 6.
-Warn.: Wire 38, seg 420 (tag 110), len/rad at junction (3.144) below 6.
-Warn.: Wire 38, seg 422 (tag 110), len/rad at junction (3.144) below 6.
+Error: Wire 22 (tag 101), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 22 (tag 101), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 23 (tag 102), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 23 (tag 102), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 24 (tag 103), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 24 (tag 103), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 25 (tag 104), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 25 (tag 104), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 26 (tag 105), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 26 (tag 105), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 27 (tag 106), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 27 (tag 106), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 28 (tag 121), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 28 (tag 121), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 29 (tag 122), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 29 (tag 122), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 30 (tag 123), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 30 (tag 123), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 31 (tag 124), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 31 (tag 124), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 32 (tag 125), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 32 (tag 125), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 33 (tag 126), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 33 (tag 126), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 34 (tag 141), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 34 (tag 141), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 35 (tag 142), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 35 (tag 142), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 36 (tag 143), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 36 (tag 143), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 37 (tag 144), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 37 (tag 144), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 38 (tag 145), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 38 (tag 145), seg-len (0) below .5 * radius (1.e-4)
+Error: Wire 39 (tag 146), seg-len ( (0) ) below wlen/1000 (1.e-4)
+Error: Wire 39 (tag 146), seg-len (0) below .5 * radius (1.e-4)
+Warn.: Wire 45 (tag 15), seg-len (3.e-4) below 2 * radius (5.e-4)
+Warn.: Wire 46 (tag 16), seg-len (3.e-4) below 2 * radius (5.e-4)

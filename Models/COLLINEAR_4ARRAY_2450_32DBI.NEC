@@ -1,6 +1,26 @@
-CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry	
-CM P-multip	Rny*2	5	-G	-Rx	-Ry	-G	-Rx	Ry	SRL	-SRA	Ry		
-CM P-multip	Rny*2	5	-G	Rx	Ry	-G	Rx	-Ry	SRL	SRA	-Ry
+CM freq=2450	
+CM AH=3	Antenna height in wavelength
+CM spacing=0.0130	Adj gap when testing      0.0130              Help in adjusting VSWR.
+CM W=0.0020	Wire thickness                0.0041              0.0020 @ 2.45 ghz is ethernet cable
+CM wla=0.4255	Center wire                      0.4255
+CM wlb=0.6805	Inner wires                       0.6805
+CM wlc=wlb	Outer wires                      0.6805
+CM wld=wlb	End wires                        0.6805
+CM hr=0.04581	Ring radius                      0.04581
+CM da=wla	
+CM db=da+spacing	
+CM dc=db+wlb	
+CM dd=dc+spacing	
+CM de=dd+wlc	
+CM df=de+spacing	
+CM dg=df+wld	
+CM EG=0.719369	Gap between elements  0.721
+CM RG=0.24	Gap between elements  0.24       0.16 TO 0.25
+CM STUB=0.98	Electric length of stub   0.9826
+CM RH=5.5	Reflector height
+CM RW=EG	Reflector width
+CM Rx=RW/2, Rnx=4	Reflector width  / 2 , number of wires
+CM Ry=RH/2, Rny=20	Reflector height / 2 , number of wires
 CM 
 CM 
 CM Helix	1	10	spacing	spacing	hr	hr	hr	hr	W				
@@ -8,7 +28,29 @@ CM Copy/move	0	0	0	0	0	0	0	da	1
 CM Helix	2	10	spacing	spacing	hr	hr	hr	hr	W				
 CM Copy/move	0	0	0	0	0	0	0	dc	2				
 CM Helix	3	10	spacing	spacing	hr	hr	hr	hr	W				
-CM Copy/move	0	0	0	0	0	0	0	de	3						
+CM Copy/move	0	0	0	0	0	0	0	de	3				
+CM Wire	5	30	hr	0	0	hr	0	da	W				
+CM Wire	6	10	hr	0	db	hr	0	dc	W				
+CM Wire	7	10	hr	0	dd	hr	0	de	W				
+CM Wire	8	10	hr	0	df	hr	0	dg	W				
+CM Wire	9	11	0	0	0	0	0	da	W				
+CM Mirror	10	0	0	1									
+CM Copy/move	100	7	0	0	0	0	EG	0					
+CM P-multip	Rnx*2	Rny*2	-RG	-EG	-Ry	-RG	EG*8	-Ry	-RG	EG*8	Ry		Reflector
+CM Copy/move	0	0	0	0	0	0	0	AH
+CM 
+CM 
+CM Voltage-src	5	1	0	1	0	1	0	0
+CM 
+CM 		
+CM 
+CM Trans-line	5	1	105	1	50	STUB	Open		Open		
+CM Trans-line	105	1	205	1	50	STUB	Open		Open		
+CM Trans-line	205	1	305	1	50	STUB	Open		Open		
+CM Trans-line	305	1	405	1	50	STUB	Open		Open		
+CM Trans-line	405	1	505	1	50	STUB	Open		Open		
+CM Trans-line	505	1	605	1	50	STUB	Open		Open		
+CM Trans-line	605	1	705	1	50	STUB	Open		Open							
 CE
 SY freq=2450
 SY AH=3	'Antenna height in wavelength

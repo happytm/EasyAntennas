@@ -7,6 +7,63 @@ CM CQ21, 21 Element Curtain-Quad from Ross Anderson, W1HBQ, holl_ands mod 20Oct2
 CM See http://home.comcast.net/~ross_anderson/CurtainQuadFigure2.htm
 CM Horizontal wires represent 21 Elements, vertical wires all same length.
 CM ########################################################################
+CM 
+CM 
+CM 
+CM freq=2450	Resonant frequency
+CM AH=3	Antenna height in wavelength
+CM RH=5.2	Reflector height   5.20
+CM RW=1	Reflector Width    1.00
+CM Ry=RH/2, Rny=16	Reflector height / 2 , number of wires
+CM Rx=RW/2, Rnx=4	Reflector width / 2 , number of wires
+CM W=0.0028	Wire Radius                                        0.0034
+CM WH=W	Wire radius for horizontal elements      0.0034
+CM G=0.16	Gap between reflector and elements   0.16
+CM H=0.032	Transmission lines         0.032 with reflector or 0.052 without reflector
+CM V=0.8181	All vertical elements      0.8181
+CM H1=0.1412	Horizontal elements       0.1412
+CM H2=H1*2	Horizontal elements       H1*2
+CM H3=H1*3	Horizontal elements       H1*3
+CM V1=V*2	Vertical elements           V*2
+CM V2=V*3	Vertical elements           V*3
+CM 
+CM 
+CM 
+CM Wire	1	11	0	H	V2	0	H1	V2	WH				
+CM Wire	2	2	0	0	V1	0	H	V1	WH				
+CM Wire	3	11	0	H1	V1	0	H2	V1	WH				
+CM Wire	4	11	0	H	V	0	H1	V	WH				
+CM Wire	5	11	0	H2	V	0	H3	V	WH				
+CM Wire	7	11	0	H1	0	0	H2	0	WH				
+CM Wire	8	11	0	H	-V	0	H1	-V	WH				
+CM Wire	9	11	0	H2	-V	0	H3	-V	WH				
+CM Wire	10	3	0	0	-V1	0	H	-V1	WH				
+CM Wire	11	11	0	H1	-V1	0	H2	-V1	WH				
+CM Wire	12	11	0	H	-V2	0	H1	-V2	WH				
+CM Wire	13	13	0	H	V2	0	H	V1	W				
+CM Wire	14	13	0	H	V1	0	H	V	W				
+CM Wire	15	13	0	H	V	0	H	0	W				
+CM Wire	16	13	0	H	0	0	H	-V	W				
+CM Wire	17	13	0	H	-V	0	H	-V1	W				
+CM Wire	18	13	0	H	-V1	0	H	-V2	W				
+CM Wire	19	13	0	H1	V2	0	H1	V1	W				
+CM Wire	20	13	0	H1	V1	0	H1	V	W				
+CM Wire	21	13	0	H1	V	0	H1	0	W				
+CM Wire	22	13	0	H1	0	0	H1	-V	W				
+CM Wire	23	13	0	H1	-V	0	H1	-V1	W				
+CM Wire	24	13	0	H1	-V1	0	H1	-V2	W				
+CM Wire	25	13	0	H2	V1	0	H2	V	W				
+CM Wire	26	13	0	H2	V	0	H2	0	W				
+CM Wire	27	13	0	H2	0	0	H2	-V	W				
+CM Wire	28	13	0	H2	-V	0	H2	-V1	W				
+CM Wire	29	13	0	H3	V	0	H3	0	W				
+CM Wire	30	13	0	H3	0	0	H3	-V	W				
+CM Mirror	100	0	1	0									
+CM Wire	6	3	0	-H	0	0	H	0	WH				
+CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry		Reflector
+CM Copy/move	0	0	0	0	0	0	0	AH					
+CM 
+CM Voltage-src	6	2	0	1	0	1	0	0		SOURCE on GW1, Seg1
 CM 	
 CE
 SY freq=2450	'Resonant frequency
@@ -15,10 +72,10 @@ SY RH=5.2	'Reflector height   5.20
 SY RW=1	'Reflector Width    1.00
 SY Ry=RH/2, Rny=16	'Reflector height / 2 , number of wires
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
-SY W=0.0034	'Wire Radius                                        0.0034
+SY W=0.0028	'Wire Radius                                        0.0034
 SY WH=W	'Wire radius for horizontal elements      0.0034
 SY G=0.16	'Gap between reflector and elements   0.16
-SY H=0.036594	'Transmission lines         0.03659 with reflector or 0.052 without reflector
+SY H=0.032	'Transmission lines         0.032
 SY V=0.8181	'All vertical elements      0.8181
 SY H1=0.1412	'Horizontal elements       0.1412
 SY H2=H1*2	'Horizontal elements       H1*2
@@ -56,8 +113,8 @@ GW	29	13	0	H3	V	0	H3	0	W
 GW	30	13	0	H3	0	0	H3	-V	W
 GX	100	010
 GW	6	3	0	-H	0	0	H	0	WH
-SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
-SC	0	0	-G	Rx	Ry	'Reflector
+SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry
+SC	0	0	-G	Rx	Ry
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/freq
 GE	1

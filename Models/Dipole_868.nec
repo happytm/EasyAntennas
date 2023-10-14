@@ -1,26 +1,25 @@
-CM LoRa/LoRaWAN tutorial 41
-CM https://www.mobilefish.com/developer/lorawan/lorawan_quickguide_tutorial.html
-CM https://www.mobilefish.com/download/lora/dipole_vertical_868mhz_4nec2.nec.txt
-CM Vertical dipole 868MHz over real ground (City industrial area)
-CM Each element length = 80mm 
-CM Wire diameter = 1.8mm
-CM Height from ground to feedpoint = 11m
-CM --------
+CM Wire	1	11	0	0	G	0	0	L	W				
+CM Wire	2	11	0	0	-G	0	0	-L	W				
+CM Wire	3	11	0	0	G	0.10	0	G	W				
+CM Wire	4	11	0	0	-G	0.10	0	-G	W				
+CM Wire	5	3	0.10	0	-G	0.10	0	G	W				
 CE
 SY FREQ=2450
-SY W=0.0020	'Wire diameter
-SY L=0.228373	'Element length
-SY G=0.0030
-GW	1	11	0	0	G	0	0	L	W
-GW	2	11	0	0	-G	0	0	-L	W
-GW	3	11	0	0	G	0.10	0	G	W
-GW	4	11	0	0	-G	0.10	0	-G	W
-GW	5	3	0.10	0	-G	0.10	0	G	W
+SY AH=0
+SY W=0.002	'Wire diameter                       0.00020
+SY L=0.448491	'Element length                     0.4484
+SY TL=0.251744	'Transmission line length       0.2517
+SY G=0.014719	'Transmission line gap           0.01472
+GW	1	11	0	0	0	0	0	TL	W
+GW	2	11	0	G	0	0	G	TL	W
+GW	3	1	0	0	0	0	G	0	W
+GW	4	11	0	G	TL	0	L	TL	W
+GW	5	11	0	0	TL	0	-L	TL	W
 GS	0	0	299.80/FREQ
 GE	0
 LD	5	0	0	0	58000000
 GN	-1
 EK
-EX	0	5	2	0	1	0	0
+EX	0	3	1	0	1	0	0
 FR	0	0	0	0	FREQ	0
 EN

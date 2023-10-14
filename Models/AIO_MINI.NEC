@@ -65,11 +65,12 @@ CE
 SY freq=2440	'Resonent frequency.                               2440          for Wifi & Lora        444               for VHF/UHF ham bands
 SY AH=0	'Antenna height in wavelength.
 SY W=0.0111	'Wire Thickness.                                       0.0111      for Wifi & Lora         0.00125       for VHF/UHF ham bands.  Wire thickness is very critical for VSWR.
-SY CW=0.0026	'Center element wire thickness                  0.0026     for Wifi & Lora          0.00125       for VHF/UHF ham bands.  Wire thickness is very critical for VSWR. Standard 2.54 mm pin header @2440 mhz.
+SY CW=2.614e-3	'Center element wire thickness                  0.0026     for Wifi & Lora          0.00125       for VHF/UHF ham bands.  Wire thickness is very critical for VSWR. Standard 2.54 mm pin header @2440 mhz.
 SY C=0.0555	'Center element.                                        0.0555       for Wifi & Lora         0.060          for VHF/UHF ham bands
-SY H=0.523	'Horizontal elements.                                 0.523        for Wifi & Lora          0.60            for VHF/UHF ham bands. Cut little longer wire and shorten it to tune VSWR.
-SY V=C	'Vertical elements.                                     0.0555       for Wifi & Lora         0.060          for VHF/UHF ham bands
+SY H=0.528	'Horizontal elements.                                 0.528        for Wifi & Lora          0.60            for VHF/UHF ham bands. Cut little longer wire and shorten it to tune VSWR.
+SY V=0.0555	'Vertical elements.                                     0.0555       for Wifi & Lora         0.060          for VHF/UHF ham bands
 SY A=0.00	'Angle between 2 elements (0 to 0.20)    0.00         This changes directionality in WiFi band from omni to directional (0.00 produces omni pattern). This will change VSWR slightly too. It can lower VSWR a one band at cost of other band.
+SY G=0.18
 GW	1	5	0	-C	0	0	C	0	CW
 GW	2	11	0	C	V	A	H+C-A/6	V	W
 GW	3	11	0	C	-V	A	H+C-A/6	-V	W

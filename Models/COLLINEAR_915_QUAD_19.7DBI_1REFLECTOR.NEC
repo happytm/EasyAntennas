@@ -46,7 +46,7 @@ CM Trans-line	12	1	505	1	50	STUB1	Open	0	Open	0
 CM Trans-line	12	1	1005	1	50	STUB1	Open	0	Open	0	
 CM Trans-line	12	1	1505	1	50	STUB1	Open	0	Open	0				
 CE
-SY freq=2450
+SY freq=915
 SY AH=3	'Antenna height in wavelength
 SY spacing=0.0130	'Adj gap when testing      0.0130              Help in adjusting VSWR.
 SY W=0.0020	'Wire thickness                0.0041              0.0020 @ 2.45 ghz is ethernet cable

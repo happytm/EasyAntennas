@@ -1,0 +1,44 @@
+CM semi circular pattern 6.89 dbi.
+CM If tag 6 & 7 are removed, omnidirectional pattern of 5.15dbi.
+CM 
+CM FREQ=2450	
+CM AH=0	
+CM W=0.0020	Wire diameter                       0.00020
+CM L=0.62	Element length                     0.62
+CM TL=0.17	Transmission line length       0.17
+CM G=0.017	Transmission line gap           0.017
+CM 
+CM 
+CM Wire	1	11	0	0	0	0	TL	0	W				
+CM Wire	2	11	0	0	G	0	TL	G	W				
+CM Wire	3	1	0	0	0	0	0	G	W				
+CM Wire	4	10	0	TL	G	0	TL	L	W				
+CM Wire	5	10	0	TL	0	0	TL	-L+G	W				
+CM Wire	6	10	0	0	G	0	0	L	W				
+CM Wire	7	10	0	0	0	0	0	-L+G	W				
+CM Copy/move	0	0	0	0	0	0	0	AH					
+CM 				
+CM 
+CM Voltage-src	3	1	0	1	0	1	0	0		
+CM 
+CE
+SY FREQ=915
+SY AH=0
+SY W=0.0020	'Wire diameter                       0.00020
+SY L=0.62	'Element length                     0.62
+SY TL=0.17	'Transmission line length       0.17
+SY G=0.017	'Transmission line gap           0.017
+GW	1	10	0	0	0	0	TL	0	W
+GW	2	10	0	0	G	0	TL	G	W
+GW	3	1	0	0	0	0	0	G	W
+GW	4	10	0	TL	G	0	TL	L	W
+GW	5	10	0	TL	0	0	TL	-L+G	W
+GM	0	0	0	0	0	0	0	AH
+GS	0	0	299.80/FREQ
+GE	0
+LD	5	0	0	0	58000000
+GN	-1
+EK
+EX	0	3	1	0	1	0	0
+FR	0	0	0	0	FREQ	0
+EN
