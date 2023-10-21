@@ -1,12 +1,3 @@
-CM Gain of 20.9 dBi in front direction with VSWR of 1.03.
-CM If there is no reflector, Gain of 17 dBi in both directions (front and back) with VSWR of 1.13. Gap between transmission lines is to be increased to 0.052 to lower VSWR.This setup is good for long hallways of building.
-CM Change frequency on first line of symbols tab.
-CM Add or remove reflector from Geometry tab to make antenna dirctional or bidirectional.
-CM ########################################################################
-CM CQ21, 21 Element Curtain-Quad from Ross Anderson, W1HBQ, holl_ands mod 20Oct2014
-CM See http://home.comcast.net/~ross_anderson/CurtainQuadFigure2.htm
-CM Horizontal wires represent 21 Elements, vertical wires all same length.
-CM ########################################################################
 CM 
 CM 
 CM freq=2450	Resonant frequency
