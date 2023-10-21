@@ -5,15 +5,21 @@ CM                                                 Without reflector
 CM 
 CM Elements   Gain(dbi)      VSWR        L                  TL               EG                   G
 CM 
-CM      1                4.71         1.36       0.5411         0.2132      Not needed      0.01573  
-CM      2                7.38         1.04       0.5814         0.2176      (L*2)+(G*2)       0.01605
-CM      3                8.86         1.08       0.5400         0.2500      (L*2)+(G*2)       0.01600
-CM      5               10.8          1.13       0.5200         0.2880      (L*2)+(G*2)       0.01700
-CM      7               12.0          1.04       0.5090         0.3182      (L*2)+(G*2)       0.01809
-CM      9               13.0          1.07       0.5030         0.3365      (L*2)+(G*2)       0.01827
-CM    11               13.9          1.19       0.4993         0.3491      (L*2)+(G*2)       0.01841
-CM    13               14.5          1.45       0.4985         0.3593      (L*2)+(G*2)       0.01850
-CM    15               15.0          1.68       0.4970         0.3700      (L*2)+(G*2)       0.01858
+CM      1                6.79         1.02       0.50         0.253      Not needed      0.0390  
+CM      2                8.45         1.08       0.50         0.271      (L*2)+(G*2)       0.0377
+CM      3                9.59         1.06       0.50         0.286      (L*2)+(G*2)       0.0344
+CM      4               10.5          1.03       0.50         0.297      (L*2)+(G*2)       0.0308
+CM      5               11.3          1.27       0.50         0.318      (L*2)+(G*2)       0.0249
+CM      6               11.9          1.01       0.50         0.318      (L*2)+(G*2)       0.0249
+CM      7               12.4          1.26       0.50         0.318      (L*2)+(G*2)       0.0249
+CM      8               13.0          1.07       0.50         0.344      (L*2)+(G*2)       0.0195
+CM      9               13.4          1.13       0.50         0.385      (L*2)+(G*2)       0.0137
+CM    10               14.0          1.17       0.50         0.385      (L*2)+(G*2)       0.0137
+CM    11               14.4          1.11       0.50         0.385      (L*2)+(G*2)       0.0137
+CM    12               14.8          1.03       0.50         0.385      (L*2)+(G*2)       0.0137
+CM    13               15.1          1.17       0.50         0.385      (L*2)+(G*2)       0.0137
+CM    14               15.4          1.32       0.50         0.385      (L*2)+(G*2)       0.0137
+CM    15               15.7          1.48       0.50         0.385      (L*2)+(G*2)       0.0137
 CM 
 CM 
 CM                                             With 1 wire reflector
@@ -92,20 +98,24 @@ CM
 CE
 SY FREQ=2450	'Resonant center frequency
 SY AH=3	'Antenna height in wavelength
-SY W=0.0020	'Wire diameter                               0.00020
+SY W=0.002	'Wire diameter                               0.00020
 SY L=0.52	'Element length                                                   0.5410       0.5814        0.5400            0.520       0.509           0.503              0.4993         0.4985        0.4970
-SY TL=0.288	'Transmission line length                                     0.2132       0.2176        0.2500            0.288       0 .3182        0.3365            0.3491         0.3593        0.3
-SY G=0.017	'Transmission line gap                                         0.1573       0.01605      0.1600            0.017       0.01809       0.01827          0.1841         0.1850        0.1858
+SY TL=0.2714	'Transmission line length                                     0.2132       0.2176        0.2500            0.288       0 .3182        0.3365            0.3491         0.3593        0.3
+SY G=0.02118	'Transmission line gap                                         0.1573       0.01605      0.1600            0.017       0.01809       0.01827          0.1841         0.1850        0.1858
 SY EG=(L*2)+(G*2)	'Elements gap                            (L*2)+(G*2)
 SY EL=4	'Number of elements                                    1 to 20                0                 1                2                    4                6                 8                     10                12                14
-SY RG=0.226151	'WIRE reflector gap                      0.22
-SY RT=17.19681	'Reflector Thickness                     17
+SY RG=0.30	'WIRE reflector gap                      0.22
+SY RT=35	'Reflector Thickness                     17
+SY STUB=0
 GW	1	1	0	0	0	0	0	G	W	'Feedpoint
 GW	2	10	0	0	0	0	TL	0	W	'Transmission line
 GW	3	10	0	0	G	0	TL	G	W	'Transmission line
 GW	4	10	0	TL	G	0	TL	L	W	'Radiating element
 GW	5	10	0	TL	0	0	TL	-L+G	W	'Radiating element
 GM	10	EL	0	0	0	0	0	EG	'Radiating element multiplier
+GW	6	30	0	TL+RG	-1	0	TL+RG	EL+1.5	W*RT	'Main reflector.
+GW	7	30	RG	TL	-1	RG	TL	EL+1.5	W*RT	'Secondary reflector.
+GW	8	1	-0.40	0.40	-W	-0.40	0.40	W	W*RT	'Secondary reflector.
 GM	0	0	0	0	0	0	-TL	AH	'Antenna position adjustor
 GS	0	0	299.80/FREQ
 GE	0
@@ -113,9 +123,9 @@ LD	5	0	0	0	58000000
 GN	-1
 EK
 EX	0	1	1	0	1	0	0
-TL	1	1	11	1	50	0	0	0	0	0
-TL	11	1	21	1	50	0	0	0	0	0
-TL	21	1	31	1	50	0	0	0	0	0
-TL	31	1	41	1	50	0	0	0	0	0
+TL	1	1	11	1	50	STUB	0	0	0	0
+TL	11	1	21	1	50	STUB	0	0	0	0
+TL	21	1	31	1	50	STUB	0	0	0	0
+TL	31	1	41	1	50	STUB	0	0	0	0
 FR	0	0	0	0	FREQ	0
 EN

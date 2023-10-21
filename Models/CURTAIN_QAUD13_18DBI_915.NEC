@@ -1,64 +1,81 @@
-CM CQ13r 13 element Curtain Quad with reflector from W1HBQ
-CM Minor tweaks for 2.4Ghz by AE6KS
-CM 			
+CM freq=2450	Resonant frequency
+CM AH=3	Antenna height in wavelength
+CM W=0.006	Wire Thickness  0.004 To 0.008
+CM TLG=0.1618	Transsmission line gap   0.1618
+CM V=0.72	h is the length of all vertical wires  0.72
+CM H1 = TLG*3	
+CM H2 = TLG*5	
+CM RW=1.7	Reflector Width     1.7
+CM RH=3.4	Reflector Height    3.4
+CM Rx=RW/2, Rnx=4	Reflector width / 2 , number of wires
+CM Ry=RH/2, Rny=20	Reflector height / 2 , number of wires
+CM G=0.070	Gap between reflector and elements   0.070
+CM 
+CM 
+CM 
+CM ###########################################################################################
+CM 
+CM 
+CM Wire	3	11	0	H1	V*2	0	H2	V*2	W				Outer right top horizontal
+CM Wire	4	11	0	TLG/2	V	0	H1	V	W				Inner right top horizontal
+CM Wire	7	11	0	H1	0	0	H2	0	W				Outer right middle horizontal
+CM Wire	8	11	0	TLG/2	-V	0	H1	-V	W				Inner right bottom horizontal
+CM Wire	11	11	0	H1	-V*2	0	H2	-V*2	W				Outer right bottom horizontal
+CM Wire	14	13	0	TLG/2	V*2	0	TLG/2	V*1	W				Inner right top vertical
+CM Wire	15	13	0	TLG/2	V	0	TLG/2	0	W				Inner right middle top vertical
+CM Wire	16	13	0	TLG/2	0	0	TLG/2	-V	W				Inner right middle top vertical
+CM Wire	17	13	0	TLG/2	-V	0	TLG/2	-V*2	W				Inner right middle bottom vertical
+CM Wire	20	13	0	H1	V*2	0	H1	V	W				Outer right bottom vertical
+CM Wire	21	13	0	H1	V	0	H1	0	W				Outer right middle top vertical
+CM Wire	22	13	0	H1	0	0	H1	-V	W				Outer right middle bottom vertical
+CM Wire	23	13	0	H1	-V	0	H1	-V*2	W				Outer right bottom vertical
+CM Mirror	100	0	1	0									
+CM Wire	24	5	0	-TLG/2	0	0	TLG/2	0	W				Center horizontal
+CM Wire	25	3	0	-TLG/2	V*2	0	TLG/2	V*2	W				Center top horizontal
+CM Wire	26	3	0	-TLG/2	-V*2	0	TLG/2	-V*2	W				Center bottom horizontal
+CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry		Reflector
+CM Copy/move	0	0	0	0	0	0	0	AH					
+CM Voltage-src	205	3	0	1	0	1	0	0											
+CM 
+CM Voltage-src	24	3	0	1	0	1	0	0						
 CE
 SY freq=915	'Resonant frequency
-SY AH=0	'Antenna height in wavelength
+SY AH=3	'Antenna height in wavelength
 SY W=0.006	'Wire Thickness  0.004 To 0.008
-SY WH=0.006	'Horizontal wires thickness  0.006 To 0.02
+SY TLG=0.1618	'Transsmission line gap   0.1618
+SY V=0.72	'h is the length of all vertical wires  0.72
+SY H1 = TLG*3
+SY H2 = TLG*5
 SY RW=1.7	'Reflector Width     1.7
 SY RH=3.4	'Reflector Height    3.4
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
 SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
-SY G=0.088497	'Gap between reflector and elements   0.0885
-SY l0=0.160022	'Top and bottom horizontal elements in the center   0.16
-SY l1=0.328952	'l1 is the length of the elements next to the center column  0.3290
-SY l2=0.419087	'l2 is the length of the outer elements  0.4190
-SY h=0.709166	'h is the length of all vertical wires  0.7092
-SY y0 = 0.5 * l0
-SY y1 = y0 + l1
-SY y2 = y1 + l2
-SY z0 = 0
-SY z1 = h
-SY z2 = z1 + h
-SY z3 = z2 + h
+SY G=0.070	'Gap between reflector and elements   0.070
+GW	3	11	0	H1	V*2	0	H2	V*2	W	'Outer right top horizontal
+GW	4	11	0	TLG/2	V	0	H1	V	W	'Inner right top horizontal
+GW	7	11	0	H1	0	0	H2	0	W	'Outer right middle horizontal
+GW	8	11	0	TLG/2	-V	0	H1	-V	W	'Inner right bottom horizontal
+GW	11	11	0	H1	-V*2	0	H2	-V*2	W	'Outer right bottom horizontal
+GW	14	13	0	TLG/2	V*2	0	TLG/2	V*1	W	'Inner right top vertical
+GW	15	13	0	TLG/2	V	0	TLG/2	0	W	'Inner right middle top vertical
+GW	16	13	0	TLG/2	0	0	TLG/2	-V	W	'Inner right middle top vertical
+GW	17	13	0	TLG/2	-V	0	TLG/2	-V*2	W	'Inner right middle bottom vertical
+GW	20	13	0	H1	V*2	0	H1	V	W	'Outer right bottom vertical
+GW	21	13	0	H1	V	0	H1	0	W	'Outer right middle top vertical
+GW	22	13	0	H1	0	0	H1	-V	W	'Outer right middle bottom vertical
+GW	23	13	0	H1	-V	0	H1	-V*2	W	'Outer right bottom vertical
+GX	100	010
+GW	24	5	0	-TLG/2	0	0	TLG/2	0	W	'Center horizontal
+GW	25	3	0	-TLG/2	V*2	0	TLG/2	V*2	W	'Center top horizontal
+GW	26	3	0	-TLG/2	-V*2	0	TLG/2	-V*2	W	'Center bottom horizontal
 SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
 SC	0	0	-G	Rx	Ry	'Reflector
-GW	205	5	0	-y0	z0	0	y0	z0	WH	'Center horizontal
-GW	202	3	0	-y0	z2	0	y0	z2	WH	'Center top horizontal
-GW	210	3	0	-y0	-z2	0	y0	-z2	WH	'Center bottom horizontal
-GW	3	11	0	y1	z2	0	y2	z2	W	'Outer right top horizontal
-GW	4	11	0	y0	z1	0	y1	z1	WH	'Inner right top horizontal
-GW	7	11	0	y1	z0	0	y2	z0	WH	'Outer right middle horizontal
-GW	8	11	0	y0	-z1	0	y1	-z1	WH	'Inner right bottom horizontal
-GW	11	11	0	y1	-z2	0	y2	-z2	W	'Outer right bottom horizontal
-GW	14	13	0	y0	z2	0	y0	z1	W	'Inner right top vertical
-GW	15	13	0	y0	z1	0	y0	z0	W	'Inner right middle top vertical
-GW	16	13	0	y0	z0	0	y0	-z1	W	'Inner right middle top vertical
-GW	17	13	0	y0	-z1	0	y0	-z2	W	'Inner right middle bottom vertical
-GW	20	13	0	y1	z2	0	y1	z1	W	'Outer right bottom vertical
-GW	21	13	0	y1	z1	0	y1	z0	W	'Outer right middle top vertical
-GW	22	13	0	y1	z0	0	y1	-z1	W	'Outer right middle bottom vertical
-GW	23	13	0	y1	-z1	0	y1	-z2	W	'Outer right bottom vertical
-GW	103	11	0	-y1	z2	0	-y2	z2	W	'Outer left top horizontal
-GW	104	11	0	-y0	z1	0	-y1	z1	WH	'Inner left top horizontal
-GW	107	11	0	-y1	z0	0	-y2	z0	WH	'Outer left middle horizontal
-GW	108	11	0	-y0	-z1	0	-y1	-z1	WH	'Inner left bottom horizontal
-GW	111	11	0	-y1	-z2	0	-y2	-z2	W	'Outer left bottom horizontal
-GW	114	13	0	-y0	z2	0	-y0	z1	W	'Inner left top vertical
-GW	115	13	0	-y0	z1	0	-y0	z0	W	'Inner left middle top vertical
-GW	116	13	0	-y0	z0	0	-y0	-z1	W	'Inner left middle bottom vertical
-GW	117	13	0	-y0	-z1	0	-y0	-z2	W	'Inner left bottom vertical
-GW	120	13	0	-y1	z2	0	-y1	z1	W	'Outer left top vertical
-GW	121	13	0	-y1	z1	0	-y1	z0	W	'Outer left middle top vertical
-GW	122	13	0	-y1	z0	0	-y1	-z1	W	'Outer left middle bottom vertical
-GW	123	13	0	-y1	-z1	0	-y1	-z2	W	'Outer left bottom vertical
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/freq
 GE	0
 LD	5	0	0	0	58000000
 GN	-1
 EK
-EX	0	205	3	0	1	0	0
+EX	0	24	3	0	1	0	0
 FR	0	0	0	0	freq	0
 EN

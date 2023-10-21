@@ -1,35 +1,33 @@
-CM CQ13r 13 element Curtain Quad with reflector from W1HBQ
-CM Minor tweaks for 2.4Ghz by AE6KS
-CM 4:1 balun required (Halfwave length coax cable). Gain of 18 dBi in front direction.
-CM Change value on first line of symbols tab to scale model for any frequency.
+CM 
 CM ###########################################################################################
-CM freq=915	Resonant frequency
-CM W=7.987e-3	Wire Thickness
-CM CW=0.029093	Center element wire thickness
-CM l0=0.159417	Top and bottom horizontal elements in the center
-CM l1=0.469677	l1 is the length of the elements next to the center column
-CM l2=0.423522	l2 is the length of the outer elements
-CM h=0.682936	h is the length of all vertical wires
+CM 
+CM freq=2450	Resonant frequency
+CM AH=3	Antenna height in wavelength
+CM W=0.006	Wire Thickness  0.004 To 0.008
+CM WH=0.006	Horizontal wires thickness  0.006 To 0.02
+CM RW=0.70	Reflector Width     0.80 TO 1.0
+CM RH=4	Reflector Height    3.5 TO 4.0
+CM Rx=RW/2, Rnx=4	Reflector width / 2 , number of wires
+CM Ry=RH/2, Rny=20	Reflector height / 2 , number of wires
+CM G=0.20	Gap between reflector and elements   0.24
+CM l0=0.1512	Top and bottom horizontal elements in the center   0.1643
+CM l1=l0	l1 is the length of the elements next to the center column  0.1383
+CM h=l0*5	h is the length of all vertical wires  0.7482
 CM y0 = .5 * l0	
 CM y1 = y0 + l1	
-CM y2 = y1 + l2	
 CM z0 = 0	
 CM z1 = h	
 CM z2 = z1 + h	
 CM z3 = z2 + h	
-CM Rx=2/2, Rnx=4	Reflector width / 2 , number of wires
-CM Ry=3.7/2, Rny=20	Reflector height / 2 , number of wires
-CM G=0.179869	Gap between reflector and elements
+CM 
+CM 
 CM ###########################################################################################
 CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry		Reflector
-CM Wire	205	5	0	-y0	z0	0	y0	z0	CW				Center horizontal
-CM Wire	202	5	0	-y0	z2	0	y0	z2	CW				Center top horizontal
-CM Wire	210	5	0	-y0	-z2	0	y0	-z2	CW				Center bottom horizontal
-CM Wire	3	11	0	y1	z2	0	y2	z2	W				Outer right top horizontal
-CM Wire	4	11	0	y0	z1	0	y1	z1	W				Inner right top horizontal
-CM Wire	7	11	0	y1	z0	0	y2	z0	W				Outer right middle horizontal
-CM Wire	8	11	0	y0	-z1	0	y1	-z1	W				Inner right bottom horizontal
-CM Wire	11	11	0	y1	-z2	0	y2	-z2	W				Outer right bottom horizontal
+CM Wire	205	5	0	-y0	z0	0	y0	z0	WH				Center horizontal
+CM Wire	202	3	0	-y0	z2	0	y0	z2	WH				Center top horizontal
+CM Wire	210	3	0	-y0	-z2	0	y0	-z2	WH				Center bottom horizontal
+CM Wire	4	11	0	y0	z1	0	y1	z1	WH				Inner right top horizontal
+CM Wire	8	11	0	y0	-z1	0	y1	-z1	WH				Inner right bottom horizontal
 CM Wire	14	13	0	y0	z2	0	y0	z1	W				Inner right top vertical
 CM Wire	15	13	0	y0	z1	0	y0	z0	W				Inner right middle top vertical
 CM Wire	16	13	0	y0	z0	0	y0	-z1	W				Inner right middle top vertical
@@ -38,11 +36,8 @@ CM Wire	20	13	0	y1	z2	0	y1	z1	W				Outer right bottom vertical
 CM Wire	21	13	0	y1	z1	0	y1	z0	W				Outer right middle top vertical
 CM Wire	22	13	0	y1	z0	0	y1	-z1	W				Outer right middle bottom vertical
 CM Wire	23	13	0	y1	-z1	0	y1	-z2	W				Outer right bottom vertical
-CM Wire	103	11	0	-y1	z2	0	-y2	z2	W				Outer left top horizontal
-CM Wire	104	11	0	-y0	z1	0	-y1	z1	W				Inner left top horizontal
-CM Wire	107	11	0	-y1	z0	0	-y2	z0	W				Outer left middle horizontal
-CM Wire	108	11	0	-y0	-z1	0	-y1	-z1	W				Inner left bottom horizontal
-CM Wire	111	11	0	-y1	-z2	0	-y2	-z2	W				Outer left bottom horizontal
+CM Wire	104	11	0	-y0	z1	0	-y1	z1	WH				Inner left top horizontal
+CM Wire	108	11	0	-y0	-z1	0	-y1	-z1	WH				Inner left bottom horizontal
 CM Wire	114	13	0	-y0	z2	0	-y0	z1	W				Inner left top vertical
 CM Wire	115	13	0	-y0	z1	0	-y0	z0	W				Inner left middle top vertical
 CM Wire	116	13	0	-y0	z0	0	-y0	-z1	W				Inner left middle bottom vertical
@@ -51,24 +46,24 @@ CM Wire	120	13	0	-y1	z2	0	-y1	z1	W				Outer left top vertical
 CM Wire	121	13	0	-y1	z1	0	-y1	z0	W				Outer left middle top vertical
 CM Wire	122	13	0	-y1	z0	0	-y1	-z1	W				Outer left middle bottom vertical
 CM Wire	123	13	0	-y1	-z1	0	-y1	-z2	W				Outer left bottom vertical
-CM 													
+CM Copy/move	0	0	0	0	0	0	0	AH									
+CM 
+CM Voltage-src	205	3	0	1	0	1	0	0											
 CE
 SY freq=2450	'Resonant frequency
 SY AH=3	'Antenna height in wavelength
 SY W=0.006	'Wire Thickness  0.004 To 0.008
 SY WH=0.006	'Horizontal wires thickness  0.006 To 0.02
-SY RW=0.90	'Reflector Width     0.90
-SY RH=3.2	'Reflector Height    3.2
+SY RW=0.70	'Reflector Width     0.80 TO 1.0
+SY RH=4	'Reflector Height    3.5 TO 4.0
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
 SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
-SY G=0.240011	'Gap between reflector and elements   0.24
-SY l0=0.1643	'Top and bottom horizontal elements in the center   0.1643
-SY l1=0.1372	'l1 is the length of the elements next to the center column  0.1372
-SY l2=0.1111	'l2 is the length of the outer elements  0.1111
-SY h=0.7484	'h is the length of all vertical wires  0.7484
+SY G=0.20	'Gap between reflector and elements   0.24
+SY l0=0.1512	'Top and bottom horizontal elements in the center   0.1643
+SY l1=l0	'l1 is the length of the elements next to the center column  0.1383
+SY h=l0*5	'h is the length of all vertical wires  0.7482
 SY y0 = .5 * l0
 SY y1 = y0 + l1
-SY y2 = y1 + l2
 SY z0 = 0
 SY z1 = h
 SY z2 = z1 + h
@@ -78,11 +73,8 @@ SC	0	0	-G	Rx	Ry	'Reflector
 GW	205	5	0	-y0	z0	0	y0	z0	WH	'Center horizontal
 GW	202	3	0	-y0	z2	0	y0	z2	WH	'Center top horizontal
 GW	210	3	0	-y0	-z2	0	y0	-z2	WH	'Center bottom horizontal
-GW	3	11	0	y1	z2	0	y2	z2	W	'Outer right top horizontal
 GW	4	11	0	y0	z1	0	y1	z1	WH	'Inner right top horizontal
-GW	7	11	0	y1	z0	0	y2	z0	WH	'Outer right middle horizontal
 GW	8	11	0	y0	-z1	0	y1	-z1	WH	'Inner right bottom horizontal
-GW	11	11	0	y1	-z2	0	y2	-z2	W	'Outer right bottom horizontal
 GW	14	13	0	y0	z2	0	y0	z1	W	'Inner right top vertical
 GW	15	13	0	y0	z1	0	y0	z0	W	'Inner right middle top vertical
 GW	16	13	0	y0	z0	0	y0	-z1	W	'Inner right middle top vertical
@@ -91,11 +83,8 @@ GW	20	13	0	y1	z2	0	y1	z1	W	'Outer right bottom vertical
 GW	21	13	0	y1	z1	0	y1	z0	W	'Outer right middle top vertical
 GW	22	13	0	y1	z0	0	y1	-z1	W	'Outer right middle bottom vertical
 GW	23	13	0	y1	-z1	0	y1	-z2	W	'Outer right bottom vertical
-GW	103	11	0	-y1	z2	0	-y2	z2	W	'Outer left top horizontal
 GW	104	11	0	-y0	z1	0	-y1	z1	WH	'Inner left top horizontal
-GW	107	11	0	-y1	z0	0	-y2	z0	WH	'Outer left middle horizontal
 GW	108	11	0	-y0	-z1	0	-y1	-z1	WH	'Inner left bottom horizontal
-GW	111	11	0	-y1	-z2	0	-y2	-z2	W	'Outer left bottom horizontal
 GW	114	13	0	-y0	z2	0	-y0	z1	W	'Inner left top vertical
 GW	115	13	0	-y0	z1	0	-y0	z0	W	'Inner left middle top vertical
 GW	116	13	0	-y0	z0	0	-y0	-z1	W	'Inner left middle bottom vertical
