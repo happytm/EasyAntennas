@@ -1,6 +1,58 @@
-CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry	
-CM P-multip	Rny*2	5	-G	-Rx	-Ry	-G	-Rx	Ry	SRL	-SRA	Ry		
-CM P-multip	Rny*2	5	-G	Rx	Ry	-G	Rx	-Ry	SRL	SRA	-Ry		
+CM freq=2440	
+CM AH=3	Antenna height in wavelength
+CM spacing=0.0130	Adj gap when testing      0.0130              Help in adjusting VSWR.
+CM W=0.0020	Wire thickness                0.0041              0.0020 @ 2.45 ghz is ethernet cable
+CM wla=0.42	Center wire                      0.4193
+CM wlb=0.72	Inner wires                       0.72
+CM wlc=wlb	Outer wires                      0.72
+CM wld=wlb	End wires                        0.72
+CM hr=0.0417	Ring radius                      0.0417
+CM da=wla	
+CM db=da+spacing	
+CM dc=db+wlb	
+CM dd=dc+spacing	
+CM de=dd+wlc	
+CM df=de+spacing	
+CM dg=df+wld	
+CM FP=1	
+CM RH=6.66	Reflector height       6.66
+CM RW=0.40	Reflector width        0.40           0 TO 1.0            Decides antenna pattern
+CM Rx=RW/2, Rnx=4	Reflector width  / 2 , number of wires
+CM Ry=RH/2, Rny=20	Reflector height / 2 , number of wires
+CM G=0.40	Reflector gap           0.40           0.20 to 0.45       Decides antenna pattern
+CM SRW=0.50	0.50
+CM SRA=1.0	1.00
+CM STUB1=0.1008	0.1008
+CM STUB2=0.2028	0.2028
+CM 
+CM 
+CM Helix	1	10	spacing	spacing	hr	hr	hr	hr	W				
+CM Copy/move	0	0	0	0	0	0	0	da	1				
+CM Helix	2	10	spacing	spacing	hr	hr	hr	hr	W				
+CM Copy/move	0	0	0	0	0	0	0	dc	2				
+CM Helix	3	10	spacing	spacing	hr	hr	hr	hr	W				
+CM Copy/move	0	0	0	0	0	0	0	de	3				
+CM Wire	5	30	hr	0	0	hr	0	da	W				
+CM Wire	6	10	hr	0	db	hr	0	dc	W				
+CM Wire	7	10	hr	0	dd	hr	0	de	W				
+CM Wire	8	10	hr	0	df	hr	0	dg	W				
+CM Wire	10	30	0	0	0	0	0	da	W				
+CM Mirror	100	0	0	1									
+CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry		
+CM P-multip	Rny*2	5	-G	-Rx	-Ry	-G	-Rx	Ry	-G/2	-SRA/2	Ry		
+CM P-multip	Rny*2	5	-G	Rx	Ry	-G	Rx	-Ry	-G/2	SRA/2	-Ry		
+CM P-multip	Rny*2	5	-G/2	-SRA/2	-Ry	-G/2	-SRA/2	Ry	SRW	-SRA	Ry		
+CM P-multip	Rny*2	5	-G/2	SRA/2	Ry	-G/2	SRA/2	-Ry	SRW	SRA	-Ry		
+CM Wire	500	1	1	-W	0	1	W	0	W				
+CM Wire	501	1	2	-W	0	2	W	0	W				
+CM Copy/move	0	0	0	0	0	0	0	AH	
+CM 
+CM 
+CM Voltage-src	500	1	0	1	0	1	0	0		
+CM 
+CM 
+CM Trans-line	500	1	5	1	50	STUB1	Open	0	Open	0	
+CM Trans-line	500	1	501	1	50	STUB2	Open	0	Open	0					
 CE
 SY freq=2440
 SY AH=3	'Antenna height in wavelength
@@ -25,7 +77,7 @@ SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
 SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
 SY G=0.40	'Reflector gap           0.40           0.20 to 0.45       Decides antenna pattern
 SY SRW=0.50	'0.50
-SY SRA=1.0	'1.00
+SY SRA=1.00	'1.00
 SY STUB1=0.1008	'0.1008
 SY STUB2=0.2028	'0.2028
 GH	1	10	spacing	spacing	hr	hr	hr	hr	W

@@ -1,35 +1,35 @@
-CM 
-CM freq=5785	Resonant frequency
+CM freq=2450	Resonant frequency
 CM AH=3	Antenna height in wavelength
-CM W=0.006	Wire Thickness  0.004 To 0.008
-CM H=0.1514	Top and bottom horizontal elements in the center   0.1514
-CM V=H*5	V is the length of all vertical wires
-CM RW=0.70	Reflector Width     0.80 TO 1.0
-CM RH=4	Reflector Height    3.5 TO 4.0
+CM W=0.006	0.004 To 0.008   Wire Thickness
+CM H=0.1584	0.1584                Top and bottom horizontal elements in the center
+CM H1=1.508	0.1508
+CM V=0.7527	0.7527                  V is the length of all vertical wires
+CM RW=0.70	0.70 TO 1.0          Reflector Width
+CM RH=3.2	3.2 TO 4.0            Reflector Height
 CM Rx=RW/2, Rnx=4	Reflector width / 2 , number of wires
 CM Ry=RH/2, Rny=20	Reflector height / 2 , number of wires
-CM G=0.20	Gap between reflector and elements   0.20
+CM G=0.18	0.18                      Gap between reflector and elements
 CM 
 CM 
 CM ###########################################################################################
 CM 
 CM 
-CM Wire	4	11	0	H/2	V	0	H*1.5	V	W				Inner right top horizontal
-CM Wire	5	11	0	H/2	-V	0	H*1.5	-V	W				Inner right bottom horizontal
+CM Wire	4	11	0	H/2	V	0	H*H1	V	W				Inner right top horizontal
+CM Wire	5	11	0	H/2	-V	0	H*H1	-V	W				Inner right bottom horizontal
 CM Wire	6	13	0	H/2	V*2	0	H/2	V	W				Inner right top vertical
 CM Wire	7	13	0	H/2	V	0	H/2	0	W				Inner right middle top vertical
 CM Wire	8	13	0	H/2	0	0	H/2	-V	W				Inner right middle top vertical
 CM Wire	9	13	0	H/2	-V	0	H/2	-V*2	W				Inner right middle bottom vertical
-CM Wire	10	13	0	H*1.5	V*2	0	H*1.5	V	W				Outer right bottom vertical
-CM Wire	11	13	0	H*1.5	V	0	H*1.5	0	W				Outer right middle top vertical
-CM Wire	12	13	0	H*1.5	0	0	H*1.5	-V	W				Outer right middle bottom vertical
-CM Wire	13	13	0	H*1.5	-V	0	H*1.5	-V*2	W				Outer right bottom vertical
+CM Wire	10	13	0	H*H1	V*2	0	H*H1	V	W				Outer right bottom vertical
+CM Wire	11	13	0	H*H1	V	0	H*H1	0	W				Outer right middle top vertical
+CM Wire	12	13	0	H*H1	0	0	H*H1	-V	W				Outer right middle bottom vertical
+CM Wire	13	13	0	H*H1	-V	0	H*H1	-V*2	W				Outer right bottom vertical
 CM Copy/move	100	1	0	0	180	0	0	0					
 CM Wire	1	5	0	-H/2	0	0	H/2	0	W				Center horizontal
 CM Wire	2	3	0	-H/2	V*2	0	H/2	V*2	W				Center top horizontal
 CM Wire	3	3	0	-H/2	-V*2	0	H/2	-V*2	W				Center bottom horizontal
 CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry		Reflector
-CM Copy/move	0	0	0	0	0	0	0	AH							
+CM Copy/move	0	0	0	0	0	0	0	AH										
 CM 
 CM ###########################################################################################
 CM 
@@ -37,24 +37,25 @@ CM Voltage-src	1	3	0	1	0	1	0	0
 CE
 SY freq=915	'Resonant frequency
 SY AH=3	'Antenna height in wavelength
-SY W=0.006	'Wire Thickness  0.004 To 0.008
-SY H=0.1514	'Top and bottom horizontal elements in the center   0.1514
-SY V=H*5	'V is the length of all vertical wires
-SY RW=0.70	'Reflector Width     0.80 TO 1.0
-SY RH=4	'Reflector Height    3.5 TO 4.0
+SY W=0.006	'0.004 To 0.008   Wire Thickness
+SY H=0.1584	'0.1584                Top and bottom horizontal elements in the center
+SY H1=1.508	'0.1508
+SY V=0.7527	'0.7527                  V is the length of all vertical wires
+SY RW=0.70	'0.70 TO 1.0          Reflector Width
+SY RH=3.2	'3.2 TO 4.0            Reflector Height
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
 SY Ry=RH/2, Rny=20	'Reflector height / 2 , number of wires
-SY G=0.20	'Gap between reflector and elements   0.20
-GW	4	11	0	H/2	V	0	H*1.5	V	W	'Inner right top horizontal
-GW	5	11	0	H/2	-V	0	H*1.5	-V	W	'Inner right bottom horizontal
+SY G=0.18	'0.18                      Gap between reflector and elements
+GW	4	11	0	H/2	V	0	H*H1	V	W	'Inner right top horizontal
+GW	5	11	0	H/2	-V	0	H*H1	-V	W	'Inner right bottom horizontal
 GW	6	13	0	H/2	V*2	0	H/2	V	W	'Inner right top vertical
 GW	7	13	0	H/2	V	0	H/2	0	W	'Inner right middle top vertical
 GW	8	13	0	H/2	0	0	H/2	-V	W	'Inner right middle top vertical
 GW	9	13	0	H/2	-V	0	H/2	-V*2	W	'Inner right middle bottom vertical
-GW	10	13	0	H*1.5	V*2	0	H*1.5	V	W	'Outer right bottom vertical
-GW	11	13	0	H*1.5	V	0	H*1.5	0	W	'Outer right middle top vertical
-GW	12	13	0	H*1.5	0	0	H*1.5	-V	W	'Outer right middle bottom vertical
-GW	13	13	0	H*1.5	-V	0	H*1.5	-V*2	W	'Outer right bottom vertical
+GW	10	13	0	H*H1	V*2	0	H*H1	V	W	'Outer right bottom vertical
+GW	11	13	0	H*H1	V	0	H*H1	0	W	'Outer right middle top vertical
+GW	12	13	0	H*H1	0	0	H*H1	-V	W	'Outer right middle bottom vertical
+GW	13	13	0	H*H1	-V	0	H*H1	-V*2	W	'Outer right bottom vertical
 GM	100	1	0	0	180	0	0	0
 GW	1	5	0	-H/2	0	0	H/2	0	W	'Center horizontal
 GW	2	3	0	-H/2	V*2	0	H/2	V*2	W	'Center top horizontal
@@ -63,9 +64,9 @@ SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
 SC	0	0	-G	Rx	Ry	'Reflector
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/freq
-GE	0
+GE	1
 LD	5	0	0	0	58000000
-GN	-1
+GN	2	0	0	0	4	0.003
 EK
 EX	0	1	3	0	1	0	0
 FR	0	0	0	0	freq	0

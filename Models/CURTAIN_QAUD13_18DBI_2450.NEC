@@ -72,9 +72,9 @@ SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
 SC	0	0	-G	Rx	Ry	'Reflector
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/freq
-GE	0
+GE	1
 LD	5	0	0	0	58000000
-GN	-1
+GN	2	0	0	0	4	0.003
 EK
 EX	0	24	3	0	1	0	0
 FR	0	0	0	0	freq	0

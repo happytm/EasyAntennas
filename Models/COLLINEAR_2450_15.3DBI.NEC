@@ -1,4 +1,4 @@
-CM Omnidirectional pattern of 10.5 to 15.3 dBi peak gain without reflector.
+CM Omnidirectional pattern of 10.4 to 15.3 dBi peak gain without reflector.
 CM Omnidirectional pattern of 16.6 to 21.4 dBi peak gain without reflector with real moderate ground and 3 wavelength antenna height.
 CM Directional peak gain of 23.8 dBi (190 degrees beamwidth) with real moderate ground and 3 wavelength antenna height using single reflector.
 CM Directional peak gain of 26.9 dBi (83 degrees beamwidth) with real moderate ground and 3 wavelength antenna height using 2 reflectors.
@@ -7,18 +7,18 @@ CM -----------------------------------------------------------------------------
 CM Antenna with no reflector for omnidirecional pattern. Velocity factor of coax cable is 0.66 and primary coax length is 230MM.
 CM ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CM 
-CM   Extra            VSWR         Gain         A             R           Adjusting
+CM   Extra           VSWR         Gain         A             R           Adjusting
 CM Elements                            dBi                                      length(MM)              A+R
 CM 
-CM       2                1.05          10.50      7743        2019             109.08              9762    
-CM       3                1.05          11.50      7844        2025             110.76              9869 
-CM       4                1.06          12.20      7898        2032             111.81              9930                    
-CM       5                1.05          12.80      7969        2010             112.46              9979    
-CM       6                1.05          13.30      8008        2000             113.15              1.008 
-CM       7                1.10          13.90      8234        1853             113.01              1.087   
-CM       8                1.07          14.30      8226        1867             113.11              1.093 
-CM       9                1.02          14.70      8293        1831             113.41              1.012
-CM     10                1.06          15.30      8653        1562             111.41              1.022
+CM       2                1.03          10.40      7530        2186             110.48              9716    
+CM       3                1.02          11.40      7631        2187             111.82              9818 
+CM       4                1.03          12.00      7674        2198             111.81              9872                    
+CM       5                1.05          12.50      7714        2194             113.75              9908    
+CM       6                1.03          12.90      7728        2201             114.38              9929 
+CM       7                1.02          13.20      7749        2202             114.84              9951   
+CM       8                1.01          13.30      7781        2185             115.08              9966 
+CM       9                1.02          13.70      7898        2108             115.05              1.00
+CM     10                1.01          13.80      8188        2040             117.80              1.02
 CM 
 CM ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CM Antenna with 1 reflector for 190 degree pattern. Velocity factor of coax cable is 0.66 and primary coax length is 230MM.
@@ -134,16 +134,16 @@ CE
 SY freq=2450	'Resonant frequency
 SY AH=0	'Antenna height in wavelength
 SY S=0.0082	'Adj gap when testing              0.0082              0.0082      1MM gap for WiFi band. Help in adjusting VSWR.
-SY W=0.0020	'Wire thickness                        0.0020              0.0020 @ 2.45 ghz is ethernet cable
-SY A=0.8653	'Center wire                              0.74
-SY R=0.1562	'Ring wire length                      0.98-A               0.98 seems optimum number.
+SY W=0.0020	'Wire thickness                        0.0020              0.0020 @ 2.45 ghz is diameter of one of the conductor of ethernet cable
+SY A=0.7530	'Center wire                              0.74
+SY R=0.2186	'Ring wire length                      0.98-A               0.98 seems optimum number.
 SY CF=6.2832	'6.2832 Conversion factor for ring wire length    (2*pi(3.1416)
-SY EL=10	'Number of extra  elements       2 to 9
+SY EL=2	'Number of extra  elements       2 to 9
 SY G=0.38	'0.32 with 1 reflector and 0.38 with 2 reflectors.
 SY RT=35	'Reflector thickness                         35
 SY RH=(EL*2)+1	'Reflector height                             EL+1      or  (EL*2)+1 with flat metal reflector.
 SY STUB1=230	'Stub from antenna to feedpoint     230 ( Length of stub in MM)
-SY STUB2=111.41	'Stub length in MM.Make sure to check VSWR & bandwidth with VNA and adjust this to cover whole desired bandwidth.
+SY STUB2=110.48	'Stub length in MM.Make sure to check VSWR & bandwidth with VNA and adjust this to cover whole desired bandwidth.
 SY VF=0.66	'Velocity factor of coax cable.
 SY RW=0.40	'Reflector width        0.40           0 TO 1.0            Decides antenna pattern
 SY Rx=RW/2, Rnx=4	'Reflector width  / 2 , number of wires
