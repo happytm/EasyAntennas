@@ -59,7 +59,7 @@ CM P-multip	Rny*2	5	-RG/2	-SRA/2	-Ry	-RG/2	-SRA/2	Ry	SRW	-SRA	Ry
 CM P-multip	Rny*2	5	-RG/2	SRA/2	Ry	-RG/2	SRA/2	-Ry	SRW	SRA	-Ry		
 CM 	
 CE
-SY freq=915	'Resonant frequency
+SY freq=5785	'Resonant frequency
 SY AH=3.0	'Antenna height in wavelength
 SY spacing=0.0130	'Adj gap when testing      0.0130              Help in adjusting VSWR.
 SY W=0.0020	'Wire thickness                0.0020              0.0020 @ 2.45 ghz is ethernet cable
