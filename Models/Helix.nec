@@ -1,32 +1,44 @@
-CM LoRa/LoRaWAN tutorial 45
-CM https://www.mobilefish.com/developer/lorawan/lorawan_quickguide_tutorial.html
-CM https://www.mobilefish.com/download/lora/axial_mode_helical_2.45ghz.nec.txt
-CM Helix 2.45 GHz (6 turns) over perfect ground
-CM Helix starts 2mm above ground
-CM Helix diameter = 46mm 
-CM Helix turn space = 29mm
-CM Helix wire diameter = 2mm
-CM Wire with length=2mm and diameter=2mm added between helix and ground
-CM Wire and helix made of copper
-CM Excitation at bottom of this wire
-CM --------
+CM Direction gain of 15.5 dBi and vswr of 1.7 with 20 turn helix.
+CM Same beamwidth of 27 degrees horizontally and vertically.
+CM Front back ratio 29.9.
+CM Narrow bandwith with vswr under 2 from 2440-2465 mhz.
+CM 
+CM freq=2450	
+CM AH=3	
+CM W=0.0020	0.0020
+CM R=0.097575	Radius = 0.0976
+CM S=0.248484	Spacing = 0.2487
+CM EL=20	Number of turns = 20
+CM FP=150	Feedpoint segment = 150       It changes VSWR, pattern and F/B ratio.
+CM STUB1= 1	
+CM STUB2=0.590706	
+CM 
+CM 
+CM Helix	1	EL*20	S	EL*S	R	R	R	R	W				
+CM Copy/move	0	0	0	90	0	0	0	S	0				
+CM 
+CM Voltage-src	1	FP	0	1	0	1	0	0		
 CE
 SY freq=2450
 SY AH=3
-SY W=0.0020
-SY H=0.01639	'0.1639
-SY R=0.01639	'0.1885
-SY S=0.01639	'0.2377
-SY EL=6
-SY L=EL*S
-GH	1	EL*20	S	L	R	R	R	R	W
-GM	0	0	0	0	0	0	0	H	0
-GW	15	1	R	0	H	R	0	-H	W
+SY W=0.0020	'0.0020
+SY R=0.0976	'Radius = 0.0976
+SY S=0.2487	'Spacing = 0.2487
+SY EL=20	'Number of turns = 20
+SY FP=150	'Feedpoint segment = 150       It changes VSWR, pattern and F/B ratio.
+SY STUB1=1.00	'1.0
+SY STUB2=0.590156	'0.5901
+GH	1	EL*20	S	EL*S	R	R	R	R	W
+GM	0	0	0	90	0	0	0	S	0
+GW	2	1	0	0	0.20	0	0	0.20+W	W
+GW	3	1	0	0	0.40	0	0	0.40+W	W
 GS	0	0	299.80/freq
 GE	0
 LD	5	0	0	0	58000000
 GN	-1
 EK
-EX	0	1	EL*5	0	1	0	0
+EX	0	2	1	0	1	0	0
+TL	2	1	1	FP	50	STUB1	0	0	0	0
+TL	2	1	3	1	50	STUB2	0	0	0	0
 FR	0	0	0	0	freq	0
 EN
