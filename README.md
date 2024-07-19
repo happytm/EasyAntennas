@@ -2,7 +2,8 @@
 
 ### Very useful article to understand Stacking distance and gains for antenna array
 
-https://www.w8ji.com/stacking_broadside_collinear.htm
+- https://www.w8ji.com/stacking_broadside_collinear.htm
+- https://www.w8ji.com/transmitting%20antennas.htm
 
 ### Several very useful RF calculators : 
 
