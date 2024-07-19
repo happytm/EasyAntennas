@@ -1,19 +1,20 @@
 CM freq=2450	Resonant frequency
 CM AH=3	Antenna height in wavelength
-CM RH=4.3	Reflector height   4.30
-CM RW=3.0	Reflector Width    3.00
+CM W=0.0034	Wire Radius                                        0.0034
+CM H=0.03328	Transmission lines         0.03328 with reflector or 0.052 without reflector
+CM V=0.6835	All vertical elements      0.6835
+CM H1=0.4584	Horizontal elements       0.4584
+CM H2=H1*2-H	Horizontal elements       H1*2-H
+CM H3=H1*3-H-H	Horizontal elements       H1*3-H-H
+CM V1=V*2	Vertical elements           V*2
+CM V2=V*3	Vertical elements           V*3
+CM RH=4.30	Reflector height   4.30
+CM RW=3.00	Reflector Width    3.00
 CM Ry=RH/2, Rny=16	Reflector height / 2 , number of wires
 CM Rx=RW/2, Rnx=4	Reflector width / 2 , number of wires
-CM W=0.0034	Wire Radius                                        0.0034
-CM WH=W	Wire radius for horizontal elements      0.0034
-CM G=0.20	Gap between reflector and elements   0.20
-CM H=0.032	Transmission lines         0.032 with reflector or 0.052 without reflector
-CM V=0.68	All vertical elements      0.68
-CM H1=0.4558	Horizontal elements       0.4558
-CM H2=H1*2	Horizontal elements       H1*2
-CM H3=H1*3	Horizontal elements       H1*3
-CM V1=V*2	Vertical elements           V*2
-CM V2=V*3	Vertical elements           V*3	
+CM G=0.18	Gap between reflector and elements   0.18
+CM 
+CM 
 CM 
 CM Wire	1	11	0	H	V2	0	H1	V2	WH				
 CM Wire	2	3	0	0	V1	0	H	V1	WH				
@@ -55,30 +56,29 @@ CE
 SY freq=2450	'Resonant frequency
 SY AH=3	'Antenna height in wavelength
 SY W=0.0034	'Wire Radius                                        0.0034
-SY WH=W	'Wire radius for horizontal elements      0.0034
-SY H=0.032	'Transmission lines         0.032 with reflector or 0.052 without reflector
-SY V=0.68	'All vertical elements      0.68
-SY H1=0.4558	'Horizontal elements       0.4558
-SY H2=H1*2	'Horizontal elements       H1*2
-SY H3=H1*3	'Horizontal elements       H1*3
+SY H=0.03328	'Transmission lines         0.03328 with reflector or 0.052 without reflector
+SY V=0.6835	'All vertical elements      0.6835
+SY H1=0.4584	'Horizontal elements       0.4584
+SY H2=H1*2-H	'Horizontal elements       H1*2-H
+SY H3=H1*3-H-H	'Horizontal elements       H1*3-H-H
 SY V1=V*2	'Vertical elements           V*2
 SY V2=V*3	'Vertical elements           V*3
 SY RH=4.30	'Reflector height   4.30
 SY RW=3.00	'Reflector Width    3.00
 SY Ry=RH/2, Rny=16	'Reflector height / 2 , number of wires
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
-SY G=0.20	'Gap between reflector and elements   0.20
-GW	1	11	0	H	V2	0	H1	V2	WH
-GW	2	3	0	0	V1	0	H	V1	WH
-GW	3	11	0	H1	V1	0	H2	V1	WH
-GW	4	11	0	H	V	0	H1	V	WH
-GW	5	11	0	H2	V	0	H3	V	WH
-GW	7	11	0	H1	0	0	H2	0	WH
-GW	8	11	0	H	-V	0	H1	-V	WH
-GW	9	11	0	H2	-V	0	H3	-V	WH
-GW	10	3	0	0	-V1	0	H	-V1	WH
-GW	11	11	0	H1	-V1	0	H2	-V1	WH
-GW	12	11	0	H	-V2	0	H1	-V2	WH
+SY G=0.18	'Gap between reflector and elements   0.18
+GW	1	11	0	H	V2	0	H1	V2	W
+GW	2	3	0	0	V1	0	H	V1	W
+GW	3	11	0	H1	V1	0	H2	V1	W
+GW	4	11	0	H	V	0	H1	V	W
+GW	5	11	0	H2	V	0	H3	V	W
+GW	7	11	0	H1	0	0	H2	0	W
+GW	8	11	0	H	-V	0	H1	-V	W
+GW	9	11	0	H2	-V	0	H3	-V	W
+GW	10	3	0	0	-V1	0	H	-V1	W
+GW	11	11	0	H1	-V1	0	H2	-V1	W
+GW	12	11	0	H	-V2	0	H1	-V2	W
 GW	13	13	0	H	V2	0	H	V1	W
 GW	14	13	0	H	V1	0	H	V	W
 GW	15	13	0	H	V	0	H	0	W
@@ -98,14 +98,14 @@ GW	28	13	0	H2	-V	0	H2	-V1	W
 GW	29	13	0	H3	V	0	H3	0	W
 GW	30	13	0	H3	0	0	H3	-V	W
 GX	100	010
-SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry
-SC	0	0	-G	Rx	Ry
-GW	6	3	0	-H	0	0	H	0	WH
+GW	6	3	0	-H	0	0	H	0	W
+SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	'Reflector
+SC	0	0	-G	Rx	Ry	'Reflector
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/freq
-GE	1
+GE	0
 LD	5	0	0	0	58000000	'Copper wires
-GN	2	0	0	0	4	0.003
+GN	-1
 EK
 EX	0	6	2	0	1	0	0	'SOURCE on GW1, Seg1
 FR	0	0	0	0	freq	0
