@@ -1,4 +1,9 @@
 # DIY easy to build high gain antennas with 4nec2 models.
+
+### Very useful article to understand Stacking distance and gains for antenna array
+
+https://www.w8ji.com/stacking_broadside_collinear.htm
+
 ### Several very useful RF calculators : 
 
 - https://www.mantaro.com/resources/impedance-calculator.htm
