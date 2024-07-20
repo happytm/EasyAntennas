@@ -1,29 +1,36 @@
-CM M2 432-12EME with T-MATCH
+CM M2 2450-12EME with T-MATCH
 CM 
-CM A=0	Reflector
-CM B=0.201297	Driven element
-CM C=0.355673	Director
-CM D=0.666841	Director
-CM E=1.03142	Director
-CM F=1.434258	Director
-CM G=1.857421	Director
-CM H=2.295333	Director
-CM I=2.738112	Director
-CM J=3.172731	Director
-CM K=3.605043	Director
-CM L=3.980187	Director
-CM M=0.235429	
-CM N=0.180115	
-CM O=0.226445	
-CM P=0.216213	
-CM Q=0.212808	
-CM R=0.209385	
-CM S=0.207108	
-CM T=0.203703	
-CM U=0.202556	
-CM V=0.208238	
-CM W=0.228357	
-CM Z=0.036023
+CM Very wide bandwidth under VSWR of less then 2:1 and gain of 20 dBi.
+CM 
+CM Freq=2450	
+CM AH=3	                Antenna height
+CM WR=0.0020	Wire radius
+CM A=0	                Reflector
+CM B=0.228624	Driven element
+CM C=0.357481	Director
+CM D=0.60274	Director
+CM E=0.99861	Director
+CM F=1.428799	Director
+CM G=1.861446	Director
+CM H=2.293434	Director
+CM I=2.749653	Director
+CM J=3.176988	Director
+CM K=3.627164	Director
+CM L=4.014831	Director
+CM M=0.237415	
+CM N=0.180244	
+CM O=0.226102	
+CM P=0.217877	
+CM Q=0.212268	
+CM R=0.20951	
+CM S=0.208295	
+CM T=0.204976	
+CM U=0.203748	
+CM V=0.208359	
+CM W=0.223887	
+CM Z=0.036066	
+CM EG=1.027	1.027  Sweet point between 0.95 to 1.05
+CM STUB=0	
 CM 
 CM 
 CM Wire	1	19	A	-M	0	A	M	0	WR				
@@ -44,35 +51,47 @@ CM Wire	15	1	B	N	0	B	N	-Z	WR
 CM Wire	16	15	B	-N	-Z	B	N	-Z	WR				
 CM Wire	17	3	B	N	-Z	B	W	-Z	WR				
 CM Wire	18	3	B	-N	-Z	B	-W	-Z	WR				
-CM Wire	19	1	B	-N	-Z	B	-N	0	WR					
+CM Wire	19	1	B	-N	-Z	B	-N	0	WR				
+CM Copy/move	0	0	90	0	0	0	0	0					
+CM Copy/move	20	3	0	0	0	0	0	EG					
+CM Copy/move	0	0	0	0	0	0	0	AH					
+CM 													
+CM 
+CM Voltage-src	2	8	0	1	0	1	0	0		
+CM 
+CM Trans-line	2	8	22	8	50	STUB	Open		Open		
+CM Trans-line	22	8	42	8	50	STUB	Open		Open		
+CM Trans-line	42	8	62	8	50	STUB	Open		Open		
 CE
 SY Freq=2450
 SY AH=3	'Antenna height
-SY WR=0.003431	'Wire radius
+SY WR=0.0020	'Wire radius
 SY A=0	'Reflector
-SY B=0.201297	'Driven element
-SY C=0.355673	'Director
-SY D=0.666841	'Director
-SY E=1.03142	'Director
-SY F=1.434258	'Director
-SY G=1.857421	'Director
-SY H=2.295333	'Director
-SY I=2.738112	'Director
-SY J=3.172731	'Director
-SY K=3.605043	'Director
-SY L=3.980187	'Director
-SY M=0.235429
-SY N=0.180115
-SY O=0.226445
-SY P=0.216213
-SY Q=0.212808
-SY R=0.209385
-SY S=0.207108
-SY T=0.203703
-SY U=0.202556
-SY V=0.208238
-SY W=0.228357
-SY Z=0.036023
+SY B=0.228624	'Driven element
+SY C=0.357481	'Director
+SY D=0.60274	'Director
+SY E=0.99861	'Director
+SY F=1.428799	'Director
+SY G=1.861446	'Director
+SY H=2.293434	'Director
+SY I=2.749653	'Director
+SY J=3.176988	'Director
+SY K=3.627164	'Director
+SY L=4.014831	'Director
+SY M=0.2374	'0.2374
+SY N=0.180244
+SY O=0.226102
+SY P=0.217877
+SY Q=0.212268
+SY R=0.20951
+SY S=0.208295
+SY T=0.204976
+SY U=0.203748
+SY V=0.208359
+SY W=0.223887
+SY Z=0.036066
+SY EG=1.027	'1.027  Sweet point between 0.95 to 1.05
+SY STUB=0
 GW	1	19	A	-M	0	A	M	0	WR
 GW	2	15	B	-N	0	B	N	0	WR
 GW	3	19	C	-O	0	C	O	0	WR
@@ -92,12 +111,17 @@ GW	16	15	B	-N	-Z	B	N	-Z	WR
 GW	17	3	B	N	-Z	B	W	-Z	WR
 GW	18	3	B	-N	-Z	B	-W	-Z	WR
 GW	19	1	B	-N	-Z	B	-N	0	WR
+GM	0	0	90	0	0	0	0	0
+GM	20	3	0	0	0	0	0	EG
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/2450
 GE	0
-LD	5	0	0	0	37700000
+LD	5	0	0	0	58000000
 GN	-1
 EK
 EX	0	2	8	0	1	0	0
+TL	2	8	22	8	50	STUB	0	0	0	0
+TL	22	8	42	8	50	STUB	0	0	0	0
+TL	42	8	62	8	50	STUB	0	0	0	0
 FR	0	0	0	0	Freq	0
 EN
