@@ -36,23 +36,29 @@ function calculate() {
 		lats = [43.39708, 43.39695, 43.39619];       // Hard coded anchor latitudes.
         longs = [-72.69701, -72.69409,  -72.69688];  // Hard coded anchor longitudes.     
 	      var polygon = L.polygon([
-         [lats[0], longs[0]],
-         [lats[1], longs[1]],
-         [lats[2], longs[2]]
-        ]).addTo(map);
+               [lats[0], longs[0]],
+               [lats[1], longs[1]],
+               [lats[2], longs[2]]
+              ]).addTo(map);
 		
 		var anchor1;
 		var anchor2;
 		var anchor3;
 		anchor1 = L.marker([lats[0], longs[0]])
 		var featureGroup = L.featureGroup([anchor1]).addTo(map)
-        anchor2 = L.marker([lats[1], longs[1]])
+                anchor2 = L.marker([lats[1], longs[1]])
 		featureGroup = L.featureGroup([anchor2]).addTo(map)
-        anchor3 = L.marker([lats[2], longs[2]])
+                anchor3 = L.marker([lats[2], longs[2]])
 		featureGroup = L.featureGroup([anchor3]).addTo(map)
 	    
+	      var circle = L.circle([43.39079, -72.67333], {
+              color: 'red',
+              fillColor: '#f03',
+              fillOpacity: 0.1,
+              radius: 25
+              }).addTo(map);
 	      
-	      dists = [math.floor(math.random() * 200), math.floor(math.random() * 200), math.floor(math.random() * 200)]; // DISTANCE IN METERS. Replace with live data from anchors.
+	    dists = [math.floor(math.random() * 200), math.floor(math.random() * 200), math.floor(math.random() * 200)]; // DISTANCE IN METERS. Replace with live data from anchors.
 	
 	    console.log("Raw distances:      "+ dists[0] +","+ dists[1] +","+ dists[2])
 	
