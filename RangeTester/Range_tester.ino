@@ -8,6 +8,7 @@
 #include "motionDetector.h"                 // Thanks to https://github.com/paoloinverse/motionDetector_esp
 //#include <ESP32Ping.h>                      // Thanks to https://github.com/marian-craciunescu/ESP32Ping
 //#include <SimpleKalmanFilter.h>             // Built in arduino library. Reference : https://github.com/denyssene/SimpleKalmanFilter
+//SimpleKalmanFilter simpleKalmanFilter(2, 2, 0.01);
 
 #define PINGABLE      false                  // If true use ESPPing library to detect presence of known devices.
 
@@ -161,7 +162,8 @@ void sniffer(void* buf, wifi_promiscuous_pkt_type_t type)
         Serial.print("Unknown device detected with MAC ID : "); for (int i = 10; i <= 15; i++) { sensorValues[i] = p->payload[i]; Serial.print(sensorValues[i], HEX); }
         receivedRSSI = p->rx_ctrl.rssi;
         Serial.print(" & RSSI : "); Serial.println(receivedRSSI);
-        //kalmanFilterRSSI();                     // Calculate the estimated value after applying Kalman Filter
+        // calculate the estimated value with Kalman Filter
+        float filteredRSSI = simpleKalmanFilter.updateEstimate(receivedRSSI);
       }
        
       // RSSI = -10nlog10(d/d0)+A0 // https://www.wouterbulten.nl/blog/tech/kalman-filters-explained-removing-noise-from-rssi-signals/#fn:2
@@ -170,7 +172,9 @@ void sniffer(void* buf, wifi_promiscuous_pkt_type_t type)
 
       float RSSI_1meter = -50; // RSSI at 1 meter distance. Adjust according to your environment.Use WiFi Analyser android app from VREM Software & take average of RSSI @ 1 meter. .
       float Noise = 2;         // Try between 2 to 4. 2 is acceptable number but Adjust according to your environment.
-      float Distance = pow(10, (RSSI_1meter -  receivedRSSI) / (10 * Noise)); Serial.print("Distance:  "); Serial.println(Distance);    
+      float Distance = pow(10, (RSSI_1meter -  filteredRSSI) / (10 * Noise)); Serial.print("Distance:  "); Serial.println(Distance);
+      // calculate the estimated value with Kalman Filter
+      float filteredDistance = simpleKalmanFilter.updateEstimate(Distance);
      }
 
   if (p->payload[0] == 0x80 && p->payload[4] == EEPROM.readByte(0))   // HEX 80 for type = Beacon to filter out unwanted traffic and match device number.
