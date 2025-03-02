@@ -8,6 +8,12 @@
 #include "motionDetector.h"                 // Thanks to https://github.com/paoloinverse/motionDetector_esp
 //#include <ESP32Ping.h>                      // Thanks to https://github.com/marian-craciunescu/ESP32Ping
 //#include <SimpleKalmanFilter.h>             // Built in arduino library. Reference : https://github.com/denyssene/SimpleKalmanFilter
+/*
+e_mea: Measurement Uncertainty - How much do we expect to our measurement vary
+e_est: Estimation Uncertainty - Can be initilized with the same value as e_mea since the kalman filter will adjust its value.
+q: Process Variance - usually a small number between 0.001 and 1 - how fast your measurement moves. Recommended 0.01. Should be tunned to your needs.
+SimpleKalmanFilter simpleKalmanFilter(e_mea, e_est, q);
+*/
 //SimpleKalmanFilter simpleKalmanFilter(2, 2, 0.01);
 
 #define PINGABLE      false                  // If true use ESPPing library to detect presence of known devices.
