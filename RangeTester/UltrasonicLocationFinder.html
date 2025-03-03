@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ultasonic local position using leafletJS</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/mathjs@4.0.1/dist/math.min.js" type="text/javascript"></script>
+    <style> body { margin: 0; padding: 0;} #map { width: 100%; height: 100vh; } </style>
+</head>
+
+<body onload="calculate();">
+	<label> Position coordinates based on simulated bearing and distance:<pre id="output"></pre></label>
+	
+	<label>Link to Google Maps:<a id="output_maps" href=""></a></label>
+    <div id="map"></div>
+	
+  <script>
+
+    output = document.getElementById("output");
+    output = document.getElementById("output_maps");
+
+   function calculate() {
+
+    var map = L.map('map').setView([43.39762, -72.69478], 18);
+   	var osm = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+    maxZoom: 18,
+    subdomains:['mt0','mt1','mt2','mt3']
+    });
+	
+      osm.addTo(map);
+
+      setInterval(() => {
+// Based on the example by StackExchange user Micheala from stackoverflow.com/questions/68961531/how-to-get-latitude-and-longitude-after-going-a-distance-at-certain-bearing-from
+		
+		var bearing = Math.floor(Math.random() * 360);
+        var bearing_rad = (bearing*Math.PI)/180;
+        var distance = 50;
+
+        var EARTH_RADIUS = 6378137;
+
+        var initial_position = {
+        "latitude": 43.39762,
+        "longitude": -72.69478
+         };
+
+        var init_lat = (initial_position.latitude*Math.PI)/180;
+        var init_lon = (initial_position.longitude*Math.PI)/180;
+
+        var radian_lat = (Math.asin( Math.sin(init_lat)*Math.cos(distance/EARTH_RADIUS) + Math.cos(init_lat)*Math.sin(distance/EARTH_RADIUS)*Math.cos(bearing_rad)));
+
+        var final_lon = (180/Math.PI)*(init_lon + Math.atan2(Math.sin(bearing_rad)*Math.sin(distance/EARTH_RADIUS)*Math.cos(init_lat), Math.cos(distance/EARTH_RADIUS)-Math.sin(init_lat)*Math.sin(radian_lat)));
+
+        var final_lat = (180/Math.PI)*radian_lat;
+
+        console.log("Location - Lat: " + final_lat + "Long: " + final_lon); 
+		     
+	    
+        var point = [final_lat , final_lon];
+	    output.innerText = point[0] + "," + point[1];
+	    output_maps.innerText = point[0] + "," + point[1];
+	    output_maps.href = "https://www.google.at/maps/@" + point[0] + "," + point[1] + ",16z";
+		
+	    //var marker;
+	    //var lat = point[0]
+        //var long = point[1]
+		
+
+     
+        var marker = L.marker([point[0], point[1]])
+        var featureGroup = L.featureGroup([marker]).addTo(map)
+       .bindPopup('Location is - Bearing: ' + bearing + ", Distance: " + distance)
+       .openPopup();
+        
+	    map.fitBounds(featureGroup.getBounds())
+		
+        console.log("Cener point - Lat: "+ point[0] +" Long: "+ point[1])
+      }, 5000);
+
+      setInterval(() => {         // Reload page at fixed interval to remove stale markers. 
+		
+	   
+		location.reload()  
+	  }, 1000000);
+    }
+</script>
+
+
+</body>
+</html>
