@@ -63,6 +63,13 @@
 		
 	    const now = new Date();
         const timeString = now.toLocaleTimeString();
+		
+		var circle = L.circle([43.39762, -72.69478 ], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.0,
+        radius: 50
+        }).addTo(map);
         
 		var marker = L.marker([point[0], point[1]])
         var featureGroup = L.featureGroup([marker]).addTo(map)
