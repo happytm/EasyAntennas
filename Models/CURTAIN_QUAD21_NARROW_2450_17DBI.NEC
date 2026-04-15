@@ -1,18 +1,19 @@
-CM freq=2450	Resonant frequency
+CM freq=2440	Resonant frequency
 CM AH=3	Antenna height in wavelength
-CM W=0.0028	Wire Radius                                        0.0034
-CM H=0.032	Transmission lines         0.032
-CM V=0.8181	All vertical elements      0.8181
-CM H1=0.1412	Horizontal elements       0.1412
+CM W=0.0080	Wire Radius                  0.0080
+CM H=0.044	Transmission lines         0.044
+CM V=0.7571	All vertical elements      0.7571
+CM H1=0.263	Horizontal elements       0.263
 CM H2=H1*2	Horizontal elements       H1*2
 CM H3=H1*3	Horizontal elements       H1*3
 CM V1=V*2	Vertical elements           V*2
 CM V2=V*3	Vertical elements           V*3
-CM RH=5.2	Reflector height   5.20
-CM RW=1.0	Reflector Width    1.00
+CM RH=4.8	Reflector height   4.80
+CM RW=1.7	Reflector Width    1.7
+CM RG=0.16	Gap between reflector and elements   0.16
 CM Ry=RH/2, Rny=16	Reflector height / 2 , number of wires
 CM Rx=RW/2, Rnx=4	Reflector width / 2 , number of wires
-CM G=0.16	Gap between reflector and elements   0.16
+CM 
 CM 
 CM 
 CM 
@@ -47,27 +48,27 @@ CM Wire	29	13	0	H3	V	0	H3	0	W
 CM Wire	30	13	0	H3	0	0	H3	-V	W				
 CM Mirror	100	0	1	0									
 CM Wire	6	3	0	-H	0	0	H	0	W				
-CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry		
+CM P-multip	Rnx*2	Rny*2	-RG	-Rx	-Ry	-RG	Rx	-Ry	-RG	Rx	Ry		
 CM Copy/move	0	0	0	0	0	0	0	AH					
 CM 
 CM Voltage-src	6	2	0	1	0	1	0	0		
 CM 	
 CE
-SY freq=2450	'Resonant frequency
+SY freq=2440	'Resonant frequency
 SY AH=3	'Antenna height in wavelength
-SY W=0.0028	'Wire Radius                                        0.0034
-SY H=0.032	'Transmission lines         0.032
-SY V=0.8190	'All vertical elements      0.8190
-SY H1=0.1412	'Horizontal elements       0.1412
+SY W=0.0080	'Wire Radius                  0.0080
+SY H=0.044	'Transmission lines         0.044
+SY V=0.7571	'All vertical elements      0.7571
+SY H1=0.263	'Horizontal elements       0.263
 SY H2=H1*2	'Horizontal elements       H1*2
 SY H3=H1*3	'Horizontal elements       H1*3
 SY V1=V*2	'Vertical elements           V*2
 SY V2=V*3	'Vertical elements           V*3
-SY RH=5.20	'Reflector height   5.20
-SY RW=1.0	'Reflector Width    1.00
+SY RH=4.8	'Reflector height   4.80
+SY RW=1.7	'Reflector Width    1.7
+SY RG=0.16	'Gap between reflector and elements   0.16
 SY Ry=RH/2, Rny=16	'Reflector height / 2 , number of wires
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
-SY G=0.16	'Gap between reflector and elements   0.16
 GW	1	11	0	H	V2	0	H1	V2	W
 GW	2	2	0	0	V1	0	H	V1	W
 GW	3	11	0	H1	V1	0	H2	V1	W
@@ -99,13 +100,13 @@ GW	29	13	0	H3	V	0	H3	0	W
 GW	30	13	0	H3	0	0	H3	-V	W
 GX	100	010
 GW	6	3	0	-H	0	0	H	0	W
-SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry
-SC	0	0	-G	Rx	Ry
+SM	Rnx*2	Rny*2	-RG	-Rx	-Ry	-RG	Rx	-Ry
+SC	0	0	-RG	Rx	Ry
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/freq
-GE	0
+GE	1
 LD	5	0	0	0	58000000	'Copper wires
-GN	-1
+GN	2	0	0	0	4	0.003
 EK
 EX	0	6	2	0	1	0	0
 FR	0	0	0	0	freq	0

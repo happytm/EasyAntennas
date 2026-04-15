@@ -1,7 +1,7 @@
 CM freq=2450	Resonant frequency
 CM AH=3	Antenna height in wavelength
 CM W=0.0080	Wire Radius                  0.0080
-CM H=0.04344	Transmission lines         0.04344
+CM H=0.040	Transmission lines         0.04344
 CM V=0.7571	All vertical elements      0.7571
 CM H1=0.2475	Horizontal elements       0.2475
 CM H2=H1*2	Horizontal elements       H1*2
@@ -10,10 +10,9 @@ CM V1=V*2	Vertical elements           V*2
 CM V2=V*3	Vertical elements           V*3
 CM RH=4.8	Reflector height   4.80
 CM RW=1.8	Reflector Width    1.80
-CM RG=0.21	Gap between reflector and elements   0.21
-CM Ry=RH/2, Rny=16	Reflector height / 2 , number of wires
+CM RG=0.20	Gap between reflector and elements   0.21
+CM Ry=RH/2, Rny=10	Reflector height / 2 , number of wires
 CM Rx=RW/2, Rnx=4	Reflector width / 2 , number of wires
-CM 
 CM 
 CM Wire	1	11	0	H	V2	0	H1	V2	W				
 CM Wire	2	2	0	0	V1	0	H	V1	W				
@@ -65,7 +64,7 @@ SY V2=V*3	'Vertical elements           V*3
 SY RH=4.8	'Reflector height   4.80
 SY RW=1.8	'Reflector Width    1.80
 SY RG=0.21	'Gap between reflector and elements   0.21
-SY Ry=RH/2, Rny=16	'Reflector height / 2 , number of wires
+SY Ry=RH/2, Rny=10	'Reflector height / 2 , number of wires
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
 GW	1	11	0	H	V2	0	H1	V2	W
 GW	2	2	0	0	V1	0	H	V1	W
