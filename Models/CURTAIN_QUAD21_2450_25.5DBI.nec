@@ -80,8 +80,8 @@ SY H3=H1*3-H-H	'Horizontal elements       H1*3-H-H
 SY V1=V*2	'Vertical elements           V*2
 SY V2=V*3	'Vertical elements           V*3
 SY RH=4.30	'Reflector height   4.30
-SY RW=3.0	'Reflector Width    3.00
-SY Ry=RH/2, Rny=16	'Reflector height / 2 , number of wires
+SY RW=3.00	'Reflector Width    3.00
+SY Ry=RH/2, Rny=10	'Reflector height / 2 , number of wires
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
 SY G=0.16	'Gap between reflector and elements   0.16
 GW	1	11	0	H	V2	0	H1	V2	W

@@ -77,49 +77,42 @@ CM freq=2440	Resonant frequency
 CM AH=4	Antenna height in wavelength
 CM S=0.0082	Adj gap when testing              0.0082              0.0082  =   1MM gap for WiFi band. Help in adjusting VSWR.
 CM W=0.0020	Wire thickness                        0.0020              0.0020 @ 2.45 ghz is diameter (0.50 mm) of one of the conductor of ethernet cable
-CM A=0.6910	Radiating wires length             0.6910            85 MM                  85 to 100 mm length  for WiFi band depending on number of elements
+CM A=0.6918	Radiating wires length             0.6918            85 MM                  85 to 100 mm length  for WiFi band depending on number of elements
 CM R=0.26	Ring wire length                      0.96-A    0.26  32 MM           25 to 32 mm length for WiFi band depending on number of elements
 CM CF=6.2832	2*pi  or 2 * 3.1416 = 6.2832 Conversion factor for ring wire length
 CM EL=2	Number of extra  elements       2 to 9                651 mm length for 2 elements for WiFi band covering whole band under 2:1 VSWR
 CM G=0.32	0.32 with 1 reflector , 0.38 with 2 reflectors and 0.65 with 7 wire reflectors.
 CM RT=21	Reflector thickness                         35 or 21 with 7 wire reflectors.
-CM RH=5.89	Reflector height                             EL+1      or  (EL*2)+2 with flat metal reflector.
+CM RH=5.65	Reflector height                             EL+1      or  (EL*2)+2 with flat metal reflector.
 CM VF=1	Velocity factor of coax cable.        0.66
-CM STUB1=172	Stub from antenna to feedpoint     172 ( Any length of stub in MM)
-CM STUB2=55.17916	Stub length in MM.                        55             Make sure to check VSWR & bandwidth with VNA and adjust this to cover whole desired bandwidth.
-CM RW=1.65	Reflector width        1.65          0 TO 1.7            Decides antenna pattern
+CM STUB1=175	Stub from antenna to feedpoint     175 ( Any length of stub in MM)
+CM STUB2=52	Stub length in MM.                        52             Make sure to check VSWR & bandwidth with VNA and adjust this to cover whole desired bandwidth.
+CM RW=1.658149	Reflector width        1.65          0 TO 1.7            Decides antenna pattern
 CM Rx=RW/2, Rnx=2	Reflector width  / 2 , number of wires
 CM Ry=RH/2, Rny=10	Reflector height / 2 , number of wires
-CM SRW=1.18	1.18
-CM SRA=2.40	2.40
-CM RG=0.62	0.62
-CM HW=2	2.00
+CM SRW=1.02	1.02
+CM SRA=2.36	2.36
+CM RG=0.64	0.64
 CM 
 CM 
 CM 
-CM Helix	1	10	S	S	R/CF	R/CF	R/CF	R/CF	W				                Create center ring
+CM Helix	1	10	S	S	R/CF	R/CF	R/CF	R/CF	W				Create center ring
 CM Copy/move	0	0	0	0	0	0	0	A/2	1				Move center ring on Z axis
 CM Copy/move	10	EL	0	0	0	0	0	A+S	1				Create exra rings and copy on Z axis
 CM Wire	2	10	R/CF	0	(A/2)+S	R/CF	0	A+(A/2)+S	W				Wire from center ring to second ring
-CM Wire	3	10	R/CF	0	A+(A/2)+(S*2)	R/CF	0	(A*2)+(A/2)+(S*2)	W			Wire from second ring to third ring
+CM Wire	3	10	R/CF	0	A+(A/2)+(S*2)	R/CF	0	(A*2)+(A/2)+(S*2)	W			Wire from second ring to third ring	
 CM Copy/move	20	EL-1	0	0	0	0	0	A+S	3				Create wires and copy on Z axis
 CM Mirror	100	0	0	1									
 CM Wire	4	11	R/CF	0	-A/2	R/CF	0	A/2	W				Center radiator
 CM Wire	5	10	0	0	-A/2	0	0	A/2	W				Reflector
 CM Wire	6	1	0.20	-W	0	0.20	0	W	W				Feedpoint
 CM Wire	7	1	0.40	-W	0	0.40	0	W	W				Stub for adjusing VSWR
-CM Wire	8	30	-G	0	-RH	-G	0	RH	W*RT				Primary reflector
-CM Wire	9	30	R/CF	-G	-RH	R/CF	-G	RH	W*RT				Secondary
+CM P-multip	Rnx*2	Rny*2	-RG	-Rx	-Ry	-RG	Rx	-Ry	-RG	Rx	Ry		
+CM P-multip	Rny*2	5	-RG	-RW/2	-Ry	-RG	-RW/2	Ry	SRW	-SRA	Ry		
+CM P-multip	Rny*2	5	-RG	RW/2	Ry	-RG	RW/2	-Ry	SRW	SRA	-Ry		
 CM Wire	500	3	-RG	-Rx	0	-RG	Rx	0	W				
-CM Wire	501	3	-RG	-Rx	0	-RG/2	-SRA/2	0	W				
-CM Wire	502	3	-RG/2	-SRA/2	0	SRW	-SRA	0	W				
-CM Wire	503	3	-RG	Rx	0	-RG/2	SRA/2	0	W				
-CM Wire	504	3	-RG/2	SRA/2	0	SRW	SRA	0	W				
-CM Wire	505	3	-RG/2	SRA/2	0	-RG/2	-SRA/2	0	W				
-CM Wire	506	3	SRW	SRA	0	SRW	-SRA	0	W				
-CM Wire	507	3	-RG	0	0	SRW	0	0	W				
-CM Copy/move	0	0	0	0	0	0	0	AH			                Antenna height adjustor
-CM 								
+CM Wire	501	3	SRW	-SRA	0	SRW	SRA	0	W				
+CM Copy/move	0	0	0	0	0	0	0	AH			Antenna height adjustor										
 CM 
 CM Voltage-src	6	1	0	1	0	1	0	0						
 CM 
@@ -130,8 +123,8 @@ CM Trans-line	6	1	7	1	50	(STUB2/VF)*(freq/2998000)	Open	0	Open	0
 CM 													
 CM 
 CM P-multip	Rnx*2	Rny*2	-RG	-Rx	-Ry	-RG	Rx	-Ry	-RG	Rx	Ry		
-CM P-multip	Rny*2	5	-RG	-Rx	-Ry	-RG	-Rx	Ry	-RG/2	-SRA/2	Ry		
-CM P-multip	Rny*2	5	-RG	Rx	Ry	-RG	Rx	-Ry	-RG/2	SRA/2	-Ry		
+CM P-multip	Rny*2	5	-RG	-RW/2	-Ry	-RG	-RW/2	Ry	SRW	-SRA	Ry		
+CM P-multip	Rny*2	5	-RG	RW/2	Ry	-RG	RW/2	-Ry	SRW	SRA	-Ry			
 CM P-multip	Rny*2	5	-RG/2	-SRA/2	-Ry	-RG/2	-SRA/2	Ry	SRW	-SRA	Ry		
 CM P-multip	Rny*2	5	-RG/2	SRA/2	Ry	-RG/2	SRA/2	-Ry	SRW	SRA	-Ry		
 CM 
@@ -241,23 +234,20 @@ SY freq=2440	'Resonant frequency
 SY AH=4	'Antenna height in wavelength
 SY S=0.0082	'Adj gap when testing              0.0082              0.0082  =   1MM gap for WiFi band. Help in adjusting VSWR.
 SY W=0.0020	'Wire thickness                        0.0020              0.0020 @ 2.45 ghz is diameter (0.50 mm) of one of the conductor of ethernet cable
-SY A=0.6912	'Radiating wires length             0.6912            85 MM                  85 to 100 mm length  for WiFi band depending on number of elements
+SY A=0.6918	'Radiating wires length             0.6918            85 MM                  85 to 100 mm length  for WiFi band depending on number of elements
 SY R=0.26	'Ring wire length                      0.96-A    0.26  32 MM           25 to 32 mm length for WiFi band depending on number of elements
 SY CF=6.2832	'2*pi  or 2 * 3.1416 = 6.2832 Conversion factor for ring wire length
 SY EL=2	'Number of extra  elements       2 to 9                651 mm length for 2 elements for WiFi band covering whole band under 2:1 VSWR
-SY G=0.32	'0.32 with 1 reflector , 0.38 with 2 reflectors and 0.65 with 7 wire reflectors.
-SY RT=21	'Reflector thickness                         35 or 21 with 7 wire reflectors.
 SY RH=5.65	'Reflector height                             EL+1      or  (EL*2)+2 with flat metal reflector.
-SY VF=1	'Velocity factor of coax cable.        0.66
-SY STUB1=172	'Stub from antenna to feedpoint     172 ( Any length of stub in MM)
-SY STUB2=55	'Stub length in MM.                        55             Make sure to check VSWR & bandwidth with VNA and adjust this to cover whole desired bandwidth.
-SY RW=1.658149	'Reflector width        1.65          0 TO 1.7            Decides antenna pattern
+SY RW=1.65	'Reflector width        1.65          0 TO 1.7            Decides antenna pattern
 SY Rx=RW/2, Rnx=2	'Reflector width  / 2 , number of wires
 SY Ry=RH/2, Rny=10	'Reflector height / 2 , number of wires
-SY SRW=1.029829	'1.18
-SY SRA=2.365155	'2.36
-SY RG=0.628372	'0.62
-SY HW=1.5	'1.50
+SY SRW=1.02	'1.02
+SY SRA=2.36	'2.36
+SY RG=0.64	'0.64
+SY VF=1	'Velocity factor of coax cable.        0.66
+SY STUB1=175	'Stub from antenna to feedpoint     175 ( Any length of stub in MM)
+SY STUB2=52	'Stub length in MM.                        52             Make sure to check VSWR & bandwidth with VNA and adjust this to cover whole desired bandwidth.
 GH	1	10	S	S	R/CF	R/CF	R/CF	R/CF	W	'Create center ring
 GM	0	0	0	0	0	0	0	A/2	1	'Move center ring on Z axis
 GM	10	EL	0	0	0	0	0	A+S	1	'Create exra rings and copy on Z axis
@@ -266,20 +256,17 @@ GW	3	10	R/CF	0	A+(A/2)+(S*2)	R/CF	0	(A*2)+(A/2)+(S*2)	W
 GM	20	EL-1	0	0	0	0	0	A+S	3	'Create wires and copy on Z axis
 GX	100	001
 GW	4	11	R/CF	0	-A/2	R/CF	0	A/2	W	'Center radiator
-GW	5	10	0	0	-A/2	0	0	A/2	W
+GW	5	10	0	0	-A/2	0	0	A/2	W	'Reflector
 GW	6	1	0.20	-W	0	0.20	0	W	W	'Feedpoint
 GW	7	1	0.40	-W	0	0.40	0	W	W	'Stub for adjusing VSWR
+GW	500	3	-RG	-Rx	0	-RG	Rx	0	W
+GW	501	3	SRW	-SRA	0	SRW	SRA	0	W
 SM	Rnx*2	Rny*2	-RG	-Rx	-Ry	-RG	Rx	-Ry
 SC	0	0	-RG	Rx	Ry
 SM	Rny*2	5	-RG	-RW/2	-Ry	-RG	-RW/2	Ry
 SC	0	0	SRW	-SRA	Ry
 SM	Rny*2	5	-RG	RW/2	Ry	-RG	RW/2	-Ry
 SC	0	0	SRW	SRA	-Ry
-GW	500	3	-RG	-Rx	0	-RG	Rx	0	W
-GW	501	3	SRW	-SRA	0	SRW	SRA	0	W
-GW	502	3	-RG	-RW/2	0	SRW	-SRA	0	W
-GW	503	3	-RG	RW/2	0	SRW	SRA	0	W
-GW	504	3	-RG	0	0	SRW	0	0	W
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.792/freq
 GE	1
