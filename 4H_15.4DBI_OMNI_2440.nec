@@ -1,0 +1,64 @@
+CM Compact 14.3 dbi  omni  pattern with whole  WiFi  band below VSWR of 2. Vertical beamwidth of 2 degrees.
+CM 
+CM freq=2440	Resonent frequency.
+CM AH=3	
+CM W=0.004	0.004  Wire Thickness.    0.002 to 0.008
+CM H=0.464	Horizontal elements.         0.464    57 MM
+CM V=0.0813	Vertical elements.             0.0813   10 MM                              0.05 TO 0.10           Changes pattern from Oval to Omni
+CM EG=1.00	Vertical gap between elements        1.00                  Very critical for antenna pattern thereby gain and good VSWR.
+CM EL=3	Number of extra elements
+CM G=0.097	Horizontal gap beween elements      0.097  12MM
+CM RT=56.30231	Reflector thickness
+CM RG=0.018	Reflector gap       18.00
+CM 
+CM 
+CM 
+CM Wire	2	11	G	0	V	G	H	V	W				right top horizontal
+CM Wire	3	11	G	0	-V	G	H	-V	W				Inner right bottom horizontal
+CM Wire	4	13	G	0	V	G	0	0	W				Inner right middle top vertical
+CM Wire	5	13	G	0	-V	G	0	0	W				Inner right middle top vertical
+CM Wire	6	11	0	0	V	0	-H	V	W				right top horizontal
+CM Wire	7	11	0	0	-V	0	-H	-V	W				Inner right bottom horizontal
+CM Wire	8	13	0	0	V	0	0	0	W				Inner right middle top vertical
+CM Wire	9	13	0	0	-V	0	0	0	W				Inner right middle top vertical
+CM Copy/move	10	EL	0	0	0	0	EG	0					
+CM Wire	50	30	G	0	0	G	EG*EL	0	W				Feedline
+CM Wire	51	30	0	0	0	0	EG*EL	0	W				Feedline
+CM Wire	1	5	0	EL/2	0	G	EL/2	0	W				Feedpoint
+CM Copy/move	0	0	90	0	0	0	0	AH					
+CM 
+CM 
+CM 
+CM Voltage-src	1	3	0	1	0	1	0	0		
+CE
+SY freq=2440	'Resonent frequency.
+SY AH=6
+SY W=0.004	'0.004  Wire Thickness.    0.002 to 0.008
+SY H=0.464	'Horizontal elements.         0.464    57 MM
+SY V=0.0813	'Vertical elements.             0.0813   10 MM                              0.05 TO 0.10           Changes pattern from Oval to Omni
+SY EG=1.00	'Vertical gap between elements        1.00                  Very critical for antenna pattern thereby gain and good VSWR.
+SY EL=3	'Number of extra elements
+SY G=0.097	'Horizontal gap beween elements      0.097  12MM
+SY RT=56.30231	'Reflector thickness
+SY RG=0.018	'Reflector gap       18.00
+GW	2	15	G	0	V	G	H	V	W	'right top horizontal
+GW	3	15	G	0	-V	G	H	-V	W	'Inner right bottom horizontal
+GW	4	15	G	0	V	G	0	0	W	'Inner right middle top vertical
+GW	5	15	G	0	-V	G	0	0	W	'Inner right middle top vertical
+GW	6	15	0	0	V	0	-H	V	W	'right top horizontal
+GW	7	15	0	0	-V	0	-H	-V	W	'Inner right bottom horizontal
+GW	8	15	0	0	V	0	0	0	W	'Inner right middle top vertical
+GW	9	15	0	0	-V	0	0	0	W	'Inner right middle top vertical
+GM	10	EL	0	0	0	0	EG	0
+GW	50	60	G	0	0	G	EG*EL	0	W	'Feedline
+GW	51	60	0	0	0	0	EG*EL	0	W	'Feedline
+GW	1	5	0	EL/2	0	G	EL/2	0	W	'Feedpoint
+GM	0	0	90	0	0	0	0	AH
+GS	0	0	299.8/freq
+GE	1
+LD	5	0	0	0	58000000
+GN	2	0	0	0	4	0.003
+EK
+EX	0	1	3	0	1	0	0
+FR	0	0	0	0	freq	0
+EN
