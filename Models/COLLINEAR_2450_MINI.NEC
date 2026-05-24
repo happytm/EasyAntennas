@@ -1,88 +1,157 @@
-CM freq=2450	Resonant frequency.
+CM freq=2450	
 CM AH=3	Antenna height in wavelength
-CM S=0.010	Adjust spacing when testing  0.010
-CM W=0.0028	Wire thickness                0.0028
-CM A=0.2238	Center wire                      0.2223                 0.2238     with reflectors.
-CM B=0.1047	Inner wires                       0.1237                 0.1047     with reflectors.
-CM C=B	Outer wires                      0.1237
-CM D=B	End wires                        0.1237
-CM hr=0.0174	Ring radius                      0.0149                   0.174      with reflectors.
-CM RWL=hr*2*3.1416	Ring wire length
-CM da=A	
-CM db=A+S	
-CM dc=db+B	
-CM dd=dc+S	
-CM de=dd+C	
-CM df=de+S	
-CM dg=df+D	
-CM FP=26	Segment 22 Of 30 segments for single element. 26 of 30 segments for double elements. This is very critical for good VSWR.
-CM G=0.18	0.18
-CM RH=0.68	0.68
-CM RT=10	10
+CM S=0.0082	Adjust gap when testing  0.0082
+CM W=0.0020	Wire thickness                0.0020
+CM A=0.23	Center wire                     0.23
+CM RR=0.01357	Ring radius                     0.01357
+CM B=A+S	
+CM C=B+(A/2)	
+CM D=C+S	
+CM E=D+(A/2)	
+CM F=E+S	
+CM G=F+(A/2)	
+CM H=G+S	
+CM I=H+(A/2)	
+CM RH=2.27	Reflector height                    2.27
+CM RW=0.78	Reflector width                      0.78
+CM Rx=RW/2, Rnx=2	Reflector width  / 2 , number of wires
+CM Ry=RH/2, Rny=10	Reflector height / 2 , number of wires
+CM SRW=1.10	1.00
+CM SRA=1.64	1.64
+CM RG=0.40	0.40
 CM 
-CM Helix	1	10	S	S	hr	hr	hr	hr	W				
-CM Copy/move	0	0	0	0	0	0	0	da	1				
-CM Helix	2	10	S	S	hr	hr	hr	hr	W				
-CM Copy/move	0	0	0	0	0	0	0	dc	2				
-CM Helix	3	10	S	S	hr	hr	hr	hr	W				
-CM Copy/move	0	0	0	0	0	0	0	de	3				
-CM Wire	11	30	hr	0	0	hr	0	da	W				
-CM Wire	12	41	hr	0	db	hr	0	dc	W				
-CM Wire	13	33	hr	0	dd	hr	0	de	W				
-CM Wire	14	30	hr	0	df	hr	0	dg	W				
-CM Wire	50	30	0	0	0	0	0	da	W				
-CM Wire	51	30	-G	0	-RH	-G	0	RH	W*RT				
-CM Wire	52	30	hr	-G	-RH	hr	-G	RH	W*RT				
+CM 
+CM ================ DOUBLE ARRAY ====================
+CM 
+CM 
+CM freq=2450	
+CM AH=6	Antenna height in wavelength
+CM S=0.0082	Adjust gap when testing  0.0082
+CM W=0.0020	Wire thickness                0.0020
+CM A=0.2339	Center wire                     0.2339
+CM RR=0.0116	Ring radius                     0.0116
+CM B=A+S	
+CM C=B+(A/2)	
+CM D=C+S	
+CM E=D+(A/2)	
+CM F=E+S	
+CM G=F+(A/2)	
+CM RH=1.55	Reflector height                    1.55
+CM RW=0.97	Reflector width                      0.97
+CM Rx=RW/2, Rnx=2	Reflector width  / 2 , number of wires
+CM Ry=RH/2, Rny=10	Reflector height / 2 , number of wires
+CM SRW=1.00	1.00
+CM SRA=1.55	1.55
+CM RG=0.44	0.44
+CM EG=1.25	Elements gap    1.25 to 1.35
+CM 
+CM 
+CM 
+CM 
+CM 
+CM 
+CM Helix	1	6	S	S	RR	RR	RR	RR	W				
+CM Copy/move	0	0	0	0	0	0	0	A	1				
+CM Helix	2	6	S	S	RR	RR	RR	RR	W				
+CM Copy/move	0	0	0	0	0	0	0	C	2				
+CM Helix	3	6	S	S	RR	RR	RR	RR	W				
+CM Copy/move	0	0	0	0	0	0	0	E	3				
+CM Wire	8	6	RR	0	F	RR	0	G	W				
+CM Wire	7	6	RR	0	D	RR	0	E	W				
+CM Wire	6	6	RR	0	B	RR	0	C	W				
+CM Wire	10	6	0	0	0	0	0	A	W				
 CM Mirror	100	0	0	1									
-CM Copy/move	60	1	0	0	0	0	0	1.4					
-CM Copy/move	0	0	180	0	0	0	0	AH	
+CM Wire	5	11	RR	0	-A	RR	0	A	W				
+CM P-multip	Rnx*2	Rny*2	-RG	-Rx	-Ry	-RG	Rx	-Ry	-RG	Rx	Ry		
+CM P-multip	Rny*2	5	-RG	-RW/2	-Ry	-RG	-RW/2	Ry	SRW	-SRA	Ry		
+CM P-multip	Rny*2	5	-RG	RW/2	Ry	-RG	RW/2	-Ry	SRW	SRA	-Ry		
+CM Copy/move	0	0	0	0	0	0	0	AH					
 CM 
-CM Voltage-src	11	FP	0	1	0	1	0	0		
-CM Voltage-src	71	FP	0	1	0	1	0	0						
+CM 
+CM Voltage-src	5	6	0	1	0	1	0	0	
+CM 
+CM 
+CM 
+CM 
+CM ======================= DOUBLE ARRAY ===========================
+CM 
+CM 
+CM 
+CM Helix	1	6	S	S	RR	RR	RR	RR	W				
+CM Copy/move	0	0	0	0	0	0	0	A	1				
+CM Helix	2	6	S	S	RR	RR	RR	RR	W				
+CM Copy/move	0	0	0	0	0	0	0	C	2				
+CM Helix	3	6	S	S	RR	RR	RR	RR	W				
+CM Copy/move	0	0	0	0	0	0	0	E	3				
+CM Wire	8	6	RR	0	F	RR	0	G	W				
+CM Wire	7	6	RR	0	D	RR	0	E	W				
+CM Wire	6	6	RR	0	B	RR	0	C	W				
+CM Wire	10	6	0	0	0	0	0	A	W				
+CM Mirror	100	0	0	1									
+CM Wire	5	11	RR	0	-A	RR	0	A	W				
+CM Wire	11	1	RG	-W	EG/2	RG	W	EG/2	W				
+CM Copy/move	200	1	0	0	0	0	0	EG					
+CM P-multip	Rnx*2	Rny*2	-RG	-Rx	-Ry	-RG	Rx	-Ry	-RG	Rx	Ry+EG		
+CM P-multip	Rny*2	5	-RG	-RW/2	-Ry	-RG	-RW/2	Ry+EG	SRW	-SRA	Ry+EG		
+CM P-multip	Rny*2	5	-RG	RW/2	Ry+EG	-RG	RW/2	-Ry	SRW	SRA	-Ry		
+CM Copy/move	0	0	0	0	0	0	0	AH					
+CM 
+CM 
+CM Voltage-src	11	1	0	1	0	1	0	0	
+CM 
+CM 
+CM Trans-line	11	1	5	6	50	0	Open	0	Open	0	
+CM Trans-line	11	1	205	6	50	0	Open	0	Open	0		
+CM 						
 CE
-SY freq=2450	'Resonant frequency.
-SY AH=3	'Antenna height in wavelength
-SY S=0.010	'Adjust spacing when testing  0.010
-SY W=0.0028	'Wire thickness                0.0028
-SY A=0.2238	'Center wire                      0.2223                 0.2238     with reflectors.
-SY B=0.1047	'Inner wires                       0.1237                 0.1047     with reflectors.
-SY C=B	'Outer wires                      0.1237
-SY D=B	'End wires                        0.1237
-SY R=0.1093	'Ring radius                      0.0149                   0.1093      with reflectors.
-SY CF=6.2832	'6.2832 Conversion factor for ring wire length    (2*pi(3.1416)
-SY da=A
-SY db=A+S
-SY dc=db+B
-SY dd=dc+S
-SY de=dd+C
-SY df=de+S
-SY dg=df+D
-SY FP=26	'Segment 22 Of 30 segments for single element. 26 of 30 segments for double elements. This is very critical for good VSWR.
-SY G=0.18	'0.18
-SY RT=10	'10
-SY EG=1.76	'1.76
-GH	1	10	S	S	R/CF	R/CF	R/CF	R/CF	W
-GM	0	0	0	0	0	0	0	da	1
-GH	2	10	S	S	R/CF	R/CF	R/CF	R/CF	W
-GM	0	0	0	0	0	0	0	dc	2
-GH	3	10	S	S	R/CF	R/CF	R/CF	R/CF	W
-GM	0	0	0	0	0	0	0	de	3
-GW	11	30	R/CF	0	0	R/CF	0	da	W
-GW	12	41	R/CF	0	db	R/CF	0	dc	W
-GW	13	33	R/CF	0	dd	R/CF	0	de	W
-GW	14	30	R/CF	0	df	R/CF	0	dg	W
-GW	50	30	0	0	0	0	0	da	W
+SY freq=2450
+SY AH=6	'Antenna height in wavelength
+SY S=0.0082	'Adjust gap when testing  0.0082
+SY W=0.0020	'Wire thickness                0.0020
+SY A=0.2339	'Center wire                     0.2339
+SY RR=0.0116	'Ring radius                     0.0116
+SY B=A+S
+SY C=B+(A/2)
+SY D=C+S
+SY E=D+(A/2)
+SY F=E+S
+SY G=F+(A/2)
+SY RH=1.55	'Reflector height                    1.55
+SY RW=0.97	'Reflector width                      0.97
+SY Rx=RW/2, Rnx=2	'Reflector width  / 2 , number of wires
+SY Ry=RH/2, Rny=10	'Reflector height / 2 , number of wires
+SY SRW=1.00	'1.00
+SY SRA=1.55	'1.55
+SY RG=0.44	'0.44
+SY EG=1.25	'Elements gap    1.25 to 1.35
+GH	1	6	S	S	RR	RR	RR	RR	W
+GM	0	0	0	0	0	0	0	A	1
+GH	2	6	S	S	RR	RR	RR	RR	W
+GM	0	0	0	0	0	0	0	C	2
+GH	3	6	S	S	RR	RR	RR	RR	W
+GM	0	0	0	0	0	0	0	E	3
+GW	8	6	RR	0	F	RR	0	G	W
+GW	7	6	RR	0	D	RR	0	E	W
+GW	6	6	RR	0	B	RR	0	C	W
+GW	10	6	0	0	0	0	0	A	W
 GX	100	001
-GW	51	30	-G	0	-EG/2	-G	0	EG/2	W*RT
-GW	52	30	R/CF	-G	-EG/2	R/CF	-G	EG/2	W*RT
-GM	60	1	0	0	0	0	0	EG
-GM	0	0	180	0	0	0	0	AH
+GW	5	11	RR	0	-A	RR	0	A	W
+GW	11	1	RG	-W	EG/2	RG	W	EG/2	W
+GM	200	1	0	0	0	0	0	EG
+SM	Rnx*2	Rny*2	-RG	-Rx	-Ry	-RG	Rx	-Ry
+SC	0	0	-RG	Rx	Ry+EG
+SM	Rny*2	5	-RG	-RW/2	-Ry	-RG	-RW/2	Ry+EG
+SC	0	0	SRW	-SRA	Ry+EG
+SM	Rny*2	5	-RG	RW/2	Ry+EG	-RG	RW/2	-Ry
+SC	0	0	SRW	SRA	-Ry
+GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.80/freq
 GE	1
 LD	5	0	0	0	58000000
 GN	2	0	0	0	4	0.003
 EK
-EX	0	11	FP	0	1	0	0
-EX	0	71	FP	0	1	0	0
+EX	0	11	1	0	1	0	0
+TL	11	1	5	6	50	0	0	0	0	0
+TL	11	1	205	6	50	0	0	0	0	0
 FR	0	0	0	0	freq	0
 EN

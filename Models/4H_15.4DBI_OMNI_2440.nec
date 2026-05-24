@@ -1,13 +1,15 @@
-CM Compact 15.4 dbi  omni  pattern with whole  WiFi  band below VSWR of 2. Vertical beamwidth of 2 degrees.
+CM Compact 11.5 dbi  almost omni  pattern with whole  WiFi  band below VSWR of 2. 
+CM 
+CM 
 CM 
 CM freq=2440	Resonent frequency.
 CM AH=6	
 CM W=0.004	0.002  Wire Thickness.    0.002 to 0.008
-CM H=0.50422	Horizontal elements.         0.50422    62 MM
-CM V=0.04065	Vertical elements.             0.04065   10 MM                              0.05 TO 0.10           Changes pattern from Oval to Omni
+CM H=0.5042	Horizontal elements.         0.50422    62 MM
+CM V=0.114	Vertical elements.             0.114   14 MM                              0.10 TO 0.15           Changes pattern from Oval to Omni
 CM EG=1.00	Vertical gap between elements        1.00                  Very critical for antenna pattern thereby gain and good VSWR.
-CM EL=3	Number of extra elements
-CM G=0.097	Horizontal gap beween elements      0.97  12MM
+CM EL=1	Number of extra elements   ONLY 1 EXTRA ELEMENT WORKS BEST
+CM G=0.102	Horizontal gap beween elements      0.102  13MM
 CM RT=56.30231	Reflector thickness
 CM RG=0.018255	Reflector gap
 CM 
@@ -15,50 +17,48 @@ CM
 CM 
 CM Wire	2	11	G	0	V	G	H	V	W				right top horizontal
 CM Wire	3	11	G	0	-V	G	H	-V	W				Inner right bottom horizontal
-CM Wire	4	13	G	0	V	G	0	0	W				Inner right middle top vertical
-CM Wire	5	13	G	0	-V	G	0	0	W				Inner right middle top vertical
+CM Wire	4	5	G	0	V	G	0	0	W				Inner right middle top vertical
+CM Wire	5	5	G	0	-V	G	0	0	W				Inner right middle top vertical
 CM Wire	6	11	0	0	V	0	-H	V	W				right top horizontal
 CM Wire	7	11	0	0	-V	0	-H	-V	W				Inner right bottom horizontal
-CM Wire	8	13	0	0	V	0	0	0	W				Inner right middle top vertical
-CM Wire	9	13	0	0	-V	0	0	0	W				Inner right middle top vertical
+CM Wire	8	5	0	0	V	0	0	0	W				Inner right middle top vertical
+CM Wire	9	5	0	0	-V	0	0	0	W				Inner right middle top vertical
 CM Copy/move	10	EL	0	0	0	0	EG	0					
 CM Wire	50	30	G	0	0	G	EG*EL	0	W				Feedline
 CM Wire	51	30	0	0	0	0	EG*EL	0	W				Feedline
-CM Wire	1	5	0	EL/2	0	G	EL/2	0	W				Feedpoint
+CM Wire	1	3	0	EL/2	0	G	EL/2	0	W				Feedpoint
 CM Copy/move	0	0	90	0	0	0	0	AH					
 CM 
-CM 
-CM 
-CM Voltage-src	1	3	0	1	0	1	0	0		
+CM Voltage-src	1	2	0	1	0	1	0	0		
 CE
 SY freq=2440	'Resonent frequency.
 SY AH=6
 SY W=0.004	'0.002  Wire Thickness.    0.002 to 0.008
-SY H=0.50422	'Horizontal elements.         0.50422    62 MM
-SY V=0.04065	'Vertical elements.             0.04065   10 MM                              0.05 TO 0.10           Changes pattern from Oval to Omni
+SY H=0.5042	'Horizontal elements.         0.50422    62 MM
+SY V=0.114	'Vertical elements.             0.114   14 MM                              0.10 TO 0.15           Changes pattern from Oval to Omni
 SY EG=1.00	'Vertical gap between elements        1.00                  Very critical for antenna pattern thereby gain and good VSWR.
-SY EL=3	'Number of extra elements
-SY G=0.097	'Horizontal gap beween elements      0.97  12MM
+SY EL=1	'Number of extra elements   ONLY 1 EXTRA ELEMENT WORKS BEST
+SY G=0.102	'Horizontal gap beween elements      0.102  13MM
 SY RT=56.30231	'Reflector thickness
 SY RG=0.018255	'Reflector gap
 GW	2	11	G	0	V	G	H	V	W	'right top horizontal
 GW	3	11	G	0	-V	G	H	-V	W	'Inner right bottom horizontal
-GW	4	13	G	0	V	G	0	0	W	'Inner right middle top vertical
-GW	5	13	G	0	-V	G	0	0	W	'Inner right middle top vertical
+GW	4	5	G	0	V	G	0	0	W	'Inner right middle top vertical
+GW	5	5	G	0	-V	G	0	0	W	'Inner right middle top vertical
 GW	6	11	0	0	V	0	-H	V	W	'right top horizontal
 GW	7	11	0	0	-V	0	-H	-V	W	'Inner right bottom horizontal
-GW	8	13	0	0	V	0	0	0	W	'Inner right middle top vertical
-GW	9	13	0	0	-V	0	0	0	W	'Inner right middle top vertical
+GW	8	5	0	0	V	0	0	0	W	'Inner right middle top vertical
+GW	9	5	0	0	-V	0	0	0	W	'Inner right middle top vertical
 GM	10	EL	0	0	0	0	EG	0
 GW	50	30	G	0	0	G	EG*EL	0	W	'Feedline
 GW	51	30	0	0	0	0	EG*EL	0	W	'Feedline
-GW	1	5	0	EL/2	0	G	EL/2	0	W	'Feedpoint
+GW	1	3	0	EL/2	0	G	EL/2	0	W	'Feedpoint
 GM	0	0	90	0	0	0	0	AH
 GS	0	0	299.8/freq
 GE	1
 LD	5	0	0	0	58000000
 GN	2	0	0	0	4	0.003
 EK
-EX	0	1	3	0	1	0	0
+EX	0	1	2	0	1	0	0
 FR	0	0	0	0	freq	0
 EN

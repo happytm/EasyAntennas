@@ -37,26 +37,30 @@ CM Wire	24	13	0	H1	-V1	0	H1	-V2	W
 CM Mirror	100	0	1	0									
 CM Wire	6	3	0	-H	0	0	H	0	W				
 CM P-multip	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry	-G	Rx	Ry		
+CM P-multip	Rny*2	5	-G	-RW/2	-Ry	-G	-RW/2	Ry	SRW	-SRA	Ry		
+CM P-multip	Rny*2	5	-G	RW/2	Ry	-G	RW/2	-Ry	SRW	SRA	-Ry		
 CM Copy/move	0	0	0	0	0	0	0	AH									
 CM 
 CM Voltage-src	6	2	0	1	0	1	0	0		
 CM 	
 CE
 SY freq=2450	'Resonant frequency
-SY AH=3	'Antenna height in wavelength
+SY AH=6	'Antenna height in wavelength
 SY W=0.0020	'Wire Radius                                        0.0020
-SY H=0.05421	'Transmission lines         0.05421
-SY V=0.798029	'All vertical elements      0.7980
-SY H1=0.11607	'Horizontal elements       0.116
+SY H=0.0575	'Transmission lines         0.05421
+SY V=0.786	'All vertical elements      0.7980
+SY H1=0.1469	'Horizontal elements       0.116
 SY H2=H1*2	'Horizontal elements       H1*2
 SY H3=H1*3	'Horizontal elements       H1*3
 SY V1=V*2	'Vertical elements           V*2
 SY V2=V*3	'Vertical elements           V*3
-SY RH=5.20	'Reflector height   5.20
-SY RW=0.50	'Reflector Width    1.00
-SY Ry=RH/2, Rny=16	'Reflector height / 2 , number of wires
+SY RH=5.73	'Reflector height   5.20
+SY RW=0.32	'Reflector Width    0.97
+SY Ry=RH/2, Rny=10	'Reflector height / 2 , number of wires
 SY Rx=RW/2, Rnx=4	'Reflector width / 2 , number of wires
-SY G=0.280012	'Gap between reflector and elements   0.28
+SY G=0.19	'Gap between reflector and elements   0.25
+SY SRW=0.40	'0.24
+SY SRA=0.75	'0.62
 GW	1	11	0	H	V2	0	H1	V2	W
 GW	2	2	0	0	V1	0	H	V1	W
 GW	4	11	0	H	V	0	H1	V	W
@@ -76,16 +80,20 @@ GW	22	13	0	H1	0	0	H1	-V	W
 GW	23	13	0	H1	-V	0	H1	-V1	W
 GW	24	13	0	H1	-V1	0	H1	-V2	W
 GX	100	010
-GW	6	3	0	-H	0	0	H	0	W
+GW	5	3	0	-H	0	0	H	0	W
 SM	Rnx*2	Rny*2	-G	-Rx	-Ry	-G	Rx	-Ry
 SC	0	0	-G	Rx	Ry
+SM	Rny*2	5	-G	-RW/2	-Ry	-G	-RW/2	Ry
+SC	0	0	SRW	-SRA	Ry
+SM	Rny*2	5	-G	RW/2	Ry	-G	RW/2	-Ry
+SC	0	0	SRW	SRA	-Ry
 GM	0	0	0	0	0	0	0	AH
 GS	0	0	299.8/freq
-GE	0
+GE	1
 LD	5	0	0	0	58000000	'Copper wires
-GN	-1
+GN	2	0	0	0	4	0.003
 EK
-EX	0	6	2	0	1	0	0
+EX	0	5	2	0	1	0	0
 FR	0	0	0	0	freq	0
 RP	0	73	73	1001	-90	90	5	5	10000	0
 EN
